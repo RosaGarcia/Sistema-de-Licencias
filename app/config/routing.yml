@@ -1,0 +1,4 @@
+licencia:
+    resource: "@licenciaBundle/Resources/config/routing.yml"
+    prefix:   /
+

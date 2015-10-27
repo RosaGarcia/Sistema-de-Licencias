@@ -1,0 +1,3 @@
+licencia_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: licenciaBundle:Default:index }
