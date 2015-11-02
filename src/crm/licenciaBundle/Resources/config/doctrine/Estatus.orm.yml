@@ -1,0 +1,16 @@
+crm\licenciaBundle\Entity\Estatus:
+    type: entity
+    table: null
+    repositoryClass: crm\licenciaBundle\Entity\EstatusRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        estatus:
+            type: string
+            length: '20'
+            column: Estatus
+    lifecycleCallbacks: {  }

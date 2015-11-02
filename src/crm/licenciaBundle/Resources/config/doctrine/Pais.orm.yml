@@ -1,0 +1,16 @@
+crm\licenciaBundle\Entity\Pais:
+    type: entity
+    table: null
+    repositoryClass: crm\licenciaBundle\Entity\PaisRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombrePais:
+            type: string
+            length: '50'
+            column: nombre_pais
+    lifecycleCallbacks: {  }

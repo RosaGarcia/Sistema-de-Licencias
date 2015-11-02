@@ -1,0 +1,15 @@
+crm\licenciaBundle\Entity\Capacidad:
+    type: entity
+    table: null
+    repositoryClass: crm\licenciaBundle\Entity\CapacidadRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        capacidad:
+            type: string
+            length: '10'
+    lifecycleCallbacks: {  }

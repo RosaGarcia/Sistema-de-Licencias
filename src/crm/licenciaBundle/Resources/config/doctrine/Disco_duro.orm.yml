@@ -1,0 +1,21 @@
+crm\licenciaBundle\Entity\Disco_duro:
+    type: entity
+    table: null
+    repositoryClass: crm\licenciaBundle\Entity\Disco_duroRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        marca:
+            type: string
+            length: '20'
+        capacidad:
+            type: string
+            length: '10'
+        tipo:
+            type: string
+            length: '20'
+    lifecycleCallbacks: {  }

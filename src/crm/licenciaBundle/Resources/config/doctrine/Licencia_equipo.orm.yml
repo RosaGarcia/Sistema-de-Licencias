@@ -1,0 +1,21 @@
+crm\licenciaBundle\Entity\Licencia_equipo:
+    type: entity
+    table: null
+    repositoryClass: crm\licenciaBundle\Entity\Licencia_equipoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idTipoLicencia:
+            type: integer
+            column: id_tipo_licencia
+        fechaInicio:
+            type: datetime
+            column: fecha_inicio
+        fechaFinal:
+            type: datetime
+            column: fecha_final
+    lifecycleCallbacks: {  }

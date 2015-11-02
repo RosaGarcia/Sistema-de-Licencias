@@ -1,0 +1,18 @@
+crm\licenciaBundle\Entity\Modelo:
+    type: entity
+    table: null
+    repositoryClass: crm\licenciaBundle\Entity\ModeloRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idCaracteristicasEquipo:
+            type: integer
+            column: id_caracteristicas_equipo
+        nombre:
+            type: string
+            length: '10'
+    lifecycleCallbacks: {  }

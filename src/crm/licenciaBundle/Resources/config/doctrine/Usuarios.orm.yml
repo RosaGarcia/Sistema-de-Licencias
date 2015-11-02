@@ -1,0 +1,27 @@
+crm\licenciaBundle\Entity\Usuarios:
+    type: entity
+    table: null
+    repositoryClass: crm\licenciaBundle\Entity\UsuariosRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idPersonal:
+            type: integer
+            column: id_personal
+        nombreUsuario:
+            type: string
+            length: '20'
+            column: nombre_usuario
+        contrasena:
+            type: string
+            length: '16'
+        rol:
+            type: string
+            length: '15'
+        salt:
+            type: integer
+    lifecycleCallbacks: {  }
