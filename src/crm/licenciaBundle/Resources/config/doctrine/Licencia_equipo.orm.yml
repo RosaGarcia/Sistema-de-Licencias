@@ -9,13 +9,14 @@ crm\licenciaBundle\Entity\Licencia_equipo:
             generator:
                 strategy: AUTO
     fields:
-        idTipoLicencia:
-            type: integer
-            column: id_tipo_licencia
         fechaInicio:
             type: datetime
             column: fecha_inicio
         fechaFinal:
             type: datetime
             column: fecha_final
+    manyToOne:
+        tipo_licencia:
+        targetEntity: crm/licenciaBundle/Entity/Tipo_licencia
+        mappedBy: Licencia_equipo
     lifecycleCallbacks: {  }

@@ -9,18 +9,6 @@ crm\licenciaBundle\Entity\Caracteristicas_equipo:
             generator:
                 strategy: AUTO
     fields:
-        idProcesador:
-            type: integer
-            column: id_procesador
-        idCapacidad:
-            type: integer
-            column: id_capacidad
-        idMemoriaRam:
-            type: integer
-            column: id_memoria_ram
-        idDiscoDuro:
-            type: integer
-            column: id_disco_duro
         versionSoftware:
             type: string
             length: '20'
@@ -31,4 +19,20 @@ crm\licenciaBundle\Entity\Caracteristicas_equipo:
         dimenciones:
             type: string
             length: '20'
+    manyToOne:
+        procesador:
+          targetEntity: crm\licenciaBundle\Entity\Procesador
+          mappedBy: Caracteristicas_equipo
+    manyToOne:
+        capacidad:
+          targetEntity: crm\licenciaBundle\Entity\Capacidad
+          mappedBy: Caracteristicas_equipo
+    manyToOne:
+        memoria_ram:
+          targetEntity: crm\licenciaBundle\Entity\Memoria_ram
+          mappedBy: Caracteristicas_equipo 
+    manyToOne:
+        disco_duro:
+          targetEntity: crm\licenciaBundle\Entity\Disco_duro
+          mappedBy: Caracteristicas_equipo                             
     lifecycleCallbacks: {  }

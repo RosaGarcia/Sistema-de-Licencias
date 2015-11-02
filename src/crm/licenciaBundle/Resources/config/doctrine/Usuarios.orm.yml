@@ -9,9 +9,6 @@ crm\licenciaBundle\Entity\Usuarios:
             generator:
                 strategy: AUTO
     fields:
-        idPersonal:
-            type: integer
-            column: id_personal
         nombreUsuario:
             type: string
             length: '20'
@@ -24,4 +21,8 @@ crm\licenciaBundle\Entity\Usuarios:
             length: '15'
         salt:
             type: integer
+    manyToOne:
+        personal:
+          targetEntity: crm\licenciaBundle\Entity\Personal
+          mappedBy: Usuarios
     lifecycleCallbacks: {  }

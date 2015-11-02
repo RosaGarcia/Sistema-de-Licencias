@@ -30,4 +30,16 @@ crm\licenciaBundle\Entity\Direccion_personal:
             type: string
             length: '50'
             column: dele_muni
+    manyToOne:
+        estado:
+        targetEntity: crm/licenciaBundle/Entity/Estado
+        mappedBy: Direccion_personal
+    manyToOne:
+        pais:
+        targetEntity: crm/licenciaBundle/Entity/Pais
+        mappedBy: Direccion_personal
+    manyToOne:
+        personal:
+        targetEntity: crm/licenciaBundle/Entity/Personal
+        mappedBy: Direccion_personal
     lifecycleCallbacks: {  }

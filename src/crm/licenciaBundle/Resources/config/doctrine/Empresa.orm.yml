@@ -46,4 +46,8 @@ crm\licenciaBundle\Entity\Empresa:
         idModificacion:
             type: integer
             column: id_modificacion
+    manyToOne:
+        estatus:
+        targetEntity: crm/licenciaBundle/Entity/Estatus
+        mappedBy: Empresa
     lifecycleCallbacks: {  }

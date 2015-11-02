@@ -9,30 +9,6 @@ crm\licenciaBundle\Entity\Equipo:
             generator:
                 strategy: AUTO
     fields:
-        idProcedencia:
-            type: integer
-            column: id_procedencia
-        idLicenciaEquipo:
-            type: integer
-            column: id_licencia_equipo
-        idCliente:
-            type: integer
-            column: id_cliente
-        idPersonal:
-            type: integer
-            column: id_personal
-        idVenta:
-            type: integer
-            column: id_venta
-        idProducto:
-            type: integer
-            column: id_producto
-        idCaracteristicasEquipo:
-            type: integer
-            column: id_caracteristicas_equipo
-        idEstatus:
-            type: integer
-            column: id_estatus
         numeroSerie:
             type: string
             length: '20'
@@ -40,4 +16,36 @@ crm\licenciaBundle\Entity\Equipo:
         fechaInstalacion:
             type: datetime
             column: fecha_instalacion
+    manyToOne:
+        procedencia:
+        targetEntity: crm/licenciaBundle/Entity/Procedencia
+        mappedBy: Equipo
+    manyToOne:
+        licencia_equipo:
+        targetEntity: crm/licenciaBundle/Entity/Licencia_equipo
+        mappedBy: Equipo
+    manyToOne:
+        cliente:
+        targetEntity: crm/licenciaBundle/Entity/Cliente
+        mappedBy: Equipo
+    manyToOne:
+        personal:
+        targetEntity: crm/licenciaBundle/Entity/Personal
+        mappedBy: Equipo
+    manyToOne:
+        venta:
+        targetEntity: crm/licenciaBundle/Entity/venta
+        mappedBy: Equipo
+    manyToOne:
+        producto:
+        targetEntity: crm/licenciaBundle/Entity/Producto
+        mappedBy: Equipo
+    manyToOne:
+        caracteristicas_equipo:
+        targetEntity: crm/licenciaBundle/Entity/Caracteristicas_equipo
+        mappedBy: Equipo
+    manyToOne:
+        estaus:
+        targetEntity: crm/licenciaBundle/Entity/Estatus
+        mappedBy: Equipo
     lifecycleCallbacks: {  }

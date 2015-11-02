@@ -30,4 +30,16 @@ crm\licenciaBundle\Entity\Direccion_fabricante:
             type: string
             length: '50'
             column: dele_muni
+    manyToOne:
+        estado:
+        targetEntity: crm/licenciaBundle/Entity/Estado
+        mappedBy: Direccion_fabricante
+    manyToOne:
+        pais:
+        targetEntity: crm/licenciaBundle/Entity/Pais
+        mappedBy: Direccion_fabricante
+    manyToOne:
+        fabricante:
+        targetEntity: crm/licenciaBundle/Entity/Fabricante
+        mappedBy: Direccion_fabricante
     lifecycleCallbacks: {  }

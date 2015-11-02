@@ -13,4 +13,8 @@ crm\licenciaBundle\Entity\Estado:
             type: string
             length: '50'
             column: nombre_estado
+    manyToOne:
+        pais:
+        targetEntity: crm/licenciaBundle/Entity/Pais
+        mappedBy: Estado
     lifecycleCallbacks: {  }

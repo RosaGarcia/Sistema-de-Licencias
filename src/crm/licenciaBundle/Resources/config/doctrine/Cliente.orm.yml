@@ -20,13 +20,16 @@ crm\licenciaBundle\Entity\Cliente:
             type: string
             length: '15'
             column: telefono_1
-        telExt:
+        telExt_1:
             type: integer
-            column: tel_ext
+            column: tel_ext_1
         telefono2:
             type: string
             length: '15'
             column: telefono_2
+        telExt_2:
+            type: integer
+            column: tel_ext_2    
         email:
             type: string
             length: '50'
@@ -46,4 +49,8 @@ crm\licenciaBundle\Entity\Cliente:
         idModificacion:
             type: integer
             column: id_modificacion
+    manyToOne:
+        estatus:
+        targetEntity: crm/licenciaBundle/Entity/Estatus
+        mappedBy: Cliente
     lifecycleCallbacks: {  }

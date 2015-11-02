@@ -30,12 +30,17 @@ class Cliente
     /**
      * @var integer
      */
-    private $telExt;
+    private $telExt1;
 
     /**
      * @var string
      */
     private $telefono2;
+
+    /**
+     * @var integer
+     */
+    private $telExt2;
 
     /**
      * @var string
@@ -151,27 +156,27 @@ class Cliente
     }
 
     /**
-     * Set telExt
+     * Set telExt1
      *
-     * @param integer $telExt
+     * @param integer $telExt1
      *
      * @return Cliente
      */
-    public function setTelExt($telExt)
+    public function setTelExt($telExt1)
     {
-        $this->telExt = $telExt;
+        $this->telExt1 = $telExt1;
 
         return $this;
     }
 
     /**
-     * Get telExt
+     * Get telExt1
      *
      * @return integer
      */
-    public function getTelExt()
+    public function getTelExt1()
     {
-        return $this->telExt;
+        return $this->telExt1;
     }
 
     /**
@@ -196,6 +201,30 @@ class Cliente
     public function getTelefono2()
     {
         return $this->telefono2;
+    }
+
+    /**
+     * Set telExt2
+     *
+     * @param integer $telExt2
+     *
+     * @return Cliente
+     */
+    public function setTelExt($telExt2)
+    {
+        $this->telExt2 = $telExt2;
+
+        return $this;
+    }
+
+    /**
+     * Get telExt2
+     *
+     * @return integer
+     */
+    public function getTelExt2()
+    {
+        return $this->telExt2;
     }
 
     /**

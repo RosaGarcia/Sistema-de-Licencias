@@ -30,4 +30,16 @@ crm\licenciaBundle\Entity\Direccion_empresa:
             type: string
             length: '50'
             column: dele_mini
+    manyToOne:
+        estado:
+        targetEntity: crm/licenciaBundle/Entity/Estado
+        mappedBy: Direccion_empresa
+    manyToOne:
+        pais:
+        targetEntity: crm/licenciaBundle/Entity/Pais
+        mappedBy: Direccion_empresa
+    manyToOne:
+        empresa:
+        targetEntity: crm/licenciaBundle/Entity/Empresa
+        mappedBy: Direccion_empresa
     lifecycleCallbacks: {  }
