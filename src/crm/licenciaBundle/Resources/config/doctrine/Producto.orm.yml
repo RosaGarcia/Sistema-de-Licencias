@@ -1,0 +1,22 @@
+crm\licenciaBundle\Entity\Producto:
+    type: entity
+    table: null
+    repositoryClass: crm\licenciaBundle\Entity\ProductoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idModelo:
+            type: integer
+            column: id_modelo
+        nombre:
+            type: string
+            length: '10'
+        terminoProducto:
+            type: string
+            length: '10'
+            column: termino_producto
+    lifecycleCallbacks: {  }

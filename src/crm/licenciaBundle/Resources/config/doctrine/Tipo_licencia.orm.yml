@@ -1,0 +1,19 @@
+crm\licenciaBundle\Entity\Tipo_licencia:
+    type: entity
+    table: null
+    repositoryClass: crm\licenciaBundle\Entity\Tipo_licenciaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idProducto:
+            type: integer
+            column: id_producto
+        precio:
+            type: integer
+        meses:
+            type: integer
+    lifecycleCallbacks: {  }

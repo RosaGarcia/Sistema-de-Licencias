@@ -1,0 +1,21 @@
+crm\licenciaBundle\Entity\Procesador:
+    type: entity
+    table: null
+    repositoryClass: crm\licenciaBundle\Entity\ProcesadorRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        marca:
+            type: string
+            length: '30'
+        modelo:
+            type: string
+            length: '15'
+        velocidad:
+            type: string
+            length: '10'
+    lifecycleCallbacks: {  }

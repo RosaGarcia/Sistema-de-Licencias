@@ -1,0 +1,43 @@
+crm\licenciaBundle\Entity\Equipo:
+    type: entity
+    table: null
+    repositoryClass: crm\licenciaBundle\Entity\EquipoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idProcedencia:
+            type: integer
+            column: id_procedencia
+        idLicenciaEquipo:
+            type: integer
+            column: id_licencia_equipo
+        idCliente:
+            type: integer
+            column: id_cliente
+        idPersonal:
+            type: integer
+            column: id_personal
+        idVenta:
+            type: integer
+            column: id_venta
+        idProducto:
+            type: integer
+            column: id_producto
+        idCaracteristicasEquipo:
+            type: integer
+            column: id_caracteristicas_equipo
+        idEstatus:
+            type: integer
+            column: id_estatus
+        numeroSerie:
+            type: string
+            length: '20'
+            column: numero_serie
+        fechaInstalacion:
+            type: datetime
+            column: fecha_instalacion
+    lifecycleCallbacks: {  }

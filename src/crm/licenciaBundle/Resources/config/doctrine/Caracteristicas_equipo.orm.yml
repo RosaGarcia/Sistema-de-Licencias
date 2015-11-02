@@ -1,0 +1,34 @@
+crm\licenciaBundle\Entity\Caracteristicas_equipo:
+    type: entity
+    table: null
+    repositoryClass: crm\licenciaBundle\Entity\Caracteristicas_equipoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        idProcesador:
+            type: integer
+            column: id_procesador
+        idCapacidad:
+            type: integer
+            column: id_capacidad
+        idMemoriaRam:
+            type: integer
+            column: id_memoria_ram
+        idDiscoDuro:
+            type: integer
+            column: id_disco_duro
+        versionSoftware:
+            type: string
+            length: '20'
+            column: version_software
+        numeroInterfaz:
+            type: integer
+            column: numero_interfaz
+        dimenciones:
+            type: string
+            length: '20'
+    lifecycleCallbacks: {  }
