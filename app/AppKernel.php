@@ -16,7 +16,16 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new crm\licenciaBundle\licenciaBundle(),
+            new Crm\CaracteristicasBundle\CaracteristicasBundle(),
+            new Crm\ClienteBundle\ClienteBundle(),
+            new Crm\EmpresaBundle\EmpresaBundle(),
+            new Crm\EquipoBundle\EquipoBundle(),
+            new Crm\FabricanteBundle\FabricanteBundle(),
+            new Crm\GeneralBundle\GeneralBundle(),
+            new Crm\PersonalBundle\PersonalBundle(),
+            new Crm\ProductoBundle\ProductoBundle(),
+            new Crm\UsuariosBundle\UsuariosBundle(),
+            new Crm\VentasBundle\VentasBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

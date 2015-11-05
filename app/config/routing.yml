@@ -1,4 +1,40 @@
-licencia:
-    resource: "@licenciaBundle/Resources/config/routing.yml"
+ventas:
+    resource: "@VentasBundle/Resources/config/routing.yml"
+    prefix:   /
+
+usuarios:
+    resource: "@UsuariosBundle/Resources/config/routing.yml"
+    prefix:   /
+
+producto:
+    resource: "@ProductoBundle/Resources/config/routing.yml"
+    prefix:   /
+
+personal:
+    resource: "@PersonalBundle/Resources/config/routing.yml"
+    prefix:   /
+
+general:
+    resource: "@GeneralBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fabricante:
+    resource: "@FabricanteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+equipo:
+    resource: "@EquipoBundle/Resources/config/routing.yml"
+    prefix:   /
+
+empresa:
+    resource: "@EmpresaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+cliente:
+    resource: "@ClienteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+caracteristicas:
+    resource: "@CaracteristicasBundle/Resources/config/routing.yml"
     prefix:   /
 
