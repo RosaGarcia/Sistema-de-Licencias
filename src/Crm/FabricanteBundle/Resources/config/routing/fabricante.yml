@@ -1,0 +1,30 @@
+fabricante:
+    path:     /
+    defaults: { _controller: "FabricanteBundle:Fabricante:index" }
+
+fabricante_show:
+    path:     /{id}/show
+    defaults: { _controller: "FabricanteBundle:Fabricante:show" }
+
+fabricante_new:
+    path:     /new
+    defaults: { _controller: "FabricanteBundle:Fabricante:new" }
+
+fabricante_create:
+    path:     /create
+    defaults: { _controller: "FabricanteBundle:Fabricante:create" }
+    methods:  POST
+
+fabricante_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FabricanteBundle:Fabricante:edit" }
+
+fabricante_update:
+    path:     /{id}/update
+    defaults: { _controller: "FabricanteBundle:Fabricante:update" }
+    methods:  [POST, PUT]
+
+fabricante_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FabricanteBundle:Fabricante:delete" }
+    methods:  [POST, DELETE]

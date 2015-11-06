@@ -1,0 +1,15 @@
+Crm\GeneralBundle\Entity\Estatus:
+    type: entity
+    table: null
+    repositoryClass: Crm\GeneralBundle\Entity\EstatusRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        estatus:
+            type: string
+            length: '30'
+    lifecycleCallbacks: {  }

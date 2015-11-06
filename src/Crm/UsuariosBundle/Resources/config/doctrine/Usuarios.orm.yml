@@ -1,0 +1,26 @@
+Crm\UsuariosBundle\Entity\Usuarios:
+    type: entity
+    table: null
+    repositoryClass: Crm\UsuariosBundle\Entity\UsuariosRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: '20'
+        contrasena:
+            type: string
+            length: '16'
+    manyToOne:
+        personal:
+          targetEntity: Crm\PersonalBundle\Entity\Personal
+          mappedBy: Usuarios
+    manyToOne:
+        rol:
+          targetEntity: Crm\UsuariosBundle\Entity\Roles
+          mappedBy: Usuarios
+    lifecycleCallbacks: {  }

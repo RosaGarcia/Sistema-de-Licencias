@@ -1,0 +1,4 @@
+services:
+#    caracteristicas.example:
+#        class: Crm\CaracteristicasBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

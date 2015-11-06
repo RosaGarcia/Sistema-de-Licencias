@@ -1,0 +1,30 @@
+direccionempresa:
+    path:     /
+    defaults: { _controller: "EmpresaBundle:DireccionEmpresa:index" }
+
+direccionempresa_show:
+    path:     /{id}/show
+    defaults: { _controller: "EmpresaBundle:DireccionEmpresa:show" }
+
+direccionempresa_new:
+    path:     /new
+    defaults: { _controller: "EmpresaBundle:DireccionEmpresa:new" }
+
+direccionempresa_create:
+    path:     /create
+    defaults: { _controller: "EmpresaBundle:DireccionEmpresa:create" }
+    methods:  POST
+
+direccionempresa_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EmpresaBundle:DireccionEmpresa:edit" }
+
+direccionempresa_update:
+    path:     /{id}/update
+    defaults: { _controller: "EmpresaBundle:DireccionEmpresa:update" }
+    methods:  [POST, PUT]
+
+direccionempresa_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EmpresaBundle:DireccionEmpresa:delete" }
+    methods:  [POST, DELETE]

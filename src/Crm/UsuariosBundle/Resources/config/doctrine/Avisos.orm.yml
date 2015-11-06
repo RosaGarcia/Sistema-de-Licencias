@@ -1,0 +1,18 @@
+Crm\UsuariosBundle\Entity\Avisos:
+    type: entity
+    table: null
+    repositoryClass: Crm\UsuariosBundle\Entity\AvisosRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        avisos:
+            type: text
+    manyToOne:
+        usuarios:
+          targetEntity: Crm\UsuariosBundle\Entity\Usuarios
+          mappedBy: Avisos
+    lifecycleCallbacks: {  }

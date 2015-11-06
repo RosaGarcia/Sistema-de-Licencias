@@ -1,0 +1,20 @@
+Crm\ProductoBundle\Entity\TipoLicencia:
+    type: entity
+    table: null
+    repositoryClass: Crm\ProductoBundle\Entity\TipoLicenciaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        precio:
+            type: integer
+        meses:
+            type: integer
+    manyToOne:
+        producto:
+          targetEntity: Crm\ProductoBundle\Entity\Producto
+          mappedBy: TipoLicencia
+    lifecycleCallbacks: {  }

@@ -1,0 +1,44 @@
+Crm\EmpresaBundle\Entity\Empresa:
+    type: entity
+    table: null
+    repositoryClass: Crm\EmpresaBundle\Entity\EmpresaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        razonSocial:
+            type: string
+            length: '50'
+            column: razon_social
+        rcf:
+            type: string
+            length: '15'
+        telefono1:
+            type: string
+            length: '15'
+            column: telefono_1
+        ext1:
+            type: integer
+            column: ext_1
+        telefono2:
+            type: string
+            length: '15'
+            column: telefono_2
+        ext2:
+            type: integer
+            column: ext_2
+        email:
+            type: string
+            length: '50'
+        paginaWeb:
+            type: string
+            length: '50'
+            column: pagina_web
+    manyToOne:
+        estatus:
+          targetEntity: Crm\GeneralBundle\Entity\Estatus
+          mappedBy: Empresa
+    lifecycleCallbacks: {  }

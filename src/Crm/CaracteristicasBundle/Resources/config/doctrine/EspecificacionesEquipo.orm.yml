@@ -1,0 +1,44 @@
+Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo:
+    type: entity
+    table: null
+    repositoryClass: Crm\CaracteristicasBundle\Entity\EspecificacionesEquipoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        numeroInterfaces:
+            type: integer
+            column: numero_interfaces
+        numeroUsb:
+            type: integer
+            column: numero_usb
+        expansion:
+            type: boolean
+    manyToOne:
+        procesador:
+          targetEntity: Crm\CaracteristicasBundle\Entity\Procesador
+          mappedBy: EspecificacionesEquipo
+    manyToOne:
+        capacidad:
+          targetEntity: Crm\CaracteristicasBundle\Entity\Capacidad
+          mappedBy: EspecificacionesEquipo
+    manyToOne:
+        memoriaRam:
+          targetEntity: Crm\CaracteristicasBundle\Entity\MemoriaRam
+          mappedBy: EspecificacionesEquipo
+    manyToOne:
+        discoDuro:
+          targetEntity: Crm\CaracteristicasBundle\Entity\DiscoDuro
+          mappedBy: EspecificacionesEquipo
+    manyToOne:
+        versionSoftware:
+          targetEntity: Crm\CaracteristicasBundle\Entity\VersionSoftware
+          mappedBy: EspecificacionesEquipo
+    manyToOne:
+        dimenciones:
+          targetEntity: Crm\CaracteristicasBundle\Entity\Dimenciones
+          mappedBy: EspecificacionesEquipo
+    lifecycleCallbacks: {  }

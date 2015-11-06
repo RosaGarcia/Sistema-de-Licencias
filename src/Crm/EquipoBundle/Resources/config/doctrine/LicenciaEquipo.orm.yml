@@ -1,0 +1,22 @@
+Crm\EquipoBundle\Entity\LicenciaEquipo:
+    type: entity
+    table: null
+    repositoryClass: Crm\EquipoBundle\Entity\LicenciaEquipoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        fechaInicio:
+            type: datetime
+            column: fecha_inicio
+        fechaFinal:
+            type: datetime
+            column: fecha_final
+    manyToOne:
+        tipoLicencia:
+          targetEntity: Crm\ProductoBundle\Entity\TipoLicencia
+          mappedBy: LicenciaEquipo
+    lifecycleCallbacks: {  }

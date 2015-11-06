@@ -1,0 +1,30 @@
+Crm\EquipoBundle\Entity\Procedencia:
+    type: entity
+    table: null
+    repositoryClass: Crm\EquipoBundle\Entity\ProcedenciaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        fechaLlegada:
+            type: datetime
+            column: fecha_llegada
+        numeroSerieFabricante:
+            type: string
+            length: '20'
+            column: numero_serie_fabricante
+        numeroSerieWarriors:
+            type: string
+            length: '20'
+            column: numero_serie_warriors
+        fechaSalida:
+            type: datetime
+            column: fecha_salida
+    manyToOne:
+        fabricante:
+          targetEntity: Crm\FabricanteBundle\Entity\Fabricante
+          mappedBy: Procedencia
+    lifecycleCallbacks: {  }

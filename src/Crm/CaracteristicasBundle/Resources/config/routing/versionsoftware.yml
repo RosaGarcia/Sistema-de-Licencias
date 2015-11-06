@@ -1,0 +1,30 @@
+versionsoftware:
+    path:     /
+    defaults: { _controller: "CaracteristicasBundle:VersionSoftware:index" }
+
+versionsoftware_show:
+    path:     /{id}/show
+    defaults: { _controller: "CaracteristicasBundle:VersionSoftware:show" }
+
+versionsoftware_new:
+    path:     /new
+    defaults: { _controller: "CaracteristicasBundle:VersionSoftware:new" }
+
+versionsoftware_create:
+    path:     /create
+    defaults: { _controller: "CaracteristicasBundle:VersionSoftware:create" }
+    methods:  POST
+
+versionsoftware_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CaracteristicasBundle:VersionSoftware:edit" }
+
+versionsoftware_update:
+    path:     /{id}/update
+    defaults: { _controller: "CaracteristicasBundle:VersionSoftware:update" }
+    methods:  [POST, PUT]
+
+versionsoftware_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CaracteristicasBundle:VersionSoftware:delete" }
+    methods:  [POST, DELETE]

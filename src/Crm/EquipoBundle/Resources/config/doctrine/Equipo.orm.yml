@@ -1,0 +1,51 @@
+Crm\EquipoBundle\Entity\Equipo:
+    type: entity
+    table: null
+    repositoryClass: Crm\EquipoBundle\Entity\EquipoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        numeroSerie:
+            type: string
+            length: '20'
+            column: numero_serie
+        fechaInstalacion:
+            type: datetime
+            column: fecha_instalacion
+    manyToOne:
+        cliente:
+          targetEntity: Crm\ClienteBundle\Entity\Cliente
+          mappedBy: Equipo
+    manyToOne:
+        personal:
+          targetEntity: Crm\PersonalBundle\Entity\Personal
+          mappedBy: Equipo
+    oneToOne:
+        licenciaEquipo:
+          targetEntity: Crm\EquipoBundle\Entity\LicenciaEquipo
+          mappedBy: Equipo
+    oneToOne:
+        venta:
+          targetEntity: Crm\VentaBundle\Entity\Venta
+          mappedBy: Equipo
+    manyToOne:
+        estatus:
+          targetEntity: Crm\GeneralBundle\Entity\Estatus
+          mappedBy: Equipo
+    manyToOne:
+        procedencia:
+          targetEntity: Crm\EquipoBundle\Entity\Procedencia
+          mappedBy: Equipo
+    manyToOne:
+        producto:
+          targetEntity: Crm\ProductoBundle\Entity\Producto
+          mappedBy: Equipo
+    manyToOne:
+        especificacionesEquipo:
+          targetEntity: Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo
+          mappedBy: Equipo
+    lifecycleCallbacks: {  }

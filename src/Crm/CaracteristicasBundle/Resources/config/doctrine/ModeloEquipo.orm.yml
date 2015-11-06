@@ -1,0 +1,19 @@
+Crm\CaracteristicasBundle\Entity\ModeloEquipo:
+    type: entity
+    table: null
+    repositoryClass: Crm\CaracteristicasBundle\Entity\ModeloEquipoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: '15'
+    manyToOne:
+        especificacionesEquipo:
+          targetEntity: Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo
+          mappedBy: ModeloEquipo
+    lifecycleCallbacks: {  }

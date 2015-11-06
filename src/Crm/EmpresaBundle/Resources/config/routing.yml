@@ -1,0 +1,11 @@
+empresa_direccionempresa:
+    resource: "@EmpresaBundle/Resources/config/routing/direccionempresa.yml"
+    prefix:   /direccionempresa
+
+empresa_empresa:
+    resource: "@EmpresaBundle/Resources/config/routing/empresa.yml"
+    prefix:   /empresa
+
+empresa_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: EmpresaBundle:Default:index }

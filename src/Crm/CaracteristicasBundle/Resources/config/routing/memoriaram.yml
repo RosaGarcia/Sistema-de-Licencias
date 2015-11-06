@@ -1,0 +1,30 @@
+memoriaram:
+    path:     /
+    defaults: { _controller: "CaracteristicasBundle:MemoriaRam:index" }
+
+memoriaram_show:
+    path:     /{id}/show
+    defaults: { _controller: "CaracteristicasBundle:MemoriaRam:show" }
+
+memoriaram_new:
+    path:     /new
+    defaults: { _controller: "CaracteristicasBundle:MemoriaRam:new" }
+
+memoriaram_create:
+    path:     /create
+    defaults: { _controller: "CaracteristicasBundle:MemoriaRam:create" }
+    methods:  POST
+
+memoriaram_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CaracteristicasBundle:MemoriaRam:edit" }
+
+memoriaram_update:
+    path:     /{id}/update
+    defaults: { _controller: "CaracteristicasBundle:MemoriaRam:update" }
+    methods:  [POST, PUT]
+
+memoriaram_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CaracteristicasBundle:MemoriaRam:delete" }
+    methods:  [POST, DELETE]

@@ -1,0 +1,26 @@
+Crm\CaracteristicasBundle\Entity\MemoriaRam:
+    type: entity
+    table: null
+    repositoryClass: Crm\CaracteristicasBundle\Entity\MemoriaRamRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        marca:
+            type: string
+            length: '20'
+        modelo:
+            type: string
+            length: '10'
+        capacidad:
+            type: integer
+        unidad:
+            type: string
+            length: '5'
+        tipo:
+            type: string
+            length: '10'
+    lifecycleCallbacks: {  }

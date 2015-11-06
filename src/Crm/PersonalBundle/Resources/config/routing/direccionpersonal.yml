@@ -1,0 +1,30 @@
+direccionpersonal:
+    path:     /
+    defaults: { _controller: "PersonalBundle:DireccionPersonal:index" }
+
+direccionpersonal_show:
+    path:     /{id}/show
+    defaults: { _controller: "PersonalBundle:DireccionPersonal:show" }
+
+direccionpersonal_new:
+    path:     /new
+    defaults: { _controller: "PersonalBundle:DireccionPersonal:new" }
+
+direccionpersonal_create:
+    path:     /create
+    defaults: { _controller: "PersonalBundle:DireccionPersonal:create" }
+    methods:  POST
+
+direccionpersonal_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PersonalBundle:DireccionPersonal:edit" }
+
+direccionpersonal_update:
+    path:     /{id}/update
+    defaults: { _controller: "PersonalBundle:DireccionPersonal:update" }
+    methods:  [POST, PUT]
+
+direccionpersonal_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PersonalBundle:DireccionPersonal:delete" }
+    methods:  [POST, DELETE]

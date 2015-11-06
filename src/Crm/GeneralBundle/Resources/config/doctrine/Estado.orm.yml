@@ -1,0 +1,20 @@
+Crm\GeneralBundle\Entity\Estado:
+    type: entity
+    table: null
+    repositoryClass: Crm\GeneralBundle\Entity\EstadoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombreEstado:
+            type: string
+            length: '50'
+            column: nombre_estado
+    manyToOne:
+        pais:
+          targetEntity: Crm\GeneralBundle\Entity\Pais
+          mappedBy: Estado
+    lifecycleCallbacks: {  }

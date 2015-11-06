@@ -1,0 +1,44 @@
+Crm\PersonalBundle\Entity\Personal:
+    type: entity
+    table: null
+    repositoryClass: Crm\PersonalBundle\Entity\PersonalRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: '20'
+        apePat:
+            type: string
+            length: '30'
+            column: ape_pat
+        apeMat:
+            type: string
+            length: '30'
+            column: ape_mat
+        telefono:
+            type: string
+            length: '15'
+        celular:
+            type: string
+            length: '15'
+        email:
+            type: string
+            length: '50'
+    manyToOne:
+        estatus:
+          targetEntity: Crm\GeneralBundle\Entity\Estatus
+          mappedBy: Personal
+    manyToOne:
+        empresa:
+          targetEntity: Crm\EmpresaBundle\Entity\Empresa
+          mappedBy: Personal
+    manyToOne:
+        puesto:
+          targetEntity: Crm\PersonalBundle\Entity\Puesto
+          mappedBy: Personal
+    lifecycleCallbacks: {  }

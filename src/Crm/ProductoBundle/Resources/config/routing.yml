@@ -1,0 +1,11 @@
+producto_tipolicencia:
+    resource: "@ProductoBundle/Resources/config/routing/tipolicencia.yml"
+    prefix:   /tipolicencia
+
+producto_producto:
+    resource: "@ProductoBundle/Resources/config/routing/producto.yml"
+    prefix:   /producto
+
+producto_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ProductoBundle:Default:index }

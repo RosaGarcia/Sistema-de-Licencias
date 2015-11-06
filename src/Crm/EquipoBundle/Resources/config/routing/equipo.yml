@@ -1,0 +1,30 @@
+equipo:
+    path:     /
+    defaults: { _controller: "EquipoBundle:Equipo:index" }
+
+equipo_show:
+    path:     /{id}/show
+    defaults: { _controller: "EquipoBundle:Equipo:show" }
+
+equipo_new:
+    path:     /new
+    defaults: { _controller: "EquipoBundle:Equipo:new" }
+
+equipo_create:
+    path:     /create
+    defaults: { _controller: "EquipoBundle:Equipo:create" }
+    methods:  POST
+
+equipo_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EquipoBundle:Equipo:edit" }
+
+equipo_update:
+    path:     /{id}/update
+    defaults: { _controller: "EquipoBundle:Equipo:update" }
+    methods:  [POST, PUT]
+
+equipo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EquipoBundle:Equipo:delete" }
+    methods:  [POST, DELETE]

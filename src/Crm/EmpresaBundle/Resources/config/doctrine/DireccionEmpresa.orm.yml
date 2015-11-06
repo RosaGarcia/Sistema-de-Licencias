@@ -1,0 +1,45 @@
+Crm\EmpresaBundle\Entity\DireccionEmpresa:
+    type: entity
+    table: null
+    repositoryClass: Crm\EmpresaBundle\Entity\DireccionEmpresaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        calle:
+            type: string
+            length: '50'
+        numeroExt:
+            type: string
+            length: '10'
+            column: numero_ext
+        numeroInt:
+            type: string
+            length: '10'
+            column: numero_int
+        colonia:
+            type: string
+            length: '50'
+        codigoPostal:
+            type: integer
+            column: codigo_postal
+    manyToOne:
+        empresa:
+          targetEntity: Crm\EmpresaBundle\Entity\Empresa
+          mappedBy: DireccionEmpresa
+    manyToOne:
+        localidad:
+          targetEntity: Crm\GeneralBundle\Entity\Localidad
+          mappedBy: DireccionEmpresa
+    manyToOne:
+        estado:
+          targetEntity: Crm\GenaralBundle\Entity\Estado
+          mappedBy: DireccionEmpresa
+    manyToOne:
+        pais:
+          targetEntity: Crm\GeneralBundle\Entity\Pais
+          mappedBy: DireccionEmpresa
+    lifecycleCallbacks: {  }

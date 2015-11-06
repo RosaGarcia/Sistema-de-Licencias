@@ -1,0 +1,7 @@
+ventas_venta:
+    resource: "@VentasBundle/Resources/config/routing/venta.yml"
+    prefix:   /venta
+
+ventas_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: VentasBundle:Default:index }

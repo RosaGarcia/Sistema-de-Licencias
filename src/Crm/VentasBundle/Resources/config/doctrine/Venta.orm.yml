@@ -1,0 +1,19 @@
+Crm\VentasBundle\Entity\Venta:
+    type: entity
+    table: null
+    repositoryClass: Crm\VentasBundle\Entity\VentaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        fechaVenta:
+            type: datetime
+            column: fecha_venta
+    manyToOne:
+        usuarios:
+          targetEntity: Crm\UsuariosBundle\Entity\Usuarios
+          mappedBy: Venta
+    lifecycleCallbacks: {  }

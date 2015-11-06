@@ -1,0 +1,22 @@
+Crm\ProductoBundle\Entity\Producto:
+    type: entity
+    table: null
+    repositoryClass: Crm\ProductoBundle\Entity\ProductoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: '30'
+        termino:
+            type: string
+            length: '10'
+    manyToOne:
+        modeloEquipo:
+          targetEntity: Crm\CaracteristicasBundle\Entity\ModeloEquipo
+          mappedBy: Producto
+    lifecycleCallbacks: {  }

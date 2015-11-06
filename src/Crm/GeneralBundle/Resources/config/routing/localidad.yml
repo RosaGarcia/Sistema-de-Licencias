@@ -1,0 +1,30 @@
+localidad:
+    path:     /
+    defaults: { _controller: "GeneralBundle:Localidad:index" }
+
+localidad_show:
+    path:     /{id}/show
+    defaults: { _controller: "GeneralBundle:Localidad:show" }
+
+localidad_new:
+    path:     /new
+    defaults: { _controller: "GeneralBundle:Localidad:new" }
+
+localidad_create:
+    path:     /create
+    defaults: { _controller: "GeneralBundle:Localidad:create" }
+    methods:  POST
+
+localidad_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GeneralBundle:Localidad:edit" }
+
+localidad_update:
+    path:     /{id}/update
+    defaults: { _controller: "GeneralBundle:Localidad:update" }
+    methods:  [POST, PUT]
+
+localidad_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GeneralBundle:Localidad:delete" }
+    methods:  [POST, DELETE]

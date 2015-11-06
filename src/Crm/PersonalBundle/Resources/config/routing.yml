@@ -1,0 +1,15 @@
+personal_puesto:
+    resource: "@PersonalBundle/Resources/config/routing/puesto.yml"
+    prefix:   /puesto
+
+personal_personal:
+    resource: "@PersonalBundle/Resources/config/routing/personal.yml"
+    prefix:   /personal
+
+personal_direccionpersonal:
+    resource: "@PersonalBundle/Resources/config/routing/direccionpersonal.yml"
+    prefix:   /direccionpersonal
+
+personal_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: PersonalBundle:Default:index }

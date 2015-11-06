@@ -1,0 +1,15 @@
+Crm\CaracteristicasBundle\Entity\Dimenciones:
+    type: entity
+    table: null
+    repositoryClass: Crm\CaracteristicasBundle\Entity\DimencionesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        dimenciones:
+            type: string
+            length: '25'
+    lifecycleCallbacks: {  }

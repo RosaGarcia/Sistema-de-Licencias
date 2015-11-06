@@ -1,0 +1,20 @@
+Crm\GeneralBundle\Entity\Localidad:
+    type: entity
+    table: null
+    repositoryClass: Crm\GeneralBundle\Entity\LocalidadRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombreLocalidad:
+            type: string
+            length: '50'
+            column: nombre_localidad
+    manyToOne:
+        estado:
+          targetEntity: Crm\GeneralBundle\Entity\Estado
+          mappedBy: Localidad
+    lifecycleCallbacks: {  }

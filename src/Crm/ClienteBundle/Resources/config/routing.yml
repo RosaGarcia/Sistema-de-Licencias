@@ -1,0 +1,11 @@
+cliente_direccioncliente:
+    resource: "@ClienteBundle/Resources/config/routing/direccioncliente.yml"
+    prefix:   /direccioncliente
+
+cliente_cliente:
+    resource: "@ClienteBundle/Resources/config/routing/cliente.yml"
+    prefix:   /cliente
+
+cliente_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ClienteBundle:Default:index }

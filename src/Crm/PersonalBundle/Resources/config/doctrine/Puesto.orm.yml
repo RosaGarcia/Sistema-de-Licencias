@@ -1,0 +1,15 @@
+Crm\PersonalBundle\Entity\Puesto:
+    type: entity
+    table: null
+    repositoryClass: Crm\PersonalBundle\Entity\PuestoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        puesto:
+            type: string
+            length: '20'
+    lifecycleCallbacks: {  }

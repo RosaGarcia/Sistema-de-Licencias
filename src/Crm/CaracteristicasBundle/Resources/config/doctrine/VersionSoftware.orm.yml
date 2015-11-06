@@ -1,0 +1,16 @@
+Crm\CaracteristicasBundle\Entity\VersionSoftware:
+    type: entity
+    table: null
+    repositoryClass: Crm\CaracteristicasBundle\Entity\VersionSoftwareRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        versionSoftware:
+            type: string
+            length: '20'
+            column: version_software
+    lifecycleCallbacks: {  }

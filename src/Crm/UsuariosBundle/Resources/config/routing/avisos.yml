@@ -1,0 +1,30 @@
+avisos:
+    path:     /
+    defaults: { _controller: "UsuariosBundle:Avisos:index" }
+
+avisos_show:
+    path:     /{id}/show
+    defaults: { _controller: "UsuariosBundle:Avisos:show" }
+
+avisos_new:
+    path:     /new
+    defaults: { _controller: "UsuariosBundle:Avisos:new" }
+
+avisos_create:
+    path:     /create
+    defaults: { _controller: "UsuariosBundle:Avisos:create" }
+    methods:  POST
+
+avisos_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UsuariosBundle:Avisos:edit" }
+
+avisos_update:
+    path:     /{id}/update
+    defaults: { _controller: "UsuariosBundle:Avisos:update" }
+    methods:  [POST, PUT]
+
+avisos_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UsuariosBundle:Avisos:delete" }
+    methods:  [POST, DELETE]

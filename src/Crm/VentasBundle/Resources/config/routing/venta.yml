@@ -1,0 +1,30 @@
+venta:
+    path:     /
+    defaults: { _controller: "VentasBundle:Venta:index" }
+
+venta_show:
+    path:     /{id}/show
+    defaults: { _controller: "VentasBundle:Venta:show" }
+
+venta_new:
+    path:     /new
+    defaults: { _controller: "VentasBundle:Venta:new" }
+
+venta_create:
+    path:     /create
+    defaults: { _controller: "VentasBundle:Venta:create" }
+    methods:  POST
+
+venta_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "VentasBundle:Venta:edit" }
+
+venta_update:
+    path:     /{id}/update
+    defaults: { _controller: "VentasBundle:Venta:update" }
+    methods:  [POST, PUT]
+
+venta_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "VentasBundle:Venta:delete" }
+    methods:  [POST, DELETE]

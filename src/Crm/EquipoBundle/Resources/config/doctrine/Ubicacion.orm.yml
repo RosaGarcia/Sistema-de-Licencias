@@ -1,0 +1,45 @@
+Crm\EquipoBundle\Entity\Ubicacion:
+    type: entity
+    table: null
+    repositoryClass: Crm\EquipoBundle\Entity\UbicacionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        calle:
+            type: string
+            length: '50'
+        numeroExt:
+            type: string
+            length: '10'
+            column: numero_ext
+        numeroInt:
+            type: string
+            length: '10'
+            column: numero_int
+        colonia:
+            type: string
+            length: '50'
+        codigoPostal:
+            type: integer
+            column: codigo_postal
+    manyToOne:
+        equipo:
+          targetEntity: Crm\EquipoBundle\Entity\Equipo
+          mappedBy: Ubicacion
+    manyToOne:
+        localidad:
+          targetEntity: Crm\GeneralBundle\Entity\Localidad
+          mappedBy: Ubicacion
+    manyToOne:
+        estado:
+          targetEntity: Crm\GeneralBundle\Entity\Estado
+          mappedBy: Ubicacion
+    manyToOne:
+        pais:
+          targetEntity: Crm\GeneralBundle\Entity\Pais
+          mappedBy: Ubicacion
+    lifecycleCallbacks: {  }

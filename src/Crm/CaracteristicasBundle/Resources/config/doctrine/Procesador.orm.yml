@@ -1,0 +1,23 @@
+Crm\CaracteristicasBundle\Entity\Procesador:
+    type: entity
+    table: null
+    repositoryClass: Crm\CaracteristicasBundle\Entity\ProcesadorRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        marca:
+            type: string
+            length: '20'
+        modelo:
+            type: string
+            length: '30'
+        velocidad:
+            type: float
+        unidad:
+            type: string
+            length: '5'
+    lifecycleCallbacks: {  }

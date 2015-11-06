@@ -1,0 +1,15 @@
+Crm\UsuariosBundle\Entity\Roles:
+    type: entity
+    table: null
+    repositoryClass: Crm\UsuariosBundle\Entity\RolesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        roles:
+            type: string
+            length: '20'
+    lifecycleCallbacks: {  }

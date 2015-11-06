@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>MemoriaRam</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Marca</th>
+                <td>{{ entity.marca }}</td>
+            </tr>
+            <tr>
+                <th>Modelo</th>
+                <td>{{ entity.modelo }}</td>
+            </tr>
+            <tr>
+                <th>Capacidad</th>
+                <td>{{ entity.capacidad }}</td>
+            </tr>
+            <tr>
+                <th>Unidad</th>
+                <td>{{ entity.unidad }}</td>
+            </tr>
+            <tr>
+                <th>Tipo</th>
+                <td>{{ entity.tipo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('memoriaram') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('memoriaram_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

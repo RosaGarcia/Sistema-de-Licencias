@@ -1,0 +1,30 @@
+procesador:
+    path:     /
+    defaults: { _controller: "CaracteristicasBundle:Procesador:index" }
+
+procesador_show:
+    path:     /{id}/show
+    defaults: { _controller: "CaracteristicasBundle:Procesador:show" }
+
+procesador_new:
+    path:     /new
+    defaults: { _controller: "CaracteristicasBundle:Procesador:new" }
+
+procesador_create:
+    path:     /create
+    defaults: { _controller: "CaracteristicasBundle:Procesador:create" }
+    methods:  POST
+
+procesador_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CaracteristicasBundle:Procesador:edit" }
+
+procesador_update:
+    path:     /{id}/update
+    defaults: { _controller: "CaracteristicasBundle:Procesador:update" }
+    methods:  [POST, PUT]
+
+procesador_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CaracteristicasBundle:Procesador:delete" }
+    methods:  [POST, DELETE]

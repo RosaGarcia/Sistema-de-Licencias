@@ -1,0 +1,30 @@
+discoduro:
+    path:     /
+    defaults: { _controller: "CaracteristicasBundle:DiscoDuro:index" }
+
+discoduro_show:
+    path:     /{id}/show
+    defaults: { _controller: "CaracteristicasBundle:DiscoDuro:show" }
+
+discoduro_new:
+    path:     /new
+    defaults: { _controller: "CaracteristicasBundle:DiscoDuro:new" }
+
+discoduro_create:
+    path:     /create
+    defaults: { _controller: "CaracteristicasBundle:DiscoDuro:create" }
+    methods:  POST
+
+discoduro_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CaracteristicasBundle:DiscoDuro:edit" }
+
+discoduro_update:
+    path:     /{id}/update
+    defaults: { _controller: "CaracteristicasBundle:DiscoDuro:update" }
+    methods:  [POST, PUT]
+
+discoduro_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CaracteristicasBundle:DiscoDuro:delete" }
+    methods:  [POST, DELETE]

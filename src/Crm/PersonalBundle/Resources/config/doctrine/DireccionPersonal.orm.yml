@@ -1,0 +1,45 @@
+Crm\PersonalBundle\Entity\DireccionPersonal:
+    type: entity
+    table: null
+    repositoryClass: Crm\PersonalBundle\Entity\DireccionPersonalRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        calle:
+            type: string
+            length: '50'
+        numeroExt:
+            type: string
+            length: '10'
+            column: numero_ext
+        numeroInt:
+            type: string
+            length: '10'
+            column: numero_int
+        colonia:
+            type: string
+            length: '50'
+        codigoPostal:
+            type: integer
+            column: codigo_postal
+    manyToOne:
+        personal:
+          targetEntity: Crm\PersonalBundle\Entity\Personal
+          mappedBy: DireccionPersonal
+    manyToOne:
+        localidad:
+          targetEntity: Crm\GeneralBundle\Entity\Localidad
+          mappedBy: DireccionPersonal
+    manyToOne:
+        estado:
+          targetEntity: Crm\GeneralBundle\Entity\Estado
+          mappedBy: DireccionPersonal
+    manyToOne:
+        pais:
+          targetEntity: Crm\GeneralBundle\Entity\Pais
+          mappedBy: DireccionPersonal
+    lifecycleCallbacks: {  }
