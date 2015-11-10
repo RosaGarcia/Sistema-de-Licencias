@@ -40,5 +40,12 @@ Crm\FabricanteBundle\Entity\Fabricante:
     manyToOne:
         estatus:
           targetEntity: Crm\GeneralBundle\Entity\Estatus
-          mappedBy: Fabricante
+          inversedBy: fabricante
+          joinColumn:
+              name: estatus_id
+              referencedColumnName: id
+    oneToMany:
+        direccionFabricante: 
+          targetEntity: Crm\FabricanteBundle\Entity\DireccionFabricante  
+          mappedBy: Fabricante    
     lifecycleCallbacks: {  }

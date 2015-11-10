@@ -15,12 +15,21 @@ Crm\UsuariosBundle\Entity\Usuarios:
         contrasena:
             type: string
             length: '16'
+    onyToMany:
+        venta:
+          targetEntity: Crm\VentasBundle\Entity\Venta 
+          mappedBy: Usuarios       
     manyToOne:
         personal:
           targetEntity: Crm\PersonalBundle\Entity\Personal
-          mappedBy: Usuarios
-    manyToOne:
+          inversedBy: usuarios
+          joinColumn:
+              name: personal_id
+              referencedColumnName: id
         rol:
           targetEntity: Crm\UsuariosBundle\Entity\Roles
-          mappedBy: Usuarios
+          inversedBy: usuarios
+          joinColumn: 
+              name: rol_id
+              referencedColumnName: id
     lifecycleCallbacks: {  }
