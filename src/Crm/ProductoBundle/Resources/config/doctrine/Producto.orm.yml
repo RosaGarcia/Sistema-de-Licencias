@@ -15,6 +15,10 @@ Crm\ProductoBundle\Entity\Producto:
         termino:
             type: string
             length: '10'
+    oneToMany:
+        equipo:
+           targetEntity: Crm\EquipoBundle\Entity\Equipo
+           mappedBy: Producto
     manyToOne:
         modeloEquipo:
           targetEntity: Crm\CaracteristicasBundle\Entity\ModeloEquipo

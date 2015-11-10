@@ -140,4 +140,42 @@ class Pais
     {
         return $this->direccionCliente;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direccionEmpresa;
+
+
+    /**
+     * Add direccionEmpresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa
+     * @return Pais
+     */
+    public function addDireccionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa)
+    {
+        $this->direccionEmpresa[] = $direccionEmpresa;
+
+        return $this;
+    }
+
+    /**
+     * Remove direccionEmpresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa
+     */
+    public function removeDireccionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa)
+    {
+        $this->direccionEmpresa->removeElement($direccionEmpresa);
+    }
+
+    /**
+     * Get direccionEmpresa
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDireccionEmpresa()
+    {
+        return $this->direccionEmpresa;
+    }
 }

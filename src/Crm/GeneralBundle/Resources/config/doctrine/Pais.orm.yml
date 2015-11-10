@@ -23,4 +23,10 @@ Crm\GeneralBundle\Entity\Pais:
         direccionEmpresa:
              targetEntity: Crm\EmpresaBundle\Entity\DireccionEmpresa
              mappedBy: Pais
+        direccionFabricante:
+             targetEntity: Crm\FabricanteBundle\Entity\DireccionFabricante
+             mappedBy: Pais
+        ubicacion:
+             targetEntity: Crm\EquipoBundle\Entity\Ubicacion
+             mappedBy: Pais
     lifecycleCallbacks: {  }

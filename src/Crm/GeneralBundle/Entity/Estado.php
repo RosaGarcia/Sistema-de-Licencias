@@ -168,4 +168,42 @@ class Estado
     {
         return $this->direccionCliente;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direcionEmpresa;
+
+
+    /**
+     * Add direcionEmpresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direcionEmpresa
+     * @return Estado
+     */
+    public function addDirecionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direcionEmpresa)
+    {
+        $this->direcionEmpresa[] = $direcionEmpresa;
+
+        return $this;
+    }
+
+    /**
+     * Remove direcionEmpresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direcionEmpresa
+     */
+    public function removeDirecionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direcionEmpresa)
+    {
+        $this->direcionEmpresa->removeElement($direcionEmpresa);
+    }
+
+    /**
+     * Get direcionEmpresa
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDirecionEmpresa()
+    {
+        return $this->direcionEmpresa;
+    }
 }

@@ -276,4 +276,54 @@ class Empresa
     {
         return $this->estatus;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direccionEmpresa;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->direccionEmpresa = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add direccionEmpresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa
+     * @return Empresa
+     */
+    public function addDireccionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa)
+    {
+        $this->direccionEmpresa[] = $direccionEmpresa;
+
+        return $this;
+    }
+
+    /**
+     * Remove direccionEmpresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa
+     */
+    public function removeDireccionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa)
+    {
+        $this->direccionEmpresa->removeElement($direccionEmpresa);
+    }
+
+    /**
+     * Get direccionEmpresa
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDireccionEmpresa()
+    {
+        return $this->direccionEmpresa;
+    }
+
+     public function __toString()
+    {
+        return $this->razonSocial;
+    }
 }

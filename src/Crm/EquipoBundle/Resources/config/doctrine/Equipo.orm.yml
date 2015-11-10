@@ -19,33 +19,48 @@ Crm\EquipoBundle\Entity\Equipo:
     manyToOne:
         cliente:
           targetEntity: Crm\ClienteBundle\Entity\Cliente
-          mappedBy: Equipo
-    manyToOne:
+          inversedBy: equipo
+          joinColumn:
+            name: cliente_id
+            referencedColumnName: id
         personal:
           targetEntity: Crm\PersonalBundle\Entity\Personal
-          mappedBy: Equipo
+          inversedBy: equipo
+          joinColumn:
+            name: personal_id
+            referencedColumnName: id
+        estatus:
+          targetEntity: Crm\GeneralBundle\Entity\Estatus
+          inversedBy: equipo
+          joinColumn:
+            name: estatus_id
+            referencedColumnName: id
+        procedencia:
+          targetEntity: Crm\EquipoBundle\Entity\Procedencia
+          inversedBy: equipo
+          joinColumn:
+            name: procedencia_id
+            referencedColumnName: id
+        producto:
+          targetEntity: Crm\ProductoBundle\Entity\Producto
+          inversedBy: equipo
+          joinColumn:
+            name: producto_id
+            referencedColumnName: id
+        especificacionesEquipo:
+          targetEntity: Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo
+          inversedBy: equipo
+          joinColumn:
+            name: especificacionesEquipo_id
+            referencedColumnName: id
     oneToOne:
         licenciaEquipo:
           targetEntity: Crm\EquipoBundle\Entity\LicenciaEquipo
           mappedBy: Equipo
-    oneToOne:
         venta:
           targetEntity: Crm\VentaBundle\Entity\Venta
           mappedBy: Equipo
-    manyToOne:
-        estatus:
-          targetEntity: Crm\GeneralBundle\Entity\Estatus
-          mappedBy: Equipo
-    manyToOne:
-        procedencia:
-          targetEntity: Crm\EquipoBundle\Entity\Procedencia
-          mappedBy: Equipo
-    manyToOne:
-        producto:
-          targetEntity: Crm\ProductoBundle\Entity\Producto
-          mappedBy: Equipo
-    manyToOne:
-        especificacionesEquipo:
-          targetEntity: Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo
+        ubicacion:
+          targetEntity: Crm\EquipoBundle\Entity\Ubicacion
           mappedBy: Equipo
     lifecycleCallbacks: {  }

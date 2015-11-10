@@ -27,4 +27,10 @@ Crm\GeneralBundle\Entity\Localidad:
         direcionEmpres:
            targetEntity: Crm\EmpresaBundle\Entity\DirecionEmpres
            mappedBy: Localidad
+        direcionFabricante:
+           targetEntity: Crm\FabricanteBundle\Entity\DirecionFabricante
+           mappedBy: Localidad
+        ubicacion:
+           targetEntity: Crm\EquipoBundle\Entity\Ubicacion
+           mappedBy: Localidad
     lifecycleCallbacks: {  }

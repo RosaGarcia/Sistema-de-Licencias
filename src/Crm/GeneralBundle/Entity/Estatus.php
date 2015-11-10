@@ -102,4 +102,42 @@ class Estatus
     {
         return $this->cliente;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $empresa;
+
+
+    /**
+     * Add empresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\Empresa $empresa
+     * @return Estatus
+     */
+    public function addEmpresa(\Crm\EmpresaBundle\Entity\Empresa $empresa)
+    {
+        $this->empresa[] = $empresa;
+
+        return $this;
+    }
+
+    /**
+     * Remove empresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\Empresa $empresa
+     */
+    public function removeEmpresa(\Crm\EmpresaBundle\Entity\Empresa $empresa)
+    {
+        $this->empresa->removeElement($empresa);
+    }
+
+    /**
+     * Get empresa
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEmpresa()
+    {
+        return $this->empresa;
+    }
 }

@@ -130,4 +130,42 @@ class Localidad
     {
         return $this->nombreLocalidad;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direcionEmpres;
+
+
+    /**
+     * Add direcionEmpres
+     *
+     * @param \Crm\EmpresaBundle\Entity\DirecionEmpres $direcionEmpres
+     * @return Localidad
+     */
+    public function addDirecionEmpre(\Crm\EmpresaBundle\Entity\DirecionEmpres $direcionEmpres)
+    {
+        $this->direcionEmpres[] = $direcionEmpres;
+
+        return $this;
+    }
+
+    /**
+     * Remove direcionEmpres
+     *
+     * @param \Crm\EmpresaBundle\Entity\DirecionEmpres $direcionEmpres
+     */
+    public function removeDirecionEmpre(\Crm\EmpresaBundle\Entity\DirecionEmpres $direcionEmpres)
+    {
+        $this->direcionEmpres->removeElement($direcionEmpres);
+    }
+
+    /**
+     * Get direcionEmpres
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDirecionEmpres()
+    {
+        return $this->direcionEmpres;
+    }
 }

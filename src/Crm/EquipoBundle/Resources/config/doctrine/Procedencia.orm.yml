@@ -23,8 +23,15 @@ Crm\EquipoBundle\Entity\Procedencia:
         fechaSalida:
             type: datetime
             column: fecha_salida
+    oneToMany:
+        equipo:
+           targetEntity: Crm\EquipoBundle\Entity\Equipo
+           mappedBy: Procedencia
     manyToOne:
         fabricante:
           targetEntity: Crm\FabricanteBundle\Entity\Fabricante
-          mappedBy: Procedencia
+          inversedBy: procedencia
+          joinColumn:
+                name: fabricante_id
+                referencedColumnName: id
     lifecycleCallbacks: {  }

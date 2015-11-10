@@ -23,6 +23,12 @@ Crm\GeneralBundle\Entity\Estado:
         direcionEmpresa:
            targetEntity: Crm\EmpresaBundle\Entity\DireccionEmpresa
            mappedBy: Estado
+        direccionFabricante:
+           targetEntity: Crm\FabricanteBundle\Entity\DireccionFabricante
+           mappedBy: Estado
+        ubicacion:
+           targetEntity: Crm\EquipoBundle\Entity\Ubicacion
+           mappedBy: Estado
     manyToOne:
         pais:
           targetEntity: Crm\GeneralBundle\Entity\Pais

@@ -17,6 +17,10 @@ Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo:
             column: numero_usb
         expansion:
             type: boolean
+    oneToMany:
+        equipo:
+           targetEntity: Crm\EquipoBundle\Entity\Equipo
+           mappedBy: EspecificacionesEquipo
     manyToOne:
         procesador:
             targetEntity: Crm\CaracteristicasBundle\Entity\Procesador

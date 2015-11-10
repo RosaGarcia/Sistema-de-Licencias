@@ -15,8 +15,15 @@ Crm\EquipoBundle\Entity\LicenciaEquipo:
         fechaFinal:
             type: datetime
             column: fecha_final
+    oneToOne:
+        equipo:
+           targetEntity: Crm\EquipoBundle\Entity\Equipo
+           mappedBy: LicenciaEquipo
     manyToOne:
         tipoLicencia:
           targetEntity: Crm\ProductoBundle\Entity\TipoLicencia
-          mappedBy: LicenciaEquipo
+          inversedBy: licenciaEquipo
+          joinColumn:
+            name: tipoLicencia_id
+            referencedColumnName: id
     lifecycleCallbacks: {  }

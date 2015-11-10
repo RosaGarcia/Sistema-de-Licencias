@@ -33,12 +33,14 @@ Crm\PersonalBundle\Entity\Personal:
         estatus:
           targetEntity: Crm\GeneralBundle\Entity\Estatus
           mappedBy: Personal
-    manyToOne:
         empresa:
           targetEntity: Crm\EmpresaBundle\Entity\Empresa
           mappedBy: Personal
-    manyToOne:
         puesto:
           targetEntity: Crm\PersonalBundle\Entity\Puesto
           mappedBy: Personal
+    oneToMany:
+        equipo:
+           targetEntity: Crm\EquipoBundle\Entity\Equipo
+           mappedBy: Personal
     lifecycleCallbacks: {  }

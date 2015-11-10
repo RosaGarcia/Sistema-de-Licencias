@@ -57,4 +57,49 @@ class Estatus
     {
         return $this->estatus;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $cliente;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->cliente = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add cliente
+     *
+     * @param \Crm\ClienteBundle\Entity\Cliente $cliente
+     * @return Estatus
+     */
+    public function addCliente(\Crm\ClienteBundle\Entity\Cliente $cliente)
+    {
+        $this->cliente[] = $cliente;
+
+        return $this;
+    }
+
+    /**
+     * Remove cliente
+     *
+     * @param \Crm\ClienteBundle\Entity\Cliente $cliente
+     */
+    public function removeCliente(\Crm\ClienteBundle\Entity\Cliente $cliente)
+    {
+        $this->cliente->removeElement($cliente);
+    }
+
+    /**
+     * Get cliente
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCliente()
+    {
+        return $this->cliente;
+    }
 }

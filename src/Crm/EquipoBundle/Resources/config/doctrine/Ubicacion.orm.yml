@@ -29,17 +29,26 @@ Crm\EquipoBundle\Entity\Ubicacion:
     manyToOne:
         equipo:
           targetEntity: Crm\EquipoBundle\Entity\Equipo
-          mappedBy: Ubicacion
-    manyToOne:
+          inversedBy: ubicacion
+          joinColumn:
+                name: equipo_id
+                referencedColumnName: id
         localidad:
           targetEntity: Crm\GeneralBundle\Entity\Localidad
-          mappedBy: Ubicacion
-    manyToOne:
+          inversedBy: ubicacion
+          joinColumn:
+                name: localidad_id
+                referencedColumnName: id
         estado:
           targetEntity: Crm\GeneralBundle\Entity\Estado
-          mappedBy: Ubicacion
-    manyToOne:
+          inversedBy: ubicacion
+          joinColumn:
+                name: estado_id
+                referencedColumnName: id
         pais:
           targetEntity: Crm\GeneralBundle\Entity\Pais
-          mappedBy: Ubicacion
+          inversedBy: ubicacion
+          joinColumn:
+                name: pais_id
+                referencedColumnName: id
     lifecycleCallbacks: {  }

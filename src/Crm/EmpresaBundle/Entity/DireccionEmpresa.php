@@ -192,4 +192,88 @@ class DireccionEmpresa
     {
         return $this->empresa;
     }
+    /**
+     * @var \Crm\GeneralBundle\Entity\Localidad
+     */
+    private $localidad;
+
+    /**
+     * @var \Crm\GenaralBundle\Entity\Estado
+     */
+    private $estado;
+
+    /**
+     * @var \Crm\GeneralBundle\Entity\Pais
+     */
+    private $pais;
+
+
+    /**
+     * Set localidad
+     *
+     * @param \Crm\GeneralBundle\Entity\Localidad $localidad
+     * @return DireccionEmpresa
+     */
+    public function setLocalidad(\Crm\GeneralBundle\Entity\Localidad $localidad = null)
+    {
+        $this->localidad = $localidad;
+
+        return $this;
+    }
+
+    /**
+     * Get localidad
+     *
+     * @return \Crm\GeneralBundle\Entity\Localidad 
+     */
+    public function getLocalidad()
+    {
+        return $this->localidad;
+    }
+
+    /**
+     * Set estado
+     *
+     * @param \Crm\GenaralBundle\Entity\Estado $estado
+     * @return DireccionEmpresa
+     */
+    public function setEstado(\Crm\GenaralBundle\Entity\Estado $estado = null)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return \Crm\GenaralBundle\Entity\Estado 
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * Set pais
+     *
+     * @param \Crm\GeneralBundle\Entity\Pais $pais
+     * @return DireccionEmpresa
+     */
+    public function setPais(\Crm\GeneralBundle\Entity\Pais $pais = null)
+    {
+        $this->pais = $pais;
+
+        return $this;
+    }
+
+    /**
+     * Get pais
+     *
+     * @return \Crm\GeneralBundle\Entity\Pais 
+     */
+    public function getPais()
+    {
+        return $this->pais;
+    }
 }

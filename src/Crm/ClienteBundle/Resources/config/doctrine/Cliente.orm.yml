@@ -48,4 +48,7 @@ Crm\ClienteBundle\Entity\Cliente:
         direccionCliente: 
            targetEntity: Crm\ClienteBundle\Entity\DireccionCliente
            mappedBy: Cliente
+        equipo:
+           targetEntity: Crm\EquipoBundle\Entity\Equipo
+           mappedBy: Cliente
     lifecycleCallbacks: {  }
