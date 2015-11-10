@@ -40,7 +40,7 @@ Crm\EmpresaBundle\Entity\DireccionEmpresa:
                 name: localidad_id
                 referencedColumnName: id
         estado:
-          targetEntity: Crm\GenaralBundle\Entity\Estado
+          targetEntity: Crm\GeneralBundle\Entity\Estado
           inversedBy: direccionEmpresa
           joinColumn:
                 name: estado_id

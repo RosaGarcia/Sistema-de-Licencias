@@ -108,4 +108,32 @@ class Usuarios
     {
         return $this->personal;
     }
+    /**
+     * @var \Crm\UsuariosBundle\Entity\Roles
+     */
+    private $rol;
+
+
+    /**
+     * Set rol
+     *
+     * @param \Crm\UsuariosBundle\Entity\Roles $rol
+     * @return Usuarios
+     */
+    public function setRol(\Crm\UsuariosBundle\Entity\Roles $rol = null)
+    {
+        $this->rol = $rol;
+
+        return $this;
+    }
+
+    /**
+     * Get rol
+     *
+     * @return \Crm\UsuariosBundle\Entity\Roles 
+     */
+    public function getRol()
+    {
+        return $this->rol;
+    }
 }

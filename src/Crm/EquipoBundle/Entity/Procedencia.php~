@@ -164,4 +164,49 @@ class Procedencia
     {
         return $this->fabricante;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $equipo;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->equipo = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     * @return Procedencia
+     */
+    public function addEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
+    {
+        $this->equipo[] = $equipo;
+
+        return $this;
+    }
+
+    /**
+     * Remove equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     */
+    public function removeEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
+    {
+        $this->equipo->removeElement($equipo);
+    }
+
+    /**
+     * Get equipo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEquipo()
+    {
+        return $this->equipo;
+    }
 }

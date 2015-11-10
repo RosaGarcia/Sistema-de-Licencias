@@ -19,8 +19,14 @@ Crm\ProductoBundle\Entity\Producto:
         equipo:
            targetEntity: Crm\EquipoBundle\Entity\Equipo
            mappedBy: Producto
+        tipoLicencia:
+           targetEntity: Crm\ProductoBundle\Entity\TipoLicencia
+           mappedBy: Producto
     manyToOne:
         modeloEquipo:
           targetEntity: Crm\CaracteristicasBundle\Entity\ModeloEquipo
-          mappedBy: Producto
+          inversedBy: producto
+          joinColumn:
+             name: modeloEquipo_id
+             referencedColumnName: id
     lifecycleCallbacks: {  }

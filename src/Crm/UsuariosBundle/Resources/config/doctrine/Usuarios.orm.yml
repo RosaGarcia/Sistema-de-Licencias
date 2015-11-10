@@ -18,14 +18,17 @@ Crm\UsuariosBundle\Entity\Usuarios:
     onyToMany:
         venta:
           targetEntity: Crm\VentasBundle\Entity\Venta 
-          mappedBy: Usuarios       
-    manyToOne:
+          mappedBy: Usuarios   
+        avisos:
+          targetEntity: Crm\Usuarios\Entity\Avisos
+    oneToOne:
         personal:
           targetEntity: Crm\PersonalBundle\Entity\Personal
           inversedBy: usuarios
           joinColumn:
               name: personal_id
               referencedColumnName: id
+    manyToOne:
         rol:
           targetEntity: Crm\UsuariosBundle\Entity\Roles
           inversedBy: usuarios

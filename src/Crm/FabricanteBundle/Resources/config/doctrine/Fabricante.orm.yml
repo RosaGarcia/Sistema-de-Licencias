@@ -47,5 +47,8 @@ Crm\FabricanteBundle\Entity\Fabricante:
     oneToMany:
         direccionFabricante: 
           targetEntity: Crm\FabricanteBundle\Entity\DireccionFabricante  
-          mappedBy: Fabricante    
+          mappedBy: Fabricante 
+        procedencia:
+           targetEntity: Crm\EquipoBundle\Entity\Procedencia
+           mappedBy: Fabricante
     lifecycleCallbacks: {  }

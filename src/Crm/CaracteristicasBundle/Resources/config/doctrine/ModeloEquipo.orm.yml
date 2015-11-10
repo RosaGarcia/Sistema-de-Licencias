@@ -12,8 +12,8 @@ Crm\CaracteristicasBundle\Entity\ModeloEquipo:
         nombre:
             type: string
             length: '15'
-    manyToOne:
-        especificacionesEquipo:
-          targetEntity: Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo
+    oneToMany:
+        producto:
+          targetEntity: Crm\ProductoBundle\Entity\Producto
           mappedBy: ModeloEquipo
     lifecycleCallbacks: {  }

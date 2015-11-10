@@ -12,4 +12,8 @@ Crm\PersonalBundle\Entity\Puesto:
         puesto:
             type: string
             length: '20'
+    oneToMany:
+        personal:
+            targetEntity: Crm\PersonalBundle\Entity\Personal
+            mappedBy: Puesto
     lifecycleCallbacks: {  }

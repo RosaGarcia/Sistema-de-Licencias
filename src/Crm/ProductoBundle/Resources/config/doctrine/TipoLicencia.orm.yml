@@ -20,5 +20,8 @@ Crm\ProductoBundle\Entity\TipoLicencia:
     manyToOne:
         producto:
           targetEntity: Crm\ProductoBundle\Entity\Producto
-          mappedBy: TipoLicencia
+          inversedBy: tipoLicencia
+          joinColumn:
+             name: producto_id
+             referencedColumnName: id
     lifecycleCallbacks: {  }

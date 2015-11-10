@@ -38,8 +38,11 @@ Crm\EmpresaBundle\Entity\Empresa:
             length: '50'
             column: pagina_web
     oneToMany:
-       direccionEmpresa:
+        direccionEmpresa:
             targetEntity: Crm\EmpresaBundle\Entity\DireccionEmpresa
+            mappedBy: Empresa
+        personal:
+            targetEntity: Crm\PersonalBundle\Entity\Personal
             mappedBy: Empresa
     manyToOne:
         estatus:

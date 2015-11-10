@@ -276,4 +276,88 @@ class Fabricante
     {
         return $this->estatus;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direccionFabricante;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $procedencia;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->direccionFabricante = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->procedencia = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add direccionFabricante
+     *
+     * @param \Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante
+     * @return Fabricante
+     */
+    public function addDireccionFabricante(\Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante)
+    {
+        $this->direccionFabricante[] = $direccionFabricante;
+
+        return $this;
+    }
+
+    /**
+     * Remove direccionFabricante
+     *
+     * @param \Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante
+     */
+    public function removeDireccionFabricante(\Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante)
+    {
+        $this->direccionFabricante->removeElement($direccionFabricante);
+    }
+
+    /**
+     * Get direccionFabricante
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDireccionFabricante()
+    {
+        return $this->direccionFabricante;
+    }
+
+    /**
+     * Add procedencia
+     *
+     * @param \Crm\EquipoBundle\Entity\Procedencia $procedencia
+     * @return Fabricante
+     */
+    public function addProcedencium(\Crm\EquipoBundle\Entity\Procedencia $procedencia)
+    {
+        $this->procedencia[] = $procedencia;
+
+        return $this;
+    }
+
+    /**
+     * Remove procedencia
+     *
+     * @param \Crm\EquipoBundle\Entity\Procedencia $procedencia
+     */
+    public function removeProcedencium(\Crm\EquipoBundle\Entity\Procedencia $procedencia)
+    {
+        $this->procedencia->removeElement($procedencia);
+    }
+
+    /**
+     * Get procedencia
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getProcedencia()
+    {
+        return $this->procedencia;
+    }
 }

@@ -25,4 +25,7 @@ Crm\GeneralBundle\Entity\Estatus:
         fabricante:
             targetEntity: Crm\FabricanteBundle\Entity\Fabricante
             mappedBy: Estatus
+        personal:
+           targetEntity: Crm\PersonalBundle\Entity\Personal
+           mappedBy: Estatus
     lifecycleCallbacks: {  }

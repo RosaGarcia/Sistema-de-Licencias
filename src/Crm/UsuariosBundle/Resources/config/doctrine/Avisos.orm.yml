@@ -13,6 +13,9 @@ Crm\UsuariosBundle\Entity\Avisos:
             type: text
     manyToOne:
         usuarios:
-          targetEntity: Crm\UsuariosBundle\Entity\Usuarios
-          mappedBy: Avisos
+            targetEntity: Crm\UsuariosBundle\Entity\Usuarios
+            inversedBy: avisos
+            joinColumn:
+                name: usuarios_id
+                referencedColumnName: id
     lifecycleCallbacks: {  }

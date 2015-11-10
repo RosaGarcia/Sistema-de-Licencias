@@ -168,4 +168,194 @@ class Estado
     {
         return $this->direccionCliente;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direcionEmpresa;
+
+
+    /**
+     * Add direcionEmpresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direcionEmpresa
+     * @return Estado
+     */
+    public function addDirecionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direcionEmpresa)
+    {
+        $this->direcionEmpresa[] = $direcionEmpresa;
+
+        return $this;
+    }
+
+    /**
+     * Remove direcionEmpresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direcionEmpresa
+     */
+    public function removeDirecionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direcionEmpresa)
+    {
+        $this->direcionEmpresa->removeElement($direcionEmpresa);
+    }
+
+    /**
+     * Get direcionEmpresa
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDirecionEmpresa()
+    {
+        return $this->direcionEmpresa;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direccionFabricante;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $ubicacion;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direccionPersonal;
+
+
+    /**
+     * Add direccionFabricante
+     *
+     * @param \Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante
+     * @return Estado
+     */
+    public function addDireccionFabricante(\Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante)
+    {
+        $this->direccionFabricante[] = $direccionFabricante;
+
+        return $this;
+    }
+
+    /**
+     * Remove direccionFabricante
+     *
+     * @param \Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante
+     */
+    public function removeDireccionFabricante(\Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante)
+    {
+        $this->direccionFabricante->removeElement($direccionFabricante);
+    }
+
+    /**
+     * Get direccionFabricante
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDireccionFabricante()
+    {
+        return $this->direccionFabricante;
+    }
+
+    /**
+     * Add ubicacion
+     *
+     * @param \Crm\EquipoBundle\Entity\Ubicacion $ubicacion
+     * @return Estado
+     */
+    public function addUbicacion(\Crm\EquipoBundle\Entity\Ubicacion $ubicacion)
+    {
+        $this->ubicacion[] = $ubicacion;
+
+        return $this;
+    }
+
+    /**
+     * Remove ubicacion
+     *
+     * @param \Crm\EquipoBundle\Entity\Ubicacion $ubicacion
+     */
+    public function removeUbicacion(\Crm\EquipoBundle\Entity\Ubicacion $ubicacion)
+    {
+        $this->ubicacion->removeElement($ubicacion);
+    }
+
+    /**
+     * Get ubicacion
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUbicacion()
+    {
+        return $this->ubicacion;
+    }
+
+    /**
+     * Add direccionPersonal
+     *
+     * @param \Crm\PersonalBundle\Entity\DireccionPersonal $direccionPersonal
+     * @return Estado
+     */
+    public function addDireccionPersonal(\Crm\PersonalBundle\Entity\DireccionPersonal $direccionPersonal)
+    {
+        $this->direccionPersonal[] = $direccionPersonal;
+
+        return $this;
+    }
+
+    /**
+     * Remove direccionPersonal
+     *
+     * @param \Crm\PersonalBundle\Entity\DireccionPersonal $direccionPersonal
+     */
+    public function removeDireccionPersonal(\Crm\PersonalBundle\Entity\DireccionPersonal $direccionPersonal)
+    {
+        $this->direccionPersonal->removeElement($direccionPersonal);
+    }
+
+    /**
+     * Get direccionPersonal
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDireccionPersonal()
+    {
+        return $this->direccionPersonal;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direccionEmpresa;
+
+
+    /**
+     * Add direccionEmpresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa
+     * @return Estado
+     */
+    public function addDireccionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa)
+    {
+        $this->direccionEmpresa[] = $direccionEmpresa;
+
+        return $this;
+    }
+
+    /**
+     * Remove direccionEmpresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa
+     */
+    public function removeDireccionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa)
+    {
+        $this->direccionEmpresa->removeElement($direccionEmpresa);
+    }
+
+    /**
+     * Get direccionEmpresa
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDireccionEmpresa()
+    {
+        return $this->direccionEmpresa;
+    }
 }

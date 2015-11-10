@@ -80,4 +80,49 @@ class ModeloEquipo
     {
         return $this->especificacionesEquipo;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $producto;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->producto = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add producto
+     *
+     * @param \Crm\ProductoBundle\Entity\Producto $producto
+     * @return ModeloEquipo
+     */
+    public function addProducto(\Crm\ProductoBundle\Entity\Producto $producto)
+    {
+        $this->producto[] = $producto;
+
+        return $this;
+    }
+
+    /**
+     * Remove producto
+     *
+     * @param \Crm\ProductoBundle\Entity\Producto $producto
+     */
+    public function removeProducto(\Crm\ProductoBundle\Entity\Producto $producto)
+    {
+        $this->producto->removeElement($producto);
+    }
+
+    /**
+     * Get producto
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getProducto()
+    {
+        return $this->producto;
+    }
 }

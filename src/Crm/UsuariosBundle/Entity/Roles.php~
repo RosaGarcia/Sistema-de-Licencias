@@ -52,4 +52,49 @@ class Roles
     {
         return $this->roles;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $usuarios;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->usuarios = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add usuarios
+     *
+     * @param \Crm\UsuariosBundle\Entity\Usuarios $usuarios
+     * @return Roles
+     */
+    public function addUsuario(\Crm\UsuariosBundle\Entity\Usuarios $usuarios)
+    {
+        $this->usuarios[] = $usuarios;
+
+        return $this;
+    }
+
+    /**
+     * Remove usuarios
+     *
+     * @param \Crm\UsuariosBundle\Entity\Usuarios $usuarios
+     */
+    public function removeUsuario(\Crm\UsuariosBundle\Entity\Usuarios $usuarios)
+    {
+        $this->usuarios->removeElement($usuarios);
+    }
+
+    /**
+     * Get usuarios
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUsuarios()
+    {
+        return $this->usuarios;
+    }
 }

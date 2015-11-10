@@ -53,13 +53,20 @@ Crm\EquipoBundle\Entity\Equipo:
           joinColumn:
             name: especificacionesEquipo_id
             referencedColumnName: id
+        venta:
+          targetEntity: Crm\VentasBundle\Entity\Venta
+          inversedBy: equipo
+          joinColumn:
+            name: venta_id
+            referencedColumnName: id
     oneToOne:
         licenciaEquipo:
           targetEntity: Crm\EquipoBundle\Entity\LicenciaEquipo
-          mappedBy: Equipo
-        venta:
-          targetEntity: Crm\VentaBundle\Entity\Venta
-          mappedBy: Equipo
+          inversedBy: equipo
+          joinColumn:
+             name: licenciaEquipo_id
+             referencedColumnName: id
+    oneToMany:
         ubicacion:
           targetEntity: Crm\EquipoBundle\Entity\Ubicacion
           mappedBy: Equipo

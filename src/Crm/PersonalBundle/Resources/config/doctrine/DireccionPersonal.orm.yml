@@ -28,18 +28,27 @@ Crm\PersonalBundle\Entity\DireccionPersonal:
             column: codigo_postal
     manyToOne:
         personal:
-          targetEntity: Crm\PersonalBundle\Entity\Personal
-          mappedBy: DireccionPersonal
-    manyToOne:
+            targetEntity: Crm\PersonalBundle\Entity\Personal
+            inversedBy: personal
+            joinColumn:
+                name: personal_id
+                referencedColumnName: id
         localidad:
-          targetEntity: Crm\GeneralBundle\Entity\Localidad
-          mappedBy: DireccionPersonal
-    manyToOne:
+            targetEntity: Crm\GeneralBundle\Entity\Localidad
+            inversedBy: ubicacion
+            joinColumn:
+                name: localidad_id
+                referencedColumnName: id
         estado:
-          targetEntity: Crm\GeneralBundle\Entity\Estado
-          mappedBy: DireccionPersonal
-    manyToOne:
+            targetEntity: Crm\GeneralBundle\Entity\Estado
+            inversedBy: ubicacion
+            joinColumn:
+                name: estado_id
+                referencedColumnName: id
         pais:
-          targetEntity: Crm\GeneralBundle\Entity\Pais
-          mappedBy: DireccionPersonal
+            targetEntity: Crm\GeneralBundle\Entity\Pais
+            inversedBy: ubicacion
+            joinColumn:
+                name: pais_id
+                referencedColumnName: id
     lifecycleCallbacks: {  }

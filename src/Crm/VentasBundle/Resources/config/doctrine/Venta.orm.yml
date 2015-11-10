@@ -12,6 +12,10 @@ Crm\VentasBundle\Entity\Venta:
         fechaVenta:
             type: datetime
             column: fecha_venta
+    oneToMany:
+       equipo:
+         targetEntity: Crm\EquipoBundle\Entity\Equipo
+         mappedBy: Venta
     manyToOne:
         usuarios:
           targetEntity: Crm\UsuariosBundle\Entity\Usuarios

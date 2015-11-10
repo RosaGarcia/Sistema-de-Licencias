@@ -140,4 +140,118 @@ class Estatus
     {
         return $this->empresa;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $equipo;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $fabricante;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $personal;
+
+
+    /**
+     * Add equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     * @return Estatus
+     */
+    public function addEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
+    {
+        $this->equipo[] = $equipo;
+
+        return $this;
+    }
+
+    /**
+     * Remove equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     */
+    public function removeEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
+    {
+        $this->equipo->removeElement($equipo);
+    }
+
+    /**
+     * Get equipo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEquipo()
+    {
+        return $this->equipo;
+    }
+
+    /**
+     * Add fabricante
+     *
+     * @param \Crm\FabricanteBundle\Entity\Fabricante $fabricante
+     * @return Estatus
+     */
+    public function addFabricante(\Crm\FabricanteBundle\Entity\Fabricante $fabricante)
+    {
+        $this->fabricante[] = $fabricante;
+
+        return $this;
+    }
+
+    /**
+     * Remove fabricante
+     *
+     * @param \Crm\FabricanteBundle\Entity\Fabricante $fabricante
+     */
+    public function removeFabricante(\Crm\FabricanteBundle\Entity\Fabricante $fabricante)
+    {
+        $this->fabricante->removeElement($fabricante);
+    }
+
+    /**
+     * Get fabricante
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFabricante()
+    {
+        return $this->fabricante;
+    }
+
+    /**
+     * Add personal
+     *
+     * @param \Crm\PersonalBundle\Entity\Personal $personal
+     * @return Estatus
+     */
+    public function addPersonal(\Crm\PersonalBundle\Entity\Personal $personal)
+    {
+        $this->personal[] = $personal;
+
+        return $this;
+    }
+
+    /**
+     * Remove personal
+     *
+     * @param \Crm\PersonalBundle\Entity\Personal $personal
+     */
+    public function removePersonal(\Crm\PersonalBundle\Entity\Personal $personal)
+    {
+        $this->personal->removeElement($personal);
+    }
+
+    /**
+     * Get personal
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPersonal()
+    {
+        return $this->personal;
+    }
 }

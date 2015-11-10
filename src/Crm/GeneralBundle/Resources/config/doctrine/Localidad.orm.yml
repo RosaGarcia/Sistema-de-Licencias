@@ -24,13 +24,16 @@ Crm\GeneralBundle\Entity\Localidad:
         direccionCliente:
            targetEntity: Crm\ClienteBundle\Entity\DireccionCliente
            mappedBy: Localidad
-        direcionEmpres:
-           targetEntity: Crm\EmpresaBundle\Entity\DirecionEmpres
+        direccionEmpresa:
+           targetEntity: Crm\EmpresaBundle\Entity\DireccionEmpresa
            mappedBy: Localidad
-        direcionFabricante:
-           targetEntity: Crm\FabricanteBundle\Entity\DirecionFabricante
+        direccionFabricante:
+           targetEntity: Crm\FabricanteBundle\Entity\DireccionFabricante
            mappedBy: Localidad
         ubicacion:
            targetEntity: Crm\EquipoBundle\Entity\Ubicacion
+           mappedBy: Localidad
+        direccionPersonal:
+           targetEntity: Crm\PersonalBundle\Entity\DireccionPersonal
            mappedBy: Localidad
     lifecycleCallbacks: {  }

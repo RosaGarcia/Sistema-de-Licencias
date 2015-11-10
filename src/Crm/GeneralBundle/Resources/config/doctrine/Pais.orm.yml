@@ -29,4 +29,7 @@ Crm\GeneralBundle\Entity\Pais:
         ubicacion:
              targetEntity: Crm\EquipoBundle\Entity\Ubicacion
              mappedBy: Pais
+        direccionPersonal:
+           targetEntity: Crm\PersonalBundle\Entity\DireccionPersonal
+           mappedBy: Pais
     lifecycleCallbacks: {  }

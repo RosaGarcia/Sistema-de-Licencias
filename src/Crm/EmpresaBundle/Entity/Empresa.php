@@ -326,4 +326,42 @@ class Empresa
     {
         return $this->razonSocial;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $personal;
+
+
+    /**
+     * Add personal
+     *
+     * @param \Crm\PersonalBundle\Entity\Personal $personal
+     * @return Empresa
+     */
+    public function addPersonal(\Crm\PersonalBundle\Entity\Personal $personal)
+    {
+        $this->personal[] = $personal;
+
+        return $this;
+    }
+
+    /**
+     * Remove personal
+     *
+     * @param \Crm\PersonalBundle\Entity\Personal $personal
+     */
+    public function removePersonal(\Crm\PersonalBundle\Entity\Personal $personal)
+    {
+        $this->personal->removeElement($personal);
+    }
+
+    /**
+     * Get personal
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPersonal()
+    {
+        return $this->personal;
+    }
 }

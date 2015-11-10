@@ -192,4 +192,88 @@ class DireccionPersonal
     {
         return $this->personal;
     }
+    /**
+     * @var \Crm\GeneralBundle\Entity\Localidad
+     */
+    private $localidad;
+
+    /**
+     * @var \Crm\GeneralBundle\Entity\Estado
+     */
+    private $estado;
+
+    /**
+     * @var \Crm\GeneralBundle\Entity\Pais
+     */
+    private $pais;
+
+
+    /**
+     * Set localidad
+     *
+     * @param \Crm\GeneralBundle\Entity\Localidad $localidad
+     * @return DireccionPersonal
+     */
+    public function setLocalidad(\Crm\GeneralBundle\Entity\Localidad $localidad = null)
+    {
+        $this->localidad = $localidad;
+
+        return $this;
+    }
+
+    /**
+     * Get localidad
+     *
+     * @return \Crm\GeneralBundle\Entity\Localidad 
+     */
+    public function getLocalidad()
+    {
+        return $this->localidad;
+    }
+
+    /**
+     * Set estado
+     *
+     * @param \Crm\GeneralBundle\Entity\Estado $estado
+     * @return DireccionPersonal
+     */
+    public function setEstado(\Crm\GeneralBundle\Entity\Estado $estado = null)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return \Crm\GeneralBundle\Entity\Estado 
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * Set pais
+     *
+     * @param \Crm\GeneralBundle\Entity\Pais $pais
+     * @return DireccionPersonal
+     */
+    public function setPais(\Crm\GeneralBundle\Entity\Pais $pais = null)
+    {
+        $this->pais = $pais;
+
+        return $this;
+    }
+
+    /**
+     * Get pais
+     *
+     * @return \Crm\GeneralBundle\Entity\Pais 
+     */
+    public function getPais()
+    {
+        return $this->pais;
+    }
 }

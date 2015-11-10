@@ -12,4 +12,8 @@ Crm\UsuariosBundle\Entity\Roles:
         roles:
             type: string
             length: '20'
+    oneToMany:
+        usuarios:
+            targetEntity: Crm\UsuariosBundle\Entity\Usuarios
+            mappedBy: Roles
     lifecycleCallbacks: {  }

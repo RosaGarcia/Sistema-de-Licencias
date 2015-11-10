@@ -326,4 +326,42 @@ class Cliente
     {
         return $this->razonSocial;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $equipo;
+
+
+    /**
+     * Add equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     * @return Cliente
+     */
+    public function addEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
+    {
+        $this->equipo[] = $equipo;
+
+        return $this;
+    }
+
+    /**
+     * Remove equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     */
+    public function removeEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
+    {
+        $this->equipo->removeElement($equipo);
+    }
+
+    /**
+     * Get equipo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEquipo()
+    {
+        return $this->equipo;
+    }
 }

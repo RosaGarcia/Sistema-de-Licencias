@@ -31,16 +31,28 @@ Crm\PersonalBundle\Entity\Personal:
             length: '50'
     manyToOne:
         estatus:
-          targetEntity: Crm\GeneralBundle\Entity\Estatus
-          mappedBy: Personal
+            targetEntity: Crm\GeneralBundle\Entity\Estatus
+            inversedBy: personal
+            joinColumn:
+                name: estatus_id
+                referencedColumnName: id
         empresa:
-          targetEntity: Crm\EmpresaBundle\Entity\Empresa
-          mappedBy: Personal
+            targetEntity: Crm\EmpresaBundle\Entity\Empresa
+            inversedBy: personal
+            joinColumn:
+                name: empresa_id
+                referencedColumnName: id
         puesto:
-          targetEntity: Crm\PersonalBundle\Entity\Puesto
-          mappedBy: Personal
+            targetEntity: Crm\PersonalBundle\Entity\Puesto
+            inversedBy: personal
+            joinColumn:
+                name: puesto_id
+                referencedColumnName: id
     oneToMany:
         equipo:
-           targetEntity: Crm\EquipoBundle\Entity\Equipo
-           mappedBy: Personal
+            targetEntity: Crm\EquipoBundle\Entity\Equipo
+            mappedBy: Personal
+        direccionPersonal:
+            targetEntity: Crm\PersonalBundle\Entity\DireccionPersonal
+            mappedBy: Personal
     lifecycleCallbacks: {  }

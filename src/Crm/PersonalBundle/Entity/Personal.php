@@ -225,4 +225,144 @@ class Personal
     {
         return $this->estatus;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $equipo;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direccionPersonal;
+
+    /**
+     * @var \Crm\EmpresaBundle\Entity\Empresa
+     */
+    private $empresa;
+
+    /**
+     * @var \Crm\PersonalBundle\Entity\Puesto
+     */
+    private $puesto;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->equipo = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->direccionPersonal = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     * @return Personal
+     */
+    public function addEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
+    {
+        $this->equipo[] = $equipo;
+
+        return $this;
+    }
+
+    /**
+     * Remove equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     */
+    public function removeEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
+    {
+        $this->equipo->removeElement($equipo);
+    }
+
+    /**
+     * Get equipo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEquipo()
+    {
+        return $this->equipo;
+    }
+
+    /**
+     * Add direccionPersonal
+     *
+     * @param \Crm\PersonalBundle\Entity\DireccionPersonal $direccionPersonal
+     * @return Personal
+     */
+    public function addDireccionPersonal(\Crm\PersonalBundle\Entity\DireccionPersonal $direccionPersonal)
+    {
+        $this->direccionPersonal[] = $direccionPersonal;
+
+        return $this;
+    }
+
+    /**
+     * Remove direccionPersonal
+     *
+     * @param \Crm\PersonalBundle\Entity\DireccionPersonal $direccionPersonal
+     */
+    public function removeDireccionPersonal(\Crm\PersonalBundle\Entity\DireccionPersonal $direccionPersonal)
+    {
+        $this->direccionPersonal->removeElement($direccionPersonal);
+    }
+
+    /**
+     * Get direccionPersonal
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDireccionPersonal()
+    {
+        return $this->direccionPersonal;
+    }
+
+    /**
+     * Set empresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\Empresa $empresa
+     * @return Personal
+     */
+    public function setEmpresa(\Crm\EmpresaBundle\Entity\Empresa $empresa = null)
+    {
+        $this->empresa = $empresa;
+
+        return $this;
+    }
+
+    /**
+     * Get empresa
+     *
+     * @return \Crm\EmpresaBundle\Entity\Empresa 
+     */
+    public function getEmpresa()
+    {
+        return $this->empresa;
+    }
+
+    /**
+     * Set puesto
+     *
+     * @param \Crm\PersonalBundle\Entity\Puesto $puesto
+     * @return Personal
+     */
+    public function setPuesto(\Crm\PersonalBundle\Entity\Puesto $puesto = null)
+    {
+        $this->puesto = $puesto;
+
+        return $this;
+    }
+
+    /**
+     * Get puesto
+     *
+     * @return \Crm\PersonalBundle\Entity\Puesto 
+     */
+    public function getPuesto()
+    {
+        return $this->puesto;
+    }
 }

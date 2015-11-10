@@ -108,4 +108,49 @@ class TipoLicencia
     {
         return $this->producto;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $licenciaEquipo;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->licenciaEquipo = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add licenciaEquipo
+     *
+     * @param \Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo
+     * @return TipoLicencia
+     */
+    public function addLicenciaEquipo(\Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo)
+    {
+        $this->licenciaEquipo[] = $licenciaEquipo;
+
+        return $this;
+    }
+
+    /**
+     * Remove licenciaEquipo
+     *
+     * @param \Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo
+     */
+    public function removeLicenciaEquipo(\Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo)
+    {
+        $this->licenciaEquipo->removeElement($licenciaEquipo);
+    }
+
+    /**
+     * Get licenciaEquipo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLicenciaEquipo()
+    {
+        return $this->licenciaEquipo;
+    }
 }
