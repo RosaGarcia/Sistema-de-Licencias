@@ -15,5 +15,8 @@ Crm\VentasBundle\Entity\Venta:
     manyToOne:
         usuarios:
           targetEntity: Crm\UsuariosBundle\Entity\Usuarios
-          mappedBy: Venta
+          inversedBy: venta
+          joinColumn:
+              name: usuarios_id
+              referencedColumnName: id
     lifecycleCallbacks: {  }

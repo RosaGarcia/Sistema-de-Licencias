@@ -29,17 +29,26 @@ Crm\FabricanteBundle\Entity\DireccionFabricante:
     manyToOne:
         fabricante:
           targetEntity: Crm\FabricanteBundle\Entity\Fabricante
-          mappedBy: DireccionFabricante
-    manyToOne:
+          inversedBy: direccionFabricante
+          joinColumn:
+              name: fabricante_id
+              referencedColumnName: id
         localidad:
           targetEntity: Crm\GeneralBundle\Entity\Localidad
-          mappedBy: DireccionFabricante
-    manyToOne:
+          inversedBy: direccionFabricante
+          joinColumn:
+              name: localidad_id
+              referencedColumnName: id
         estado:
-          targetEntity: GeneralBundle\Entity\Estado
-          mappedBy: DireccionFabricante
-    manyToOne:
+          targetEntity: Crm\GeneralBundle\Entity\Estado
+          inversedBy: direccionFabricante
+          joinColumn: 
+              name: estado_id
+              referencedColumnName: id
         pais:
           targetEntity: Crm\GeneralBundle\Entity\Pais
-          mappedBy: DireccionFabricante
+          inversedBy: direccionFabricante
+          joinColumn: 
+              name: pais_id
+              referencedColumnName: id
     lifecycleCallbacks: {  }
