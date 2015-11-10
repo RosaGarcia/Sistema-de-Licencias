@@ -39,6 +39,13 @@ Crm\ClienteBundle\Entity\Cliente:
             column: pagina_web
     manyToOne:
         estatus:
-          targetEntity: Crm\GeneralBundle\Entity\Estatus
-          mappedBy: Cliente
+           targetEntity: Crm\GeneralBundle\Entity\Estatus
+           inversedBy: cliente
+           joinColumn:
+                name: estatus_id
+                referencedColumnName: id
+    oneToMany:
+        direccionCliente: 
+           targetEntity: Crm\ClienteBundle\Entity\DireccionCliente
+           mappedBy: Cliente
     lifecycleCallbacks: {  }

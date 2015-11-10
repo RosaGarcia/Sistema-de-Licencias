@@ -19,6 +19,11 @@ class EspecificacionesEquipoType extends AbstractType
             ->add('numeroUsb')
             ->add('expansion')
             ->add('procesador')
+            ->add('capacidad')
+            ->add('terminoMemoria')
+            ->add('terminoDisco')
+            ->add('versionSoftware')
+            ->add('dimenciones')
         ;
     }
     

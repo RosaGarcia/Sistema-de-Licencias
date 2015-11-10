@@ -23,4 +23,11 @@ Crm\CaracteristicasBundle\Entity\MemoriaRam:
         tipo:
             type: string
             length: '10'
+        terminoMemoria:
+            type: string
+            length: '10'
+    oneToMany:
+       especificacionesEquipo:
+           targetEntity: Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo
+           mappedBy: MemoriaRam
     lifecycleCallbacks: {  }

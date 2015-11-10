@@ -20,7 +20,11 @@ Crm\CaracteristicasBundle\Entity\DiscoDuro:
         tipo:
             type: string
             length: '10'
-        discoDuro:
+        terminoDisco:
             type: string
             length: '10'
+    oneToMany:
+       especificacionesEquipo:
+            targetEntity: Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo
+            mappedBy: DiscoDuro
     lifecycleCallbacks: {  }

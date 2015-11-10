@@ -20,6 +20,7 @@ class MemoriaRamType extends AbstractType
             ->add('capacidad')
             ->add('unidad')
             ->add('tipo')
+            ->add('terminoMemoria')
         ;
     }
     

@@ -19,26 +19,39 @@ Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo:
             type: boolean
     manyToOne:
         procesador:
-          targetEntity: Crm\CaracteristicasBundle\Entity\Procesador
-          mappedBy: EspecificacionesEquipo
-    manyToOne:
+            targetEntity: Crm\CaracteristicasBundle\Entity\Procesador
+            inversedBy: especificacionesEquipo
+            joinColumn:
+                name: procesador_id
+                referencedColumnName: id
         capacidad:
-          targetEntity: Crm\CaracteristicasBundle\Entity\Capacidad
-          mappedBy: EspecificacionesEquipo
-    manyToOne:
-        memoriaRam:
-          targetEntity: Crm\CaracteristicasBundle\Entity\MemoriaRam
-          mappedBy: EspecificacionesEquipo
-    manyToOne:
-        discoDuro:
-          targetEntity: Crm\CaracteristicasBundle\Entity\DiscoDuro
-          mappedBy: EspecificacionesEquipo
-    manyToOne:
+            targetEntity: Crm\CaracteristicasBundle\Entity\Capacidad
+            inversedBy: especificacionesEquipo
+            joinColumn:
+                name: capacidad_id
+                referencedColumnName: id
+        terminoMemoria:
+            targetEntity: Crm\CaracteristicasBundle\Entity\MemoriaRam
+            inversedBy: especificacionesEquipo
+            joinColumn:
+                name: memoriaRam_id
+                referencedColumnName: id
+        terminoDisco:
+            targetEntity: Crm\CaracteristicasBundle\Entity\DiscoDuro
+            inversedBy: especificacionesEquipo
+            joinColumn:
+                name: discoDuro_id
+                referencedColumnName: id
         versionSoftware:
-          targetEntity: Crm\CaracteristicasBundle\Entity\VersionSoftware
-          mappedBy: EspecificacionesEquipo
-    manyToOne:
+            targetEntity: Crm\CaracteristicasBundle\Entity\VersionSoftware
+            inversedBy: especificacionesEquipo
+            joinColumn:
+                name: versionSoftware_id
+                referencedColumnName: id
         dimenciones:
-          targetEntity: Crm\CaracteristicasBundle\Entity\Dimenciones
-          mappedBy: EspecificacionesEquipo
+            targetEntity: Crm\CaracteristicasBundle\Entity\Dimenciones
+            inversedBy: especificacionesEquipo
+            joinColumn:
+                name: dimenciones_id
+                referencedColumnName: id
     lifecycleCallbacks: {  }

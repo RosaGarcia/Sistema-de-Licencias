@@ -13,4 +13,14 @@ Crm\GeneralBundle\Entity\Pais:
             type: string
             length: '50'
             column: nombre_pais
+    oneToMany:
+        estado:
+             targetEntity: Crm\GeneralBundle\Entity\Estado
+             mappedBy: Pais
+        direccionCliente:
+             targetEntity: Crm\ClienteBundle\Entity\DireccionCliente
+             mappedBy: Pais
+        direccionEmpresa:
+             targetEntity: Crm\EmpresaBundle\Entity\DireccionEmpresa
+             mappedBy: Pais
     lifecycleCallbacks: {  }

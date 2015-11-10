@@ -29,17 +29,26 @@ Crm\ClienteBundle\Entity\DireccionCliente:
     manyToOne:
         cliente:
           targetEntity: Crm\ClienteBundle\Entity\Cliente
-          mappedBy: DireccionCliente
-    manyToOne:
+          inversedBy: direccionCliente
+          joinColumn:
+                name: cliente_id
+                referencedColumnName: id
         localidad:
           targetEntity: Crm\GeneralBundle\Entity\Localidad
-          mappedBy: DireccionCliente
-    manyToOne:
+          inversedBy: direccionCliente
+          joinColumn:
+                name: localidad_id
+                referencedColumnName: id
         estado:
           targetEntity: Crm\GeneralBundle\Entity\Estado
-          mappedBy: DireccionCliente
-    manyToOne:
+          inversedBy: direccionCliente
+          joinColumn:
+                name: estado_id
+                referencedColumnName: id
         pais:
           targetEntity: Crm\GeneralBundle\Entity\Pais
-          mappedBy: DireccionCliente
+          inversedBy: direccionCliente
+          joinColumn:
+                name: pais_id
+                referencedColumnName: id
     lifecycleCallbacks: {  }

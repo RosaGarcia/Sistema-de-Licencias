@@ -37,8 +37,15 @@ Crm\EmpresaBundle\Entity\Empresa:
             type: string
             length: '50'
             column: pagina_web
+    oneToMany:
+       direccionEmpresa:
+            targetEntity: Crm\EmpresaBundle\Entity\DireccionEmpresa
+            mappedBy: Empresa
     manyToOne:
         estatus:
           targetEntity: Crm\GeneralBundle\Entity\Estatus
-          mappedBy: Empresa
+          inversedBy: empresa
+          joinColumn:
+                name: estatus_id
+                referencedColumnName: id
     lifecycleCallbacks: {  }

@@ -113,6 +113,41 @@ class EspecificacionesEquipo
      */
     private $procesador;
 
+    /**
+     * @var \Crm\GeneralBundle\Entity\Dimenciones
+     */
+    private $dimenciones;
+
+    /**
+     * @var \Crm\CaracteristicasBundle\Entity\Capacidad
+     */
+    private $capacidad;
+
+    /**
+     * @var \Crm\CaracteristicasBundle\Entity\MemoriaRam
+     */
+    private $memoriaRam;
+
+    /**
+     * @var \Crm\CaracteristicasBundle\Entity\DiscoDuro
+     */
+    private $discoDuro;
+
+    /**
+     * @var \Crm\CaracteristicasBundle\Entity\VersionSoftware
+     */
+    private $versionSoftware;
+
+    /**
+     * @var \Crm\CaracteristicasBundle\Entity\DiscoDuro
+     */
+    private $terminoDisco;
+
+    /**
+     * @var \Crm\CaracteristicasBundle\Entity\MemoriaRam
+     */
+    private $terminoMemoria;
+
 
     /**
      * Set procesador
@@ -138,9 +173,73 @@ class EspecificacionesEquipo
     }
 
     /**
-     * @var \Crm\CaracteristicasBundle\Entity\DiscoDuro
+     * Set dimenciones
+     *
+     * @param \Crm\CaracteristicasBundle\Entity\Dimenciones $dimenciones
+     * @return EspecificacionesEquipo
      */
-    private $discoDuro;
+    public function setDimenciones(\Crm\CaracteristicasBundle\Entity\Dimenciones $dimenciones = null)
+    {
+        $this->dimenciones = $dimenciones;
+
+        return $this;
+    }
+
+    /**
+     * Get dimenciones
+     *
+     * @return \Crm\CaracteristicasBundle\Entity\Dimenciones 
+     */
+    public function getDimenciones()
+    {
+        return $this->dimenciones;
+    }
+
+    /**
+     * Set capacidad
+     *
+     * @param \Crm\CaracteristicasBundle\Entity\Capacidad $capacidad
+     * @return EspecificacionesEquipo
+     */
+    public function setCapacidad(\Crm\CaracteristicasBundle\Entity\Capacidad $capacidad = null)
+    {
+        $this->capacidad = $capacidad;
+
+        return $this;
+    }
+
+    /**
+     * Get capacidad
+     *
+     * @return \Crm\CaracteristicasBundle\Entity\Capacidad 
+     */
+    public function getCapacidad()
+    {
+        return $this->capacidad;
+    }
+
+    /**
+     * Set memoriaRam
+     *
+     * @param \Crm\CaracteristicasBundle\Entity\MemoriaRam $memoriaRam
+     * @return EspecificacionesEquipo
+     */
+    public function setMemoriaRam(\Crm\CaracteristicasBundle\Entity\MemoriaRam $memoriaRam = null)
+    {
+        $this->memoriaRam = $memoriaRam;
+
+        return $this;
+    }
+
+    /**
+     * Get memoriaRam
+     *
+     * @return \Crm\CaracteristicasBundle\Entity\MemoriaRam 
+     */
+    public function getMemoriaRam()
+    {
+        return $this->memoriaRam;
+    }
 
     /**
      * Set discoDuro
@@ -148,7 +247,7 @@ class EspecificacionesEquipo
      * @param \Crm\CaracteristicasBundle\Entity\DiscoDuro $discoDuro
      * @return EspecificacionesEquipo
      */
-    public function setDisoDuro(\Crm\CaracteristicasBundle\Entity\DiscoDuro $discoDuro = null)
+    public function setDiscoDuro(\Crm\CaracteristicasBundle\Entity\DiscoDuro $discoDuro = null)
     {
         $this->discoDuro = $discoDuro;
 
@@ -158,11 +257,79 @@ class EspecificacionesEquipo
     /**
      * Get discoDuro
      *
-     * @return \Crm\CaracteristicasBundle\Entity\DiscoDuro
+     * @return \Crm\CaracteristicasBundle\Entity\DiscoDuro 
      */
-    public function getDisoDuro()
+    public function getDiscoDuro()
     {
         return $this->discoDuro;
     }
-    
+
+    /**
+     * Set versionSoftware
+     *
+     * @param \Crm\CaracteristicasBundle\Entity\VersionSoftware $versionSoftware
+     * @return EspecificacionesEquipo
+     */
+    public function setVersionSoftware(\Crm\CaracteristicasBundle\Entity\VersionSoftware $versionSoftware = null)
+    {
+        $this->versionSoftware = $versionSoftware;
+
+        return $this;
+    }
+
+    /**
+     * Get versionSoftware
+     *
+     * @return \Crm\CaracteristicasBundle\Entity\VersionSoftware 
+     */
+    public function getVersionSoftware()
+    {
+        return $this->versionSoftware;
+    }
+
+    /**
+     * Set terminoDisco
+     *
+     * @param \Crm\CaracteristicasBundle\Entity\DiscoDuro $terminoDisco
+     * @return EspecificacionesEquipo
+     */
+    public function setTerminoDisco(\Crm\CaracteristicasBundle\Entity\DiscoDuro $terminoDisco = null)
+    {
+        $this->terminoDisco = $terminoDisco;
+
+        return $this;
+    }
+
+    /**
+     * Get terminoDisco
+     *
+     * @return \Crm\CaracteristicasBundle\Entity\DiscoDuro 
+     */
+    public function getTerminoDisco()
+    {
+        return $this->terminoDisco;
+    }
+
+    /**
+     * Set terminoMemoria
+     *
+     * @param \Crm\CaracteristicasBundle\Entity\MemoriaRam $terminoMemoria
+     * @return EspecificacionesEquipo
+     */
+    public function setTerminoMemoria(\Crm\CaracteristicasBundle\Entity\MemoriaRam $terminoMemoria = null)
+    {
+        $this->terminoMemoria = $terminoMemoria;
+
+        return $this;
+    }
+
+    /**
+     * Get terminoMemoria
+     *
+     * @return \Crm\CaracteristicasBundle\Entity\MemoriaRam 
+     */
+    public function getTerminoMemoria()
+    {
+        return $this->terminoMemoria;
+    }
 }

@@ -19,7 +19,7 @@ class DiscoDuroType extends AbstractType
             ->add('capacidad')
             ->add('unidad')
             ->add('tipo')
-            ->add('discoDuro')
+            ->add('terminoDisco')
         ;
     }
     

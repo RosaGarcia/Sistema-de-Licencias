@@ -16,5 +16,15 @@ Crm\GeneralBundle\Entity\Localidad:
     manyToOne:
         estado:
           targetEntity: Crm\GeneralBundle\Entity\Estado
-          mappedBy: Localidad
+          inversedBy: localidad
+          joinColumn:
+               name: estado_id
+               referencedColumnName: id
+    oneToMany:
+        direccionCliente:
+           targetEntity: Crm\ClienteBundle\Entity\DireccionCliente
+           mappedBy: Localidad
+        direcionEmpres:
+           targetEntity: Crm\EmpresaBundle\Entity\DirecionEmpres
+           mappedBy: Localidad
     lifecycleCallbacks: {  }

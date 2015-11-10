@@ -37,7 +37,7 @@ class DiscoDuro
      /**
      * @var string
      */
-    private $discoDuro;
+    private $terminoDisco;
 
 
     /**
@@ -143,43 +143,75 @@ class DiscoDuro
     }
 
     /**
-     * Set discoDuro
-     *
-     * @param string $termino
-     * @return DiscoDuro
-     */
-    public function setTermino($discoDuro)
-    {
-        $this->discoDuro = $discoDuro;
-
-        return $this;
-    }
-
-    /**
-     * Get discoDuro
+     * Get terminoDisco
      *
      * @return string 
      */
-    public function getDiscoDuro()
+    public function getTerminoDisco()
     {
-        return $this->discoDuro;
+        return $this->terminoDisco;
     }
 
      public function __toString()
     {
-        return $this->discoDuro;
+        return $this->terminoDisco;
     }
 
     /**
-     * Set discoDuro
+     * Set terminoDisco
      *
-     * @param string $discoDuro
+     * @param string $terminoDisco
      * @return DiscoDuro
      */
-    public function setDiscoDuro($discoDuro)
+    public function setTerminoDisco($terminoDisco)
     {
-        $this->discoDuro = $discoDuro;
+        $this->terminoDisco = $terminoDisco;
 
         return $this;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $especificacionesEquipo;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->especificacionesEquipo = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add especificacionesEquipo
+     *
+     * @param \Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo $especificacionesEquipo
+     * @return DiscoDuro
+     */
+    public function addEspecificacionesEquipo(\Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo $especificacionesEquipo)
+    {
+        $this->especificacionesEquipo[] = $especificacionesEquipo;
+
+        return $this;
+    }
+
+    /**
+     * Remove especificacionesEquipo
+     *
+     * @param \Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo $especificacionesEquipo
+     */
+    public function removeEspecificacionesEquipo(\Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo $especificacionesEquipo)
+    {
+        $this->especificacionesEquipo->removeElement($especificacionesEquipo);
+    }
+
+    /**
+     * Get especificacionesEquipo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEspecificacionesEquipo()
+    {
+        return $this->especificacionesEquipo;
     }
 }

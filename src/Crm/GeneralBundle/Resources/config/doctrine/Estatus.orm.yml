@@ -12,4 +12,11 @@ Crm\GeneralBundle\Entity\Estatus:
         estatus:
             type: string
             length: '30'
+    oneToMany:
+        cliente:
+            targetEntity: Crm\ClienteBundle\Entity\Cliente
+            mappedBy: Estatus
+        empresa:
+            targetEntity: Crm\EmpresaBundle\Entity\Empresa
+            mappedBy: Estatus
     lifecycleCallbacks: {  }

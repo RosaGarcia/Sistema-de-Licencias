@@ -11,4 +11,8 @@ Crm\CaracteristicasBundle\Entity\Capacidad:
     fields:
         capacidad:
             type: integer
+    oneToMany:
+       especificacionesEquipo:
+           targetEntity: Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo
+           mappedBy: Capacidad
     lifecycleCallbacks: {  }

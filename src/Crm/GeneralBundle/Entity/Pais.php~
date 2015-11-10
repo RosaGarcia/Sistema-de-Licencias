@@ -52,4 +52,54 @@ class Pais
     {
         return $this->nombrePais;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $estado;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->estado = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add estado
+     *
+     * @param \Crm\GeneralBundle\Entity\Estado $estado
+     * @return Pais
+     */
+    public function addEstado(\Crm\GeneralBundle\Entity\Estado $estado)
+    {
+        $this->estado[] = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Remove estado
+     *
+     * @param \Crm\GeneralBundle\Entity\Estado $estado
+     */
+    public function removeEstado(\Crm\GeneralBundle\Entity\Estado $estado)
+    {
+        $this->estado->removeElement($estado);
+    }
+
+    /**
+     * Get estado
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    public function __toString()
+    {
+        return $this->nombrePais;
+    }
 }

@@ -80,4 +80,54 @@ class Localidad
     {
         return $this->estado;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direccionCliente;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->direccionCliente = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add direccionCliente
+     *
+     * @param \Crm\ClienteBundle\Entity\DireccionCliente $direccionCliente
+     * @return Localidad
+     */
+    public function addDireccionCliente(\Crm\ClienteBundle\Entity\DireccionCliente $direccionCliente)
+    {
+        $this->direccionCliente[] = $direccionCliente;
+
+        return $this;
+    }
+
+    /**
+     * Remove direccionCliente
+     *
+     * @param \Crm\ClienteBundle\Entity\DireccionCliente $direccionCliente
+     */
+    public function removeDireccionCliente(\Crm\ClienteBundle\Entity\DireccionCliente $direccionCliente)
+    {
+        $this->direccionCliente->removeElement($direccionCliente);
+    }
+
+    /**
+     * Get direccionCliente
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDireccionCliente()
+    {
+        return $this->direccionCliente;
+    }
+
+    public function __toString()
+    {
+        return $this->nombreLocalidad;
+    }
 }
