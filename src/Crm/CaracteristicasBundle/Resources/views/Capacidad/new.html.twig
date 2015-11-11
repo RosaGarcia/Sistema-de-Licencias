@@ -1,15 +1,47 @@
-{% extends '::base.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    <h1>Capacidad creation</h1>
 
-    {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('capacidad') }}">
-            Back to the list
+<div class="rom">
+    <div class="col-xs-12 col-sm-12 com-md-12">
+        <h2><a href="{{ path('capacidad') }}">
+            Lista
         </a>
-    </li>
-</ul>
+        <span>
+            /Nueva Capacidad 
+        </span></h2>
+    </div>
+</div>
+
+<div class="row">
+	<div class="col-md-12 col-sm-12">
+        <div class="portlet light tasks-widget ">
+            <div class="portlet-title">
+                <div class="caption">
+                	<i class="icon-share font-blue"></i>
+                        <span class="caption-subject font-green bold uppercase">Nueva Capacidad</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="task-content">
+
+                    {{ form_start(form) }}
+
+                    <div class="col-xs-2 col-sm-2 col-md-2">
+                    	Capacidad: 
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                    	{{ form_widget(form.capacidad) }}
+                    </div>
+
+                    {{ form_end(form) }}
+
+                    <ul class="record_actions">
+    
+                    </ul>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

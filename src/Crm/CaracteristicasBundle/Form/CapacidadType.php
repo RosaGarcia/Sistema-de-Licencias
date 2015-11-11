@@ -15,7 +15,7 @@ class CapacidadType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('capacidad')
+            ->add('capacidad','integer',array('attr' => array('class' => 'form-control')))
         ;
     }
     

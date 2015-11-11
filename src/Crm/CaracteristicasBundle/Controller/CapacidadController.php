@@ -66,8 +66,7 @@ class CapacidadController extends Controller
             'action' => $this->generateUrl('capacidad_create'),
             'method' => 'POST',
         ));
-
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear', 'attr' => array('class' => 'btn btn-success')));
 
         return $form;
     }
