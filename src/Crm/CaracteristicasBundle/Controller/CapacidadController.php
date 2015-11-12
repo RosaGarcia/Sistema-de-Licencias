@@ -43,8 +43,12 @@ class CapacidadController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha creado el registro exitosamente'
+                            );
 
-            return $this->redirect($this->generateUrl('capacidad_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('capacidad'));
         }
 
         return $this->render('CaracteristicasBundle:Capacidad:new.html.twig', array(
@@ -146,7 +150,7 @@ class CapacidadController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Editar','attr' => array('class' => 'btn btn-primary')));
 
         return $form;
     }
@@ -170,8 +174,12 @@ class CapacidadController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha editado el registro exitosamente'
+                            );
 
-            return $this->redirect($this->generateUrl('capacidad_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('capacidad'));
         }
 
         return $this->render('CaracteristicasBundle:Capacidad:edit.html.twig', array(
@@ -199,6 +207,10 @@ class CapacidadController extends Controller
 
             $em->remove($entity);
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha eliminado el registro exitosamente'
+                            );
         }
 
         return $this->redirect($this->generateUrl('capacidad'));
@@ -216,7 +228,7 @@ class CapacidadController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('capacidad_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
     }
