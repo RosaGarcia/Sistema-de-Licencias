@@ -48,7 +48,7 @@ class CapacidadController extends Controller
                                 'Se ha creado el registro exitosamente'
                             );
 
-            return $this->redirect($this->generateUrl('capacidad'));
+            return $this->redirect($this->generateUrl('capacidad_show', array('id' => $entity->getId())));
         }
 
         return $this->render('CaracteristicasBundle:Capacidad:new.html.twig', array(
