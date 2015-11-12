@@ -11,6 +11,11 @@
         </div>
     </div>
 
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <h2 class="alert-success">{{ flashMessage }}</h2>
+        <br /><br />
+    {% endfor %}
+
    <div class="row">
         <div class="col-md-6">
             <div class="portlet light portlet-fit ">
