@@ -15,12 +15,12 @@ class MemoriaRamType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('marca')
-            ->add('modelo')
-            ->add('capacidad')
-            ->add('unidad')
-            ->add('tipo')
-            ->add('terminoMemoria')
+            ->add('marca','text',array('attr' => array('class' => 'form-control')))
+            ->add('modelo','text',array('attr' => array('class' => 'form-control')))
+            ->add('capacidad','integer',array('attr' => array('class' => 'form-control')))
+            ->add('unidad','choice',array('choices' => array('GigaByte' => 'GB'),'attr' => array('class' => 'form-control')))
+            ->add('tipo','text',array('attr' => array('class' => 'form-control')))
+            ->add('terminoMemoria','text',array('attr' => array('class' => 'form-control')))
         ;
     }
     

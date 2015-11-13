@@ -1,6 +1,7 @@
 {% extends '::frontend.html.twig' %}
 
 {% block body -%}
+
     <div class="row">
         <div class="col-xs-12 col-sm-12 com-md-12">
             <h2><a href="{{ path('capacidad') }}">
@@ -12,8 +13,7 @@
     </div>
 
     {% for flashMessage in app.session.flashbag.get('mensaje') %}
-        <h2 class="alert-success">{{ flashMessage }}</h2>
-        <br /><br />
+        <h2 class="alert-success">{{ flashMessage }}</h2><br /><br />
     {% endfor %}
 
    <div class="row">

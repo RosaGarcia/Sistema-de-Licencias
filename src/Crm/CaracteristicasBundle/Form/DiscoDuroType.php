@@ -15,11 +15,11 @@ class DiscoDuroType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('marca')
-            ->add('capacidad')
-            ->add('unidad')
-            ->add('tipo')
-            ->add('terminoDisco')
+            ->add('marca','text',array('attr' => array('class' => 'form-control')))
+            ->add('capacidad','integer',array('attr' => array('class' => 'form-control')))
+            ->add('unidad','choice',array('choices' => array('GigaByte' => 'GB','TeraByte' => 'TB'),'attr' => array('class' => 'form-control')))
+            ->add('tipo','text',array('attr' => array('class' => 'form-control')))
+            ->add('terminoDisco','text',array('attr' => array('class' => 'form-control')))
         ;
     }
     

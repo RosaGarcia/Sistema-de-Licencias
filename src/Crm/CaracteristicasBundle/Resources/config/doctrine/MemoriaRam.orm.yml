@@ -19,7 +19,7 @@ Crm\CaracteristicasBundle\Entity\MemoriaRam:
             type: integer
         unidad:
             type: string
-            length: '5'
+            length: '10'
         tipo:
             type: string
             length: '10'
