@@ -15,7 +15,7 @@ class ModeloEquipoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
+            ->add('nombre','text',array('attr' => array('class' => 'form-control')))
             ->add('especificacionesEquipo')
         ;
     }

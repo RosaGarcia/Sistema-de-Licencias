@@ -15,7 +15,7 @@ class VersionSoftwareType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('versionSoftware')
+            ->add('versionSoftware','text',array('attr' => array('class' => 'form-control')))
         ;
     }
     

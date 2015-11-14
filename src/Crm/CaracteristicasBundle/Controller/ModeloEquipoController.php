@@ -43,6 +43,10 @@ class ModeloEquipoController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                               'mensaje',
+                               'Se ha creado el registro exitosamente'  
+                        );
 
             return $this->redirect($this->generateUrl('modeloequipo_show', array('id' => $entity->getId())));
         }
@@ -67,7 +71,7 @@ class ModeloEquipoController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear','attr' => array('class' => 'btn btn-success')));
 
         return $form;
     }
@@ -147,7 +151,7 @@ class ModeloEquipoController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Editar','attr' => array('class' => 'btn btn-primary')));
 
         return $form;
     }
