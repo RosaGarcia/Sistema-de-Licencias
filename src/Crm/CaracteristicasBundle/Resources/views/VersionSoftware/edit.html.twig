@@ -1,16 +1,52 @@
-{% extends '::base.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    <h1>VersionSoftware edit</h1>
 
-    {{ form(edit_form) }}
+         <div class="row">
+         	<div class="col-xs-12 col-sm-12 col-md-12">
+                <h2><a href="{{ path('versionsoftware') }}">
+                	Version Software:
+                    </a>
+                    Editar           
+                </h2>
+            </div>
+        </div>   
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('versionsoftware') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">   
+                <div class="portlet light tasks-widget">
+                	<div class="portlet-title">
+                		<div class="caption">
+                			<i class="icon-pencil font-green"></i>
+                			<span class="caption-subject font-green bold uppercase"> Editar Version software</span>
+                		</div>
+                	</div>	
+
+                    <div class="portlet-body">
+                        <div class="task-content">	
+
+                            {{ form_start(edit_form) }}
+
+                                <div class="form-group">
+                               	    <div class="row">
+                                        <div class="col-xs-12 col-sm-2 col-md-2">
+                                           Version Software:
+                                        </div>
+                                        <div class="col-xs-12 col-sm-3 col-md-3">
+                                        	{{ form_widget(edit_form.versionSoftware) }}
+                                        </div>
+                               	    </div>
+                               	</div>   
+
+
+                            {{ form_end(edit_form) }}  
+
+
+                        </div>
+                    </div>     
+
+                </div>
+            </div>
+        </div> 
+
 {% endblock %}

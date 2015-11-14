@@ -1,15 +1,35 @@
-{% extends '::base.html.twig' %}
+{% extends '::vendedor.html.twig' %}
 
 {% block body -%}
-    <h1>Venta creation</h1>
 
-    {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('venta') }}">
-            Back to the list
+<div class="rom">
+    <div class="col-xs-12 col-sm-12 com-md-12">
+        <h2><a href="{{ path('venta') }}">
+            Lista
         </a>
-    </li>
-</ul>
+        <span>
+            /Nueva venta 
+        </span></h2>
+    </div>
+</div>
+
+  <div class="row">
+  	<div class="col-xs-12 col-sm-12 col-md-12">
+  		<div class="portlet light tasks-widget ">
+  		    <div class="portlet-title">
+                <div class="caption">                    
+                        <span class="caption-subject font-green sbold uppercase">Nueva venta</span>
+                </div>
+            </div>
+
+            <div class="portlet-body">
+                 
+                 {{ form(form) }}
+
+      
+</div>
+
+</div>
+</div>
+</div>
 {% endblock %}
