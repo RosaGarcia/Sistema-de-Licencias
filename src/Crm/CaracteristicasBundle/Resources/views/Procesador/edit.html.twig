@@ -1,16 +1,82 @@
-{% extends '::base.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    <h1>Procesador edit</h1>
+    
+    <div class="row">
+       	<div class="col-xs-12 col-sm-12 com-md-12">
+        	<h2><a href="{{ path('procesador') }}">
+            		Procesador:
+            	</a>
+         		Editar
+        	</h2>
+    	</div>
+	</div>
 
-    {{ form(edit_form) }}
+    <div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12">
+        	<div class="portlet light tasks-widget ">
+            	<div class="portlet-title">
+                	<div class="caption">
+                		<i class="icon-pencil font-blue"></i>
+                        	<span class="caption-subject font-green bold uppercase">Editar Procesador</span>
+                	</div>
+            	</div>
+            	<div class="portlet-body">
+                	<div class="task-content">
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('procesador') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    {{ form_start(edit_form) }}
+
+    <div class="form-group">
+    						<div class="row">
+    							<div class="col-xs-12 col-sm-2 col-md-2">
+                    				Marca:
+                    			</div>
+                    			<div class="col-xs-12 col-sm-3 col-md-3">
+                    				{{ form_widget(edit_form.marca) }}
+                    			</div>
+                			</div>
+            			</div>
+            			<div class="form-group">
+    						<div class="row">
+    							<div class="col-xs-12 col-sm-2 col-md-2">
+                    				Modelo:
+                    			</div>
+                    			<div class="col-xs-12 col-sm-3 col-md-3">
+                    				{{ form_widget(edit_form.modelo) }}
+                    			</div>
+                			</div>
+            			</div>
+            			<div class="form-group">
+    						<div class="row">
+    							<div class="col-xs-12 col-sm-2 col-md-2">
+                    				Velocidad:
+                    			</div>
+                    			<div class="col-xs-12 col-sm-3 col-md-3">
+                    				{{ form_widget(edit_form.velocidad) }}
+                    			</div>
+                    			<div class="col-xs-12 col-sm-2 col-md-2">
+                    				{{ form_widget(edit_form.unidad) }}
+                    			</div>
+                			</div>
+            			</div>
+            			<div class="form-group">
+    						<div class="row">
+    							<div class="col-xs-12 col-sm-2 col-md-2">
+                    				Termino:
+                    			</div>
+                    			<div class="col-xs-12 col-sm-3 col-md-3">
+                    				{{ form_widget(edit_form.terminoProcesador) }}
+                    			</div>
+                			</div>
+            			</div>
+
+            			{{ form_end(edit_form) }}
+
+            			</div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+
+        
 {% endblock %}

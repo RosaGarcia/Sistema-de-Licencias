@@ -16,10 +16,14 @@ Crm\CaracteristicasBundle\Entity\Procesador:
             type: string
             length: '30'
         velocidad:
-            type: float
+            type: string
+            length: '4'
         unidad:
             type: string
-            length: '5'
+            length: '10'
+        terminoProcesador:
+            type: string
+            length: '10'
     oneToMany:
         especificacionesEquipo:
             targetEntity: Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo

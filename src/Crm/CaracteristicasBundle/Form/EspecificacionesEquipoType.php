@@ -15,9 +15,9 @@ class EspecificacionesEquipoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('numeroInterfaces')
-            ->add('numeroUsb')
-            ->add('expansion')
+            ->add('numeroInterfaces','integer',array('attr' => array('class' => 'form-control')))
+            ->add('numeroUsb','integer',array('attr' => array('class' => 'form-control')))
+            ->add('expansion',null,array("required" => false))
             ->add('procesador')
             ->add('capacidad')
             ->add('terminoMemoria')

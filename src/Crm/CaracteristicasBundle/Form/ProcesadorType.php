@@ -15,10 +15,11 @@ class ProcesadorType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('marca')
-            ->add('modelo')
-            ->add('velocidad')
-            ->add('unidad')
+            ->add('marca','text',array('attr' => array('class' => 'form-control')))
+            ->add('modelo','text',array('attr' => array('class' => 'form-control')))
+            ->add('velocidad','text',array('attr' => array('class' => 'form-control')))
+            ->add('unidad','choice',array('choices' => array('MegaHercio' => 'MHz'),'attr' => array('class' => 'form-control')))
+            ->add('terminoProcesador','text',array('attr' => array('class' => 'form-control')))
         ;
     }
     
