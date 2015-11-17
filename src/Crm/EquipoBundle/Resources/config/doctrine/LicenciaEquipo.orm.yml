@@ -18,7 +18,10 @@ Crm\EquipoBundle\Entity\LicenciaEquipo:
     oneToOne:
         equipo:
            targetEntity: Crm\EquipoBundle\Entity\Equipo
-           mappedBy: LicenciaEquipo
+           inversedBy: licenciaEquipo
+           joinColumn:
+                name: equipo_id
+                referencedColumnName: id
     manyToOne:
         tipoLicencia:
           targetEntity: Crm\ProductoBundle\Entity\TipoLicencia

@@ -153,4 +153,37 @@ class TipoLicencia
     {
         return $this->licenciaEquipo;
     }
+    /**
+     * @var string
+     */
+    private $terminoLicencia;
+
+
+    /**
+     * Set terminoLicencia
+     *
+     * @param string $terminoLicencia
+     * @return TipoLicencia
+     */
+    public function setTerminoLicencia($terminoLicencia)
+    {
+        $this->terminoLicencia = $terminoLicencia;
+
+        return $this;
+    }
+
+    /**
+     * Get terminoLicencia
+     *
+     * @return string 
+     */
+    public function getTerminoLicencia()
+    {
+        return $this->terminoLicencia;
+    }
+
+     public function __toString()
+    {
+        return $this->terminoLicencia;
+    }
 }

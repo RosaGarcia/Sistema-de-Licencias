@@ -17,6 +17,7 @@ class TipoLicenciaType extends AbstractType
         $builder
             ->add('precio')
             ->add('meses')
+            ->add('terminoLicencia')
             ->add('producto')
         ;
     }

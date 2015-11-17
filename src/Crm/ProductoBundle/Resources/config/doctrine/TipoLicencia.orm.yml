@@ -13,6 +13,9 @@ Crm\ProductoBundle\Entity\TipoLicencia:
             type: integer
         meses:
             type: integer
+        terminoLicencia:
+            type: string
+            length: '10'
     oneToMany:
         licenciaEquipo:
           targetEntity: Crm\EquipoBundle\Entity\LicenciaEquipo

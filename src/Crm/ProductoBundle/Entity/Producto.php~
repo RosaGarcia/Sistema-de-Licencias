@@ -192,4 +192,9 @@ class Producto
     {
         return $this->tipoLicencia;
     }
+
+    public function __toString()
+    {
+        return $this->termino;
+    }
 }
