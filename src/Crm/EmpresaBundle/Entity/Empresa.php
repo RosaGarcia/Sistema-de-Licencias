@@ -22,7 +22,7 @@ class Empresa
     /**
      * @var string
      */
-    private $rcf;
+    private $rfc;
 
     /**
      * @var string
@@ -94,9 +94,9 @@ class Empresa
      * @param string $rcf
      * @return Empresa
      */
-    public function setRcf($rcf)
+    public function setRfc($rfc)
     {
-        $this->rcf = $rcf;
+        $this->rfc = $rfc;
 
         return $this;
     }
@@ -106,9 +106,9 @@ class Empresa
      *
      * @return string 
      */
-    public function getRcf()
+    public function getRfc()
     {
-        return $this->rcf;
+        return $this->rfc;
     }
 
     /**

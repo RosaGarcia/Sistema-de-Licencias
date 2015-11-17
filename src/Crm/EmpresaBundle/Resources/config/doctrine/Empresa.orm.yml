@@ -13,7 +13,7 @@ Crm\EmpresaBundle\Entity\Empresa:
             type: string
             length: '50'
             column: razon_social
-        rcf:
+        rfc:
             type: string
             length: '15'
         telefono1:
@@ -23,13 +23,16 @@ Crm\EmpresaBundle\Entity\Empresa:
         ext1:
             type: integer
             column: ext_1
+            nullable: TRUE
         telefono2:
             type: string
             length: '15'
             column: telefono_2
+            nullable: TRUE
         ext2:
             type: integer
             column: ext_2
+            nullable: TRUE
         email:
             type: string
             length: '50'
@@ -37,6 +40,7 @@ Crm\EmpresaBundle\Entity\Empresa:
             type: string
             length: '50'
             column: pagina_web
+            nullable: TRUE
     oneToMany:
         direccionEmpresa:
             targetEntity: Crm\EmpresaBundle\Entity\DireccionEmpresa
