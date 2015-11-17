@@ -417,10 +417,10 @@ class EspecificacionesEquipo
     /**
      * Add modeloEquipo
      *
-     * @param \Crm\EquipoBundle\Entity\ModeloEquipo $modeloEquipo
+     * @param \Crm\CaracteristicasBundle\Entity\ModeloEquipo $modeloEquipo
      * @return EspecificacionesEquipo
      */
-    public function addModeloEquipo(\Crm\EquipoBundle\Entity\ModeloEquipo $modeloEquipo)
+    public function addModeloEquipo(\Crm\CaracteristicasBundle\Entity\ModeloEquipo $modeloEquipo)
     {
         $this->modeloEquipo[] = $modeloEquipo;
 
@@ -430,9 +430,9 @@ class EspecificacionesEquipo
     /**
      * Remove modeloEquipo
      *
-     * @param \Crm\EquipoBundle\Entity\ModeloEquipo $modeloEquipo
+     * @param \Crm\CaracteristicasBundle\Entity\ModeloEquipo $modeloEquipo
      */
-    public function removeModeloEquipo(\Crm\EquipoBundle\Entity\ModeloEquipo $modeloEquipo)
+    public function removeModeloEquipo(\Crm\CaracteristicasBundle\Entity\ModeloEquipo $modeloEquipo)
     {
         $this->modeloEquipo->removeElement($modeloEquipo);
     }

@@ -15,10 +15,10 @@ class ProcedenciaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('fechaLlegada')
-            ->add('numeroSerieFabricante')
-            ->add('numeroSerieWarriors')
-            ->add('fechaSalida')
+            ->add('fechaLlegada','date')
+            ->add('numeroSerieFabricante','text',array('attr' => array('class' => 'form-control')))
+            ->add('numeroSerieWarriors','text',array('attr' => array('class' => 'form-control')))
+            ->add('fechaSalida','date')
             ->add('fabricante')
         ;
     }

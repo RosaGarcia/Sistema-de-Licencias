@@ -1,15 +1,68 @@
-{% extends '::base.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    <h1>LicenciaEquipo creation</h1>
 
-    {{ form(form) }}
+    <div class="row">
+    	<div class="col-xs-12 col-sm-12 com-md-12">
+        	<h2><a href="{{ path('licenciaequipo') }}">
+            	Licencia Equipo:
+        	</a>
+        	<span>
+            	Nuevo
+        	</span></h2>
+    	</div>
+	</div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('licenciaequipo') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12">
+        	<div class="portlet light tasks-widget ">
+            	<div class="portlet-title">
+                	<div class="caption">
+                		<i class="icon-share font-blue"></i>
+                        	<span class="caption-subject font-green bold uppercase">Nueva Licencia</span>
+                	</div>
+            	</div>
+            	<div class="portlet-body">
+                	<div class="task-content">
+                		{{ form_start(form) }}
+
+                			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Fecha Inicia:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.fechaInicio) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Fecha Final:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.fechaFinal) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Tipo Licencia:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.tipoLicencia,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+
+						{{ form_end(form) }}
+            			
+            		</div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+     
 {% endblock %}

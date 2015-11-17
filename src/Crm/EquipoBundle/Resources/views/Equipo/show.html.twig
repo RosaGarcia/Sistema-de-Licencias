@@ -1,36 +1,56 @@
-{% extends '::base.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    <h1>Equipo</h1>
+    
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 com-md-12">
+            <h2><a href="{{ path('equipo') }}">
+               Equipo:
+                </a>
+                Vista 
+            </h2>
+        </div>
+    </div>
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Numeroserie</th>
-                <td>{{ entity.numeroSerie }}</td>
-            </tr>
-            <tr>
-                <th>Fechainstalacion</th>
-                <td>{{ entity.fechaInstalacion|date('Y-m-d H:i:s') }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light portlet-fit ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-eye font-yellow"></i>
+                        <span class="caption-subject font-yellow bold uppercase">Caracteristicas</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Numero de Serie</th>
+                                    <th>Fecha Instalacion</th>
+                                    <th>Licencia</th>
+                                    <th>Cliente</th>
+                                    <th colspan="2">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ entity.numeroSerie }}</td>
+                                    <td>{{ entity.fechaInstalacion|date('Y-m-d H:i:s') }}</td>
+                                    <td>{{ entity.licenciaEquipo }}</td>
+                                    <td>{{ entity.cliente }}</td>
+                                    <td><a href="{{ path('equipo_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">
+                                         Editar
+                                        </a></td>
+                                    <td>{{ form(delete_form) }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('equipo') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('equipo_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        
 {% endblock %}
