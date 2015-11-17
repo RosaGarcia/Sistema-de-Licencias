@@ -63,7 +63,7 @@
 	                    				Procesador:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(form.procesador,{"attr":{"class":'form-control'}}) }}
+	                    				{{ form_widget(form.procesador,{"attr":{"class":"form-control"},"required":"true"}) }}
 	                    			</div>
 	                			</div>
 	            			</div>
@@ -73,7 +73,7 @@
 	                    				Capacidad:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				{{ form_widget(form.capacidad,{"attr":{"class":'form-control'}}) }}
+	                    				{{ form_widget(form.capacidad,{"attr":{"class":"form-control"},"required":"true"}) }}
 	                    			</div>
 	                			</div>
 	            			</div>
@@ -83,7 +83,7 @@
 	                    				Memoria ram:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(form.terminoMemoria,{"attr":{"class":'form-control'}}) }}
+	                    				{{ form_widget(form.terminoMemoria,{"attr":{"class":"form-control"},"required":"true"}) }}
 	                    			</div>
 	                			</div>
 	            			</div>
@@ -93,7 +93,7 @@
 	                    				Disco Duro:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(form.terminoDisco,{"attr":{"class":'form-control'}}) }}
+	                    				{{ form_widget(form.terminoDisco,{"attr":{"class":"form-control"},"required":"true"}) }}
 	                    			</div>
 	                			</div>
 	            			</div>
@@ -103,7 +103,7 @@
 	                    				Software:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				{{ form_widget(form.versionSoftware,{"attr":{"class":'form-control'}}) }}
+	                    				{{ form_widget(form.versionSoftware,{"attr":{"class":"form-control"},"required":"true"}) }}
 	                    			</div>
 	                			</div>
 	            			</div>
@@ -113,7 +113,17 @@
 	                    				Dimenciones:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(form.dimenciones,{"attr":{"class":'form-control'}}) }}
+	                    				{{ form_widget(form.dimenciones,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Termino:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.terminoEquipo) }}
 	                    			</div>
 	                			</div>
 	            			</div>

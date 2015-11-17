@@ -1,40 +1,68 @@
-{% extends '::base.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    <h1>EspecificacionesEquipo</h1>
+    
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 com-md-12">
+            <h2><a href="{{ path('especificacionesequipo') }}">
+                Caracteristicas Equipo:
+                </a>
+                Vista 
+            </h2>
+        </div>
+    </div>
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Numerointerfaces</th>
-                <td>{{ entity.numeroInterfaces }}</td>
-            </tr>
-            <tr>
-                <th>Numerousb</th>
-                <td>{{ entity.numeroUsb }}</td>
-            </tr>
-            <tr>
-                <th>Expansion</th>
-                <td>{{ entity.expansion }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light portlet-fit ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-eye font-yellow"></i>
+                        <span class="caption-subject font-yellow bold uppercase">Caracteristicas</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Interfaces</th>
+                                    <th>USB</th>
+                                    <th>Expansion</th>
+                                    <th>Procesador</th>
+                                    <th>Capacidad</th>
+                                    <th>Memoria Ram</th>
+                                    <th>Disco Duro</th>
+                                    <th>Software</th>
+                                    <th>Dimenciones</th>
+                                    <th>Termino</th>
+                                    <th colspan="2">Acciones</th>  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ entity.numeroInterfaces }}</td>
+                                    <td>{{ entity.numeroUsb }}</td>
+                                    <td><input type="checkbox" {% if  entity.expansion == 1 %} checked="checked" {% endif %}/></td>
+                                    <td>{{ entity.procesador }}</td>
+                                    <td>{{ entity.capacidad }}</td>
+                                    <td>{{ entity.terminoMemoria }}</td>
+                                    <td>{{ entity.terminoDisco }}</td>
+                                    <td>{{ entity.versionSoftware }}</td>
+                                    <td>{{ entity.dimenciones }}</td>
+                                    <td>{{ entity.terminoEquipo }}</td>
+                                    <td><a href="{{ path('especificacionesequipo_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">
+                                        Editar
+                                        </a>
+                                    </td>
+                                    <td>{{ form(delete_form) }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('especificacionesequipo') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('especificacionesequipo_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
 {% endblock %}

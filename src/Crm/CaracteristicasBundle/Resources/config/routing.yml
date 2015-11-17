@@ -1,3 +1,7 @@
+caracteristicas_modeloequipo:
+    resource: "@CaracteristicasBundle/Resources/config/routing/modeloequipo.yml"
+    prefix:   /modeloequipo
+
 caracteristicas_especificacionesequipo:
     resource: "@CaracteristicasBundle/Resources/config/routing/especificacionesequipo.yml"
     prefix:   /especificacionesequipo
@@ -9,10 +13,6 @@ caracteristicas_versionsoftware:
 caracteristicas_procesador:
     resource: "@CaracteristicasBundle/Resources/config/routing/procesador.yml"
     prefix:   /procesador
-
-caracteristicas_modeloequipo:
-    resource: "@CaracteristicasBundle/Resources/config/routing/modeloequipo.yml"
-    prefix:   /modeloequipo
 
 caracteristicas_memoriaram:
     resource: "@CaracteristicasBundle/Resources/config/routing/memoriaram.yml"

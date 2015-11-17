@@ -15,7 +15,7 @@ class EstatusType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('estatus')
+            ->add('estatus','text',array('attr' => array('class' => 'form-control')))
         ;
     }
     

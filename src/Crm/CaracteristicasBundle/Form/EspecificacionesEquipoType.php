@@ -24,6 +24,7 @@ class EspecificacionesEquipoType extends AbstractType
             ->add('terminoDisco')
             ->add('versionSoftware')
             ->add('dimenciones')
+            ->add('terminoEquipo','text',array('attr' => array('class' => 'form-control')))
         ;
     }
     

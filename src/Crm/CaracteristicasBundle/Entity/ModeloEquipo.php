@@ -125,4 +125,9 @@ class ModeloEquipo
     {
         return $this->producto;
     }
+
+     public function __toString()
+    {
+        return (string)$this->nombre;
+    }
 }

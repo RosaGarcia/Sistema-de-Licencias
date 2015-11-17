@@ -1,7 +1,7 @@
 {% extends '::frontend.html.twig' %}
 
 {% block body -%}
-
+    
     <div class="row">
         <div class="col-xs-12 col-sm-12 com-md-12">
             <h2><a href="{{ path('modeloequipo') }}">
@@ -10,53 +10,47 @@
                 Nuevo
             </h2>
         </div>
-    </div> 
+    </div>
 
-    <div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12">
-        	<div class="portlet light tasks-widget ">
-            	<div class="portlet-title">
-                	<div class="caption">
-                		<i class="icon-share font-blue"></i>
-                        	<span class="caption-subject font-green bold uppercase">Nuevo Modelo</span>
-                	</div>
-            	</div>
-
-            	<div class="portlet-body">
-                	<div class="task-content">
-   
-     
-                    {{ form_start(form) }}
-                        <div class="form-group">
-    							<div class="row">
-    								<div class="col-xs-12 col-sm-2 col-md-2">
-                    					Nombre:
-                    				</div>
-                    				<div class="col-xs-12 col-sm-3 col-md-3">
-                    					{{ form_widget(form.nombre) }}
-                    				</div>
-                				</div>
-            			</div>
-
-            			<div class="form-group">
-    							<div class="row">
-    								<div class="col-xs-12 col-sm-2 col-md-2">
-                    					Caracteristicas equipo:
-                    				</div>
-                    				<div class="col-xs-12 col-sm-3 col-md-3">
-                    					{{ form(form.especificacionesEquipo,{'attr':{'class':'form-control'}}) }}
-                    				</div>
-                				</div>
-            			</div>
-                 
-                    {{ form_end(form) }}
-
-       
-
+     <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="portlet light tasks-widget ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-share font-blue"></i>
+                            <span class="caption-subject font-green bold uppercase">Nueva Modelo</span>
                     </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="task-content">
+
+    {{ form_start(form) }}
+
+    <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Nombre:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ form_widget(form.nombre) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Caracteristicas:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        {{ form_widget(form.especificacionesEquipo,{"attr":{"class":"form-control"},"required":"true"})}}
+                                    </div>
+                                </div>
+                            </div>
+{{ form_end(form)}}
+ </div>
                 </div>
             </div>
         </div>
     </div>
-
+        
 {% endblock %}

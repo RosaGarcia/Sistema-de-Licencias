@@ -133,45 +133,7 @@ class Localidad
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $direcionEmpres;
-
-
-    /**
-     * Add direcionEmpres
-     *
-     * @param \Crm\EmpresaBundle\Entity\DirecionEmpres $direcionEmpres
-     * @return Localidad
-     */
-    public function addDirecionEmpre(\Crm\EmpresaBundle\Entity\DirecionEmpres $direcionEmpres)
-    {
-        $this->direcionEmpres[] = $direcionEmpres;
-
-        return $this;
-    }
-
-    /**
-     * Remove direcionEmpres
-     *
-     * @param \Crm\EmpresaBundle\Entity\DirecionEmpres $direcionEmpres
-     */
-    public function removeDirecionEmpre(\Crm\EmpresaBundle\Entity\DirecionEmpres $direcionEmpres)
-    {
-        $this->direcionEmpres->removeElement($direcionEmpres);
-    }
-
-    /**
-     * Get direcionEmpres
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getDirecionEmpres()
-    {
-        return $this->direcionEmpres;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $direcionFabricante;
+    private $direccionFabricante;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -185,36 +147,36 @@ class Localidad
 
 
     /**
-     * Add direcionFabricante
+     * Add direccionFabricante
      *
-     * @param \Crm\FabricanteBundle\Entity\DirecionFabricante $direcionFabricante
+     * @param \Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante
      * @return Localidad
      */
-    public function addDirecionFabricante(\Crm\FabricanteBundle\Entity\DirecionFabricante $direcionFabricante)
+    public function addDireccionFabricante(\Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante)
     {
-        $this->direcionFabricante[] = $direcionFabricante;
+        $this->direccionFabricante[] = $direccionFabricante;
 
         return $this;
     }
 
     /**
-     * Remove direcionFabricante
+     * Remove direccionFabricante
      *
-     * @param \Crm\FabricanteBundle\Entity\DirecionFabricante $direcionFabricante
+     * @param \Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante
      */
-    public function removeDirecionFabricante(\Crm\FabricanteBundle\Entity\DirecionFabricante $direcionFabricante)
+    public function removeDireccionFabricante(\Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante)
     {
-        $this->direcionFabricante->removeElement($direcionFabricante);
+        $this->direccionFabricante->removeElement($direccionFabricante);
     }
 
     /**
-     * Get direcionFabricante
+     * Get direccionFabricante
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getDirecionFabricante()
+    public function getDireccionFabricante()
     {
-        return $this->direcionFabricante;
+        return $this->direccionFabricante;
     }
 
     /**
@@ -285,92 +247,15 @@ class Localidad
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $direccionEmpres;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $direccionFabricante;
-
-
-    /**
-     * Add direccionEmpres
-     *
-     * @param \Crm\EmpresaBundle\Entity\DirecionEmpres $direccionEmpres
-     * @return Localidad
-     */
-    public function addDireccionEmpre(\Crm\EmpresaBundle\Entity\DirecionEmpres $direccionEmpres)
-    {
-        $this->direccionEmpres[] = $direccionEmpres;
-
-        return $this;
-    }
-
-    /**
-     * Remove direccionEmpres
-     *
-     * @param \Crm\EmpresaBundle\Entity\DirecionEmpres $direccionEmpres
-     */
-    public function removeDireccionEmpre(\Crm\EmpresaBundle\Entity\DirecionEmpres $direccionEmpres)
-    {
-        $this->direccionEmpres->removeElement($direccionEmpres);
-    }
-
-    /**
-     * Get direccionEmpres
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getDireccionEmpres()
-    {
-        return $this->direccionEmpres;
-    }
-
-    /**
-     * Add direccionFabricante
-     *
-     * @param \Crm\FabricanteBundle\Entity\DirecionFabricante $direccionFabricante
-     * @return Localidad
-     */
-    public function addDireccionFabricante(\Crm\FabricanteBundle\Entity\DirecionFabricante $direccionFabricante)
-    {
-        $this->direccionFabricante[] = $direccionFabricante;
-
-        return $this;
-    }
-
-    /**
-     * Remove direccionFabricante
-     *
-     * @param \Crm\FabricanteBundle\Entity\DirecionFabricante $direccionFabricante
-     */
-    public function removeDireccionFabricante(\Crm\FabricanteBundle\Entity\DirecionFabricante $direccionFabricante)
-    {
-        $this->direccionFabricante->removeElement($direccionFabricante);
-    }
-
-    /**
-     * Get direccionFabricante
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getDireccionFabricante()
-    {
-        return $this->direccionFabricante;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
     private $direccionEmpresa;
-
 
     /**
      * Add direccionEmpresa
      *
-     * @param \Crm\EmpresaBundle\Entity\DirecionEmpres $direccionEmpresa
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa
      * @return Localidad
      */
-    public function addDireccionEmpresa(\Crm\EmpresaBundle\Entity\DirecionEmpres $direccionEmpresa)
+    public function addDireccionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa)
     {
         $this->direccionEmpresa[] = $direccionEmpresa;
 
@@ -380,9 +265,9 @@ class Localidad
     /**
      * Remove direccionEmpresa
      *
-     * @param \Crm\EmpresaBundle\Entity\DirecionEmpres $direccionEmpresa
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa
      */
-    public function removeDireccionEmpresa(\Crm\EmpresaBundle\Entity\DirecionEmpres $direccionEmpresa)
+    public function removeDireccionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa)
     {
         $this->direccionEmpresa->removeElement($direccionEmpresa);
     }
@@ -394,6 +279,6 @@ class Localidad
      */
     public function getDireccionEmpresa()
     {
-        return $this->direccionEmpresa;
+    return $this->direccionEmpresa;
     }
 }

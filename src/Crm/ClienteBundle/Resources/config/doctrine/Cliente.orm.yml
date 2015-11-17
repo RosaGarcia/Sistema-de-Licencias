@@ -23,13 +23,16 @@ Crm\ClienteBundle\Entity\Cliente:
         ext1:
             type: integer
             column: ext_1
+            nullable: TRUE
         telefono2:
             type: string
             length: '15'
             column: telefono_2
+            nullable: TRUE
         ext2:
             type: integer
             column: ext_2
+            nullable: TRUE
         email:
             type: string
             length: '50'

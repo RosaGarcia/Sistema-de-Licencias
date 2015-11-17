@@ -43,6 +43,10 @@ class LocalidadController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha creado el registro exitosamente'
+                            );
 
             return $this->redirect($this->generateUrl('localidad_show', array('id' => $entity->getId())));
         }
@@ -67,7 +71,7 @@ class LocalidadController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear', 'attr' => array('class' => 'btn btn-success')));
 
         return $form;
     }
@@ -147,7 +151,7 @@ class LocalidadController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Editar','attr' => array('class' => 'btn btn-primary')));
 
         return $form;
     }
@@ -171,8 +175,12 @@ class LocalidadController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha editado el registro exitosamente'
+                            );
 
-            return $this->redirect($this->generateUrl('localidad_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('localidad'));
         }
 
         return $this->render('GeneralBundle:Localidad:edit.html.twig', array(
@@ -200,6 +208,10 @@ class LocalidadController extends Controller
 
             $em->remove($entity);
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha eliminado el registro exitosamente'
+                            );
         }
 
         return $this->redirect($this->generateUrl('localidad'));
@@ -217,7 +229,7 @@ class LocalidadController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('localidad_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
     }

@@ -180,7 +180,7 @@ class EspecificacionesEquipoController extends Controller
                                 'Se ha editado el registro exitosamente'
                             );
 
-            return $this->redirect($this->generateUrl('especificacionesequipo_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('especificacionesequipo'));
         }
 
         return $this->render('CaracteristicasBundle:EspecificacionesEquipo:edit.html.twig', array(

@@ -34,6 +34,11 @@ class Procesador
      */
     private $unidad;
 
+    /**
+     * @var string
+     */
+    private $terminoProcesador;
+
 
     /**
      * Get id
@@ -94,7 +99,7 @@ class Procesador
     /**
      * Set velocidad
      *
-     * @param float $velocidad
+     * @param string $velocidad
      * @return Procesador
      */
     public function setVelocidad($velocidad)
@@ -107,7 +112,7 @@ class Procesador
     /**
      * Get velocidad
      *
-     * @return float 
+     * @return string 
      */
     public function getVelocidad()
     {
@@ -137,10 +142,35 @@ class Procesador
         return $this->unidad;
     }
 
-    public function __toString()
+    /**
+     * Get terminoProcesador
+     *
+     * @return string 
+     */
+    public function getTerminoProcesador()
     {
-        return $this->marca;
+        return $this->terminoProcesador;
     }
+
+     public function __toString()
+    {
+        return $this->terminoProcesador;
+    }
+
+    /**
+     * Set terminoProcesador
+     *
+     * @param string $terminoProcesador
+     * @return Procesador
+     */
+    public function setTerminoProcesador($terminoProcesador)
+    {
+        $this->terminoProcesador = $terminoProcesador;
+
+        return $this;
+    }
+
+   
     /**
      * @var \Doctrine\Common\Collections\Collection
      */

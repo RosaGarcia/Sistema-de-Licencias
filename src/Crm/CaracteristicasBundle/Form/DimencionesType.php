@@ -15,7 +15,7 @@ class DimencionesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('dimenciones')
+            ->add('dimenciones','text',array('attr' => array('class' => 'form-control')))
         ;
     }
     

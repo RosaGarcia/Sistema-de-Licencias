@@ -29,6 +29,10 @@ class EspecificacionesEquipo
      */
     private $expansion;
 
+     /**
+     * @var string
+     */
+    private $terminoEquipo;
 
     /**
      * Get id
@@ -108,6 +112,31 @@ class EspecificacionesEquipo
     {
         return $this->expansion;
     }
+
+    /**
+     * Set terminoEquipo
+     *
+     * @param string $terminoEquipo
+     * @return EspecificacionesEquipo
+     */
+    public function setTerminoEquipo($terminoEquipo)
+    {
+        $this->terminoEquipo = $terminoEquipo;
+
+        return $this;
+    }
+
+    /**
+     * Get terminoEquipo
+     *
+     * @return string 
+     */
+    public function getTerminoEquipo()
+    {
+        return $this->terminoEquipo;
+    }
+
+     
     /**
      * @var \Crm\CaracteristicasBundle\Entity\Procesador
      */
@@ -376,5 +405,50 @@ class EspecificacionesEquipo
     public function getEquipo()
     {
         return $this->equipo;
+    }
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $modeloEquipo;
+
+
+
+    /**
+     * Add modeloEquipo
+     *
+     * @param \Crm\CaracteristicasBundle\Entity\ModeloEquipo $modeloEquipo
+     * @return EspecificacionesEquipo
+     */
+    public function addModeloEquipo(\Crm\CaracteristicasBundle\Entity\ModeloEquipo $modeloEquipo)
+    {
+        $this->modeloEquipo[] = $modeloEquipo;
+
+        return $this;
+    }
+
+    /**
+     * Remove modeloEquipo
+     *
+     * @param \Crm\CaracteristicasBundle\Entity\ModeloEquipo $modeloEquipo
+     */
+    public function removeModeloEquipo(\Crm\CaracteristicasBundle\Entity\ModeloEquipo $modeloEquipo)
+    {
+        $this->modeloEquipo->removeElement($modeloEquipo);
+    }
+
+    /**
+     * Get modeloEquipo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getModeloEquipo()
+    {
+        return $this->modeloEquipo;
+    }
+
+    public function __toString()
+    {
+        return $this->terminoEquipo;
     }
 }

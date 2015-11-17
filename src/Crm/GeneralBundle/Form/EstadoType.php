@@ -15,7 +15,7 @@ class EstadoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombreEstado')
+            ->add('nombreEstado','text',array('attr' => array('class' => 'form-control')))
             ->add('pais')
         ;
     }

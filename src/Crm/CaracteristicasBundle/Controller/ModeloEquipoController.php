@@ -43,10 +43,10 @@ class ModeloEquipoController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-            $this->get('session')->getFlashBag()->add(
-                               'mensaje',
-                               'Se ha creado el registro exitosamente'  
-                        );
+             $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha creado el registro exitosamente'
+                            );
 
             return $this->redirect($this->generateUrl('modeloequipo_show', array('id' => $entity->getId())));
         }
@@ -175,8 +175,12 @@ class ModeloEquipoController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha editado el registro exitosamente'
+                            );
 
-            return $this->redirect($this->generateUrl('modeloequipo_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('modeloequipo'));
         }
 
         return $this->render('CaracteristicasBundle:ModeloEquipo:edit.html.twig', array(
@@ -204,6 +208,10 @@ class ModeloEquipoController extends Controller
 
             $em->remove($entity);
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha eliminado el registro exitosamente'
+                            );
         }
 
         return $this->redirect($this->generateUrl('modeloequipo'));
@@ -221,7 +229,7 @@ class ModeloEquipoController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('modeloequipo_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
     }

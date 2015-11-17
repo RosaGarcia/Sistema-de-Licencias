@@ -20,6 +20,7 @@ Crm\ClienteBundle\Entity\DireccionCliente:
             type: string
             length: '10'
             column: numero_int
+            nullable: TRUE
         colonia:
             type: string
             length: '50'
