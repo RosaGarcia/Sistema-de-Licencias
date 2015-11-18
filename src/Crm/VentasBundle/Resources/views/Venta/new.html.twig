@@ -1,35 +1,57 @@
-{% extends '::vendedor.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
 {% block body -%}
 
-<div class="rom">
-    <div class="col-xs-12 col-sm-12 com-md-12">
-        <h2><a href="{{ path('venta') }}">
-            Lista
-        </a>
-        <span>
-            /Nueva venta 
-        </span></h2>
+    <div class="rom">
+        <div class="col-xs-12 col-sm-12 com-md-12">
+            <h2><a href="{{ path('venta') }}">
+                Venta:
+                </a>
+            <span>
+                Nueva  
+            </span></h2>
+        </div>
     </div>
-</div>
 
-  <div class="row">
-  	<div class="col-xs-12 col-sm-12 col-md-12">
-  		<div class="portlet light tasks-widget ">
-  		    <div class="portlet-title">
-                <div class="caption">                    
+    <div class="row">
+  	    <div class="col-xs-12 col-sm-12 col-md-12">
+  		      <div class="portlet light tasks-widget ">
+  		          <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-share font-blue"></i>                    
                         <span class="caption-subject font-green sbold uppercase">Nueva venta</span>
+                    </div>
+                </div>
+
+                <div class="portlet-body">
+                    <div class="task-content">
+                 
+                        {{ form_start(form) }}
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Fecha Venta:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ form_widget(form.fechaVenta) }}
+                                    </div>
+                                </div>
+                            </div>                            
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Usuarios:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ form_widget(form.usuarios,{"attr":{"class":"form-control"},"required":"true"}) }}
+                                    </div>
+                                </div>
+                            </div> 
+
+                        {{ form_end(form) }}    
+                    </div>
                 </div>
             </div>
-
-            <div class="portlet-body">
-                 
-                 {{ form(form) }}
-
-      
-</div>
-
-</div>
-</div>
-</div>
+        </div>
+    </div>
 {% endblock %}

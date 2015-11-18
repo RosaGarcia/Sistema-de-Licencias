@@ -17,6 +17,7 @@ class VentaType extends AbstractType
         $builder
             ->add('fechaVenta')
             ->add('usuarios')
+            
         ;
     }
     
