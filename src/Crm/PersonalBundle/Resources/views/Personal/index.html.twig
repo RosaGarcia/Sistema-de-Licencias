@@ -1,25 +1,57 @@
-{% extends '::base.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    <h1>Personal list</h1>
 
-    <table class="records_list">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 com-md-12">
+            <h2>
+                Personal
+            </h2>
+        </div>
+    </div>
+
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <h2 class="alert-success">{{ flashMessage }}</h2><br /><br />
+    {% endfor %}
+
+   <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light ">
+                <div class="portlet-title">
+                    <div class="caption font-dark">
+                        <i class="icon-settings font-dark"></i>
+                            <span class="caption-subject bold uppercase"> Lista personal</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-toolbar">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    <a href="{{ path('personal_new') }}" class="btn green btn-outline">
+                                        Crear nueva personal
+                                    </a>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_2">
         <thead>
             <tr>
-                <th>Id</th>
+                <th class="oculto">Id</th>
                 <th>Nombre</th>
-                <th>Apepat</th>
-                <th>Apemat</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
                 <th>Telefono</th>
                 <th>Celular</th>
                 <th>Email</th>
-                <th>Actions</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('personal_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td class="oculto"><a href="{{ path('personal_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.nombre }}</td>
                 <td>{{ entity.apePat }}</td>
                 <td>{{ entity.apeMat }}</td>
@@ -27,25 +59,18 @@
                 <td>{{ entity.celular }}</td>
                 <td>{{ entity.email }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('personal_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('personal_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                        <a href="{{ path('personal_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
+                    
+                        <a href="{{ path('personal_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+    </div>
+            </div>
+        </div>
+    </div>
 
-        <ul>
-        <li>
-            <a href="{{ path('personal_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+        
     {% endblock %}

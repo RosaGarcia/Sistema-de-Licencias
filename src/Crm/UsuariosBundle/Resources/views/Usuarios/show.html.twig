@@ -1,36 +1,53 @@
-{% extends '::base.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    <h1>Usuarios</h1>
+    
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 com-md-12">
+            <h2><a href="{{ path('usuarios') }}">
+               Usuarios:
+                </a>
+                Vista 
+            </h2>
+        </div>
+    </div>
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Nombre</th>
-                <td>{{ entity.nombre }}</td>
-            </tr>
-            <tr>
-                <th>Contrasena</th>
-                <td>{{ entity.contrasena }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('usuarios') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('usuarios_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light portlet-fit ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-eye font-yellow"></i>
+                        <span class="caption-subject font-yellow bold uppercase">Caracteristicas</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Personal</th>
+                                    <th>Rol</th>
+                                    <th colspan="2">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ entity.nombre }}</td>
+                                    <td>{{ entity.personal }}</td>
+                                    <td>{{ entity.rol }}</td>
+                                    <td><a href="{{ path('usuarios_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">
+                                            Editar
+                                        </a></td>
+                                    <td>{{ form(delete_form) }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 {% endblock %}

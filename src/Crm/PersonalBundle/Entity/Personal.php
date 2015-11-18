@@ -365,4 +365,32 @@ class Personal
     {
         return $this->puesto;
     }
+    /**
+     * @var \Crm\UsuariosBundle\Entity\Usuarios
+     */
+    private $usuarios;
+
+
+    /**
+     * Set usuarios
+     *
+     * @param \Crm\UsuariosBundle\Entity\Usuarios $usuarios
+     * @return Personal
+     */
+    public function setUsuarios(\Crm\UsuariosBundle\Entity\Usuarios $usuarios = null)
+    {
+        $this->usuarios = $usuarios;
+
+        return $this;
+    }
+
+    /**
+     * Get usuarios
+     *
+     * @return \Crm\UsuariosBundle\Entity\Usuarios 
+     */
+    public function getUsuarios()
+    {
+        return $this->usuarios;
+    }
 }

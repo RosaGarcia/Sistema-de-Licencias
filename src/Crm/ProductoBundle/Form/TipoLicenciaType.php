@@ -15,9 +15,9 @@ class TipoLicenciaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('precio')
-            ->add('meses')
-            ->add('terminoLicencia')
+            ->add('precio','integer',array('attr' => array('class' => 'form-control')))
+            ->add('meses','integer',array('attr' => array('class' => 'form-control')))
+            ->add('terminoLicencia','text',array('attr' => array('class' => 'form-control')))
             ->add('producto')
         ;
     }

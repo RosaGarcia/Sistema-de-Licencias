@@ -167,7 +167,7 @@ class Equipo
     private $especificacionesEquipo;
 
     /**
-     * @var \Crm\VentaBundle\Entity\Venta
+     * @var \Crm\VentasBundle\Entity\Venta
      */
     private $venta;
 
@@ -330,10 +330,10 @@ class Equipo
     /**
      * Set venta
      *
-     * @param \Crm\VentaBundle\Entity\Venta $venta
+     * @param \Crm\VentasBundle\Entity\Venta $venta
      * @return Equipo
      */
-    public function setVenta(\Crm\VentaBundle\Entity\Venta $venta = null)
+    public function setVenta(\Crm\VentasBundle\Entity\Venta $venta = null)
     {
         $this->venta = $venta;
 
@@ -343,10 +343,15 @@ class Equipo
     /**
      * Get venta
      *
-     * @return \Crm\VentaBundle\Entity\Venta 
+     * @return \Crm\VentasBundle\Entity\Venta 
      */
     public function getVenta()
     {
         return $this->venta;
+    }
+
+    public function __toString()
+    {
+        return $this->numeroSerie;
     }
 }

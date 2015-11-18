@@ -360,4 +360,8 @@ class Fabricante
     {
         return $this->procedencia;
     }
+     public function __toString()
+    {
+        return $this->razonSocial;
+    }
 }

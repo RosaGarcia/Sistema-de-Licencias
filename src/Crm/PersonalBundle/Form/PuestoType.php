@@ -15,7 +15,7 @@ class PuestoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('puesto')
+            ->add('puesto','text',array('attr' => array('class' => 'form-control')))
         ;
     }
     

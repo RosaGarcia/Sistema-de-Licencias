@@ -21,6 +21,7 @@ Crm\UsuariosBundle\Entity\Usuarios:
           mappedBy: Usuarios   
         avisos:
           targetEntity: Crm\Usuarios\Entity\Avisos
+          mappedBy: Usuarios
     oneToOne:
         personal:
           targetEntity: Crm\PersonalBundle\Entity\Personal

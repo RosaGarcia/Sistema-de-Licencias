@@ -1,15 +1,69 @@
-{% extends '::base.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    <h1>Producto creation</h1>
 
-    {{ form(form) }}
+    <div class="row">
+    	<div class="col-xs-12 col-sm-12 com-md-12">
+        	<h2><a href="{{ path('producto') }}">
+            	Producto:
+        	</a>
+        	<span>
+            	Nuevo
+        	</span></h2>
+    	</div>
+	</div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('producto') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12">
+        	<div class="portlet light tasks-widget ">
+            	<div class="portlet-title">
+                	<div class="caption">
+                		<i class="icon-share font-blue"></i>
+                        	<span class="caption-subject font-green bold uppercase">Nueva Producto</span>
+                	</div>
+            	</div>
+            	<div class="portlet-body">
+                	<div class="task-content">
+
+                		{{ form_start(form) }}
+
+                			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Nombre:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.nombre) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Termino:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.termino) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Equipo:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.modeloEquipo,{"attr":{"class":"form-control"},"required":"false"}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+
+						{{ form_end(form) }}
+            			
+            		</div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+
 {% endblock %}

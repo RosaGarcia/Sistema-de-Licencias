@@ -15,7 +15,7 @@ class AvisosType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('avisos')
+            ->add('avisos','text',array('attr' => array('class' => 'form-control')))
             ->add('usuarios')
         ;
     }

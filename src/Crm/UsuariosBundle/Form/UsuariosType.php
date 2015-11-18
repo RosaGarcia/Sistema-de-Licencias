@@ -15,9 +15,10 @@ class UsuariosType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
-            ->add('contrasena')
+            ->add('nombre','text',array('attr' => array('class' => 'form-control')))
+            ->add('contrasena','password',array('attr' => array('class' => 'form-control')))
             ->add('personal')
+            ->add('rol')
         ;
     }
     

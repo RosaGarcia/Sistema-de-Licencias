@@ -1,15 +1,46 @@
-{% extends '::base.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    <h1>Puesto creation</h1>
 
-    {{ form(form) }}
+    <div class="row">
+    	<div class="col-xs-12 col-sm-12 com-md-12">
+        	<h2><a href="{{ path('puesto') }}">
+            	Puesto:
+        	</a>
+        	<span>
+            	Nuevo
+        	</span></h2>
+    	</div>
+	</div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('puesto') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12">
+        	<div class="portlet light tasks-widget ">
+            	<div class="portlet-title">
+                	<div class="caption">
+                		<i class="icon-share font-blue"></i>
+                        	<span class="caption-subject font-green bold uppercase">Nueva Puesto</span>
+                	</div>
+            	</div>
+            	<div class="portlet-body">
+                	<div class="task-content">
+                		
+                		{{ form_start(form) }}
+
+                		
+	    					<div class="col-xs-12 col-sm-2 col-md-2">
+	                    		Puesto:
+	                    	</div>
+	                    	<div class="col-xs-12 col-sm-3 col-md-3">
+	                    		{{ form_widget(form.puesto) }}
+	                    	</div>
+	                			
+						{{ form_end(form) }}
+            			
+            		</div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+
 {% endblock %}

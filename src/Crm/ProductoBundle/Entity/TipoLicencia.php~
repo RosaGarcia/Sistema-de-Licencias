@@ -181,4 +181,9 @@ class TipoLicencia
     {
         return $this->terminoLicencia;
     }
+
+     public function __toString()
+    {
+        return $this->terminoLicencia;
+    }
 }

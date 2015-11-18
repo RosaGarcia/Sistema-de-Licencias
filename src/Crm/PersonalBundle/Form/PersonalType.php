@@ -15,13 +15,15 @@ class PersonalType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
-            ->add('apePat')
-            ->add('apeMat')
-            ->add('telefono')
-            ->add('celular')
-            ->add('email')
+            ->add('nombre','text',array('attr' => array('class' => 'form-control')))
+            ->add('apePat','text',array('attr' => array('class' => 'form-control')))
+            ->add('apeMat','text',array('attr' => array('class' => 'form-control')))
+            ->add('telefono','text',array('attr' => array('class' => 'form-control'),'required' => false))
+            ->add('celular','text',array('attr' => array('class' => 'form-control'),'required' => false))
+            ->add('email','email',array('attr' => array('class' => 'form-control')))
             ->add('estatus')
+            ->add('empresa')
+            ->add('puesto')
         ;
     }
     

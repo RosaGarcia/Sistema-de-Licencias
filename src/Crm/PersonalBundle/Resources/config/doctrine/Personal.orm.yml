@@ -23,9 +23,11 @@ Crm\PersonalBundle\Entity\Personal:
         telefono:
             type: string
             length: '15'
+            nullable: true
         celular:
             type: string
             length: '15'
+            nullable: true
         email:
             type: string
             length: '50'
@@ -55,4 +57,11 @@ Crm\PersonalBundle\Entity\Personal:
         direccionPersonal:
             targetEntity: Crm\PersonalBundle\Entity\DireccionPersonal
             mappedBy: Personal
+    oneToOne:
+        usuarios:
+            targetEntity: Crm\UsuariosBundle\Entity\Usuarios
+            inversedBy: personal
+            joinColumn:
+              name: usuarios_id
+              referencedColumnName: id
     lifecycleCallbacks: {  }

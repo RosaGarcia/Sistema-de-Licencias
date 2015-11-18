@@ -15,12 +15,15 @@ class UbicacionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('calle')
-            ->add('numeroExt')
-            ->add('numeroInt')
-            ->add('colonia')
-            ->add('codigoPostal')
+            ->add('calle','text',array('attr' => array('class' => 'form-control')))
+            ->add('numeroExt','text',array('attr' => array('class' => 'form-control')))
+            ->add('numeroInt','text',array('attr' => array('class' => 'form-control'),'required' => false))
+            ->add('colonia','text',array('attr' => array('class' => 'form-control')))
+            ->add('codigoPostal','integer',array('attr' => array('class' => 'form-control')))
             ->add('equipo')
+            ->add('estado')
+            ->add('localidad')
+            ->add('pais')
         ;
     }
     

@@ -20,6 +20,7 @@ Crm\PersonalBundle\Entity\DireccionPersonal:
             type: string
             length: '10'
             column: numero_int
+            nullable: true
         colonia:
             type: string
             length: '50'

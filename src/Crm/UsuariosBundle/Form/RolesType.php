@@ -15,7 +15,7 @@ class RolesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('roles')
+            ->add('roles','text',array('attr' => array('class' => 'form-control')))
         ;
     }
     

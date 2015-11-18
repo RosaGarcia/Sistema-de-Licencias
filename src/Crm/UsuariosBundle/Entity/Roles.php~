@@ -97,4 +97,9 @@ class Roles
     {
         return $this->usuarios;
     }
+
+    public function __toString()
+    {
+        return $this->roles;
+    }
 }

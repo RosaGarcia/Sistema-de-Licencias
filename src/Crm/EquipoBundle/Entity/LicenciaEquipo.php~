@@ -136,4 +136,9 @@ class LicenciaEquipo
     {
         return $this->equipo;
     }
+
+     public function __toString()
+    {
+        return (string)$this->id;
+    }
 }
