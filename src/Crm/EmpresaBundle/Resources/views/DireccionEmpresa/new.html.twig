@@ -1,15 +1,125 @@
-{% extends '::base.html.twig' %}
+{% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    <h1>DireccionEmpresa creation</h1>
+    <div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12">
+    		<h2><a href="{{ path('direccionempresa') }}">
+                Direccion Empresa
+    		</a>
+    		<span>
+    			Nuevo
+    		</span></h2>
+    	</div>
+    </div>
 
-    {{ form(form) }}
+    <div class="row">
+    	<div class="col-xs-12 col-sm-12 col-md-12">
+    		<div class="portlet light tasks-widget">
+    			<div class="portlet-title">
+    				<div class="caption">
+    					<i class="icon-share font-blue"></i>
+                        <span class="caption-subject font-green bold uppercase">Nueva Direccion Empresa</span>
+    				</div>
+    			</div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('direccionempresa') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    			<div class="portlet-body">
+    				<div class="task-content">
+
+                        {{ form_start(form) }}
+                            <div class="form-group">
+                            	<div class="row">
+                            		<div class="col-xs-12 col-sm-2 col-md-2">
+                            			Calle:
+                            		</div>
+                            		<div class="col-xs-12 col-sm-3 col-md-3">
+                            			{{ form_widget(form.calle)}}
+                            		</div>
+                            	</div>
+                            </div>
+                             <div class="form-group">
+                            	<div class="row">
+                            		<div class="col-xs-12 col-sm-2 col-md-2">
+                            			Numero exterior:
+                            		</div>
+                            		<div class="col-xs-12 col-sm-3 col-md-3">
+                            			{{ form_widget(form.numeroExt)}}
+                            		</div>
+                            	</div>
+                            </div>
+                             <div class="form-group">
+                            	<div class="row">
+                            		<div class="col-xs-12 col-sm-2 col-md-2">
+                            			Numero interior:
+                            		</div>
+                            		<div class="col-xs-12 col-sm-3 col-md-3">
+                            			{{ form_widget(form.numeroInt)}}
+                            		</div>
+                            	</div>
+                            </div>
+                             <div class="form-group">
+                            	<div class="row">
+                            		<div class="col-xs-12 col-sm-2 col-md-2">
+                            			Colonia:
+                            		</div>
+                            		<div class="col-xs-12 col-sm-3 col-md-3">
+                            			{{ form_widget(form.colonia)}}
+                            		</div>
+                            	</div>
+                            </div>
+                             <div class="form-group">
+                            	<div class="row">
+                            		<div class="col-xs-12 col-sm-2 col-md-2">
+                            			Codigo postal:
+                            		</div>
+                            		<div class="col-xs-12 col-sm-3 col-md-3">
+                            			{{ form_widget(form.codigoPostal)}}
+                            		</div>
+                            	</div>
+                            </div>
+                             <div class="form-group">
+                            	<div class="row">
+                            		<div class="col-xs-12 col-sm-2 col-md-2">
+                            			Empresa:
+                            		</div>
+                            		<div class="col-xs-12 col-sm-3 col-md-3">
+                            			{{ form_widget(form.empresa,{"attr":{"class":"form-control"},"required":"true"}) }}
+                            		</div>
+                            	</div>
+                            </div>
+                            <div class="form-group">
+                            	<div class="row">
+                            		<div class="col-xs-12 col-sm-2 col-md-2">
+                            			Pais:
+                            		</div>
+                            		<div class="col-xs-12 col-sm-3 col-md-3">
+                            			{{ form_widget(form.pais,{"attr":{"class":"form-control"},"required":"true"}) }}
+                            		</div>
+                            	</div>
+                            </div>
+                            <div class="form-group">
+                            	<div class="row">
+                            		<div class="col-xs-12 col-sm-2 col-md-2">
+                            			Estado:
+                            		</div>
+                            		<div class="col-xs-12 col-sm-3 col-md-3">
+                            			{{ form_widget(form.estado,{"attr":{"class":"form-control"},"required":"true"}) }}
+                            		</div>
+                            	</div>
+                            </div>
+                            <div class="form-group">
+                            	<div class="row">
+                            		<div class="col-xs-12 col-sm-2 col-md-2">
+                            			Localidad:
+                            		</div>
+                            		<div class="col-xs-12 col-sm-3 col-md-3">
+                            			{{ form_widget(form.localidad,{"attr":{"class":"form-control"},"required":"true"}) }}
+                            		</div>
+                            	</div>
+                            </div>
+                        {{ form_end(form) }}    
+                    </div>
+                </div>
+            </div> 
+        </div>  
+     </div>  
 {% endblock %}

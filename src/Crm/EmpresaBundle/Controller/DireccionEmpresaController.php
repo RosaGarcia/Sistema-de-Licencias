@@ -43,6 +43,11 @@ class DireccionEmpresaController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+            $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha creado el registro exitosamente'
+                            );
 
             return $this->redirect($this->generateUrl('direccionempresa_show', array('id' => $entity->getId())));
         }
@@ -67,7 +72,7 @@ class DireccionEmpresaController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear', 'attr' => array('class' => 'btn btn-success')));
 
         return $form;
     }
@@ -147,7 +152,7 @@ class DireccionEmpresaController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Editar','attr' => array('class' => 'btn btn-primary')));
 
         return $form;
     }
@@ -171,8 +176,12 @@ class DireccionEmpresaController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha editado el registro exitosamente'
+                            );
 
-            return $this->redirect($this->generateUrl('direccionempresa_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('direccionempresa'));
         }
 
         return $this->render('EmpresaBundle:DireccionEmpresa:edit.html.twig', array(
@@ -200,6 +209,10 @@ class DireccionEmpresaController extends Controller
 
             $em->remove($entity);
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha eliminado el registro exitosamente'
+                            );
         }
 
         return $this->redirect($this->generateUrl('direccionempresa'));
@@ -217,7 +230,7 @@ class DireccionEmpresaController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('direccionempresa_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
     }

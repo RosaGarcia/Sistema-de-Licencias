@@ -67,7 +67,7 @@ class FabricanteController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear', 'attr' => array('class' => 'btn btn-success')));
 
         return $form;
     }
@@ -147,7 +147,7 @@ class FabricanteController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Editar','attr' => array('class' => 'btn btn-primary')));
 
         return $form;
     }
@@ -171,8 +171,12 @@ class FabricanteController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha editado el registro exitosamente'
+                            );
 
-            return $this->redirect($this->generateUrl('fabricante_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('fabricante'));
         }
 
         return $this->render('FabricanteBundle:Fabricante:edit.html.twig', array(
@@ -200,6 +204,10 @@ class FabricanteController extends Controller
 
             $em->remove($entity);
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha eliminado el registro exitosamente'
+                            );
         }
 
         return $this->redirect($this->generateUrl('fabricante'));
@@ -217,7 +225,7 @@ class FabricanteController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('fabricante_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
     }

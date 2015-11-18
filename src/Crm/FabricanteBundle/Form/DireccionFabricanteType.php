@@ -15,12 +15,15 @@ class DireccionFabricanteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('calle')
-            ->add('numeroExt')
-            ->add('numeroInt')
-            ->add('colonia')
-            ->add('codigoPostal')
+            ->add('calle','text',array('attr' => array('class' => 'form-control')))
+            ->add('numeroExt','text',array('attr' => array('class' => 'form-control')))
+            ->add('numeroInt','text',array('attr' => array('class' => 'form-control')))
+            ->add('colonia','text',array('attr' => array('class' => 'form-control')))
+            ->add('codigoPostal','integer',array('attr' => array('class' => 'form-control')))
             ->add('fabricante')
+            ->add('localidad')
+            ->add('estado')
+            ->add('pais')
         ;
     }
     

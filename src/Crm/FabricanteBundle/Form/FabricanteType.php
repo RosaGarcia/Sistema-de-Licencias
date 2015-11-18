@@ -15,14 +15,14 @@ class FabricanteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('razonSocial')
-            ->add('rfc')
-            ->add('telefono1')
-            ->add('ext1')
-            ->add('telefono2')
-            ->add('ext2')
-            ->add('email')
-            ->add('paginaWeb')
+            ->add('razonSocial','text',array('attr' => array('class' => 'form-control')))
+            ->add('rfc','text',array('attr' => array('class' => 'form-control')))
+            ->add('telefono1','text',array('attr' => array('class' => 'form-control')))
+            ->add('ext1','integer',array('attr' => array('class' => 'form-control'),'required' => false))
+            ->add('telefono2','text',array('attr' => array('class' => 'form-control'),'required' => false))
+            ->add('ext2','integer',array('attr' => array('class' => 'form-control'),'required' => false))
+            ->add('email','text',array('attr' => array('class' => 'form-control')))
+            ->add('paginaWeb','text',array('attr' => array('class' => 'form-control'),'required' => false))
             ->add('estatus')
         ;
     }
