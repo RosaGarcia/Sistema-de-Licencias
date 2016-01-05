@@ -83,7 +83,9 @@ class VentaController extends Controller
     public function newAction()
     {
         $entity = new Venta();
-        $form   = $this->createCreateForm($entity);
+        $form   = $this->createCreateForm($entity)
+             ->add('datetime',null, array('widget' => 'choice'))
+             ->getForm();
 
         return $this->render('VentasBundle:Venta:new.html.twig', array(
             'entity' => $entity,

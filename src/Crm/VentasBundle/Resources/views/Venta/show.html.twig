@@ -26,21 +26,21 @@
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Fechaventa</th>
-                                    <td colspan="2">Accion</td>
+                                    <th class="oculto">Id</th>
+                                    <th>Fecha Venta</th>
+                                    <th colspan="2">Accion</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>                                    
-                                    <td>{{ entity.id }}</td>                              
+                                    <td class="oculto">{{ entity.id }}</td>                         
                                     <td>{{ entity.fechaVenta|date('Y-m-d H:i:s') }}</td>
                                     <td><a href="{{ path('venta_edit', { 'id': entity.id }) }}" class="btn blue btn-outline"> Edit </a></td>
                                     <td>{{ form(delete_form) }}</td>
                                 </tr>
                             </tbody>
                         </table>
-                     </div>
+                    </div>
                 </div>
             </div>
         </div>
