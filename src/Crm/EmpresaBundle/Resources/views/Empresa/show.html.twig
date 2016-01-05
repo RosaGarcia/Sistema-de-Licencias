@@ -9,7 +9,11 @@
                    Vista   
             </h2>
         </div>
-    </div> 
+    </div>
+
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <h2 class="alert-success">{{ flashMessage }}</h2><br /><br />
+    {% endfor %} 
     
     <div class="row">
         <div class="col-md-12">
@@ -22,39 +26,188 @@
                 </div>
 
                  <div class="portlet-body">
-                    <div class="table-scrollable">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>                                   
-                                    <th>Razon Social</th>
-                                    <th>RFC</th>
-                                    <th>Telefono</th>
-                                    <th>Ext</th>
-                                    <th>Telefono</th>
-                                    <th>Ext</th>
-                                    <th>Email</th>
-                                    <th>Pagina Web</th>
-                                    <th>Estatus</th>
-                                    <th colspan="2">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>                                            
-                                    <td>{{ entity.razonSocial }}</td>                
-                                    <td>{{ entity.rfc }}</td>                
-                                    <td>{{ entity.telefono1 }}</td>                
-                                    <td>{{ entity.ext1 }}</td>             
-                                    <td>{{ entity.telefono2 }}</td>               
-                                    <td>{{ entity.ext2 }}</td>                
-                                    <td>{{ entity.email }}</td>                
-                                    <td>{{ entity.paginaWeb }}</td>
-                                    <td>{{ entity.estatus}}</td>
-                                    <td><a href="{{ path('empresa_edit', { 'id': entity.id }) }}"class="btn blue btn-outline">
-                                        Editar</a></td>
-                                    <td>{{ form(delete_form) }}</td>
-                                </tr>
-                            </tbody>
-                        </table>      
+                    <div class="general-item-list">
+
+                        {% for entity in entities %}
+                        
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Razon Social:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.empresa.razonSocial }}
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        RFC:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.empresa.rfc }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Telefono 1:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.empresa.telefono1 }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-1">
+                                        Extencion:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.empresa.ext1 }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Telefono 2:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.empresa.telefono2 }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-1">
+                                        Extencion:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.empresa.ext2 }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Email:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.empresa.email }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Página Web:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.empresa.paginaWeb }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Estatus:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.empresa.estatus }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Calle:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.calle }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        No. Ext:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.numeroExt }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        No. Int:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.numeroInt }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Colonia:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.colonia }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Codigo Postal:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.codigoPostal }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Pais:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.pais }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Estado:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.estado }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Municipio:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.municipio }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Localidad:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.localidad }}
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+                        <br />
+                            {{ form(delete_form) }}
+                        
+
                     </div>
                 </div>
             </div>

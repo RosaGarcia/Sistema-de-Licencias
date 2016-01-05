@@ -553,10 +553,11 @@
                                 </ul>
                             </div>
                         </div>
-                    </div><br/><br/>
+                    </div><br /><br />
 
-                 {% block body %}{% endblock %}
-          
+                 
+                    {% block body %}
+                    {% endblock %}
                 </div>
                 <!-- END CONTENT BODY -->
 
@@ -619,8 +620,7 @@
         <script src="{{ asset('public/layouts/layout2/scripts/demo.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('public/layouts/global/scripts/quick-sidebar.min.js') }}" type="text/javascript"></script>
 
-     {% block javascripts %}
-     {% endblock javascripts %}
+     {% block javascripts %}{% endblock javascripts %}
 </body>
 
 

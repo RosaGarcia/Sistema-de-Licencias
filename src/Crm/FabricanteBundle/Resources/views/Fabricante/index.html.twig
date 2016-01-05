@@ -29,7 +29,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="btn-group">
-                                    <a href="{{ path('fabricante_new') }}" class="btn green btn-outline">
+                                    <a href="{{ path('direccionfabricante_new') }}" class="btn green btn-outline">
                                         Crear nuevo fabricante
                                     </a>  
                                 </div>
@@ -48,7 +48,7 @@
                                 <th>Ext</th>
                                 <th>Email</th>
                                 <th>Pagina Web</th>
-                                <th colspan="2">Acciones</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,8 +64,9 @@
                                 <td>{{ entity.email }}</td>
                                 <td>{{ entity.paginaWeb }}</td>
                                 <td>
-                                    <a href="{{ path('fabricante_show', { 'id': entity.id }) }}"class="btn yellow btn-outline">Ver</a>
-                                    <a href="{{ path('fabricante_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>                  
+                                    <a href="{{ path('fabricante_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
+
+                                    <a href="{{ path('direccionfabricante_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>                  
                                 </td>
                             </tr>
                         {% endfor %}

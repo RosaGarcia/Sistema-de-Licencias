@@ -48,7 +48,7 @@ class DireccionPersonalController extends Controller
                                 'Se ha creado el registro exitosamente'
                             );
 
-            return $this->redirect($this->generateUrl('direccionpersonal_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('personal_show', array('id' => $entity->getId())));
         }
 
         return $this->render('PersonalBundle:DireccionPersonal:new.html.twig', array(
@@ -180,7 +180,7 @@ class DireccionPersonalController extends Controller
                                 'Se ha editado el registro exitosamente'
                             );
 
-            return $this->redirect($this->generateUrl('direccionpersonal'));
+            return $this->redirect($this->generateUrl('personal_show', array('id' => $entity->getId())));
         }
 
         return $this->render('PersonalBundle:DireccionPersonal:edit.html.twig', array(

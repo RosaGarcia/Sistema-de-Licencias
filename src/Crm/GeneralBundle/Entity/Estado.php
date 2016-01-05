@@ -80,51 +80,7 @@ class Estado
     {
         return $this->pais;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $localidad;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->localidad = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add localidad
-     *
-     * @param \Crm\GeneralBundle\Entity\Localidad $localidad
-     * @return Estado
-     */
-    public function addLocalidad(\Crm\GeneralBundle\Entity\Localidad $localidad)
-    {
-        $this->localidad[] = $localidad;
-
-        return $this;
-    }
-
-    /**
-     * Remove localidad
-     *
-     * @param \Crm\GeneralBundle\Entity\Localidad $localidad
-     */
-    public function removeLocalidad(\Crm\GeneralBundle\Entity\Localidad $localidad)
-    {
-        $this->localidad->removeElement($localidad);
-    }
-
-    /**
-     * Get localidad
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getLocalidad()
-    {
-        return $this->localidad;
-    }
+    
 
     public function __toString()
     {
@@ -357,5 +313,55 @@ class Estado
     public function getDireccionEmpresa()
     {
         return $this->direccionEmpresa;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $municipio;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->municipio = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->direccionCliente = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->direccionEmpresa = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->direccionFabricante = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ubicacion = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->direccionPersonal = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add municipio
+     *
+     * @param \Crm\GeneralBundle\Entity\Municipio $municipio
+     * @return Estado
+     */
+    public function addMunicipio(\Crm\GeneralBundle\Entity\Municipio $municipio)
+    {
+        $this->municipio[] = $municipio;
+
+        return $this;
+    }
+
+    /**
+     * Remove municipio
+     *
+     * @param \Crm\GeneralBundle\Entity\Municipio $municipio
+     */
+    public function removeMunicipio(\Crm\GeneralBundle\Entity\Municipio $municipio)
+    {
+        $this->municipio->removeElement($municipio);
+    }
+
+    /**
+     * Get municipio
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMunicipio()
+    {
+        return $this->municipio;
     }
 }

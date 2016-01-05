@@ -12,4 +12,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class EmpresaRepository extends EntityRepository
 {
+	public function empresa($id)
+	{
+		return $this->getEntityManager()->createQuery('SELECT e, de FROM EmpresaBundle:DireccionEmpresa de JOIN de.empresa e WHERE e.id = :id')->setParameter('id',$id)->getResult();
+	}
 }

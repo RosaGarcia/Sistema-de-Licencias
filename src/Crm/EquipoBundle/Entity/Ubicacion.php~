@@ -192,10 +192,6 @@ class Ubicacion
     {
         return $this->equipo;
     }
-    /**
-     * @var \Crm\GeneralBundle\Entity\Localidad
-     */
-    private $localidad;
 
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
@@ -206,30 +202,6 @@ class Ubicacion
      * @var \Crm\GeneralBundle\Entity\Pais
      */
     private $pais;
-
-
-    /**
-     * Set localidad
-     *
-     * @param \Crm\GeneralBundle\Entity\Localidad $localidad
-     * @return Ubicacion
-     */
-    public function setLocalidad(\Crm\GeneralBundle\Entity\Localidad $localidad = null)
-    {
-        $this->localidad = $localidad;
-
-        return $this;
-    }
-
-    /**
-     * Get localidad
-     *
-     * @return \Crm\GeneralBundle\Entity\Localidad 
-     */
-    public function getLocalidad()
-    {
-        return $this->localidad;
-    }
 
     /**
      * Set estado

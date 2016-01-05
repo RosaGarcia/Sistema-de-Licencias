@@ -95,7 +95,7 @@ class FabricanteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('FabricanteBundle:Fabricante')->find($id);
+        $entity = $em->getRepository('FabricanteBundle:Fabricante')->fabricante($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Fabricante entity.');
@@ -104,7 +104,7 @@ class FabricanteController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('FabricanteBundle:Fabricante:show.html.twig', array(
-            'entity'      => $entity,
+            'entities'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }

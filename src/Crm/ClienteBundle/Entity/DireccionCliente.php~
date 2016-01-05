@@ -192,10 +192,7 @@ class DireccionCliente
     {
         return $this->cliente;
     }
-    /**
-     * @var \Crm\GeneralBundle\Entity\Localidad
-     */
-    private $localidad;
+    
 
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
@@ -206,30 +203,6 @@ class DireccionCliente
      * @var \Crm\GeneralBundle\Entity\Pais
      */
     private $pais;
-
-
-    /**
-     * Set localidad
-     *
-     * @param \Crm\GeneralBundle\Entity\Localidad $localidad
-     * @return DireccionCliente
-     */
-    public function setLocalidad(\Crm\GeneralBundle\Entity\Localidad $localidad = null)
-    {
-        $this->localidad = $localidad;
-
-        return $this;
-    }
-
-    /**
-     * Get localidad
-     *
-     * @return \Crm\GeneralBundle\Entity\Localidad 
-     */
-    public function getLocalidad()
-    {
-        return $this->localidad;
-    }
 
     /**
      * Set estado

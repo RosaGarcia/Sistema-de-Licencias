@@ -49,7 +49,7 @@ class DireccionEmpresaController extends Controller
                                 'Se ha creado el registro exitosamente'
                             );
 
-            return $this->redirect($this->generateUrl('direccionempresa_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('empresa_show', array('id' => $entity->getId())));
         }
 
         return $this->render('EmpresaBundle:DireccionEmpresa:new.html.twig', array(
@@ -181,7 +181,7 @@ class DireccionEmpresaController extends Controller
                                 'Se ha editado el registro exitosamente'
                             );
 
-            return $this->redirect($this->generateUrl('direccionempresa'));
+           return $this->redirect($this->generateUrl('empresa_show', array('id' => $entity->getId())));
         }
 
         return $this->render('EmpresaBundle:DireccionEmpresa:edit.html.twig', array(

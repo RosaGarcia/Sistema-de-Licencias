@@ -48,7 +48,7 @@ class DireccionClienteController extends Controller
                                 'Se ha creado el registro exitosamente'
                             );
 
-            return $this->redirect($this->generateUrl('direccioncliente_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('cliente_show', array('id' => $entity->getId())));
         }
 
         return $this->render('ClienteBundle:DireccionCliente:new.html.twig', array(
@@ -180,7 +180,7 @@ class DireccionClienteController extends Controller
                                 'Se ha editado el registro exitosamente'
                             );
 
-            return $this->redirect($this->generateUrl('direccioncliente'));
+            return $this->redirect($this->generateUrl('cliente_show', array('id' => $entity->getId())));
         }
 
         return $this->render('ClienteBundle:DireccionCliente:edit.html.twig', array(
