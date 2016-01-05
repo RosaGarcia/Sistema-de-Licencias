@@ -15,10 +15,8 @@ class VentaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('fechaVenta')
-            ->add('usuarios')
-            
-        ;
+            ->add('fechaVenta', 'date', array('input' =>'timestamp','widget'=>'choice')) 
+            ->add('usuarios');
     }
     
     /**

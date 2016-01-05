@@ -29,7 +29,7 @@
                             <div class="col-md-6">
                                 <div class="btn-group">
                                     <a href="{{ path('equipo_new') }}" class="btn green btn-outline">
-                                        Crear nueva Equipo
+                                        Crear nuevo Equipo
                                     </a>  
                                 </div>
                             </div>
@@ -52,11 +52,11 @@
                                     <td>{{ entity.numeroSerie }}</td>
                                     <td>{% if entity.fechaInstalacion %}{{ entity.fechaInstalacion|date('Y-m-d H:i:s') }}{% endif %}</td>
                                      <td>{{ entity.cliente }}</td>
+                                    
                                     <td>
                                         <a href="{{ path('equipo_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
                                         
-                                        <a href="{{ path('equipo_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">
-                                        Editar</a>
+                                        <a href="{{ path('equipo_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -68,3 +68,4 @@
     </div>
 
 {% endblock %}
+
