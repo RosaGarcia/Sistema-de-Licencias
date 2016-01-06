@@ -149,6 +149,7 @@ class MunicipioController extends Controller
 
 
         $form->add('submit', 'submit', array('label' => 'Editar','attr' => array('class' => 'btn btn-primary')));
+        
         return $form;
     }
     /**
@@ -219,7 +220,7 @@ class MunicipioController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('municipio_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
     }
