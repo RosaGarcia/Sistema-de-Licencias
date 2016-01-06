@@ -40,6 +40,11 @@ class DireccionCliente
     private $codigoPostal;
 
     /**
+     * @var string
+     */
+    private $localidad;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -164,12 +169,7 @@ class DireccionCliente
         return $this->codigoPostal;
     }
 
-
-<<<<<<< HEAD
-    /**
-=======
-     /**
->>>>>>> 46e5a99c75fd2ce855a269451563186199af0eea
+   /**
      * Set localidad
      *
      * @param string $localidad
