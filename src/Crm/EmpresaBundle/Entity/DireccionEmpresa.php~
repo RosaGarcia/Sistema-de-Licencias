@@ -237,7 +237,7 @@ class DireccionEmpresa
      * @param \Crm\GenaralBundle\Entity\Estado $estado
      * @return DireccionEmpresa
      */
-    public function setEstado(\Crm\GenaralBundle\Entity\Estado $estado = null)
+    public function setEstado(\Crm\GeneralBundle\Entity\Estado $estado = null)
     {
         $this->estado = $estado;
 
@@ -247,7 +247,7 @@ class DireccionEmpresa
     /**
      * Get estado
      *
-     * @return \Crm\GenaralBundle\Entity\Estado 
+     * @return \Crm\GeneralBundle\Entity\Estado 
      */
     public function getEstado()
     {
