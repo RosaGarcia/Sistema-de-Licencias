@@ -27,10 +27,17 @@ Crm\EquipoBundle\Entity\Ubicacion:
         codigoPostal:
             type: string
             column: codigo_postal
+<<<<<<< HEAD
             length: '5'
         localidad:
              type: string
              length: '50'
+=======
+            length: '10'
+        localidad:
+            type: string
+            length: '50'
+>>>>>>> proyecto
     manyToOne:
         equipo:
           targetEntity: Crm\EquipoBundle\Entity\Equipo

@@ -23,8 +23,13 @@ class DireccionEmpresaType extends AbstractType
             ->add('empresa', new EmpresaType())
             ->add('pais')
             ->add('estado')
+<<<<<<< HEAD
             ->add('localidad','text',array('attr' => array('class' => 'form-control')))
             ->add('municipio')
+=======
+            ->add('municipio')
+            ->add('localidad')
+>>>>>>> proyecto
         ;
     }
     

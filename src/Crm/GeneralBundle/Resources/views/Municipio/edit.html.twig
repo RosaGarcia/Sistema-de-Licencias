@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends '::base.html.twig' %}
 
 {% block body -%}
@@ -13,4 +14,64 @@
     </li>
     <li>{{ form(delete_form) }}</li>
 </ul>
+=======
+{% extends '::frontend.html.twig' %}
+
+{% block body -%}
+
+    <div class="row">
+    	<div class="col-xs-12 col-sm-12 com-md-12">
+        	<h2><a href="{{ path('municipio') }}">
+            	Municipio:
+        	</a>
+        	<span>
+            	Editar
+        	</span></h2>
+    	</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12">
+        	<div class="portlet light tasks-widget ">
+            	<div class="portlet-title">
+                	<div class="caption">
+                		<i class="icon-share font-blue"></i>
+                        	<span class="caption-subject font-green bold uppercase">Editar Municipio</span>
+                	</div>
+            	</div>
+            	<div class="portlet-body">
+                	<div class="task-content">
+
+    					{{ form_start(edit_form) }}
+
+	    					<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Municipio:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.municipio) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Estado:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.estado,{"attr":{"class":"form-control"}}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+
+            			{{ form_end(edit_form) }}
+            			
+            		</div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+    
+>>>>>>> proyecto
 {% endblock %}

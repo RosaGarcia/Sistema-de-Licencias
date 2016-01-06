@@ -38,6 +38,10 @@ class DireccionCliente
      * @var string
      */
     private $codigoPostal;
+    /**
+     * @var integer
+     */
+    private $localidad;
 
     /**
      * @var string
@@ -170,7 +174,11 @@ class DireccionCliente
         return $this->codigoPostal;
     }
 
+<<<<<<< HEAD
      /**
+=======
+    /**
+>>>>>>> proyecto
      * Set localidad
      *
      * @param string $localidad
@@ -220,6 +228,10 @@ class DireccionCliente
     {
         return $this->cliente;
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> proyecto
 
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
@@ -275,5 +287,33 @@ class DireccionCliente
     public function getPais()
     {
         return $this->pais;
+    }
+    /**
+     * @var \Crm\GeneralBundle\Entity\Municipio
+     */
+    private $municipio;
+
+
+    /**
+     * Set municipio
+     *
+     * @param \Crm\GeneralBundle\Entity\Municipio $municipio
+     * @return DireccionCliente
+     */
+    public function setMunicipio(\Crm\GeneralBundle\Entity\Municipio $municipio = null)
+    {
+        $this->municipio = $municipio;
+
+        return $this;
+    }
+
+    /**
+     * Get municipio
+     *
+     * @return \Crm\GeneralBundle\Entity\Municipio 
+     */
+    public function getMunicipio()
+    {
+        return $this->municipio;
     }
 }

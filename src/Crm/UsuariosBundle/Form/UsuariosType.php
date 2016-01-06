@@ -16,7 +16,13 @@ class UsuariosType extends AbstractType
     {
         $builder
             ->add('nombre','text',array('attr' => array('class' => 'form-control')))
-            ->add('contrasena','password',array('attr' => array('class' => 'form-control')))
+            ->add('contrasena','repeated', array(
+                    'type' => 'password',
+                    'invalid_message' => 'Los paswords no coinciden.',
+                    'options' => array('attr' => array('class' => 'input-xlarge','minlength'=>8)),
+                    'required' => true,
+                    'first_options'  => array('label' => 'Password'),
+                    'second_options' => array('label' => 'Repite password')))
             ->add('personal')
             ->add('rol')
         ;

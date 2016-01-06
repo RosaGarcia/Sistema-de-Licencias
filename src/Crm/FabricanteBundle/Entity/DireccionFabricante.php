@@ -170,7 +170,11 @@ class DireccionFabricante
         return $this->codigoPostal;
     }
 
+<<<<<<< HEAD
      /**
+=======
+    /**
+>>>>>>> proyecto
      * Set localidad
      *
      * @param string $localidad
@@ -220,7 +224,10 @@ class DireccionFabricante
     {
         return $this->fabricante;
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> proyecto
 
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
@@ -232,7 +239,10 @@ class DireccionFabricante
      */
     private $pais;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> proyecto
     /**
      * Set estado
      *
@@ -277,5 +287,33 @@ class DireccionFabricante
     public function getPais()
     {
         return $this->pais;
+    }
+    /**
+     * @var \Crm\GeneralBundle\Entity\Municipio
+     */
+    private $municipio;
+
+
+    /**
+     * Set municipio
+     *
+     * @param \Crm\GeneralBundle\Entity\Municipio $municipio
+     * @return DireccionFabricante
+     */
+    public function setMunicipio(\Crm\GeneralBundle\Entity\Municipio $municipio = null)
+    {
+        $this->municipio = $municipio;
+
+        return $this;
+    }
+
+    /**
+     * Get municipio
+     *
+     * @return \Crm\GeneralBundle\Entity\Municipio 
+     */
+    public function getMunicipio()
+    {
+        return $this->municipio;
     }
 }

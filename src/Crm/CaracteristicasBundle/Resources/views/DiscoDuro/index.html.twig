@@ -29,7 +29,7 @@
                             <div class="col-md-6">
                                 <div class="btn-group">
                                     <a href="{{ path('discoduro_new') }}" class="btn green btn-outline">
-                                        Crear nuevo Disco Duro
+                                        Crear nuevo disco duro
                                     </a>  
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                             <tr>
                                 <th class="oculto">Id</th>
                                 <th>Marca</th>
-                                <th colspan="2">Capacidad</th>
+                                <th>Capacidad</th>
                                 <th>Tipo</th>
                                 <th>Termino</th>
                                 <th>Actions</th>
@@ -51,8 +51,7 @@
                                 <tr>
                                     <td class="oculto"><a href="{{ path('discoduro_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                                     <td>{{ entity.marca }}</td>
-                                    <td>{{ entity.capacidad }}</td>
-                                    <td>{{ entity.unidad }}</td>
+                                    <td>{{ entity.capacidad }} {{ entity.unidad }}</td>
                                     <td>{{ entity.tipo }}</td>
                                     <td>{{ entity.terminoDisco }}</td>
                                     <td>

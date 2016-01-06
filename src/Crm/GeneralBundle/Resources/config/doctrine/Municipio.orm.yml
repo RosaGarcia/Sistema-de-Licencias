@@ -9,30 +9,30 @@ Crm\GeneralBundle\Entity\Municipio:
             generator:
                 strategy: AUTO
     fields:
-        nombreMunicipio:
+        municipio:
             type: string
             length: '50'
     manyToOne:
         estado:
-            targetEntity: Crm\GeneralBundle\Entity\Estado
-            inversedBy: Municipio
-            joinColumn:
-                name: estado_id
-                referencedColumnName: id
+          targetEntity: Crm\GeneralBundle\Entity\Estado
+          inversedBy: municipio
+          joinColumn:
+               name: estado_id
+               referencedColumnName: id
     oneToMany:
         direccionCliente:
-            targetEntity: Crm\ClienteBundle\Entity\DireccionCliente
-            mappedBy: Municipio
+           targetEntity: Crm\ClienteBundle\Entity\DireccionCliente
+           mappedBy: Municipio
         direccionEmpresa:
-            targetEntity: Crm\EmpresaBundle\Entity\DireccionEmpresa
-            mappedBy: Municipio
+           targetEntity: Crm\EmpresaBundle\Entity\DireccionEmpresa
+           mappedBy: Municipio
         direccionFabricante:
-            targetEntity: Crm\FabricanteBundle\Entity\DireccionFabricante
-            mappedBy: Municipio
+           targetEntity: Crm\FabricanteBundle\Entity\DireccionFabricante
+           mappedBy: Municipio
         ubicacion:
-            targetEntity: Crm\EquipoBundle\Entity\Ubicacion
-            mappedBy: Municipio
+           targetEntity: Crm\EquipoBundle\Entity\Ubicacion
+           mappedBy: Municipio
         direccionPersonal:
-            targetEntity: Crm\PersonalBundle\Entity\DireccionPersonal
-            mappedBy: Municipio
+           targetEntity: Crm\PersonalBundle\Entity\DireccionPersonal
+           mappedBy: Municipio
     lifecycleCallbacks: {  }

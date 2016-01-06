@@ -28,7 +28,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="btn-group">
-                                    <a href="{{ path('personal_new') }}" class="btn green btn-outline">
+                                    <a href="{{ path('direccionpersonal_new') }}" class="btn green btn-outline">
                                         Crear nueva personal
                                     </a>  
                                 </div>
@@ -61,7 +61,7 @@
                 <td>
                         <a href="{{ path('personal_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
                     
-                        <a href="{{ path('personal_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
+                        <a href="{{ path('direccionpersonal_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
                 </td>
             </tr>
         {% endfor %}

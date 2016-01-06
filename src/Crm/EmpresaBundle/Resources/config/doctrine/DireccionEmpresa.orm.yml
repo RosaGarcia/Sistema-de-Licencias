@@ -25,9 +25,15 @@ Crm\EmpresaBundle\Entity\DireccionEmpresa:
             length: '50'
         codigoPostal:
             type: string
+<<<<<<< HEAD
             column: codigo_postal
             length: '5'
         localidad: 
+=======
+            length: '10'
+            column: codigo_postal
+        localidad:
+>>>>>>> proyecto
             type: string
             length: '50'
     manyToOne:

@@ -26,8 +26,13 @@ Crm\ClienteBundle\Entity\DireccionCliente:
             length: '50'
         codigoPostal:
             type: string
+<<<<<<< HEAD
             column: codigo_postal
             length: '5'
+=======
+            length: '10'
+            column: codigo_postal
+>>>>>>> proyecto
         localidad:
             type: string
             length: '50'

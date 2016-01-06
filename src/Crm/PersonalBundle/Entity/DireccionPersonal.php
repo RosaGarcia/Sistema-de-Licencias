@@ -220,6 +220,10 @@ class DireccionPersonal
     {
         return $this->personal;
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> proyecto
 
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
@@ -275,5 +279,33 @@ class DireccionPersonal
     public function getPais()
     {
         return $this->pais;
+    }
+    /**
+     * @var \Crm\GeneralBundle\Entity\Municipio
+     */
+    private $municipio;
+
+
+    /**
+     * Set municipio
+     *
+     * @param \Crm\GeneralBundle\Entity\Municipio $municipio
+     * @return DireccionPersonal
+     */
+    public function setMunicipio(\Crm\GeneralBundle\Entity\Municipio $municipio = null)
+    {
+        $this->municipio = $municipio;
+
+        return $this;
+    }
+
+    /**
+     * Get municipio
+     *
+     * @return \Crm\GeneralBundle\Entity\Municipio 
+     */
+    public function getMunicipio()
+    {
+        return $this->municipio;
     }
 }

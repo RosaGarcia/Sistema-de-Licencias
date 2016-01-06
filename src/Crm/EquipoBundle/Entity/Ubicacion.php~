@@ -35,9 +35,14 @@ class Ubicacion
     private $colonia;
 
     /**
-     * @var integer
+     * @var string
      */
     private $codigoPostal;
+
+    /**
+     * @var string
+     */
+    private $localidad;
 
 
     /**
@@ -145,7 +150,7 @@ class Ubicacion
     /**
      * Set codigoPostal
      *
-     * @param integer $codigoPostal
+     * @param string $codigoPostal
      * @return Ubicacion
      */
     public function setCodigoPostal($codigoPostal)
@@ -158,11 +163,34 @@ class Ubicacion
     /**
      * Get codigoPostal
      *
-     * @return integer 
+     * @return string 
      */
     public function getCodigoPostal()
     {
         return $this->codigoPostal;
+    }
+
+    /**
+     * Set localidad
+     *
+     * @param string $localidad
+     * @return Ubicacion
+     */
+    public function setLocalidad($localidad)
+    {
+        $this->localidad = $localidad;
+
+        return $this;
+    }
+
+    /**
+     * Get localidad
+     *
+     * @return string 
+     */
+    public function getLocalidad()
+    {
+        return $this->localidad;
     }
     /**
      * @var \Crm\EquipoBundle\Entity\Equipo
@@ -192,10 +220,6 @@ class Ubicacion
     {
         return $this->equipo;
     }
-    /**
-     * @var \Crm\GeneralBundle\Entity\Localidad
-     */
-    private $localidad;
 
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
@@ -206,30 +230,6 @@ class Ubicacion
      * @var \Crm\GeneralBundle\Entity\Pais
      */
     private $pais;
-
-
-    /**
-     * Set localidad
-     *
-     * @param \Crm\GeneralBundle\Entity\Localidad $localidad
-     * @return Ubicacion
-     */
-    public function setLocalidad(\Crm\GeneralBundle\Entity\Localidad $localidad = null)
-    {
-        $this->localidad = $localidad;
-
-        return $this;
-    }
-
-    /**
-     * Get localidad
-     *
-     * @return \Crm\GeneralBundle\Entity\Localidad 
-     */
-    public function getLocalidad()
-    {
-        return $this->localidad;
-    }
 
     /**
      * Set estado
@@ -275,5 +275,33 @@ class Ubicacion
     public function getPais()
     {
         return $this->pais;
+    }
+    /**
+     * @var \Crm\GeneralBundle\Entity\Municipio
+     */
+    private $municipio;
+
+
+    /**
+     * Set municipio
+     *
+     * @param \Crm\GeneralBundle\Entity\Municipio $municipio
+     * @return Ubicacion
+     */
+    public function setMunicipio(\Crm\GeneralBundle\Entity\Municipio $municipio = null)
+    {
+        $this->municipio = $municipio;
+
+        return $this;
+    }
+
+    /**
+     * Get municipio
+     *
+     * @return \Crm\GeneralBundle\Entity\Municipio 
+     */
+    public function getMunicipio()
+    {
+        return $this->municipio;
     }
 }

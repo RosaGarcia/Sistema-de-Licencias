@@ -15,7 +15,12 @@ class MunicipioType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+<<<<<<< HEAD:src/Crm/GeneralBundle/Form/MunicipioType.php
             ->add('nombreMunicipio')
+=======
+            ->add('municipio','text',array('attr' => array('class' => 'form-control')))
+            ->add('estado')
+>>>>>>> proyecto:src/Crm/GeneralBundle/Form/MunicipioType.php
         ;
     }
     

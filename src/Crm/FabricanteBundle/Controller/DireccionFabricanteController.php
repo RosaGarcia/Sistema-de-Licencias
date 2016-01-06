@@ -48,7 +48,7 @@ class DireccionFabricanteController extends Controller
                                 'Se ha creado el registro exitosamente'
                             );
 
-            return $this->redirect($this->generateUrl('direccionfabricante_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('fabricante_show', array('id' => $entity->getId())));
         }
 
         return $this->render('FabricanteBundle:DireccionFabricante:new.html.twig', array(
@@ -180,7 +180,7 @@ class DireccionFabricanteController extends Controller
                                 'Se ha editado el registro exitosamente'
                             );
 
-            return $this->redirect($this->generateUrl('direccionfabricante'));
+            return $this->redirect($this->generateUrl('fabricante_show', array('id' => $entity->getId())));
         }
 
         return $this->render('FabricanteBundle:DireccionFabricante:edit.html.twig', array(

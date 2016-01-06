@@ -1,31 +1,119 @@
 {% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    
+
     <div class="row">
-       	<div class="col-xs-12 col-sm-12 com-md-12">
-        	<h2><a href="{{ path('direccionpersonal') }}">
-            		Direccion Personal:
-            	</a>
-         		Editar
-        	</h2>
+    	<div class="col-xs-12 col-sm-12 com-md-12">
+        	<h2><a href="{{ path('personal') }}">
+            	Personal:
+        	</a>
+        	<span>
+            	Editar
+        	</span></h2>
     	</div>
 	</div>
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12">
-	        <div class="portlet light tasks-widget ">
-	            <div class="portlet-title">
-	                <div class="caption">
-	                	<i class="icon-pencil font-green"></i>
-	                    <span class="caption-subject font-green bold uppercase">Editar Direccion Personal</span>
-	                </div>
-	            </div>
-	            <div class="portlet-body">
-	                <div class="task-content">
+        	<div class="portlet light tasks-widget ">
+            	<div class="portlet-title">
+                	<div class="caption">
+                		<i class="icon-share font-blue"></i>
+                        	<span class="caption-subject font-green bold uppercase">Editar Personal</span>
+                	</div>
+            	</div>
+            	<div class="portlet-body">
+                	<div class="task-content">
+                		
+                		{{ form_start(edit_form) }}
 
-	                		{{ form_start(edit_form) }}
-
+                			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Nombre:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.personal.nombre) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Apellido Paterno:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.personal.apePat) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Apellido Materno:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.personal.apeMat) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Telefono:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ form_widget(edit_form.personal.telefono) }}
+                                    </div>
+                                
+                                    <div class="col-xs-12 col-sm-2 col-md-1">
+                                        Celular:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ form_widget(edit_form.personal.celular) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Email:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.personal.email) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Estatus:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.personal.estatus,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Empresa:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.personal.empresa,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Puesto:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.personal.puesto,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
                 			<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
@@ -36,6 +124,7 @@
 	                    			</div>
 	                			</div>
 	            			</div>
+
                 			<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
@@ -46,6 +135,7 @@
 	                    			</div>
 	                			</div>
 	            			</div>
+
                 			<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
@@ -56,6 +146,7 @@
 	                    			</div>
 	                			</div>
 	            			</div>
+
                 			<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
@@ -66,6 +157,7 @@
 	                    			</div>
 	                			</div>
 	            			</div>
+
                 			<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
@@ -76,23 +168,13 @@
 	                    			</div>
 	                			</div>
 	            			</div>
-                			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Personal:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.personal,{"attr":{"class":"form-control"},"rewuired":"true"}) }}
-	                    			</div>
-	                			</div>
-	            			</div>
 	            			<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
 	                    				Pais:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.pais,{"attr":{"class":"form-control"},"rewuired":"true"}) }}
+	                    				{{ form_widget(edit_form.pais,{"attr":{"class":"form-control"},"required":"true"}) }}
 	                    			</div>
 	                			</div>
 	            			</div>
@@ -102,7 +184,17 @@
 	                    				Estado:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.estado,{"attr":{"class":"form-control"},"rewuired":"true"}) }}
+	                    				{{ form_widget(edit_form.estado,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Municipio:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.municipio,{"attr":{"class":"form-control"},"required":"true"}) }}
 	                    			</div>
 	                			</div>
 	            			</div>
@@ -112,18 +204,17 @@
 	                    				Localidad:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.localidad,{"attr":{"class":"form-control"},"rewuired":"true"}) }}
+	                    				{{ form_widget(edit_form.localidad) }}
 	                    			</div>
 	                			</div>
 	            			</div>
 
 						{{ form_end(edit_form) }}
-
-					</div>
-	        	</div>
-	    	</div>
+            			
+            		</div>
+		        </div>
+		    </div>
 		</div>
 	</div>
 
-        
 {% endblock %}

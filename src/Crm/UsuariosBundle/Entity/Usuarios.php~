@@ -136,4 +136,9 @@ class Usuarios
     {
         return $this->rol;
     }
+
+     public function __toString()
+    {
+        return $this->nombre;
+    }
 }
