@@ -80,11 +80,6 @@ class Estado
     {
         return $this->pais;
     }
-<<<<<<< HEAD
-=======
-    
->>>>>>> proyecto
-
     public function __toString()
     {
         return $this->nombreEstado;

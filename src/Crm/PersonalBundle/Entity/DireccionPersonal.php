@@ -220,11 +220,6 @@ class DireccionPersonal
     {
         return $this->personal;
     }
-<<<<<<< HEAD
-=======
-    
->>>>>>> proyecto
-
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
      */

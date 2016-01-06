@@ -44,12 +44,6 @@ class DireccionCliente
     private $localidad;
 
     /**
-     * @var string
-     */
-    private $localidad;
-
-
-    /**
      * Get id
      *
      * @return integer 
@@ -174,11 +168,8 @@ class DireccionCliente
         return $this->codigoPostal;
     }
 
-<<<<<<< HEAD
+
      /**
-=======
-    /**
->>>>>>> proyecto
      * Set localidad
      *
      * @param string $localidad
@@ -228,11 +219,6 @@ class DireccionCliente
     {
         return $this->cliente;
     }
-<<<<<<< HEAD
-=======
-    
->>>>>>> proyecto
-
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
      */

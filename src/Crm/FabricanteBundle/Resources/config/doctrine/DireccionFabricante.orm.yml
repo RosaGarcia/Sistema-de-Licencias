@@ -26,11 +26,7 @@ Crm\FabricanteBundle\Entity\DireccionFabricante:
         codigoPostal:
             type: string
             column: codigo_postal
-<<<<<<< HEAD
             length: '5'
-=======
-            length: '10'
->>>>>>> proyecto
         localidad:
             type: string
             length: '50'

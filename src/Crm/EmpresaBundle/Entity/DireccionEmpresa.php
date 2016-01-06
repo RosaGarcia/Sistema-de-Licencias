@@ -220,11 +220,6 @@ class DireccionEmpresa
     {
         return $this->empresa;
     }
-<<<<<<< HEAD
-=======
-   
->>>>>>> proyecto
-
     /**
      * @var \Crm\GenaralBundle\Entity\Estado
      */

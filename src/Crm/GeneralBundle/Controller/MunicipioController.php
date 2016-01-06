@@ -147,12 +147,8 @@ class MunicipioController extends Controller
             'method' => 'PUT',
         ));
 
-<<<<<<< HEAD:src/Crm/GeneralBundle/Controller/MunicipioController.php
-        $form->add('submit', 'submit', array('label' => 'Update'));
 
-=======
         $form->add('submit', 'submit', array('label' => 'Editar','attr' => array('class' => 'btn btn-primary')));
->>>>>>> proyecto:src/Crm/GeneralBundle/Controller/MunicipioController.php
         return $form;
     }
     /**
@@ -176,11 +172,9 @@ class MunicipioController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-<<<<<<< HEAD:src/Crm/GeneralBundle/Controller/MunicipioController.php
-            return $this->redirect($this->generateUrl('municipio_edit', array('id' => $id)));
-=======
+
             return $this->redirect($this->generateUrl('municipio_show', array('id' => $entity->getId())));
->>>>>>> proyecto:src/Crm/GeneralBundle/Controller/MunicipioController.php
+
         }
 
         return $this->render('GeneralBundle:Municipio:edit.html.twig', array(

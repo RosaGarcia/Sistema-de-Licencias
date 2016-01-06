@@ -184,11 +184,7 @@ class Ubicacion
     }
 
     /**
-<<<<<<< HEAD
-     * Get codigoPostal
-=======
      * Get localidad
->>>>>>> proyecto
      *
      * @return string 
      */
@@ -224,11 +220,6 @@ class Ubicacion
     {
         return $this->equipo;
     }
-<<<<<<< HEAD
-   
-=======
->>>>>>> proyecto
-
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
      */
@@ -239,10 +230,6 @@ class Ubicacion
      */
     private $pais;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> proyecto
     /**
      * Set estado
      *
