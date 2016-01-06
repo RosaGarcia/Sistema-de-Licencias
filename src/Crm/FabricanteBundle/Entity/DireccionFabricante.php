@@ -35,9 +35,14 @@ class DireccionFabricante
     private $colonia;
 
     /**
-     * @var integer
+     * @var string
      */
     private $codigoPostal;
+
+    /**
+     * @var string
+     */
+    private $localidad;
 
 
     /**
@@ -145,7 +150,7 @@ class DireccionFabricante
     /**
      * Set codigoPostal
      *
-     * @param integer $codigoPostal
+     * @param string $codigoPostal
      * @return DireccionFabricante
      */
     public function setCodigoPostal($codigoPostal)
@@ -158,11 +163,34 @@ class DireccionFabricante
     /**
      * Get codigoPostal
      *
-     * @return integer 
+     * @return string 
      */
     public function getCodigoPostal()
     {
         return $this->codigoPostal;
+    }
+
+     /**
+     * Set localidad
+     *
+     * @param string $localidad
+     * @return DireccionFabricante
+     */
+    public function setLocalidad($localidad)
+    {
+        $this->localidad = $localidad;
+
+        return $this;
+    }
+
+    /**
+     * Get localidad
+     *
+     * @return string 
+     */
+    public function getLocalidad()
+    {
+        return $this->localidad;
     }
     /**
      * @var \Crm\FabricanteBundle\Entity\Fabricante
@@ -192,10 +220,7 @@ class DireccionFabricante
     {
         return $this->fabricante;
     }
-    /**
-     * @var \Crm\GeneralBundle\Entity\Localidad
-     */
-    private $localidad;
+    
 
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
@@ -207,29 +232,6 @@ class DireccionFabricante
      */
     private $pais;
 
-
-    /**
-     * Set localidad
-     *
-     * @param \Crm\GeneralBundle\Entity\Localidad $localidad
-     * @return DireccionFabricante
-     */
-    public function setLocalidad(\Crm\GeneralBundle\Entity\Localidad $localidad = null)
-    {
-        $this->localidad = $localidad;
-
-        return $this;
-    }
-
-    /**
-     * Get localidad
-     *
-     * @return \Crm\GeneralBundle\Entity\Localidad 
-     */
-    public function getLocalidad()
-    {
-        return $this->localidad;
-    }
 
     /**
      * Set estado

@@ -35,9 +35,14 @@ class DireccionCliente
     private $colonia;
 
     /**
-     * @var integer
+     * @var string
      */
     private $codigoPostal;
+
+    /**
+     * @var string
+     */
+    private $localidad;
 
 
     /**
@@ -145,7 +150,7 @@ class DireccionCliente
     /**
      * Set codigoPostal
      *
-     * @param integer $codigoPostal
+     * @param string $codigoPostal
      * @return DireccionCliente
      */
     public function setCodigoPostal($codigoPostal)
@@ -158,11 +163,34 @@ class DireccionCliente
     /**
      * Get codigoPostal
      *
-     * @return integer 
+     * @return string 
      */
     public function getCodigoPostal()
     {
         return $this->codigoPostal;
+    }
+
+     /**
+     * Set localidad
+     *
+     * @param string $localidad
+     * @return DireccionCliente
+     */
+    public function setLocalidad($localidad)
+    {
+        $this->localidad = $localidad;
+
+        return $this;
+    }
+
+    /**
+     * Get localidad
+     *
+     * @return string 
+     */
+    public function getLocalidad()
+    {
+        return $this->localidad;
     }
     /**
      * @var \Crm\ClienteBundle\Entity\Cliente
@@ -192,10 +220,6 @@ class DireccionCliente
     {
         return $this->cliente;
     }
-    /**
-     * @var \Crm\GeneralBundle\Entity\Localidad
-     */
-    private $localidad;
 
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
@@ -206,30 +230,6 @@ class DireccionCliente
      * @var \Crm\GeneralBundle\Entity\Pais
      */
     private $pais;
-
-
-    /**
-     * Set localidad
-     *
-     * @param \Crm\GeneralBundle\Entity\Localidad $localidad
-     * @return DireccionCliente
-     */
-    public function setLocalidad(\Crm\GeneralBundle\Entity\Localidad $localidad = null)
-    {
-        $this->localidad = $localidad;
-
-        return $this;
-    }
-
-    /**
-     * Get localidad
-     *
-     * @return \Crm\GeneralBundle\Entity\Localidad 
-     */
-    public function getLocalidad()
-    {
-        return $this->localidad;
-    }
 
     /**
      * Set estado

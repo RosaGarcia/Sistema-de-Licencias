@@ -1,10 +1,10 @@
+general_municipio:
+    resource: "@GeneralBundle/Resources/config/routing/municipio.yml"
+    prefix:   /municipio
+
 general_pais:
     resource: "@GeneralBundle/Resources/config/routing/pais.yml"
     prefix:   /pais
-
-general_localidad:
-    resource: "@GeneralBundle/Resources/config/routing/localidad.yml"
-    prefix:   /localidad
 
 general_estatus:
     resource: "@GeneralBundle/Resources/config/routing/estatus.yml"

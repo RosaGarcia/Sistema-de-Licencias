@@ -25,8 +25,12 @@ Crm\EquipoBundle\Entity\Ubicacion:
             type: string
             length: '50'
         codigoPostal:
-            type: integer
+            type: string
             column: codigo_postal
+            length: '5'
+        localidad:
+             type: string
+             length: '50'
     manyToOne:
         equipo:
           targetEntity: Crm\EquipoBundle\Entity\Equipo
@@ -34,11 +38,11 @@ Crm\EquipoBundle\Entity\Ubicacion:
           joinColumn:
                 name: equipo_id
                 referencedColumnName: id
-        localidad:
-          targetEntity: Crm\GeneralBundle\Entity\Localidad
+        municipio:
+          targetEntity: Crm\GeneralBundle\Entity\Municipio
           inversedBy: ubicacion
           joinColumn:
-                name: localidad_id
+                name: municipio_id
                 referencedColumnName: id
         estado:
           targetEntity: Crm\GeneralBundle\Entity\Estado

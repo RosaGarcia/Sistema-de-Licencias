@@ -1,12 +1,12 @@
 <?php
 
-namespace Crm\VentasBundle\Form;
+namespace Crm\GeneralBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class VentaType extends AbstractType
+class MunicipioType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,9 +15,7 @@ class VentaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('fechaVenta','date',array('widget'=>'single_text'))
-            ->add('usuarios')
-            
+            ->add('nombreMunicipio')
         ;
     }
     
@@ -27,7 +25,7 @@ class VentaType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Crm\VentasBundle\Entity\Venta'
+            'data_class' => 'Crm\GeneralBundle\Entity\Municipio'
         ));
     }
 
@@ -36,6 +34,6 @@ class VentaType extends AbstractType
      */
     public function getName()
     {
-        return 'crm_ventasbundle_venta';
+        return 'crm_generalbundle_municipio';
     }
 }

@@ -19,11 +19,12 @@ class DireccionFabricanteType extends AbstractType
             ->add('numeroExt','text',array('attr' => array('class' => 'form-control')))
             ->add('numeroInt','text',array('attr' => array('class' => 'form-control')))
             ->add('colonia','text',array('attr' => array('class' => 'form-control')))
-            ->add('codigoPostal','integer',array('attr' => array('class' => 'form-control')))
-            ->add('fabricante')
-            ->add('localidad')
+            ->add('codigoPostal','text',array('attr' => array('class' => 'form-control')))
+            ->add('fabricante', new FabricanteType())
+            ->add('localidad','text',array('attr' => array('class' => 'form-control')))
             ->add('estado')
             ->add('pais')
+            ->add('municipio')
         ;
     }
     

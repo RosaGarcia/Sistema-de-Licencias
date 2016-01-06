@@ -1,0 +1,38 @@
+Crm\GeneralBundle\Entity\Municipio:
+    type: entity
+    table: null
+    repositoryClass: Crm\GeneralBundle\Entity\MunicipioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombreMunicipio:
+            type: string
+            length: '50'
+    manyToOne:
+        estado:
+            targetEntity: Crm\GeneralBundle\Entity\Estado
+            inversedBy: Municipio
+            joinColumn:
+                name: estado_id
+                referencedColumnName: id
+    oneToMany:
+        direccionCliente:
+            targetEntity: Crm\ClienteBundle\Entity\DireccionCliente
+            mappedBy: Municipio
+        direccionEmpresa:
+            targetEntity: Crm\EmpresaBundle\Entity\DireccionEmpresa
+            mappedBy: Municipio
+        direccionFabricante:
+            targetEntity: Crm\FabricanteBundle\Entity\DireccionFabricante
+            mappedBy: Municipio
+        ubicacion:
+            targetEntity: Crm\EquipoBundle\Entity\Ubicacion
+            mappedBy: Municipio
+        direccionPersonal:
+            targetEntity: Crm\PersonalBundle\Entity\DireccionPersonal
+            mappedBy: Municipio
+    lifecycleCallbacks: {  }
