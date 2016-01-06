@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class LocalidadType extends AbstractType
+class MunicipioType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,8 +15,12 @@ class LocalidadType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombreLocalidad','text',array('attr' => array('class' => 'form-control')))
+<<<<<<< HEAD:src/Crm/GeneralBundle/Form/MunicipioType.php
+            ->add('nombreMunicipio')
+=======
+            ->add('municipio','text',array('attr' => array('class' => 'form-control')))
             ->add('estado')
+>>>>>>> proyecto:src/Crm/GeneralBundle/Form/MunicipioType.php
         ;
     }
     
@@ -26,7 +30,7 @@ class LocalidadType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Crm\GeneralBundle\Entity\Localidad'
+            'data_class' => 'Crm\GeneralBundle\Entity\Municipio'
         ));
     }
 
@@ -35,6 +39,6 @@ class LocalidadType extends AbstractType
      */
     public function getName()
     {
-        return 'crm_generalbundle_localidad';
+        return 'crm_generalbundle_municipio';
     }
 }

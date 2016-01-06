@@ -35,9 +35,14 @@ class DireccionEmpresa
     private $colonia;
 
     /**
-     * @var integer
+     * @var string
      */
     private $codigoPostal;
+
+    /**
+     * @var string
+     */
+    private $localidad;
 
 
     /**
@@ -145,7 +150,7 @@ class DireccionEmpresa
     /**
      * Set codigoPostal
      *
-     * @param integer $codigoPostal
+     * @param string $codigoPostal
      * @return DireccionEmpresa
      */
     public function setCodigoPostal($codigoPostal)
@@ -158,11 +163,34 @@ class DireccionEmpresa
     /**
      * Get codigoPostal
      *
-     * @return integer 
+     * @return string 
      */
     public function getCodigoPostal()
     {
         return $this->codigoPostal;
+    }
+
+    /**
+     * Set localidad
+     *
+     * @param string $localidad
+     * @return DireccionEmpresa
+     */
+    public function setLocalidad($localidad)
+    {
+        $this->localidad = $localidad;
+
+        return $this;
+    }
+
+    /**
+     * Get localidad
+     *
+     * @return string 
+     */
+    public function getLocalidad()
+    {
+        return $this->localidad;
     }
     /**
      * @var \Crm\EmpresaBundle\Entity\Empresa
@@ -192,10 +220,10 @@ class DireccionEmpresa
     {
         return $this->empresa;
     }
-    /**
-     * @var \Crm\GeneralBundle\Entity\Localidad
-     */
-    private $localidad;
+<<<<<<< HEAD
+=======
+   
+>>>>>>> proyecto
 
     /**
      * @var \Crm\GenaralBundle\Entity\Estado
@@ -206,30 +234,6 @@ class DireccionEmpresa
      * @var \Crm\GeneralBundle\Entity\Pais
      */
     private $pais;
-
-
-    /**
-     * Set localidad
-     *
-     * @param \Crm\GeneralBundle\Entity\Localidad $localidad
-     * @return DireccionEmpresa
-     */
-    public function setLocalidad(\Crm\GeneralBundle\Entity\Localidad $localidad = null)
-    {
-        $this->localidad = $localidad;
-
-        return $this;
-    }
-
-    /**
-     * Get localidad
-     *
-     * @return \Crm\GeneralBundle\Entity\Localidad 
-     */
-    public function getLocalidad()
-    {
-        return $this->localidad;
-    }
 
     /**
      * Set estado
@@ -275,5 +279,33 @@ class DireccionEmpresa
     public function getPais()
     {
         return $this->pais;
+    }
+    /**
+     * @var \Crm\GeneralBundle\Entity\Municipio
+     */
+    private $municipio;
+
+
+    /**
+     * Set municipio
+     *
+     * @param \Crm\GeneralBundle\Entity\Municipio $municipio
+     * @return DireccionEmpresa
+     */
+    public function setMunicipio(\Crm\GeneralBundle\Entity\Municipio $municipio = null)
+    {
+        $this->municipio = $municipio;
+
+        return $this;
+    }
+
+    /**
+     * Get municipio
+     *
+     * @return \Crm\GeneralBundle\Entity\Municipio 
+     */
+    public function getMunicipio()
+    {
+        return $this->municipio;
     }
 }

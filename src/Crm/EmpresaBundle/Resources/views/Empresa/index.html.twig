@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="btn-group">
-                                    <a href="{{ path('empresa_new') }}" class="btn green btn-outline">
+                                    <a href="{{ path('direccionempresa_new') }}" class="btn green btn-outline">
                                         Crear nueva empresa
                                     </a>  
                                 </div>
@@ -43,9 +43,9 @@
                                 <th class="oculto">Id</th>
                                 <th>Razon Social</th>
                                 <th>RFC</th>
-                                <th>Telefono</th>
+                                <th>Telefono 1</th>
                                 <th>Ext</th>
-                                <th>Telefono</th>
+                                <th>Telefono 2</th>
                                 <th>Ext</th>
                                 <th>Email</th>
                                 <th>Pagina Web</th>
@@ -67,7 +67,7 @@
                                     <td>
                                         <a href="{{ path('empresa_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
                    
-                                        <a href="{{ path('empresa_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>                 
+                                        <a href="{{ path('direccionempresa_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>                 
                                     </td>
                                 </tr>
                             {% endfor %}

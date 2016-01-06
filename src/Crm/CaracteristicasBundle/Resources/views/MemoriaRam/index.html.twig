@@ -14,13 +14,13 @@
         <h2 class="alert-success">{{ flashMessage }}</h2><br /><br />
     {% endfor %}
 
-   <div class="row">
+     <div class="row">
         <div class="col-md-12">
             <div class="portlet light ">
                 <div class="portlet-title">
                     <div class="caption font-dark">
                         <i class="icon-settings font-dark"></i>
-                            <span class="caption-subject bold uppercase"> Lista Memoria Ram</span>
+                        <span class="caption-subject bold uppercase">Lista Memoria Ram</span>
                     </div>
                 </div>
                 <div class="portlet-body">
@@ -41,10 +41,10 @@
                                 <th class="oculto">Id</th>
                                 <th>Marca</th>
                                 <th>Modelo</th>
-                                <th colspan="2">Capacidad</th>
+                                <th>Capacidad</th>
                                 <th>Tipo</th>
                                 <th>Termino</th>
-                                <th>Actions</th>
+                                <th>Aciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,14 +53,13 @@
                                     <td class="oculto"><a href="{{ path('memoriaram_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                                     <td>{{ entity.marca }}</td>
                                     <td>{{ entity.modelo }}</td>
-                                    <td>{{ entity.capacidad }}</td>
-                                    <td>{{ entity.unidad }}</td>
+                                    <td>{{ entity.capacidad }} {{ entity.unidad }}</td>
                                     <td>{{ entity.tipo }}</td>
                                     <td>{{ entity.terminoMemoria }}</td>
                                     <td>
                                         <a href="{{ path('memoriaram_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
                                         
-                                            <a href="{{ path('memoriaram_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
+                                        <a href="{{ path('memoriaram_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -70,5 +69,6 @@
             </div>
         </div>
     </div>
-        
+   
 {% endblock %}
+

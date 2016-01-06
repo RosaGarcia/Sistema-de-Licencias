@@ -19,11 +19,17 @@ class DireccionEmpresaType extends AbstractType
             ->add('numeroExt','text',array('attr' => array('class' => 'form-control')))
             ->add('numeroInt','text',array('attr' => array('class' => 'form-control')))
             ->add('colonia','text',array('attr' => array('class' => 'form-control')))
-            ->add('codigoPostal','integer',array('attr' => array('class' => 'form-control')))
-            ->add('empresa')
+            ->add('codigoPostal','text',array('attr' => array('class' => 'form-control')))
+            ->add('empresa', new EmpresaType())
             ->add('pais')
             ->add('estado')
+<<<<<<< HEAD
+            ->add('localidad','text',array('attr' => array('class' => 'form-control')))
+            ->add('municipio')
+=======
+            ->add('municipio')
             ->add('localidad')
+>>>>>>> proyecto
         ;
     }
     

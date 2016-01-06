@@ -99,7 +99,7 @@ class EmpresaController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EmpresaBundle:Empresa')->find($id);
+        $entity = $em->getRepository('EmpresaBundle:Empresa')->empresa($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Empresa entity.');
@@ -108,7 +108,7 @@ class EmpresaController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('EmpresaBundle:Empresa:show.html.twig', array(
-            'entity'      => $entity,
+            'entities'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }

@@ -4,8 +4,8 @@
     
     <div class="row">
     	<div class="col-xs-12 col-sm-12 com-md-12">
-        	<h2><a href="{{ path('direccioncliente') }}">
-            	Direccion Cliente:
+        	<h2><a href="{{ path('cliente') }}">
+            	Cliente:
         	</a>
         	<span>
             	Nuevo
@@ -19,13 +19,95 @@
             	<div class="portlet-title">
                 	<div class="caption">
                 		<i class="icon-share font-blue"></i>
-                        <span class="caption-subject font-green bold uppercase">Nueva Direccion Cliente</span>
+                        <span class="caption-subject font-green bold uppercase">Nuevo Cliente</span>
                 	</div>
             	</div>
             	<div class="portlet-body">
                 	<div class="task-content">
 
 					    {{ form_start(form) }}
+					    <div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Razon Social:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.cliente.razonSocial) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			 <div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				RFC:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.cliente.rfc) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Telefono 1:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.cliente.telefono1) }}
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-2 col-md-1">
+	                    				Extencion:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.cliente.ext1) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Telefono 2:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.cliente.telefono2) }}
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-2 col-md-1">
+	                    				Extencion:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.cliente.ext2) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Email:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.cliente.email) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Página Web:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.cliente.paginaWeb) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Estatus:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.cliente.estatus, {"attr":{"class":"form-control"},"required":"true"}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
 					   		<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
@@ -79,20 +161,10 @@
 	            			<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Cliente:
+	                    				Pais:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(form.cliente,{"attr":{"class":"form-control"},"required":"true"}) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Localidad:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(form.localidad,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                    				{{ form_widget(form.pais,{"attr":{"class":"form-control"},"required":"true"}) }}
 	                    			</div>
 	                			</div>
 	            			</div>
@@ -109,13 +181,25 @@
 	            			<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Pais:
+	                    				Municipio:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(form.pais,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                    				{{ form_widget(form.municipio,{"attr":{"class":"form-control"},"required":"true"}) }}
 	                    			</div>
 	                			</div>
 	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Localidad:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(form.localidad,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			
+	            			
 
 	            		{{form_end(form)}}
 	            	</div>

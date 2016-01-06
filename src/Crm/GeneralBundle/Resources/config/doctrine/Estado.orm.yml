@@ -14,8 +14,8 @@ Crm\GeneralBundle\Entity\Estado:
             length: '50'
             column: nombre_estado
     oneToMany:
-        localidad:
-           targetEntity: Crm\GeneralBundle\Entity\Localidad
+        municipio:
+           targetEntity: Crm\GeneralBundle\Entity\Municipio
            mappedBy: Estado
         direccionCliente:
            targetEntity: Crm\ClienteBundle\Entity\DireccionCliente

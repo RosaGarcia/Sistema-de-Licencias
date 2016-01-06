@@ -5,9 +5,9 @@ namespace Crm\GeneralBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Localidad
+ * Municipio
  */
-class Localidad
+class Municipio
 {
     /**
      * @var integer
@@ -17,7 +17,7 @@ class Localidad
     /**
      * @var string
      */
-    private $nombreLocalidad;
+    private $municipio;
 
 
     /**
@@ -31,54 +31,26 @@ class Localidad
     }
 
     /**
-     * Set nombreLocalidad
+     * Set municipio
      *
-     * @param string $nombreLocalidad
-     * @return Localidad
+     * @param string $municipio
+     * @return Municipio
      */
-    public function setNombreLocalidad($nombreLocalidad)
+    public function setMunicipio($municipio)
     {
-        $this->nombreLocalidad = $nombreLocalidad;
+        $this->municipio = $municipio;
 
         return $this;
     }
 
     /**
-     * Get nombreLocalidad
+     * Get municipio
      *
      * @return string 
      */
-    public function getNombreLocalidad()
+    public function getMunicipio()
     {
-        return $this->nombreLocalidad;
-    }
-    /**
-     * @var \Crm\GeneralBundle\Entity\Estado
-     */
-    private $estado;
-
-
-    /**
-     * Set estado
-     *
-     * @param \Crm\GeneralBundle\Entity\Estado $estado
-     * @return Localidad
-     */
-    public function setEstado(\Crm\GeneralBundle\Entity\Estado $estado = null)
-    {
-        $this->estado = $estado;
-
-        return $this;
-    }
-
-    /**
-     * Get estado
-     *
-     * @return \Crm\GeneralBundle\Entity\Estado 
-     */
-    public function getEstado()
-    {
-        return $this->estado;
+        return $this->municipio;
     }
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -86,18 +58,47 @@ class Localidad
     private $direccionCliente;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direccionEmpresa;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direccionFabricante;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $ubicacion;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $direccionPersonal;
+
+    /**
+     * @var \Crm\GeneralBundle\Entity\Estado
+     */
+    private $estado;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->direccionCliente = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->direccionEmpresa = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->direccionFabricante = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ubicacion = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->direccionPersonal = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
      * Add direccionCliente
      *
      * @param \Crm\ClienteBundle\Entity\DireccionCliente $direccionCliente
-     * @return Localidad
+     * @return Municipio
      */
     public function addDireccionCliente(\Crm\ClienteBundle\Entity\DireccionCliente $direccionCliente)
     {
@@ -126,31 +127,44 @@ class Localidad
         return $this->direccionCliente;
     }
 
-    public function __toString()
+    /**
+     * Add direccionEmpresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa
+     * @return Municipio
+     */
+    public function addDireccionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa)
     {
-        return $this->nombreLocalidad;
+        $this->direccionEmpresa[] = $direccionEmpresa;
+
+        return $this;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $direccionFabricante;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * Remove direccionEmpresa
+     *
+     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa
      */
-    private $ubicacion;
+    public function removeDireccionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa)
+    {
+        $this->direccionEmpresa->removeElement($direccionEmpresa);
+    }
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * Get direccionEmpresa
+     *
+     * @return \Doctrine\Common\Collections\Collection 
      */
-    private $direccionPersonal;
-
+    public function getDireccionEmpresa()
+    {
+        return $this->direccionEmpresa;
+    }
 
     /**
      * Add direccionFabricante
      *
      * @param \Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante
-     * @return Localidad
+     * @return Municipio
      */
     public function addDireccionFabricante(\Crm\FabricanteBundle\Entity\DireccionFabricante $direccionFabricante)
     {
@@ -183,7 +197,7 @@ class Localidad
      * Add ubicacion
      *
      * @param \Crm\EquipoBundle\Entity\Ubicacion $ubicacion
-     * @return Localidad
+     * @return Municipio
      */
     public function addUbicacion(\Crm\EquipoBundle\Entity\Ubicacion $ubicacion)
     {
@@ -216,7 +230,7 @@ class Localidad
      * Add direccionPersonal
      *
      * @param \Crm\PersonalBundle\Entity\DireccionPersonal $direccionPersonal
-     * @return Localidad
+     * @return Municipio
      */
     public function addDireccionPersonal(\Crm\PersonalBundle\Entity\DireccionPersonal $direccionPersonal)
     {
@@ -244,41 +258,32 @@ class Localidad
     {
         return $this->direccionPersonal;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $direccionEmpresa;
 
     /**
-     * Add direccionEmpresa
+     * Set estado
      *
-     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa
-     * @return Localidad
+     * @param \Crm\GeneralBundle\Entity\Estado $estado
+     * @return Municipio
      */
-    public function addDireccionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa)
+    public function setEstado(\Crm\GeneralBundle\Entity\Estado $estado = null)
     {
-        $this->direccionEmpresa[] = $direccionEmpresa;
+        $this->estado = $estado;
 
         return $this;
     }
 
     /**
-     * Remove direccionEmpresa
+     * Get estado
      *
-     * @param \Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa
+     * @return \Crm\GeneralBundle\Entity\Estado 
      */
-    public function removeDireccionEmpresa(\Crm\EmpresaBundle\Entity\DireccionEmpresa $direccionEmpresa)
+    public function getEstado()
     {
-        $this->direccionEmpresa->removeElement($direccionEmpresa);
+        return $this->estado;
     }
 
-    /**
-     * Get direccionEmpresa
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getDireccionEmpresa()
+    public function __toString()
     {
-    return $this->direccionEmpresa;
+        return $this->municipio;
     }
 }

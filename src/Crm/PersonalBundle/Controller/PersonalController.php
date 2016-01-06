@@ -99,7 +99,9 @@ class PersonalController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('PersonalBundle:Personal')->find($id);
+        //$entity = $em->getRepository('PersonalBundle:Personal')->find($id);
+        $query = $em -> createQuery('SELECT p, dp FROM PersonalBundle:DireccionPersonal dp JOIN dp.personal p WHERE p.id = :id')->setParameter('id',$id);
+        $entity = $query -> getResult();
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Personal entity.');
@@ -108,7 +110,7 @@ class PersonalController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('PersonalBundle:Personal:show.html.twig', array(
-            'entity'      => $entity,
+            'entities'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }

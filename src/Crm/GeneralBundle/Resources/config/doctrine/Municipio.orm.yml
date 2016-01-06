@@ -1,7 +1,7 @@
-Crm\GeneralBundle\Entity\Localidad:
+Crm\GeneralBundle\Entity\Municipio:
     type: entity
     table: null
-    repositoryClass: Crm\GeneralBundle\Entity\LocalidadRepository
+    repositoryClass: Crm\GeneralBundle\Entity\MunicipioRepository
     id:
         id:
             type: integer
@@ -9,31 +9,30 @@ Crm\GeneralBundle\Entity\Localidad:
             generator:
                 strategy: AUTO
     fields:
-        nombreLocalidad:
+        municipio:
             type: string
             length: '50'
-            column: nombre_localidad
     manyToOne:
         estado:
           targetEntity: Crm\GeneralBundle\Entity\Estado
-          inversedBy: localidad
+          inversedBy: municipio
           joinColumn:
                name: estado_id
                referencedColumnName: id
     oneToMany:
         direccionCliente:
            targetEntity: Crm\ClienteBundle\Entity\DireccionCliente
-           mappedBy: Localidad
+           mappedBy: Municipio
         direccionEmpresa:
            targetEntity: Crm\EmpresaBundle\Entity\DireccionEmpresa
-           mappedBy: Localidad
+           mappedBy: Municipio
         direccionFabricante:
            targetEntity: Crm\FabricanteBundle\Entity\DireccionFabricante
-           mappedBy: Localidad
+           mappedBy: Municipio
         ubicacion:
            targetEntity: Crm\EquipoBundle\Entity\Ubicacion
-           mappedBy: Localidad
+           mappedBy: Municipio
         direccionPersonal:
            targetEntity: Crm\PersonalBundle\Entity\DireccionPersonal
-           mappedBy: Localidad
+           mappedBy: Municipio
     lifecycleCallbacks: {  }

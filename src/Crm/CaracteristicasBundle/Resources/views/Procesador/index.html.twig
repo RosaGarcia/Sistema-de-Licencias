@@ -41,7 +41,7 @@
                 <th class="oculto">Id</th>
                 <th>Marca</th>
                 <th>Modelo</th>
-                <th colspan="2">Velocidad</th>
+                <th>Velocidad</th>
                 <th>Termino</th>
                 <th>Acciones</th>
             </tr>
@@ -52,13 +52,12 @@
                 <td class="oculto"><a href="{{ path('procesador_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.marca }}</td>
                 <td>{{ entity.modelo }}</td>
-                <td>{{ entity.velocidad }}</td>
-                <td>{{ entity.unidad }}</td>
+                <td>{{ entity.velocidad }} {{ entity.unidad }}</td>
                  <td>{{ entity.terminoProcesador }}</td>
                 <td>
-                        <a href="{{ path('procesador_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
+                    <a href="{{ path('procesador_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
                     
-                        <a href="{{ path('procesador_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
+                    <a href="{{ path('procesador_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
                 </td>
             </tr>
         {% endfor %}

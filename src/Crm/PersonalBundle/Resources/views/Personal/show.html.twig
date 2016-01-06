@@ -1,65 +1,220 @@
 {% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    
     <div class="row">
-        <div class="col-xs-12 col-sm-12 com-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <h2><a href="{{ path('personal') }}">
-               Personal:
+                   Personal:
                 </a>
-                Vista 
+                   Vista   
             </h2>
         </div>
     </div>
 
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <h2 class="alert-success">{{ flashMessage }}</h2><br /><br />
+    {% endfor %} 
+    
     <div class="row">
         <div class="col-md-12">
-            <div class="portlet light portlet-fit ">
+            <div class="portlet light portlet-fit ">   
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="icon-eye font-yellow"></i>
                         <span class="caption-subject font-yellow bold uppercase">Caracteristicas</span>
                     </div>
                 </div>
-                <div class="portlet-body">
-                    <div class="table-scrollable">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Apellido Paterno</th>
-                                    <th>Apellido Materno</th>
-                                    <th>Telefono</th>
-                                    <th>Celular</th>
-                                    <th>Email</th>
-                                    <th>Estatus</th>
-                                    <th>Empresa</th>
-                                    <th>Puesto</th>
-                                    <th colspan="2">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ entity.nombre }}</td>
-                                    <td>{{ entity.apePat }}</td>
-                                    <td>{{ entity.apeMat }}</td>
-                                    <td>{{ entity.telefono }}</td>
-                                    <td>{{ entity.celular }}</td>    
-                                    <td>{{ entity.email }}</td>
-                                    <td>{{ entity.estatus }}</td>
-                                    <td>{{ entity.empresa }}</td>
-                                    <td>{{ entity.puesto }}</td>
-                                    <td><a href="{{ path('personal_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">
-                                             Editar
-                                        </a></td>
-                                    <td>{{ form(delete_form) }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                 <div class="portlet-body">
+                    <div class="general-item-list">
+
+                        {% for entity in entities %}
+                        
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Nombre:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.personal.nombre }}
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Apellido Paterno:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.personal.apePat }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Apellido Materno:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.personal.apemat }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Telefono:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.personal.telefono }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-1">
+                                        Extencion:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.personal.celular }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Email:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.personal.email }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Estatus:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.personal.estatus }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Empresa:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.personal.empresa }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Puesto:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.personal.puesto }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Calle:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.calle }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        No. Ext:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.numeroExt }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        No. Int:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.numeroInt }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Colonia:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.colonia }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Codigo Postal:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.codigoPostal }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Pais:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.pais }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Estado:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.estado }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Municipio:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.municipio }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Localidad:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.localidad }}
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+                        <br />
+                            {{ form(delete_form) }}
+                        
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 {% endblock %}

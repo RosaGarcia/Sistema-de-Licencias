@@ -12,4 +12,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class ClienteRepository extends EntityRepository
 {
+	public function cliente($id)
+	{
+		return $this->getEntityManager()->createQuery('SELECT c, dc FROM ClienteBundle:DireccionCliente dc JOIN dc.cliente c WHERE c.id = :id')->setParameter('id',$id)->getResult();
+	}
 }

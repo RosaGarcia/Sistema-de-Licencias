@@ -25,20 +25,34 @@ Crm\PersonalBundle\Entity\DireccionPersonal:
             type: string
             length: '50'
         codigoPostal:
-            type: integer
+            type: string
             column: codigo_postal
+<<<<<<< HEAD
+            length: '5'
+=======
+            length: '10'
+>>>>>>> proyecto
+        localidad:
+            type: string
+            length: '50'
     manyToOne:
         personal:
             targetEntity: Crm\PersonalBundle\Entity\Personal
-            inversedBy: personal
+            cascade: [persist]
+            inversedBy: direccionPersonal
             joinColumn:
                 name: personal_id
                 referencedColumnName: id
-        localidad:
-            targetEntity: Crm\GeneralBundle\Entity\Localidad
+                onDelete: CASCADE
+        municipio:
+            targetEntity: Crm\GeneralBundle\Entity\Municipio
             inversedBy: ubicacion
             joinColumn:
-                name: localidad_id
+<<<<<<< HEAD
+                name: Municipio_id
+=======
+                name: municipio_id
+>>>>>>> proyecto
                 referencedColumnName: id
         estado:
             targetEntity: Crm\GeneralBundle\Entity\Estado

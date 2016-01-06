@@ -12,4 +12,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class FabricanteRepository extends EntityRepository
 {
+	public function fabricante($id)
+	{
+		return $this->getEntityManager()->createQuery('SELECT f, df FROM FabricanteBundle:DireccionFabricante df JOIN df.fabricante f WHERE f.id = :id')->setParameter('id',$id)->getResult();
+	}
 }

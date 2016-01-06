@@ -19,11 +19,18 @@ class DireccionClienteType extends AbstractType
             ->add('numeroExt','text',array('attr' => array('class' => 'form-control')))
             ->add('numeroInt','text',array('attr' => array('class' => 'form-control'),'required' => false))
             ->add('colonia','text',array('attr' => array('class' => 'form-control')))
-            ->add('codigoPostal','integer',array('attr' => array('class' => 'form-control')))
-            ->add('cliente')
+            ->add('codigoPostal','text',array('attr' => array('class' => 'form-control')))
+<<<<<<< HEAD
+            ->add('cliente',new ClienteType())
+            ->add('localidad','text',array('attr' => array('class' => 'form-control')))
+=======
+            ->add('cliente', new ClienteType())
             ->add('localidad')
+            ->add('municipio')
+>>>>>>> proyecto
             ->add('estado')
             ->add('pais')
+            ->add('municipio')
         ;
     }
     
