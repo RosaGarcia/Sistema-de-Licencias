@@ -219,10 +219,6 @@ class DireccionCliente
     {
         return $this->cliente;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 46e5a99c75fd2ce855a269451563186199af0eea
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
      */
