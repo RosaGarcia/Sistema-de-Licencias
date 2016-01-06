@@ -27,11 +27,7 @@ Crm\PersonalBundle\Entity\DireccionPersonal:
         codigoPostal:
             type: string
             column: codigo_postal
-<<<<<<< HEAD
             length: '5'
-=======
-            length: '10'
->>>>>>> proyecto
         localidad:
             type: string
             length: '50'
@@ -48,11 +44,7 @@ Crm\PersonalBundle\Entity\DireccionPersonal:
             targetEntity: Crm\GeneralBundle\Entity\Municipio
             inversedBy: ubicacion
             joinColumn:
-<<<<<<< HEAD
-                name: Municipio_id
-=======
                 name: municipio_id
->>>>>>> proyecto
                 referencedColumnName: id
         estado:
             targetEntity: Crm\GeneralBundle\Entity\Estado

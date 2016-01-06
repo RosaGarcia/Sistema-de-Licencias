@@ -19,19 +19,11 @@ class DireccionPersonalType extends AbstractType
             ->add('numeroExt','text',array('attr' => array('class' => 'form-control')))
             ->add('numeroInt','text',array('attr' => array('class' => 'form-control'),'required' => false))
             ->add('colonia','text',array('attr' => array('class' => 'form-control')))
-<<<<<<< HEAD
             ->add('codigoPostal','tex',array('attr' => array('class' => 'form-control')))
             ->add('personal', new PersonalType())
             ->add('pais')
             ->add('estado')
             ->add('localidad','tex',array('attr' => array('class' => 'form-control')))
-=======
-            ->add('codigoPostal','text',array('attr' => array('class' => 'form-control')))
-            ->add('personal',new PersonalType())
-            ->add('pais')
-            ->add('estado')
-            ->add('localidad','text',array('attr' => array('class' => 'form-control')))
->>>>>>> proyecto
             ->add('municipio')
         ;
     }

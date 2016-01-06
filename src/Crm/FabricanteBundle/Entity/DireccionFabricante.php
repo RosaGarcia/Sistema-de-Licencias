@@ -170,11 +170,8 @@ class DireccionFabricante
         return $this->codigoPostal;
     }
 
-<<<<<<< HEAD
-     /**
-=======
+
     /**
->>>>>>> proyecto
      * Set localidad
      *
      * @param string $localidad
@@ -224,10 +221,6 @@ class DireccionFabricante
     {
         return $this->fabricante;
     }
-<<<<<<< HEAD
-    
-=======
->>>>>>> proyecto
 
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
@@ -239,10 +232,6 @@ class DireccionFabricante
      */
     private $pais;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> proyecto
     /**
      * Set estado
      *
