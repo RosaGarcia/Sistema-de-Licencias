@@ -21,11 +21,16 @@ class ClienteController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        return $this->render('ClienteBundle:Cliente:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
+         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('ClienteBundle:Cliente')->findAll();
 
-        return $this->render('ClienteBundle:Cliente:index.html.twig', array(
+        return $this->render('ClienteBundle:Cliente:listado.html.twig', array(
             'entities' => $entities,
         ));
     }
@@ -71,7 +76,7 @@ class ClienteController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Crear', 'attr' => array('class' => 'btn btn-success')));
+        $form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
     }
@@ -151,7 +156,7 @@ class ClienteController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Editar','attr' => array('class' => 'btn btn-primary')));
+        $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }

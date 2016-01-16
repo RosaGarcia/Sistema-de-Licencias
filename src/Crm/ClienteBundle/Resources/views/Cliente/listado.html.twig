@@ -1,0 +1,17 @@
+<tbody>
+    {% for entity in entities %}
+        <tr>
+            <td class="oculto"><a href="{{ path('cliente_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.razonSocial }}</td>
+            <td>{{ entity.rfc }}</td>
+            <td>{{ entity.telefono1 }}</td>
+            <td>{{ entity.ext1 }}</td>
+            <td>{{ entity.email }}</td>
+            <td>
+                <a href="{{ path('cliente_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
+                            
+                <a href="{{ path('direccioncliente_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
+            </td>
+        </tr>
+    {% endfor %}
+</tbody>
