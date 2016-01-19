@@ -71,7 +71,7 @@ class DireccionPersonalController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Crear', 'attr' => array('class' => 'btn btn-success')));
+        $form->add('submit', 'submit', array('label' => 'Crear'));
 
         return $form;
     }
@@ -151,7 +151,7 @@ class DireccionPersonalController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Editar','attr' => array('class' => 'btn btn-primary')));
+        $form->add('submit', 'submit', array('label' => 'Editar'));
 
         return $form;
     }

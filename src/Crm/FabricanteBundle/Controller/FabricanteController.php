@@ -21,11 +21,17 @@ class FabricanteController extends Controller
      */
     public function indexAction()
     {
+        
+        return $this->render('FabricanteBundle:Fabricante:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('FabricanteBundle:Fabricante')->findAll();
 
-        return $this->render('FabricanteBundle:Fabricante:index.html.twig', array(
+        return $this->render('FabricanteBundle:Fabricante:listado.html.twig', array(
             'entities' => $entities,
         ));
     }

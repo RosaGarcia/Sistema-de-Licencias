@@ -1,8 +1,8 @@
 <tbody>
     {% for entity in entities %}
         <tr>
-            <td class="oculto"><a href="{{ path('cliente_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-            <td>{{ entity.razonSocial }}</td>
+            <td class="oculto">{{ entity.id }}</td>
+            <td><a href="{{ path('cliente_show', { 'id': entity.id }) }}">{{ entity.razonSocial }}</a></td>
             <td>{{ entity.rfc }}</td>
             <td>{{ entity.telefono1 }}</td>
             <td>{{ entity.ext1 }}</td>

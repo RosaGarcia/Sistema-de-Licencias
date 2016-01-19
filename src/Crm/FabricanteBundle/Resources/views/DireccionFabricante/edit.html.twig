@@ -1,210 +1,232 @@
-{% extends '::frontend.html.twig' %}
+{% extends 'FabricanteBundle:Fabricante:index.html.twig' %}
 
-{% block body -%}
-    
-    <div class="row">
-    	<div class="col-xs-12 col-sm-12 col-md-12">
-    		<h2><a href="{{ path('fabricante')}}">
-                Fabricante: 
-    		</a>
-    		<span> Editar </span>   
-    	    </h2>
+{% block form -%}
+
+	<div class="row">
+    	<div class="col-xs-12 col-sm-12 com-md-12">
+        	<h2><a href="{{ path('fabricante') }}">
+            	Fabricante:
+        	</a>
+        	<span>
+            	Editar
+        	</span></h2>
     	</div>
-    </div>
+	</div>
 
-    <div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12">
-        	<div class="portlet light tasks-widget ">
-            	<div class="portlet-title">
-                	<div class="caption">
-                		<i class="icon-share font-blue"></i>
-                        <span class="caption-subject font-green bold uppercase">Nuevo Fabricante</span>
-                	</div>
-            	</div>
-            	<div class="portlet-body">
-                	<div class="task-content">
+	<div class="row">
+	    <div class="col-md-12 col-sm-12">
+	        <div class="portlet light ">
+	            <div class="portlet-title tabbable-line">
+	                <div class="caption">
+	                    <i class="icon-globe font-green-sharp"></i>
+	                    <span class="caption-subject font-green-sharp bold uppercase">Editar Fabricante</span>
+	                </div>
+	                <ul class="nav nav-tabs">
+	                    <li class="active">
+	                        <a href="#tab_1_1" class="active" data-toggle="tab"> General </a>
+	                    </li>
+	                    <li>
+	                        <a href="#tab_1_2" data-toggle="tab"> Dirección </a>
+	                    </li>
+	                </ul>
+	            </div>
+	            {{ form_start(edit_form) }}
+	                <div class="portlet-body">
+	                    <div class="tab-content">
+	                        <div class="tab-pane active" id="tab_1_1">
+	                            <div class="scroller" data-always-visible="1" data-rail-visible="0">
+	                                <ul class="feeds">
 
-                        {{ form_start(edit_form) }}
-                        	<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Razon Social:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.fabricante.razonSocial) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				RFC:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.fabricante.rfc) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-2 col-md-2">
-                                        Telefono 1:
-                                    </div>
-                                    <div class="col-xs-12 col-sm-3 col-md-3">
-                                        {{ form_widget(edit_form.fabricante.telefono1) }}
-                                    </div>
-                                
-                                    <div class="col-xs-12 col-sm-2 col-md-1">
-                                        Extencion:
-                                    </div>
-                                    <div class="col-xs-12 col-sm-3 col-md-3">
-                                        {{ form_widget(edit_form.fabricante.ext1) }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-2 col-md-2">
-                                        Telefono 2:
-                                    </div>
-                                    <div class="col-xs-12 col-sm-3 col-md-3">
-                                        {{ form_widget(edit_form.fabricante.telefono2) }}
-                                    </div>
-                                
-                                    <div class="col-xs-12 col-sm-2 col-md-1">
-                                        Extencion:
-                                    </div>
-                                    <div class="col-xs-12 col-sm-3 col-md-3">
-                                        {{ form_widget(edit_form.fabricante.ext2) }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Email:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.fabricante.email) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Pagina Web:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.fabricante.paginaWeb) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Estatus:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.fabricante.estatus,{"attr":{"class":"form-control"},"required":"true"}) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-                            <div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Calle:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.calle) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Numero Ext:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.numeroExt) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Nuemero Int:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.numeroInt) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Colonia:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.colonia) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Codigo Postal:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.codigoPostal) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Localidad:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.localidad) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Pais:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.pais,{"attr":{"class":"form-control"},"required":"true"}) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Estado:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.estado,{"attr":{"class":"form-control"},"required":"true"}) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Municipio:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.municipio,{"attr":{"class":"form-control"},"required":"true"}) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            	{{ form_end(edit_form) }}	
-                    </div> 
-                </div> 
-            </div> 
-        </div>
-    </div>             	            		
+	                                    <div class="col-md-6">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.fabricante.razonSocial,{'attr': {'placeholder': 'Razon Social'}}) }}
+	                                                <label for="razonSocial">Razon Social</label>
+	                                                <i class="fa fa-user"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-6">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.fabricante.rfc,{'attr': {'placeholder': 'RFC'}}) }}
+	                                                <label for="rfc">RFC</label>
+	                                                <i class="fa fa-pencil"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-3">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.fabricante.telefono1,{'attr': {'placeholder': 'Telefono'}}) }}
+	                                                <label for="telefono1">Telefono</label>
+	                                                <i class="fa fa-phone"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-3">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.fabricante.ext1,{'attr': {'placeholder': 'Extención'}}) }}
+	                                                <label for="ext1">Ext.</label>
+	                                                <i class="fa fa-pencil"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-3">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.fabricante.telefono2,{'attr': {'placeholder': 'Telefono'}}) }}
+	                                                <label for="telefono2">Telefono</label>
+	                                                <i class="fa fa-phone"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-3">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.fabricante.ext2,{'attr': {'placeholder': 'Extención'}}) }}
+	                                                <label for="ext2">Ext.</label>
+	                                                <i class="fa fa-pencil"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-6">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.fabricante.email,{'attr': {'placeholder': 'Email'}}) }}
+	                                                <label for="email">Email</label>
+	                                                <i class="fa fa-envelope-o"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-6">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.fabricante.paginaWeb,{'attr': {'placeholder': 'Pagina Web'}}) }}
+	                                                <label for="paginaWeb">Pagina Web</label>
+	                                                <i class="fa fa-globe"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-3">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.fabricante.estatus, {'attr':{'class':'form-control'},'required':'true'}) }}
+	                                                <label for="estatus">Estatus</label>
+	                                                <i class="fa fa-sort-down"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
 
-      
+
+
+	                                </ul>
+	                            </div>
+	                        </div>
+	                                                
+	                        <div class="tab-pane" id="tab_1_2">
+	                            <div class="scroller" style="height: 400px;" data-always-visible="1" data-rail-visible1="1">
+	                                <ul class="feeds">
+	                                                            
+	                                    <div class="col-md-12">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.calle,{'attr': {'placeholder': 'Calle'}}) }}
+	                                                <label for="calle">Calle</label>
+	                                                <i class="fa fa-road"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-4">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.numeroExt,{'attr': {'placeholder': 'Numero Exterior'}}) }}
+	                                                <label for="numeroExt">Numero Ext.</label>
+	                                                <i class="fa fa-pencil"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-4">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.numeroInt,{'attr': {'placeholder': 'Numero Interior'}}) }}
+	                                                <label for="numeroInt">Numero Int</label>
+	                                                <i class="fa fa-pencil"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-4">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.codigoPostal,{'attr': {'placeholder': 'Codigo Postal'}}) }}
+	                                                <label for="codigoPostal">Codigo Postal</label>
+	                                                <i class="fa fa-pencil"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-6">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.colonia,{'attr': {'placeholder': 'Colonia'}}) }}
+	                                                <label for="colonia">Colonia</label>
+	                                                <i class="fa fa-pencil"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-6">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.localidad,{'attr': {'placeholder': 'Localidad'}}) }}
+	                                                <label for="localidad">Localidad</label>
+	                                                <i class="fa fa-pencil"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-4">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.pais,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                                                <label for="pais">Pais</label>
+	                                                <i class="fa fa-sort-down"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-4">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.estado,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                                                <label for="estado">Estado</label>
+	                                                <i class="fa fa-sort-down"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-4">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.municipio,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                                                <label for="estado">Municipio</label>
+	                                                <i class="fa fa-sort-down"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+
+	            {{ form_widget(edit_form._token) }}  
+	                         
+	                                    <div class="col-xs-12">
+	                                        <button class="btn btn-success" type="submit" id="sendform"><i class="fa fa-plus"></i>&nbsp;Actualizar</button>
+	                                    </div>
+	                          
+	                                    </form>         
+	                                                      
+	                                </ul>
+	                            </div>
+	                        </div>
+	                                            
+	                    </div>
+	                </div>
+	        </div>
+	    </div>
+	</div>
+
 {% endblock %}

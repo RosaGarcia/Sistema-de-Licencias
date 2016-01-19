@@ -21,11 +21,16 @@ class PersonalController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+       return $this->render('PersonalBundle:Personal:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
+         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('PersonalBundle:Personal')->findAll();
 
-        return $this->render('PersonalBundle:Personal:index.html.twig', array(
+        return $this->render('PersonalBundle:Personal:listado.html.twig', array(
             'entities' => $entities,
         ));
     }

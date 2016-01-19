@@ -21,13 +21,18 @@ class EmpresaController extends Controller
      */
     public function indexAction()
     {
+        return $this->render('EmpresaBundle:Empresa:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('EmpresaBundle:Empresa')->findAll();
 
-        return $this->render('EmpresaBundle:Empresa:index.html.twig', array(
+        return $this->render('EmpresaBundle:Empresa:listado.html.twig', array(
             'entities' => $entities,
-        ));
+        )); 
     }
     /**
      * Creates a new Empresa entity.
