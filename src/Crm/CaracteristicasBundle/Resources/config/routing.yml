@@ -2,10 +2,6 @@ caracteristicas_modeloequipo:
     resource: "@CaracteristicasBundle/Resources/config/routing/modeloequipo.yml"
     prefix:   /modeloequipo
 
-caracteristicas_especificacionesequipo:
-    resource: "@CaracteristicasBundle/Resources/config/routing/especificacionesequipo.yml"
-    prefix:   /especificacionesequipo
-
 caracteristicas_versionsoftware:
     resource: "@CaracteristicasBundle/Resources/config/routing/versionsoftware.yml"
     prefix:   /versionsoftware
@@ -25,10 +21,6 @@ caracteristicas_discoduro:
 caracteristicas_dimenciones:
     resource: "@CaracteristicasBundle/Resources/config/routing/dimenciones.yml"
     prefix:   /dimenciones
-
-caracteristicas_capacidad:
-    resource: "@CaracteristicasBundle/Resources/config/routing/capacidad.yml"
-    prefix:   /capacidad
 
 caracteristicas_homepage:
     path:     /hello/{name}

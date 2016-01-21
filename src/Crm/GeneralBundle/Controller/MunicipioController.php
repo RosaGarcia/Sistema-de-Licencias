@@ -44,6 +44,11 @@ class MunicipioController extends Controller
             $em->persist($entity);
             $em->flush();
 
+             $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha creado el registro exitosamente'
+                            );
+
             return $this->redirect($this->generateUrl('municipio_show', array('id' => $entity->getId())));
         }
 
@@ -172,6 +177,10 @@ class MunicipioController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha editado el registro exitosamente'
+                            );
 
 
             return $this->redirect($this->generateUrl('municipio_show', array('id' => $entity->getId())));
@@ -203,6 +212,10 @@ class MunicipioController extends Controller
 
             $em->remove($entity);
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha eliminado el registro exitosamente'
+                            );
         }
 
         return $this->redirect($this->generateUrl('municipio'));

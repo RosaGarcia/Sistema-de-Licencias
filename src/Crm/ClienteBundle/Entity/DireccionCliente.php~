@@ -35,14 +35,14 @@ class DireccionCliente
     private $colonia;
 
     /**
-     * @var integer
+     * @var string
      */
     private $codigoPostal;
+
     /**
-     * @var integer
+     * @var string
      */
     private $localidad;
-
 
     /**
      * Get id
@@ -169,7 +169,7 @@ class DireccionCliente
         return $this->codigoPostal;
     }
 
-    /**
+   /**
      * Set localidad
      *
      * @param string $localidad
@@ -219,8 +219,6 @@ class DireccionCliente
     {
         return $this->cliente;
     }
-    
-
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
      */

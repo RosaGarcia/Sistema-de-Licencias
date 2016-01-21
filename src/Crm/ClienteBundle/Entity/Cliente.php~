@@ -54,6 +54,11 @@ class Cliente
      */
     private $paginaWeb;
 
+    /**
+     * @var string
+     */
+    private $contacto;
+
 
     /**
      * Get id
@@ -247,6 +252,29 @@ class Cliente
     public function getPaginaWeb()
     {
         return $this->paginaWeb;
+    }
+
+    /**
+     * Set contacto
+     *
+     * @param string $contacto
+     * @return Cliente
+     */
+    public function setContacto($contacto)
+    {
+        $this->contacto = $contacto;
+
+        return $this;
+    }
+
+    /**
+     * Get contacto
+     *
+     * @return string 
+     */
+    public function getContacto()
+    {
+        return $this->contacto;
     }
     /**
      * @var \Crm\GeneralBundle\Entity\Estatus

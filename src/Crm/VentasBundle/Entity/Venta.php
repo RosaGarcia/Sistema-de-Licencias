@@ -120,4 +120,101 @@ class Venta
     {
         return $this->equipo;
     }
+    /**
+     * @var string
+     */
+    private $estatus;
+
+    /**
+     * @var \Crm\ProductoBundle\Entity\Producto
+     */
+    private $producto;
+
+
+    /**
+     * Set estatus
+     *
+     * @param string $estatus
+     * @return Venta
+     */
+    public function setEstatus($estatus)
+    {
+        $this->estatus = $estatus;
+
+        return $this;
+    }
+
+    /**
+     * Get estatus
+     *
+     * @return string 
+     */
+    public function getEstatus()
+    {
+        return $this->estatus;
+    }
+
+    /**
+     * Set producto
+     *
+     * @param \Crm\ProductoBundle\Entity\Producto $producto
+     * @return Venta
+     */
+    public function setProducto(\Crm\ProductoBundle\Entity\Producto $producto = null)
+    {
+        $this->producto = $producto;
+
+        return $this;
+    }
+
+    /**
+     * Get producto
+     *
+     * @return \Crm\ProductoBundle\Entity\Producto 
+     */
+    public function getProducto()
+    {
+        return $this->producto;
+    }
+
+    /**
+     * Set equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     * @return Venta
+     */
+    public function setEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo = null)
+    {
+        $this->equipo = $equipo;
+
+        return $this;
+    }
+    /**
+     * @var \Crm\ClienteBundle\Entity\Cliente
+     */
+    private $cliente;
+
+
+    /**
+     * Set cliente
+     *
+     * @param \Crm\ClienteBundle\Entity\Cliente $cliente
+     * @return Venta
+     */
+    public function setCliente(\Crm\ClienteBundle\Entity\Cliente $cliente = null)
+    {
+        $this->cliente = $cliente;
+
+        return $this;
+    }
+
+    /**
+     * Get cliente
+     *
+     * @return \Crm\ClienteBundle\Entity\Cliente 
+     */
+    public function getCliente()
+    {
+        return $this->cliente;
+    }
 }

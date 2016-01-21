@@ -41,6 +41,10 @@ Crm\ClienteBundle\Entity\Cliente:
             length: '50'
             column: pagina_web
             nullable: TRUE
+        contacto:
+            type: string
+            length: '125'
+            column: contacto
     manyToOne:
         estatus:
            targetEntity: Crm\GeneralBundle\Entity\Estatus
@@ -52,7 +56,7 @@ Crm\ClienteBundle\Entity\Cliente:
         direccionCliente: 
            targetEntity: Crm\ClienteBundle\Entity\DireccionCliente
            mappedBy: Cliente
-        equipo:
-           targetEntity: Crm\EquipoBundle\Entity\Equipo
-           mappedBy: Cliente
+        venta:
+            targetEntity: Crm\VentasBundle\Entity\Venta
+            mappedBy: Cliente
     lifecycleCallbacks: {  }

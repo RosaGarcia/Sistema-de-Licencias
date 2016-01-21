@@ -281,18 +281,55 @@ class Fabricante
      */
     private $direccionFabricante;
 
+     public function __toString()
+    {
+        return $this->razonSocial;
+    }
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $procedencia;
+    private $equipo;
 
+
+    /**
+     * Add equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     * @return Fabricante
+     */
+    public function addEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
+    {
+        $this->equipo[] = $equipo;
+
+        return $this;
+    }
+
+    /**
+     * Remove equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     */
+    public function removeEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
+    {
+        $this->equipo->removeElement($equipo);
+    }
+
+    /**
+     * Get equipo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEquipo()
+    {
+        return $this->equipo;
+    }
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->direccionFabricante = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->procedencia = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->equipo = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -326,42 +363,5 @@ class Fabricante
     public function getDireccionFabricante()
     {
         return $this->direccionFabricante;
-    }
-
-    /**
-     * Add procedencia
-     *
-     * @param \Crm\EquipoBundle\Entity\Procedencia $procedencia
-     * @return Fabricante
-     */
-    public function addProcedencium(\Crm\EquipoBundle\Entity\Procedencia $procedencia)
-    {
-        $this->procedencia[] = $procedencia;
-
-        return $this;
-    }
-
-    /**
-     * Remove procedencia
-     *
-     * @param \Crm\EquipoBundle\Entity\Procedencia $procedencia
-     */
-    public function removeProcedencium(\Crm\EquipoBundle\Entity\Procedencia $procedencia)
-    {
-        $this->procedencia->removeElement($procedencia);
-    }
-
-    /**
-     * Get procedencia
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getProcedencia()
-    {
-        return $this->procedencia;
-    }
-     public function __toString()
-    {
-        return $this->razonSocial;
     }
 }

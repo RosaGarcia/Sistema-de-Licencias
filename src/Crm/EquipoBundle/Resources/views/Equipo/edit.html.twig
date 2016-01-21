@@ -29,43 +29,60 @@
 	    				 	<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Numero de Serie:
+	                    				Modelo Equipo:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.numeroSerie) }}
+	                    				{{ form_widget(edit_form.modeloEquipo,{"attr":{"class":"form-control"}}) }}
 	                    			</div>
 	                			</div>
 	            			</div>
+
 	            			<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Fecha Instalacion:
+	                    				Fabricante:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.fechaInstalacion) }}
+	                    				{{ form_widget(edit_form.fabricante,{"attr":{"class":"form-control"}}) }}
 	                    			</div>
 	                			</div>
 	            			</div>
+
+	    				 	<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Serie Fabricante:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.serieFabricante) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+
 	            			<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Licencia:
+	                    				Serie Warriors:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.licenciaEquipo,{"attr":{"class":"form-control"}}) }}
+	                    				{{ form_widget(edit_form.serieWarriors) }}
 	                    			</div>
 	                			</div>
 	            			</div>
+
 	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Cliente:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.cliente,{"attr":{"class":"form-control"}}) }}
-	                    			</div>
-	                			</div>
-	            			</div>
+	            				<div class="row">
+                                    <label class="control-label col-md-2">
+                                    	Fecha Llegada:
+                                    </label>
+                                    <div class="col-md-3">
+                                        {{ form_widget(edit_form.fechaLlegada,{"attr":{"class":"form-control"},"required":"true"}) }}
+                                                     
+                                        <span class="help-block"> Select date </span>
+                                    </div>
+                                </div>
+                            </div>                          
+            			
 
 						{{ form_end(edit_form) }}
 					</div>

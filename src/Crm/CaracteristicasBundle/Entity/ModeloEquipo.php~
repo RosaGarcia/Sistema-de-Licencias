@@ -52,82 +52,54 @@ class ModeloEquipo
     {
         return $this->nombre;
     }
-    /**
-     * @var \Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo
-     */
-    private $especificacionesEquipo;
-
-
-    /**
-     * Set especificacionesEquipo
-     *
-     * @param \Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo $especificacionesEquipo
-     * @return ModeloEquipo
-     */
-    public function setEspecificacionesEquipo(\Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo $especificacionesEquipo = null)
+    
+     public function __toString()
     {
-        $this->especificacionesEquipo = $especificacionesEquipo;
-
-        return $this;
-    }
-
-    /**
-     * Get especificacionesEquipo
-     *
-     * @return \Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo 
-     */
-    public function getEspecificacionesEquipo()
-    {
-        return $this->especificacionesEquipo;
+        return (string)$this->nombre;
     }
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $producto;
+    private $equipo;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->producto = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->equipo = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add producto
+     * Add equipo
      *
-     * @param \Crm\ProductoBundle\Entity\Producto $producto
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
      * @return ModeloEquipo
      */
-    public function addProducto(\Crm\ProductoBundle\Entity\Producto $producto)
+    public function addEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
     {
-        $this->producto[] = $producto;
+        $this->equipo[] = $equipo;
 
         return $this;
     }
 
     /**
-     * Remove producto
+     * Remove equipo
      *
-     * @param \Crm\ProductoBundle\Entity\Producto $producto
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
      */
-    public function removeProducto(\Crm\ProductoBundle\Entity\Producto $producto)
+    public function removeEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
     {
-        $this->producto->removeElement($producto);
+        $this->equipo->removeElement($equipo);
     }
 
     /**
-     * Get producto
+     * Get equipo
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getProducto()
+    public function getEquipo()
     {
-        return $this->producto;
-    }
-
-     public function __toString()
-    {
-        return (string)$this->nombre;
+        return $this->equipo;
     }
 }

@@ -15,10 +15,11 @@ class EquipoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('numeroSerie','text',array('attr' => array('class' => 'form-control')))
-            ->add('fechaInstalacion')
-            ->add('licenciaEquipo')
-            ->add('cliente')
+            ->add('serieFabricante','text',array('attr' => array('class' => 'form-control')))
+            ->add('serieWarriors','text',array('attr' => array('class' => 'form-control')))
+            ->add('fechaLlegada','date',array('widget'=>'single_text'))
+            ->add('modeloEquipo')
+            ->add('fabricante')
         ;
     }
     

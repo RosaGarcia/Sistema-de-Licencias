@@ -2,10 +2,6 @@ equipo_ubicacion:
     resource: "@EquipoBundle/Resources/config/routing/ubicacion.yml"
     prefix:   /ubicacion
 
-equipo_procedencia:
-    resource: "@EquipoBundle/Resources/config/routing/procedencia.yml"
-    prefix:   /procedencia
-
 equipo_licenciaequipo:
     resource: "@EquipoBundle/Resources/config/routing/licenciaequipo.yml"
     prefix:   /licenciaequipo

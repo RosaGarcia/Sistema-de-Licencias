@@ -142,22 +142,7 @@ class DiscoDuro
         return $this->tipo;
     }
 
-    /**
-     * Get terminoDisco
-     *
-     * @return string 
-     */
-    public function getTerminoDisco()
-    {
-        return $this->terminoDisco;
-    }
-
-     public function __toString()
-    {
-        return $this->terminoDisco;
-    }
-
-    /**
+     /**
      * Set terminoDisco
      *
      * @param string $terminoDisco
@@ -169,49 +154,19 @@ class DiscoDuro
 
         return $this;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $especificacionesEquipo;
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->especificacionesEquipo = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add especificacionesEquipo
+     * Get terminoDisco
      *
-     * @param \Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo $especificacionesEquipo
-     * @return DiscoDuro
+     * @return string 
      */
-    public function addEspecificacionesEquipo(\Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo $especificacionesEquipo)
+    public function getTerminoDisco()
     {
-        $this->especificacionesEquipo[] = $especificacionesEquipo;
-
-        return $this;
+        return $this->terminoDisco;
     }
-
-    /**
-     * Remove especificacionesEquipo
-     *
-     * @param \Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo $especificacionesEquipo
-     */
-    public function removeEspecificacionesEquipo(\Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo $especificacionesEquipo)
+   
+    public function __toString()
     {
-        $this->especificacionesEquipo->removeElement($especificacionesEquipo);
-    }
-
-    /**
-     * Get especificacionesEquipo
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getEspecificacionesEquipo()
-    {
-        return $this->especificacionesEquipo;
+        return $this->terminoDisco;
     }
 }

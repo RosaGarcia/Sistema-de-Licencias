@@ -1,16 +1,20 @@
 {% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    
-    <div class="row">
+   
+   <div class="row">
         <div class="col-xs-12 col-sm-12 com-md-12">
             <h2><a href="{{ path('equipo') }}">
-               Equipo:
+                Equipo:
                 </a>
                 Vista 
             </h2>
         </div>
     </div>
+
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <h2 class="alert-success">{{ flashMessage }}</h2><br /><br />
+    {% endfor %}
 
     <div class="row">
         <div class="col-md-12">
@@ -22,35 +26,67 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <div class="table-scrollable">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Numero de Serie</th>
-                                    <th>Fecha Instalacion</th>
-                                    <th>Licencia</th>
-                                    <th>Cliente</th>
-                                    <th colspan="2">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ entity.numeroSerie }}</td>
-                                    <td>{{ entity.fechaInstalacion|date('Y-m-d H:i:s') }}</td>
-                                    <td>{{ entity.licenciaEquipo }}</td>
-                                    <td>{{ entity.cliente }}</td>
-                                    <td><a href="{{ path('equipo_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">
-                                         Editar
-                                        </a></td>
-                                    <td>{{ form(delete_form) }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="general-item-list">
+
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Modelo:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.modeloEquipo }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Fabricante:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.fabricante }} 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Serie Fabricante:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.serieFabricante }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Serie Warriors:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.serieWarriors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Llegada:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.fechaLlegada|date('Y-m-d') }}
+                                </div>
+                            </div>
+                        </div>                            
+                        <br />
+
+
+                        {{ form(delete_form) }}
+                       
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
         
 {% endblock %}

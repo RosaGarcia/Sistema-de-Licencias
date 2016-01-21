@@ -32,12 +32,6 @@ Crm\EquipoBundle\Entity\Ubicacion:
             type: string
             length: '50'
     manyToOne:
-        equipo:
-          targetEntity: Crm\EquipoBundle\Entity\Equipo
-          inversedBy: ubicacion
-          joinColumn:
-                name: equipo_id
-                referencedColumnName: id
         municipio:
           targetEntity: Crm\GeneralBundle\Entity\Municipio
           inversedBy: ubicacion

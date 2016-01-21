@@ -80,121 +80,54 @@ class Producto
     {
         return $this->termino;
     }
-    /**
-     * @var \Crm\CaracteristicasBundle\Entity\ModeloEquipo
-     */
-    private $modeloEquipo;
 
-
-    /**
-     * Set modeloEquipo
-     *
-     * @param \Crm\CaracteristicasBundle\Entity\ModeloEquipo $modeloEquipo
-     * @return Producto
-     */
-    public function setModeloEquipo(\Crm\CaracteristicasBundle\Entity\ModeloEquipo $modeloEquipo = null)
+    public function __toString()
     {
-        $this->modeloEquipo = $modeloEquipo;
-
-        return $this;
-    }
-
-    /**
-     * Get modeloEquipo
-     *
-     * @return \Crm\CaracteristicasBundle\Entity\ModeloEquipo 
-     */
-    public function getModeloEquipo()
-    {
-        return $this->modeloEquipo;
+        return $this->termino;
     }
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $equipo;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $tipoLicencia;
+    private $venta;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->equipo = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->tipoLicencia = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->venta = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add equipo
+     * Add venta
      *
-     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     * @param \Crm\VentasBundle\Entity\Venta $venta
      * @return Producto
      */
-    public function addEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
+    public function addVentum(\Crm\VentasBundle\Entity\Venta $venta)
     {
-        $this->equipo[] = $equipo;
+        $this->venta[] = $venta;
 
         return $this;
     }
 
     /**
-     * Remove equipo
+     * Remove venta
      *
-     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     * @param \Crm\VentasBundle\Entity\Venta $venta
      */
-    public function removeEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
+    public function removeVentum(\Crm\VentasBundle\Entity\Venta $venta)
     {
-        $this->equipo->removeElement($equipo);
+        $this->venta->removeElement($venta);
     }
 
     /**
-     * Get equipo
+     * Get venta
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getEquipo()
+    public function getVenta()
     {
-        return $this->equipo;
-    }
-
-    /**
-     * Add tipoLicencia
-     *
-     * @param \Crm\ProductoBundle\Entity\TipoLicencia $tipoLicencia
-     * @return Producto
-     */
-    public function addTipoLicencium(\Crm\ProductoBundle\Entity\TipoLicencia $tipoLicencia)
-    {
-        $this->tipoLicencia[] = $tipoLicencia;
-
-        return $this;
-    }
-
-    /**
-     * Remove tipoLicencia
-     *
-     * @param \Crm\ProductoBundle\Entity\TipoLicencia $tipoLicencia
-     */
-    public function removeTipoLicencium(\Crm\ProductoBundle\Entity\TipoLicencia $tipoLicencia)
-    {
-        $this->tipoLicencia->removeElement($tipoLicencia);
-    }
-
-    /**
-     * Get tipoLicencia
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getTipoLicencia()
-    {
-        return $this->tipoLicencia;
-    }
-
-    public function __toString()
-    {
-        return $this->termino;
+        return $this->venta;
     }
 }

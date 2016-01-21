@@ -24,8 +24,8 @@
             	<div class="portlet-body">
                 	<div class="task-content">
 
-    {{ form_start(edit_form) }}
-<div class="form-group">
+                        {{ form_start(edit_form) }}
+                            <div class="form-group">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-2 col-md-2">
                                         Nombre:
@@ -35,18 +35,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-2 col-md-2">
-                                        Caracteristicas:
-                                    </div>
-                                    <div class="col-xs-12 col-sm-2 col-md-2">
-                                        {{ form_widget(edit_form.especificacionesEquipo,{"attr":{"class":"form-control"},"required":"true"})}}
-                                    </div>
-                                </div>
-                            </div>
-{{ form_end(edit_form)}}
-</div>
+                        {{ form_end(edit_form)}}
+                    </div>
            		 </div>
         	</div>
     	</div>

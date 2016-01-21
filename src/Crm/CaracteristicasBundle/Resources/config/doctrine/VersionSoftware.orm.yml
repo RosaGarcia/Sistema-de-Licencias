@@ -11,10 +11,6 @@ Crm\CaracteristicasBundle\Entity\VersionSoftware:
     fields:
         versionSoftware:
             type: string
-            length: '20'
+            length: '50'
             column: version_software
-    oneToMany:
-       especificacionesEquipo:
-            targetEntity: Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo
-            mappedBy: VersionSoftware
     lifecycleCallbacks: {  }

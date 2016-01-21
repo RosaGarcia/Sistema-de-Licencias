@@ -220,8 +220,6 @@ class DireccionEmpresa
     {
         return $this->empresa;
     }
-   
-
     /**
      * @var \Crm\GenaralBundle\Entity\Estado
      */
@@ -261,11 +259,7 @@ class DireccionEmpresa
      * @param \Crm\GeneralBundle\Entity\Pais $pais
      * @return DireccionEmpresa
      */
-<<<<<<< HEAD
-    public function setEstado(\Crm\GeneralBundle\Entity\Estado $estado = null)
-=======
     public function setPais(\Crm\GeneralBundle\Entity\Pais $pais = null)
->>>>>>> 7394542578c5fa460798ab110dc01a4f39414274
     {
         $this->pais = $pais;
 
@@ -275,11 +269,7 @@ class DireccionEmpresa
     /**
      * Get pais
      *
-<<<<<<< HEAD
-     * @return \Crm\GeneralBundle\Entity\Estado 
-=======
      * @return \Crm\GeneralBundle\Entity\Pais 
->>>>>>> 7394542578c5fa460798ab110dc01a4f39414274
      */
     public function getPais()
     {

@@ -17,12 +17,17 @@ class Equipo
     /**
      * @var string
      */
-    private $numeroSerie;
+    private $serieFabricante;
+
+    /**
+     * @var string
+     */
+    private $serieWarriors;
 
     /**
      * @var \DateTime
      */
-    private $fechaInstalacion;
+    private $fechaLlegada;
 
 
     /**
@@ -36,296 +41,140 @@ class Equipo
     }
 
     /**
-     * Set numeroSerie
+     * Set serieFabricante
      *
-     * @param string $numeroSerie
+     * @param string $serieFabricante
      * @return Equipo
      */
-    public function setNumeroSerie($numeroSerie)
+    public function setSerieFabricante($serieFabricante)
     {
-        $this->numeroSerie = $numeroSerie;
+        $this->serieFabricante = $serieFabricante;
 
         return $this;
     }
 
     /**
-     * Get numeroSerie
+     * Get serieFabricante
      *
      * @return string 
      */
-    public function getNumeroSerie()
+    public function getSerieFabricante()
     {
-        return $this->numeroSerie;
+        return $this->serieFabricante;
     }
 
     /**
-     * Set fechaInstalacion
+     * Set serieWarriors
      *
-     * @param \DateTime $fechaInstalacion
+     * @param string $serieWarriors
      * @return Equipo
      */
-    public function setFechaInstalacion($fechaInstalacion)
+    public function setSerieWarriors($serieWarriors)
     {
-        $this->fechaInstalacion = $fechaInstalacion;
+        $this->serieWarriors = $serieWarriors;
 
         return $this;
     }
 
     /**
-     * Get fechaInstalacion
+     * Get serieWarriors
+     *
+     * @return string 
+     */
+    public function getSerieWarriors()
+    {
+        return $this->serieWarriors;
+    }
+
+    /**
+     * Set fechaLlegada
+     *
+     * @param \DateTime $fechaLlegada
+     * @return Equipo
+     */
+    public function setFechaLlegada($fechaLlegada)
+    {
+        $this->fechaLlegada = $fechaLlegada;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaLlegada
      *
      * @return \DateTime 
      */
-    public function getFechaInstalacion()
+    public function getFechaLlegada()
     {
-        return $this->fechaInstalacion;
+        return $this->fechaLlegada;
+    }
+    
+
+    public function __toString()
+    {
+        return $this->serieWarriors;
     }
     /**
-     * @var \Crm\EquipoBundle\Entity\LicenciaEquipo
+     * @var \Crm\CaracteristicasBundle\Entity\ModeloEquipo
      */
-    private $licenciaEquipo;
+    private $modeloEquipo;
 
     /**
-     * @var \Crm\ClienteBundle\Entity\Cliente
+     * @var \Crm\FabricanteBundle\Entity\Fabricante
      */
-    private $cliente;
+    private $fabricante;
 
 
     /**
-     * Set licenciaEquipo
+     * Set modeloEquipo
      *
-     * @param \Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo
+     * @param \Crm\CaracteristicasBundle\Entity\ModeloEquipo $modeloEquipo
      * @return Equipo
      */
-    public function setLicenciaEquipo(\Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo = null)
+    public function setModeloEquipo(\Crm\CaracteristicasBundle\Entity\ModeloEquipo $modeloEquipo = null)
     {
-        $this->licenciaEquipo = $licenciaEquipo;
+        $this->modeloEquipo = $modeloEquipo;
 
         return $this;
     }
 
     /**
-     * Get licenciaEquipo
+     * Get modeloEquipo
      *
-     * @return \Crm\EquipoBundle\Entity\LicenciaEquipo 
+     * @return \Crm\CaracteristicasBundle\Entity\ModeloEquipo 
      */
-    public function getLicenciaEquipo()
+    public function getModeloEquipo()
     {
-        return $this->licenciaEquipo;
+        return $this->modeloEquipo;
     }
 
     /**
-     * Set cliente
+     * Set fabricante
      *
-     * @param \Crm\ClienteBundle\Entity\Cliente $cliente
+     * @param \Crm\FabricanteBundle\Entity\Fabricante $fabricante
      * @return Equipo
      */
-    public function setCliente(\Crm\ClienteBundle\Entity\Cliente $cliente = null)
+    public function setFabricante(\Crm\FabricanteBundle\Entity\Fabricante $fabricante = null)
     {
-        $this->cliente = $cliente;
+        $this->fabricante = $fabricante;
 
         return $this;
     }
 
     /**
-     * Get cliente
+     * Get fabricante
      *
-     * @return \Crm\ClienteBundle\Entity\Cliente 
+     * @return \Crm\FabricanteBundle\Entity\Fabricante 
      */
-    public function getCliente()
+    public function getFabricante()
     {
-        return $this->cliente;
+        return $this->fabricante;
     }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $ubicacion;
-
-    /**
-     * @var \Crm\PersonalBundle\Entity\Personal
-     */
-    private $personal;
-
-    /**
-     * @var \Crm\GeneralBundle\Entity\Estatus
-     */
-    private $estatus;
-
-    /**
-     * @var \Crm\EquipoBundle\Entity\Procedencia
-     */
-    private $procedencia;
-
-    /**
-     * @var \Crm\ProductoBundle\Entity\Producto
-     */
-    private $producto;
-
-    /**
-     * @var \Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo
-     */
-    private $especificacionesEquipo;
-
     /**
      * @var \Crm\VentasBundle\Entity\Venta
      */
     private $venta;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->ubicacion = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add ubicacion
-     *
-     * @param \Crm\EquipoBundle\Entity\Ubicacion $ubicacion
-     * @return Equipo
-     */
-    public function addUbicacion(\Crm\EquipoBundle\Entity\Ubicacion $ubicacion)
-    {
-        $this->ubicacion[] = $ubicacion;
-
-        return $this;
-    }
-
-    /**
-     * Remove ubicacion
-     *
-     * @param \Crm\EquipoBundle\Entity\Ubicacion $ubicacion
-     */
-    public function removeUbicacion(\Crm\EquipoBundle\Entity\Ubicacion $ubicacion)
-    {
-        $this->ubicacion->removeElement($ubicacion);
-    }
-
-    /**
-     * Get ubicacion
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getUbicacion()
-    {
-        return $this->ubicacion;
-    }
-
-    /**
-     * Set personal
-     *
-     * @param \Crm\PersonalBundle\Entity\Personal $personal
-     * @return Equipo
-     */
-    public function setPersonal(\Crm\PersonalBundle\Entity\Personal $personal = null)
-    {
-        $this->personal = $personal;
-
-        return $this;
-    }
-
-    /**
-     * Get personal
-     *
-     * @return \Crm\PersonalBundle\Entity\Personal 
-     */
-    public function getPersonal()
-    {
-        return $this->personal;
-    }
-
-    /**
-     * Set estatus
-     *
-     * @param \Crm\GeneralBundle\Entity\Estatus $estatus
-     * @return Equipo
-     */
-    public function setEstatus(\Crm\GeneralBundle\Entity\Estatus $estatus = null)
-    {
-        $this->estatus = $estatus;
-
-        return $this;
-    }
-
-    /**
-     * Get estatus
-     *
-     * @return \Crm\GeneralBundle\Entity\Estatus 
-     */
-    public function getEstatus()
-    {
-        return $this->estatus;
-    }
-
-    /**
-     * Set procedencia
-     *
-     * @param \Crm\EquipoBundle\Entity\Procedencia $procedencia
-     * @return Equipo
-     */
-    public function setProcedencia(\Crm\EquipoBundle\Entity\Procedencia $procedencia = null)
-    {
-        $this->procedencia = $procedencia;
-
-        return $this;
-    }
-
-    /**
-     * Get procedencia
-     *
-     * @return \Crm\EquipoBundle\Entity\Procedencia 
-     */
-    public function getProcedencia()
-    {
-        return $this->procedencia;
-    }
-
-    /**
-     * Set producto
-     *
-     * @param \Crm\ProductoBundle\Entity\Producto $producto
-     * @return Equipo
-     */
-    public function setProducto(\Crm\ProductoBundle\Entity\Producto $producto = null)
-    {
-        $this->producto = $producto;
-
-        return $this;
-    }
-
-    /**
-     * Get producto
-     *
-     * @return \Crm\ProductoBundle\Entity\Producto 
-     */
-    public function getProducto()
-    {
-        return $this->producto;
-    }
-
-    /**
-     * Set especificacionesEquipo
-     *
-     * @param \Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo $especificacionesEquipo
-     * @return Equipo
-     */
-    public function setEspecificacionesEquipo(\Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo $especificacionesEquipo = null)
-    {
-        $this->especificacionesEquipo = $especificacionesEquipo;
-
-        return $this;
-    }
-
-    /**
-     * Get especificacionesEquipo
-     *
-     * @return \Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo 
-     */
-    public function getEspecificacionesEquipo()
-    {
-        return $this->especificacionesEquipo;
-    }
 
     /**
      * Set venta
@@ -348,10 +197,5 @@ class Equipo
     public function getVenta()
     {
         return $this->venta;
-    }
-
-    public function __toString()
-    {
-        return $this->numeroSerie;
     }
 }

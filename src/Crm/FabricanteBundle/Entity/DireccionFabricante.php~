@@ -170,6 +170,7 @@ class DireccionFabricante
         return $this->codigoPostal;
     }
 
+
     /**
      * Set localidad
      *

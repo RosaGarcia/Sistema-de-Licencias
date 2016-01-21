@@ -12,10 +12,9 @@ Crm\VentasBundle\Entity\Venta:
         fechaVenta:
             type: datetime
             column: fecha_venta
-    oneToMany:
-       equipo:
-         targetEntity: Crm\EquipoBundle\Entity\Equipo
-         mappedBy: Venta
+        estatus:
+            type: string
+            length: '20'
     manyToOne:
         usuarios:
           targetEntity: Crm\UsuariosBundle\Entity\Usuarios
@@ -23,4 +22,22 @@ Crm\VentasBundle\Entity\Venta:
           joinColumn:
               name: usuarios_id
               referencedColumnName: id
+        producto:
+          targetEntity: Crm\ProductoBundle\Entity\Producto
+          inversedBy: venta
+          joinColumn:
+            name: producto_id
+            referencedColumnName: id
+        equipo:
+          targetEntity:  Crm\EquipoBundle\Entity\Equipo
+          inversedBy: venta
+          joinColumn:
+            name: equipo_id
+            referencedColumnName: id
+        cliente:
+          targetEntity: Crm\ClienteBundle\Entity\Cliente
+          inversedBy: venta
+          joinColumn: 
+            name: cliente_id
+            referencedColumnName: id
     lifecycleCallbacks: {  }

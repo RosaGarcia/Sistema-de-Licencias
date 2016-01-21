@@ -18,7 +18,7 @@ class ProcesadorType extends AbstractType
             ->add('marca','text',array('attr' => array('class' => 'form-control')))
             ->add('modelo','text',array('attr' => array('class' => 'form-control')))
             ->add('velocidad','text',array('attr' => array('class' => 'form-control')))
-            ->add('unidad','choice',array('choices' => array('MegaHercio' => 'MHz'),'attr' => array('class' => 'form-control')))
+            ->add('unidad','choice',array('choices' => array('GigaHertz' => 'GHz'),'attr' => array('class' => 'form-control')))
             ->add('terminoProcesador','text',array('attr' => array('class' => 'form-control')))
         ;
     }

@@ -19,9 +19,6 @@ Crm\GeneralBundle\Entity\Estatus:
         empresa:
             targetEntity: Crm\EmpresaBundle\Entity\Empresa
             mappedBy: Estatus
-        equipo:
-            targetEntity: Crm\EquipoBundle\Entity\Equipo
-            mappedBy: Estatus
         fabricante:
             targetEntity: Crm\FabricanteBundle\Entity\Fabricante
             mappedBy: Estatus

@@ -54,6 +54,11 @@ class Cliente
      */
     private $paginaWeb;
 
+    /**
+     * @var string
+     */
+    private $contacto;
+
 
     /**
      * Get id
@@ -248,6 +253,29 @@ class Cliente
     {
         return $this->paginaWeb;
     }
+
+    /**
+     * Set contacto
+     *
+     * @param string $contacto
+     * @return Cliente
+     */
+    public function setContacto($contacto)
+    {
+        $this->contacto = $contacto;
+
+        return $this;
+    }
+
+    /**
+     * Get contacto
+     *
+     * @return string 
+     */
+    public function getContacto()
+    {
+        return $this->contacto;
+    }
     /**
      * @var \Crm\GeneralBundle\Entity\Estatus
      */
@@ -363,5 +391,43 @@ class Cliente
     public function getEquipo()
     {
         return $this->equipo;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $venta;
+
+
+    /**
+     * Add venta
+     *
+     * @param \Crm\VentasBundle\Entity\Venta $venta
+     * @return Cliente
+     */
+    public function addVentum(\Crm\VentasBundle\Entity\Venta $venta)
+    {
+        $this->venta[] = $venta;
+
+        return $this;
+    }
+
+    /**
+     * Remove venta
+     *
+     * @param \Crm\VentasBundle\Entity\Venta $venta
+     */
+    public function removeVentum(\Crm\VentasBundle\Entity\Venta $venta)
+    {
+        $this->venta->removeElement($venta);
+    }
+
+    /**
+     * Get venta
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVenta()
+    {
+        return $this->venta;
     }
 }

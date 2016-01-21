@@ -28,7 +28,6 @@
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Termino</th>
-                                    <th>Equipo</th>
                                     <th colspan="2">Acciones</th>
                                 </tr>
                             </thead>
@@ -36,7 +35,6 @@
                                 <tr>
                                     <td>{{ entity.nombre }}</td>
                                     <td>{{ entity.termino }}</td>
-                                    <td>{{ entity.modeloEquipo }}</td>
                                     <td><a href="{{ path('producto_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">
                                             Editar
                                         </a></td>

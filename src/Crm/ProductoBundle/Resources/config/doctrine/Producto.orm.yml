@@ -16,17 +16,7 @@ Crm\ProductoBundle\Entity\Producto:
             type: string
             length: '10'
     oneToMany:
-        equipo:
-           targetEntity: Crm\EquipoBundle\Entity\Equipo
-           mappedBy: Producto
-        tipoLicencia:
-           targetEntity: Crm\ProductoBundle\Entity\TipoLicencia
-           mappedBy: Producto
-    manyToOne:
-        modeloEquipo:
-          targetEntity: Crm\CaracteristicasBundle\Entity\ModeloEquipo
-          inversedBy: producto
-          joinColumn:
-             name: modeloEquipo_id
-             referencedColumnName: id
+        venta:
+            targetEntity: Crm\VentasBundle\Entity\Venta
+            mappedBy: Producto
     lifecycleCallbacks: {  }

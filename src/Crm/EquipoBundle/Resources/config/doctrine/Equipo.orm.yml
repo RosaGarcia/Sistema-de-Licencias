@@ -9,65 +9,32 @@ Crm\EquipoBundle\Entity\Equipo:
             generator:
                 strategy: AUTO
     fields:
-        numeroSerie:
+        serieFabricante:
             type: string
             length: '20'
-            column: numero_serie
-        fechaInstalacion:
+        serieWarriors:
+            type: string
+            length: '20'
+        fechaLlegada:
             type: datetime
-            column: fecha_instalacion
     manyToOne:
-        cliente:
-          targetEntity: Crm\ClienteBundle\Entity\Cliente
+        modeloEquipo:
+          targetEntity: Crm\CaracteristicasBundle\Entity\ModeloEquipo
           inversedBy: equipo
           joinColumn:
-            name: cliente_id
+            name: modelo_id
             referencedColumnName: id
-        personal:
-          targetEntity: Crm\PersonalBundle\Entity\Personal
+        fabricante: 
+          targetEntity: Crm\FabricanteBundle\Entity\Fabricante
           inversedBy: equipo
           joinColumn:
-            name: personal_id
-            referencedColumnName: id
-        estatus:
-          targetEntity: Crm\GeneralBundle\Entity\Estatus
-          inversedBy: equipo
-          joinColumn:
-            name: estatus_id
-            referencedColumnName: id
-        procedencia:
-          targetEntity: Crm\EquipoBundle\Entity\Procedencia
-          inversedBy: equipo
-          joinColumn:
-            name: procedencia_id
-            referencedColumnName: id
-        producto:
-          targetEntity: Crm\ProductoBundle\Entity\Producto
-          inversedBy: equipo
-          joinColumn:
-            name: producto_id
-            referencedColumnName: id
-        especificacionesEquipo:
-          targetEntity: Crm\CaracteristicasBundle\Entity\EspecificacionesEquipo
-          inversedBy: equipo
-          joinColumn:
-            name: especificacionesEquipo_id
-            referencedColumnName: id
-        venta:
-          targetEntity: Crm\VentasBundle\Entity\Venta
-          inversedBy: equipo
-          joinColumn:
-            name: venta_id
+            name: fabricante_id
             referencedColumnName: id
     oneToOne:
-        licenciaEquipo:
-          targetEntity: Crm\EquipoBundle\Entity\LicenciaEquipo
-          inversedBy: equipo
-          joinColumn:
-             name: licenciaEquipo_id
-             referencedColumnName: id
-    oneToMany:
-        ubicacion:
-          targetEntity: Crm\EquipoBundle\Entity\Ubicacion
-          mappedBy: Equipo
+        venta:
+            targetEntity: Crm\VentasBundle\Entity\Venta
+            inversedBy: venta
+            joinColumn:
+              name: venta_id
+              referencedColumnName: id
     lifecycleCallbacks: {  }

@@ -23,6 +23,7 @@ class ClienteType extends AbstractType
             ->add('ext2','integer',array('attr' => array('class' => 'form-control'),'required' => false))
             ->add('email','email',array('attr' => array('class' => 'form-control')))
             ->add('paginaWeb','text',array('attr' => array('class' => 'form-control'),'required' => false))
+            ->add('contacto','text',array('attr'=> array('class' => 'form-control')))
             ->add('estatus')
         ;
     }

@@ -80,62 +80,6 @@ class LicenciaEquipo
     {
         return $this->fechaFinal;
     }
-    /**
-     * @var \Crm\ProductoBundle\Entity\TipoLicencia
-     */
-    private $tipoLicencia;
-
-
-    /**
-     * Set tipoLicencia
-     *
-     * @param \Crm\ProductoBundle\Entity\TipoLicencia $tipoLicencia
-     * @return LicenciaEquipo
-     */
-    public function setTipoLicencia(\Crm\ProductoBundle\Entity\TipoLicencia $tipoLicencia = null)
-    {
-        $this->tipoLicencia = $tipoLicencia;
-
-        return $this;
-    }
-
-    /**
-     * Get tipoLicencia
-     *
-     * @return \Crm\ProductoBundle\Entity\TipoLicencia 
-     */
-    public function getTipoLicencia()
-    {
-        return $this->tipoLicencia;
-    }
-    /**
-     * @var \Crm\EquipoBundle\Entity\Equipo
-     */
-    private $equipo;
-
-
-    /**
-     * Set equipo
-     *
-     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
-     * @return LicenciaEquipo
-     */
-    public function setEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo = null)
-    {
-        $this->equipo = $equipo;
-
-        return $this;
-    }
-
-    /**
-     * Get equipo
-     *
-     * @return \Crm\EquipoBundle\Entity\Equipo 
-     */
-    public function getEquipo()
-    {
-        return $this->equipo;
-    }
 
      public function __toString()
     {
