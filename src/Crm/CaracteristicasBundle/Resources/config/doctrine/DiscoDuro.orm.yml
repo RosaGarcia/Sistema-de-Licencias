@@ -23,4 +23,8 @@ Crm\CaracteristicasBundle\Entity\DiscoDuro:
         terminoDisco:
             type: string
             length: '20'
+    oneToMany:
+        caracteristicasEquipo: 
+           targetEntity: Crm\EquipoBundle\Entity\CaracteristicasEquipo
+           mappedBy: DiscoDuro
     lifecycleCallbacks: {  }

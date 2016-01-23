@@ -275,4 +275,32 @@ class Ubicacion
     {
         return $this->municipio;
     }
+    /**
+     * @var \Crm\EquipoBundle\Entity\Equipo
+     */
+    private $equipo;
+
+
+    /**
+     * Set equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     * @return Ubicacion
+     */
+    public function setEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo = null)
+    {
+        $this->equipo = $equipo;
+
+        return $this;
+    }
+
+    /**
+     * Get equipo
+     *
+     * @return \Crm\EquipoBundle\Entity\Equipo 
+     */
+    public function getEquipo()
+    {
+        return $this->equipo;
+    }
 }

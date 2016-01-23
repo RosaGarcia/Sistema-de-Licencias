@@ -12,4 +12,8 @@ Crm\CaracteristicasBundle\Entity\Dimenciones:
         dimenciones:
             type: string
             length: '25'
+    oneToMany:
+        caracteristicasEquipo: 
+           targetEntity: Crm\EquipoBundle\Entity\CaracteristicasEquipo
+           mappedBy: Dimenciones 
     lifecycleCallbacks: {  }

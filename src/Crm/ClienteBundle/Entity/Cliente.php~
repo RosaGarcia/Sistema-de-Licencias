@@ -392,4 +392,42 @@ class Cliente
     {
         return $this->equipo;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $venta;
+
+
+    /**
+     * Add venta
+     *
+     * @param \Crm\VentasBundle\Entity\Venta $venta
+     * @return Cliente
+     */
+    public function addVentum(\Crm\VentasBundle\Entity\Venta $venta)
+    {
+        $this->venta[] = $venta;
+
+        return $this;
+    }
+
+    /**
+     * Remove venta
+     *
+     * @param \Crm\VentasBundle\Entity\Venta $venta
+     */
+    public function removeVentum(\Crm\VentasBundle\Entity\Venta $venta)
+    {
+        $this->venta->removeElement($venta);
+    }
+
+    /**
+     * Get venta
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVenta()
+    {
+        return $this->venta;
+    }
 }

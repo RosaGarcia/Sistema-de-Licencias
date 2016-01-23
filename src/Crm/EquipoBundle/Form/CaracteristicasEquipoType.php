@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class LicenciaEquipoType extends AbstractType
+class CaracteristicasEquipoType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,8 +15,15 @@ class LicenciaEquipoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('fechaInicio','date',array('widget'=>'single_text'))
-            ->add('fechaFinal','date',array('widget'=>'single_text'))
+            ->add('interfaz','text',array('attr' => array('class' => 'form-control')))
+            ->add('usb','integer',array('attr' => array('class' => 'form-control')))
+            ->add('expansion',null,array("required" => false))
+            ->add('capacidad','text',array('attr' => array('class' => 'form-control'),'required'=> false))
+            ->add('procesador')
+            ->add('dimenciones')
+            ->add('discoDuro')
+            ->add('memoriaRam')
+            ->add('software')
             ->add('equipo')
         ;
     }
@@ -27,7 +34,7 @@ class LicenciaEquipoType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Crm\EquipoBundle\Entity\LicenciaEquipo'
+            'data_class' => 'Crm\EquipoBundle\Entity\CaracteristicasEquipo'
         ));
     }
 
@@ -36,6 +43,6 @@ class LicenciaEquipoType extends AbstractType
      */
     public function getName()
     {
-        return 'crm_equipobundle_licenciaequipo';
+        return 'crm_equipobundle_caracteristicasequipo';
     }
 }

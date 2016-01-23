@@ -1,0 +1,147 @@
+{% extends '::frontend.html.twig' %}
+
+{% block body -%}
+
+    <div class="row">
+    	<div class="col-xs-12 col-sm-12 com-md-12">
+        	<h2><a href="{{ path('caracteristicasequipo') }}">
+            	Caracteristicas Equipo:
+        	</a>
+        	<span>
+            	Nuevo
+        	</span></h2>
+    	</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12">
+        	<div class="portlet light tasks-widget ">
+            	<div class="portlet-title">
+                	<div class="caption">
+                		<i class="icon-share font-blue"></i>
+                        	<span class="caption-subject font-green bold uppercase">Editar caracteristica</span>
+                	</div>
+            	</div>
+            	<div class="portlet-body">
+                	<div class="task-content">
+
+                		{{ form_start(edit_form) }}
+
+                			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Equipo:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.equipo,{"attr":{"class":"form-control"}}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+
+                			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Numero de Interfaces:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.interfaz) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Numero de USB:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.usb) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+	            			
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Expansión:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.expansion) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Capacidad:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.capacidad) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Procesador:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.procesador,{"attr":{"class":"form-control"}}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Dimencines:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.dimenciones,{"attr":{"class":"form-control"}}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Disco Duro:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.discoDuro,{"attr":{"class":"form-control"}}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Memoria Ram:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.memoriaRam,{"attr":{"class":"form-control"}}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+
+	            			<div class="form-group">
+	    						<div class="row">
+	    							<div class="col-xs-12 col-sm-2 col-md-2">
+	                    				Software:
+	                    			</div>
+	                    			<div class="col-xs-12 col-sm-3 col-md-3">
+	                    				{{ form_widget(edit_form.software,{"attr":{"class":"form-control"}}) }}
+	                    			</div>
+	                			</div>
+	            			</div>
+
+						{{ form_end(edit_form) }}
+            			
+            		</div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+     
+{% endblock %}

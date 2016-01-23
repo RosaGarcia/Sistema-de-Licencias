@@ -24,4 +24,8 @@ Crm\CaracteristicasBundle\Entity\Procesador:
         terminoProcesador:
             type: string
             length: '20'
+    oneToMany:
+        caracteristicasEquipo: 
+            targetEntity: Crm\EquipoBundle\Entity\CaracteristicasEquipo
+            mappedBy: Procesador
     lifecycleCallbacks: {  }

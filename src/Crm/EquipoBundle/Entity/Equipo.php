@@ -171,31 +171,114 @@ class Equipo
         return $this->fabricante;
     }
     /**
-     * @var \Crm\VentasBundle\Entity\Venta
+     * @var \Crm\EquipoBundle\Entity\LicenciaEquipo
      */
-    private $venta;
+    private $licenciaEquipo;
 
 
     /**
-     * Set venta
+     * Set licenciaEquipo
      *
-     * @param \Crm\VentasBundle\Entity\Venta $venta
+     * @param \Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo
      * @return Equipo
      */
-    public function setVenta(\Crm\VentasBundle\Entity\Venta $venta = null)
+    public function setLicenciaEquipo(\Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo = null)
     {
-        $this->venta = $venta;
+        $this->licenciaEquipo = $licenciaEquipo;
 
         return $this;
     }
 
     /**
-     * Get venta
+     * Get licenciaEquipo
      *
-     * @return \Crm\VentasBundle\Entity\Venta 
+     * @return \Crm\EquipoBundle\Entity\LicenciaEquipo 
      */
-    public function getVenta()
+    public function getLicenciaEquipo()
     {
-        return $this->venta;
+        return $this->licenciaEquipo;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $caracteristicasEquipo;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->caracteristicasEquipo = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add caracteristicasEquipo
+     *
+     * @param \Crm\EquipoBundle\Entity\CaracteristicasEquipo $caracteristicasEquipo
+     * @return Equipo
+     */
+    public function addCaracteristicasEquipo(\Crm\EquipoBundle\Entity\CaracteristicasEquipo $caracteristicasEquipo)
+    {
+        $this->caracteristicasEquipo[] = $caracteristicasEquipo;
+
+        return $this;
+    }
+
+    /**
+     * Remove caracteristicasEquipo
+     *
+     * @param \Crm\EquipoBundle\Entity\CaracteristicasEquipo $caracteristicasEquipo
+     */
+    public function removeCaracteristicasEquipo(\Crm\EquipoBundle\Entity\CaracteristicasEquipo $caracteristicasEquipo)
+    {
+        $this->caracteristicasEquipo->removeElement($caracteristicasEquipo);
+    }
+
+    /**
+     * Get caracteristicasEquipo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCaracteristicasEquipo()
+    {
+        return $this->caracteristicasEquipo;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $ubicacion;
+
+
+    /**
+     * Add ubicacion
+     *
+     * @param \Crm\EquipoBundle\Entity\Ubicacion $ubicacion
+     * @return Equipo
+     */
+    public function addUbicacion(\Crm\EquipoBundle\Entity\Ubicacion $ubicacion)
+    {
+        $this->ubicacion[] = $ubicacion;
+
+        return $this;
+    }
+
+    /**
+     * Remove ubicacion
+     *
+     * @param \Crm\EquipoBundle\Entity\Ubicacion $ubicacion
+     */
+    public function removeUbicacion(\Crm\EquipoBundle\Entity\Ubicacion $ubicacion)
+    {
+        $this->ubicacion->removeElement($ubicacion);
+    }
+
+    /**
+     * Get ubicacion
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUbicacion()
+    {
+        return $this->ubicacion;
     }
 }

@@ -85,4 +85,32 @@ class LicenciaEquipo
     {
         return (string)$this->id;
     }
+    /**
+     * @var \Crm\EquipoBundle\Entity\Equipo
+     */
+    private $equipo;
+
+
+    /**
+     * Set equipo
+     *
+     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
+     * @return LicenciaEquipo
+     */
+    public function setEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo = null)
+    {
+        $this->equipo = $equipo;
+
+        return $this;
+    }
+
+    /**
+     * Get equipo
+     *
+     * @return \Crm\EquipoBundle\Entity\Equipo 
+     */
+    public function getEquipo()
+    {
+        return $this->equipo;
+    }
 }

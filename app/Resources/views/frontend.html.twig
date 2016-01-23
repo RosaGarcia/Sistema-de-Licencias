@@ -463,56 +463,129 @@
                 <div class="page-sidebar navbar-collapse collapse">
                     <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                         <li class="nav-item start active open">
-                            <a href="javascript:;" class="nav-link nav-toggle">
+                            <a href="{{ path('cliente') }}" class="nav-link nav-toggle">
                                 <i class="icon-home"></i>
-                                <span class="title">titulo</span>
+                                <span class="title">Cliente</span>
                                 <span class="selected"></span>
                                 <span class="arrow open"></span>
                             </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="{{ path('empresa') }}" class="nav-link nav-toggle">
+                                <i class="icon-diamond"></i>
+                                <span class="title">Empresa</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="{{ path('fabricante') }}" class="nav-link nav-toggle">
+                                <i class="icon-diamond"></i>
+                                <span class="title">Fabricante</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="{{ path('personal') }}" class="nav-link nav-toggle">
+                                <i class="icon-diamond"></i>
+                                <span class="title">Personal</span>
+                                <span class="arrow"></span>
+                            </a>
                             <ul class="sub-menu">
-                                <li class="nav-item start active open">
-                                    <a href="" class="nav-link ">
-                                        <i class="icon-bar-chart"></i>
-                                        <span class="title">subtitulo 1</span>
-                                        <span class="selected"></span>
+                                <li class="nav-item  ">
+                                    <a href="{{ path('puesto') }}" class="nav-link ">
+                                        <span class="title">Puesto</span>
                                     </a>
                                 </li>
-                                <li class="nav-item start ">
-                                    <a href="" class="nav-link ">
-                                        <i class="icon-bulb"></i>
-                                        <span class="title">subtitulo 2</span>
-                                        <span class="badge badge-success">1</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item start ">
-                                    <a href="" class="nav-link ">
-                                        <i class="icon-graph"></i>
-                                        <span class="title">subtitulo 3</span>
-                                        <span class="badge badge-danger">5</span>
+                                <li class="nav-item  ">
+                                    <a href="{{ path('usuarios') }}" class="nav-link ">
+                                        <span class="title">Usuario</span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item  ">
-                            <a href="javascript:;" class="nav-link nav-toggle">
+                            <a href="{{ path('producto') }}" class="nav-link nav-toggle">
                                 <i class="icon-diamond"></i>
-                                <span class="title">titulo 2</span>
+                                <span class="title">Producto</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="{{ path('venta') }}" class="nav-link nav-toggle">
+                                <i class="icon-diamond"></i>
+                                <span class="title">venta</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="" class="nav-link nav-toggle">
+                                <i class="icon-diamond"></i>
+                                <span class="title">Equipo</span>
                                 <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item  ">
-                                    <a href="" class="nav-link ">
-                                        <span class="title">subtitulo </span>
+                                    <a href="{{ path('equipo') }}" class="nav-link ">
+                                        <span class="title">Nuevo</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="{{ path('caracteristicasequipo') }}" class="nav-link ">
+                                        <span class="title">Caracteristicas</span>
                                     </a>
                                 </li>
                                 <li class="nav-item  ">
                                     <a href="" class="nav-link ">
-                                        <span class="title">subtitulo 2</span>
+                                        <span class="title">Componentes</span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item ">
+                                            <a href="{{ path('memoriaram') }}" class="nav-link "> Memoria Ram</a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="{{ path('discoduro') }}" class="nav-link "> Disco Duro </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="{{ path('procesador') }}" class="nav-link "> Procesador </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="{{ path('dimenciones') }}" class="nav-link "> Dimenciones </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="{{ path('modeloequipo') }}" class="nav-link "> Modelo Equipo </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="{{ path('versionsoftware') }}" class="nav-link "> Software </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="" class="nav-link nav-toggle">
+                                <i class="icon-diamond"></i>
+                                <span class="title">General</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="{{ path('pais') }}" class="nav-link ">
+                                        <span class="title">Pais</span>
                                     </a>
                                 </li>
                                 <li class="nav-item  ">
-                                    <a href="" class="nav-link ">
-                                        <span class="title">subtitulo 2</span>
+                                    <a href="{{ path('estado') }}" class="nav-link ">
+                                        <span class="title">Estado</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="{{ path('municipio') }}" class="nav-link ">
+                                        <span class="title">Municipio</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="{{ path('estatus') }}" class="nav-link ">
+                                        <span class="title">Estatus</span>
                                     </a>
                                 </li>
                                 <li class="nav-item  ">
@@ -520,14 +593,6 @@
                                         <span class="title">subtitulo 3</span>
                                         <span class="arrow"></span>
                                     </a>
-                                    <ul class="sub-menu">
-                                        <li class="nav-item ">
-                                            <a href="" class="nav-link "> nivel 2 </a>
-                                        </li>
-                                        <li class="nav-item ">
-                                            <a href="" class="nav-link "> nivel 2 </a>
-                                        </li>
-                                    </ul>
                                 </li> 
                             </ul>
                         </li>
@@ -573,8 +638,8 @@
         <!-- END CONTAINER -->
         <!-- BEGIN FOOTER -->
         <div class="page-footer">
-            <div class="page-footer-inner"> 2015 &copy; CRM by
-                <a href="" title="Warriorslabs" target="_blank">WarriorsLabs.</a>
+            <div class="page-footer-inner"> 2016 &copy; CRM by
+                <a href="http://www.warriorslabs.com" title="Warriorslabs" target="_blank">WarriorsLabs.</a>
             </div>
             <div class="scroll-to-top">
                 <i class="icon-arrow-up"></i>

@@ -41,7 +41,6 @@
                                 <th class="oculto"> id </th>
                                 <th> Fecha venta </th>
                                 <th>Producto</th>
-                                <th>Equipo</th>
                                 <th> Actions </th>
                             </tr>
                         </thead>
@@ -51,7 +50,6 @@
                                 <td class="oculto"><a href="{{ path('venta_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>  
                                 <td>{% if entity.fechaVenta %}{{ entity.fechaVenta|date('Y-m-d') }}{% endif %}</td> 
                                 <td>{{ entity.producto }}</td>                                           
-                                <td>{{ entity.equipo }}</td>
                                 <td>                                           
                                     <a href="{{ path('venta_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>                                       
                                     <a href="{{ path('venta_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>     

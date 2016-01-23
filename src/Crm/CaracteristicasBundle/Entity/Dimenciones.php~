@@ -58,4 +58,49 @@ class Dimenciones
         return $this->dimenciones;
     }
    
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $caracteristicasEquipo;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->caracteristicasEquipo = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add caracteristicasEquipo
+     *
+     * @param \Crm\EquipoBundle\Entity\CaracteristicasEquipo $caracteristicasEquipo
+     * @return Dimenciones
+     */
+    public function addCaracteristicasEquipo(\Crm\EquipoBundle\Entity\CaracteristicasEquipo $caracteristicasEquipo)
+    {
+        $this->caracteristicasEquipo[] = $caracteristicasEquipo;
+
+        return $this;
+    }
+
+    /**
+     * Remove caracteristicasEquipo
+     *
+     * @param \Crm\EquipoBundle\Entity\CaracteristicasEquipo $caracteristicasEquipo
+     */
+    public function removeCaracteristicasEquipo(\Crm\EquipoBundle\Entity\CaracteristicasEquipo $caracteristicasEquipo)
+    {
+        $this->caracteristicasEquipo->removeElement($caracteristicasEquipo);
+    }
+
+    /**
+     * Get caracteristicasEquipo
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCaracteristicasEquipo()
+    {
+        return $this->caracteristicasEquipo;
+    }
 }

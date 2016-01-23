@@ -30,11 +30,18 @@ Crm\EquipoBundle\Entity\Equipo:
           joinColumn:
             name: fabricante_id
             referencedColumnName: id
+    oneToMany:
+        caracteristicasEquipo: 
+          targetEntity: Crm\EquipoBundle\Entity\CaracteristicasEquipo
+          mappedBy: Equipo
+        ubicacion:
+          targetEntity: Crm\EquipoBundle\Entity\Ubicacion
+          mappedBy: Equipo
     oneToOne:
-        venta:
-            targetEntity: Crm\VentasBundle\Entity\Venta
-            inversedBy: venta
-            joinColumn:
-              name: venta_id
+        licenciaEquipo:
+          targetEntity: Crm\EquipoBundle\Entity\LicenciaEquipo
+          inversedBy: equipo
+          joinColumn:
+              name: licenciaEquipo_id
               referencedColumnName: id
     lifecycleCallbacks: {  }

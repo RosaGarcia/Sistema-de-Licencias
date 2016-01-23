@@ -1,0 +1,60 @@
+Crm\EquipoBundle\Entity\CaracteristicasEquipo:
+    type: entity
+    table: null
+    repositoryClass: Crm\EquipoBundle\Entity\CaracteristicasEquipoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        interfaz:
+            type: string
+            length: '50'
+        usb:
+            type: integer
+        expansion:
+            type: boolean
+        capacidad:
+            type: string
+            length: '50'
+            nullable: TRUE
+    manyToOne:
+        equipo:
+            targetEntity: Crm\EquipoBundle\Entity\Equipo
+            inversedBy: caracteristicasEquipo
+            joinColumn:
+                name: equipo_id
+                referencedColumnName: id
+        procesador:
+            targetEntity: Crm\CaracteristicasBundle\Entity\Procesador
+            inversedBy:  caracteristicasEquipo
+            joinColumn:
+                name: procesador_id
+                referencedColumnName: id
+        memoriaRam:
+            targetEntity: Crm\CaracteristicasBundle\Entity\MemoriaRam
+            inversedBy: caracteristicasEquipo
+            joinColumn:
+                name: memoriaRam_id
+                referencedColumnName: id
+        discoDuro:
+            targetEntity: Crm\CaracteristicasBundle\Entity\DiscoDuro
+            inversedBy: caracteristicasEquipo
+            joinColumn: 
+                name: discoDuro_id
+                referencedColumnName: id
+        software:
+            targetEntity: Crm\CaracteristicasBundle\Entity\VersionSoftware
+            inversedBy: caracteristicasEquipo
+            joinColumn: 
+                name: versionSoftware_id
+                referencedColumnName: id
+        dimenciones:
+            targetEntity: Crm\CaracteristicasBundle\Entity\Dimenciones
+            inversedBy: caracteristicasEquipo
+            joinColumn:
+                name: dimenciones_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

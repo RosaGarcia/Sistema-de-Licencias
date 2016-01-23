@@ -28,12 +28,6 @@ Crm\VentasBundle\Entity\Venta:
           joinColumn:
             name: producto_id
             referencedColumnName: id
-        equipo:
-          targetEntity:  Crm\EquipoBundle\Entity\Equipo
-          inversedBy: venta
-          joinColumn:
-            name: equipo_id
-            referencedColumnName: id
         cliente:
           targetEntity: Crm\ClienteBundle\Entity\Cliente
           inversedBy: venta

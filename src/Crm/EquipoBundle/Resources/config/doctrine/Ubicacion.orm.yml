@@ -50,4 +50,10 @@ Crm\EquipoBundle\Entity\Ubicacion:
           joinColumn:
                 name: pais_id
                 referencedColumnName: id
+        equipo:
+          targetEntity: Crm\EquipoBundle\Entity\Equipo
+          inversedBy: ubicacion
+          joinColumn:
+            name: equipo_id
+            referencedColumnName: id
     lifecycleCallbacks: {  }

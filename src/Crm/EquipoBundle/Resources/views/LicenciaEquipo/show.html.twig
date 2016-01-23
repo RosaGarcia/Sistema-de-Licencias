@@ -1,16 +1,20 @@
 {% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    
-    <div class="row">
+   
+   <div class="row">
         <div class="col-xs-12 col-sm-12 com-md-12">
             <h2><a href="{{ path('licenciaequipo') }}">
-               Licencia Equipo:
+                Licencia Equipo:
                 </a>
                 Vista 
             </h2>
         </div>
     </div>
+
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <h2 class="alert-success">{{ flashMessage }}</h2><br /><br />
+    {% endfor %}
 
     <div class="row">
         <div class="col-md-12">
@@ -22,32 +26,45 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <div class="table-scrollable">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Fecha Inicio</th>
-                                    <th>Fecha Termino</th>
-                                    <th>Tipo Licencia</th>
-                                    <th colspan="2">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>   
-                                <tr> 
-                                    <td>{{ entity.fechaInicio|date('Y-m-d H:i:s') }}</td>
-                                    <td>{{ entity.fechaFinal|date('Y-m-d H:i:s') }}</td>
-                                    <td>{{ entity.tipoLicencia }}</td>
-                                    <td><a href="{{ path('licenciaequipo_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">
-                                        Editar
-                                    </a></td>
-                                    <td>{{ form(delete_form) }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="general-item-list">
+                        
+                        <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Equipo:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.equipo }}
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        fechaInicio:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                       {{ entity.fechaInicio|date('Y-m-d') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Fecha Termino:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.fechaFinal|date('Y-m-d') }}
+                                    </div>
+                                </div>
+                            </div><br />
+
+                        {{ form(delete_form) }}
+                       
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+        
 {% endblock %}

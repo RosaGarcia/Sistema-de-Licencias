@@ -83,44 +83,6 @@ class Venta
         return $this->usuarios;
     }
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $equipo;
-
-
-    /**
-     * Add equipo
-     *
-     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
-     * @return Venta
-     */
-    public function addEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
-    {
-        $this->equipo[] = $equipo;
-
-        return $this;
-    }
-
-    /**
-     * Remove equipo
-     *
-     * @param \Crm\EquipoBundle\Entity\Equipo $equipo
-     */
-    public function removeEquipo(\Crm\EquipoBundle\Entity\Equipo $equipo)
-    {
-        $this->equipo->removeElement($equipo);
-    }
-
-    /**
-     * Get equipo
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getEquipo()
-    {
-        return $this->equipo;
-    }
-    /**
      * @var string
      */
     private $estatus;
@@ -188,5 +150,33 @@ class Venta
         $this->equipo = $equipo;
 
         return $this;
+    }
+    /**
+     * @var \Crm\ClienteBundle\Entity\Cliente
+     */
+    private $cliente;
+
+
+    /**
+     * Set cliente
+     *
+     * @param \Crm\ClienteBundle\Entity\Cliente $cliente
+     * @return Venta
+     */
+    public function setCliente(\Crm\ClienteBundle\Entity\Cliente $cliente = null)
+    {
+        $this->cliente = $cliente;
+
+        return $this;
+    }
+
+    /**
+     * Get cliente
+     *
+     * @return \Crm\ClienteBundle\Entity\Cliente 
+     */
+    public function getCliente()
+    {
+        return $this->cliente;
     }
 }

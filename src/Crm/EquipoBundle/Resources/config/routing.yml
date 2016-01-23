@@ -1,3 +1,7 @@
+equipo_caracteristicasequipo:
+    resource: "@EquipoBundle/Resources/config/routing/caracteristicasequipo.yml"
+    prefix:   /caracteristicasequipo
+
 equipo_ubicacion:
     resource: "@EquipoBundle/Resources/config/routing/ubicacion.yml"
     prefix:   /ubicacion

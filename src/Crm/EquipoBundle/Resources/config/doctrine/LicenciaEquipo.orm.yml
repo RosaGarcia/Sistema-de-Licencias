@@ -15,4 +15,11 @@ Crm\EquipoBundle\Entity\LicenciaEquipo:
         fechaFinal:
             type: datetime
             column: fecha_final
+    oneToOne:
+        equipo:
+            targetEntity: Crm\EquipoBundle\Entity\Equipo
+            inversedBy: licenciaEquipo
+            joinColumn:
+              name: equipo_id
+              referencedColumnName: id
     lifecycleCallbacks: {  }
