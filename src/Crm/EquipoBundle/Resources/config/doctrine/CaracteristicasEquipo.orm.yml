@@ -51,10 +51,10 @@ Crm\EquipoBundle\Entity\CaracteristicasEquipo:
             joinColumn: 
                 name: versionSoftware_id
                 referencedColumnName: id
-        dimenciones:
-            targetEntity: Crm\CaracteristicasBundle\Entity\Dimenciones
+        dimensiones:
+            targetEntity: Crm\CaracteristicasBundle\Entity\Dimensiones
             inversedBy: caracteristicasEquipo
             joinColumn:
-                name: dimenciones_id
+                name: dimensiones_id
                 referencedColumnName: id
     lifecycleCallbacks: {  }

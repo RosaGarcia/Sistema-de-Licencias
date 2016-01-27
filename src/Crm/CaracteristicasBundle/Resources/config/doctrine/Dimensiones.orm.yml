@@ -1,7 +1,7 @@
-Crm\CaracteristicasBundle\Entity\Dimenciones:
+Crm\CaracteristicasBundle\Entity\Dimensiones:
     type: entity
     table: null
-    repositoryClass: Crm\CaracteristicasBundle\Entity\DimencionesRepository
+    repositoryClass: Crm\CaracteristicasBundle\Entity\DimensionesRepository
     id:
         id:
             type: integer
@@ -9,11 +9,11 @@ Crm\CaracteristicasBundle\Entity\Dimenciones:
             generator:
                 strategy: AUTO
     fields:
-        dimenciones:
+        dimensiones:
             type: string
             length: '25'
     oneToMany:
         caracteristicasEquipo: 
            targetEntity: Crm\EquipoBundle\Entity\CaracteristicasEquipo
-           mappedBy: Dimenciones 
+           mappedBy: Dimensiones 
     lifecycleCallbacks: {  }

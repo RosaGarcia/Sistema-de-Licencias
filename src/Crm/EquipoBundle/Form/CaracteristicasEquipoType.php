@@ -20,7 +20,7 @@ class CaracteristicasEquipoType extends AbstractType
             ->add('expansion',null,array("required" => false))
             ->add('capacidad','text',array('attr' => array('class' => 'form-control'),'required'=> false))
             ->add('procesador')
-            ->add('dimenciones')
+            ->add('dimensiones')
             ->add('discoDuro')
             ->add('memoriaRam')
             ->add('software')

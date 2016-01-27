@@ -18,9 +18,9 @@ caracteristicas_discoduro:
     resource: "@CaracteristicasBundle/Resources/config/routing/discoduro.yml"
     prefix:   /discoduro
 
-caracteristicas_dimenciones:
-    resource: "@CaracteristicasBundle/Resources/config/routing/dimenciones.yml"
-    prefix:   /dimenciones
+caracteristicas_dimensiones:
+    resource: "@CaracteristicasBundle/Resources/config/routing/dimensiones.yml"
+    prefix:   /dimensiones
 
 caracteristicas_homepage:
     path:     /hello/{name}

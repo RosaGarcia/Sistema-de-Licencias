@@ -5,37 +5,37 @@ namespace Crm\CaracteristicasBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Crm\CaracteristicasBundle\Entity\Dimenciones;
-use Crm\CaracteristicasBundle\Form\DimencionesType;
+use Crm\CaracteristicasBundle\Entity\Dimensiones;
+use Crm\CaracteristicasBundle\Form\DimensionesType;
 
 /**
- * Dimenciones controller.
+ * Dimensiones controller.
  *
  */
-class DimencionesController extends Controller
+class DimensionesController extends Controller
 {
 
     /**
-     * Lists all Dimenciones entities.
+     * Lists all Dimensiones entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('CaracteristicasBundle:Dimenciones')->findAll();
+        $entities = $em->getRepository('CaracteristicasBundle:Dimensiones')->findAll();
 
-        return $this->render('CaracteristicasBundle:Dimenciones:index.html.twig', array(
+        return $this->render('CaracteristicasBundle:Dimensiones:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Dimenciones entity.
+     * Creates a new Dimensiones entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Dimenciones();
+        $entity = new Dimensiones();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -48,26 +48,26 @@ class DimencionesController extends Controller
                                 'Se ha creado el registro exitosamente'
                             );
 
-            return $this->redirect($this->generateUrl('dimenciones_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('dimensiones_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('CaracteristicasBundle:Dimenciones:new.html.twig', array(
+        return $this->render('CaracteristicasBundle:Dimensiones:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Dimenciones entity.
+     * Creates a form to create a Dimensiones entity.
      *
-     * @param Dimenciones $entity The entity
+     * @param Dimensiones $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Dimenciones $entity)
+    private function createCreateForm(Dimensiones $entity)
     {
-        $form = $this->createForm(new DimencionesType(), $entity, array(
-            'action' => $this->generateUrl('dimenciones_create'),
+        $form = $this->createForm(new DimensionesType(), $entity, array(
+            'action' => $this->generateUrl('dimensiones_create'),
             'method' => 'POST',
         ));
 
@@ -77,60 +77,60 @@ class DimencionesController extends Controller
     }
 
     /**
-     * Displays a form to create a new Dimenciones entity.
+     * Displays a form to create a new Dimensiones entity.
      *
      */
     public function newAction()
     {
-        $entity = new Dimenciones();
+        $entity = new Dimensiones();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('CaracteristicasBundle:Dimenciones:new.html.twig', array(
+        return $this->render('CaracteristicasBundle:Dimensiones:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Dimenciones entity.
+     * Finds and displays a Dimensiones entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('CaracteristicasBundle:Dimenciones')->find($id);
+        $entity = $em->getRepository('CaracteristicasBundle:Dimensiones')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Dimenciones entity.');
+            throw $this->createNotFoundException('Unable to find Dimensiones entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('CaracteristicasBundle:Dimenciones:show.html.twig', array(
+        return $this->render('CaracteristicasBundle:Dimensiones:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Dimenciones entity.
+     * Displays a form to edit an existing Dimensiones entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('CaracteristicasBundle:Dimenciones')->find($id);
+        $entity = $em->getRepository('CaracteristicasBundle:Dimensiones')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Dimenciones entity.');
+            throw $this->createNotFoundException('Unable to find Dimensiones entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('CaracteristicasBundle:Dimenciones:edit.html.twig', array(
+        return $this->render('CaracteristicasBundle:Dimensiones:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -138,16 +138,16 @@ class DimencionesController extends Controller
     }
 
     /**
-    * Creates a form to edit a Dimenciones entity.
+    * Creates a form to edit a Dimensiones entity.
     *
-    * @param Dimenciones $entity The entity
+    * @param Dimensiones $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Dimenciones $entity)
+    private function createEditForm(Dimensiones $entity)
     {
-        $form = $this->createForm(new DimencionesType(), $entity, array(
-            'action' => $this->generateUrl('dimenciones_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new DimensionesType(), $entity, array(
+            'action' => $this->generateUrl('dimensiones_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -156,17 +156,17 @@ class DimencionesController extends Controller
         return $form;
     }
     /**
-     * Edits an existing Dimenciones entity.
+     * Edits an existing Dimensiones entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('CaracteristicasBundle:Dimenciones')->find($id);
+        $entity = $em->getRepository('CaracteristicasBundle:Dimensiones')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Dimenciones entity.');
+            throw $this->createNotFoundException('Unable to find Dimensiones entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -180,17 +180,17 @@ class DimencionesController extends Controller
                                 'Se ha editado el registro exitosamente'
                             );
 
-            return $this->redirect($this->generateUrl('dimenciones'));
+            return $this->redirect($this->generateUrl('dimensiones'));
         }
 
-        return $this->render('CaracteristicasBundle:Dimenciones:edit.html.twig', array(
+        return $this->render('CaracteristicasBundle:Dimensiones:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Dimenciones entity.
+     * Deletes a Dimensiones entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -200,10 +200,10 @@ class DimencionesController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('CaracteristicasBundle:Dimenciones')->find($id);
+            $entity = $em->getRepository('CaracteristicasBundle:Dimensiones')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Dimenciones entity.');
+                throw $this->createNotFoundException('Unable to find Dimensiones entity.');
             }
 
             $em->remove($entity);
@@ -214,11 +214,11 @@ class DimencionesController extends Controller
                             );
         }
 
-        return $this->redirect($this->generateUrl('dimenciones'));
+        return $this->redirect($this->generateUrl('dimensiones'));
     }
 
     /**
-     * Creates a form to delete a Dimenciones entity by id.
+     * Creates a form to delete a Dimensiones entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -227,7 +227,7 @@ class DimencionesController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('dimenciones_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('dimensiones_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()

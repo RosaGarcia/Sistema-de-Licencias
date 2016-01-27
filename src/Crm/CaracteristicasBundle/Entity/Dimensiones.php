@@ -5,9 +5,9 @@ namespace Crm\CaracteristicasBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Dimenciones
+ * Dimensiones
  */
-class Dimenciones
+class Dimensiones
 {
     /**
      * @var integer
@@ -17,7 +17,7 @@ class Dimenciones
     /**
      * @var string
      */
-    private $dimenciones;
+    private $dimensiones;
 
 
     /**
@@ -31,31 +31,31 @@ class Dimenciones
     }
 
     /**
-     * Set dimenciones
+     * Set dimensiones
      *
-     * @param string $dimenciones
-     * @return Dimenciones
+     * @param string $dimensiones
+     * @return Dimensiones
      */
-    public function setDimenciones($dimenciones)
+    public function setDimensiones($dimensiones)
     {
-        $this->dimenciones = $dimenciones;
+        $this->dimensiones = $dimensiones;
 
         return $this;
     }
 
     /**
-     * Get dimenciones
+     * Get dimensiones
      *
      * @return string 
      */
-    public function getDimenciones()
+    public function getDimensiones()
     {
-        return $this->dimenciones;
+        return $this->dimensiones;
     }
 
      public function __toString()
     {
-        return $this->dimenciones;
+        return $this->dimensiones;
     }
    
     /**
@@ -75,7 +75,7 @@ class Dimenciones
      * Add caracteristicasEquipo
      *
      * @param \Crm\EquipoBundle\Entity\CaracteristicasEquipo $caracteristicasEquipo
-     * @return Dimenciones
+     * @return Dimensiones
      */
     public function addCaracteristicasEquipo(\Crm\EquipoBundle\Entity\CaracteristicasEquipo $caracteristicasEquipo)
     {

@@ -162,9 +162,9 @@ class CaracteristicasEquipo
     private $software;
 
     /**
-     * @var \Crm\CaracteristicasBundle\Entity\Dimenciones
+     * @var \Crm\CaracteristicasBundle\Entity\Dimensiones
      */
-    private $dimenciones;
+    private $dimensiones;
 
 
     /**
@@ -283,25 +283,25 @@ class CaracteristicasEquipo
     }
 
     /**
-     * Set dimenciones
+     * Set dimensiones
      *
-     * @param \Crm\CaracteristicasBundle\Entity\Dimenciones $dimenciones
+     * @param \Crm\CaracteristicasBundle\Entity\Dimensiones $dimensiones
      * @return CaracteristicasEquipo
      */
-    public function setDimenciones(\Crm\CaracteristicasBundle\Entity\Dimenciones $dimenciones = null)
+    public function setDimensiones(\Crm\CaracteristicasBundle\Entity\Dimensiones $dimensiones = null)
     {
-        $this->dimenciones = $dimenciones;
+        $this->dimensiones = $dimensiones;
 
         return $this;
     }
 
     /**
-     * Get dimenciones
+     * Get dimensiones
      *
-     * @return \Crm\CaracteristicasBundle\Entity\Dimenciones 
+     * @return \Crm\CaracteristicasBundle\Entity\Dimensiones 
      */
-    public function getDimenciones()
+    public function getDimensiones()
     {
-        return $this->dimenciones;
+        return $this->dimensiones;
     }
 }

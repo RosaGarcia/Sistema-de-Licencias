@@ -4,8 +4,8 @@
     
     <div class="row">
         <div class="col-xs-12 col-sm-12 com-md-12">
-            <h2><a href="{{ path('dimenciones') }}">
-                Dimenciones:
+            <h2><a href="{{ path('dimensiones') }}">
+                Dimensiones:
                 </a>
                 Vista 
             </h2>
@@ -30,14 +30,14 @@
                         <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>Dimenciones</th>
+                                    <th>Dimensiones</th>
                                     <th colspan="2">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{{ entity.dimenciones }}</td>
-                                    <td><a href="{{ path('dimenciones_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">
+                                    <td>{{ entity.dimensiones }}</td>
+                                    <td><a href="{{ path('dimensiones_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">
                                              Editar
                                         </a>
                                     </td>

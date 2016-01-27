@@ -5,3 +5,7 @@ ventas_venta:
 ventas_homepage:
     path:     /hello/{name}
     defaults: { _controller: VentasBundle:Default:index }
+
+venta_send:
+    path: /send
+    defaults: {_controller: VentasBundle:Venta:send }

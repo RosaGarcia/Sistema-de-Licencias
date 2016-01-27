@@ -47,6 +47,7 @@ class VentaController extends Controller
                                 'mensaje',
                                 'Se ha creado el registro exitosamente'
                             );
+            $mail = $this->send($entity);
 
             return $this->redirect($this->generateUrl('venta_show', array('id' => $entity->getId())));
         }
@@ -56,6 +57,23 @@ class VentaController extends Controller
             'form'   => $form->createView(),
         ));
     }
+
+    public function send($entity)
+    {
+        $message = \Swift_Message::newInstance()
+        ->setSubject('Nueva Venta')
+        ->setFrom('hdz.r.j.david@gmail.com')
+        ->setTo(array('crowin@hotmail.com' => 'David'))
+        ->setBody(
+            $this->renderView(
+                'VentasBundle:Venta:mail.html.twig',array('entity' => $entity)
+            )
+        )
+    ;
+    $this->get('mailer')->send($message);
+        
+    }
+
 
     /**
      * Creates a form to create a Venta entity.

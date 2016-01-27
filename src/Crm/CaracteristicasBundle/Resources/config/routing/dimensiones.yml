@@ -1,0 +1,30 @@
+dimensiones:
+    path:     /
+    defaults: { _controller: "CaracteristicasBundle:Dimensiones:index" }
+
+dimensiones_show:
+    path:     /{id}/show
+    defaults: { _controller: "CaracteristicasBundle:Dimensiones:show" }
+
+dimensiones_new:
+    path:     /new
+    defaults: { _controller: "CaracteristicasBundle:Dimensiones:new" }
+
+dimensiones_create:
+    path:     /create
+    defaults: { _controller: "CaracteristicasBundle:Dimensiones:create" }
+    methods:  POST
+
+dimensiones_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CaracteristicasBundle:Dimensiones:edit" }
+
+dimensiones_update:
+    path:     /{id}/update
+    defaults: { _controller: "CaracteristicasBundle:Dimensiones:update" }
+    methods:  [POST, PUT]
+
+dimensiones_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CaracteristicasBundle:Dimensiones:delete" }
+    methods:  [POST, DELETE]
