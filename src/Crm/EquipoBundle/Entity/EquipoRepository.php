@@ -12,4 +12,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class EquipoRepository extends EntityRepository
 {
+	public function equiposLibres($serial)
+	{
+		return $this->getEntityManager()->createQuery("SELECT equipo FROM EquipoBundle:Equipo equipo WHERE equipo.serieWarriors = :serie")->setParameter('serie', $serial)->getResult();
+	}
 }

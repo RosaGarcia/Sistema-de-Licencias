@@ -29,6 +29,25 @@ class Equipo
      */
     private $fechaLlegada;
 
+    /**
+    * @var boolean
+    */
+    private $checkCaracteristicas;
+
+    /**
+    * @var boolean
+    */
+    private $checkVenta;
+
+    /**
+    * @var boolean
+    */
+    private $checkUbicacion;
+
+     /**
+    * @var boolean
+    */
+    private $checkLicencia;
 
     /**
      * Get id
@@ -109,6 +128,97 @@ class Equipo
         return $this->fechaLlegada;
     }
     
+     /**
+     * Set checkCaracteristicas
+     *
+     * @param boolean $checkCaracteristicas
+     * @return Equipo
+     */
+    public function setCheckCaracteristicas($checkCaracteristicas)
+    {
+        $this->checkCaracteristicas = $checkCaracteristicas;
+
+        return $this;
+    }
+
+    /**
+     * Get checkCaracteristicas
+     *
+     * @return boolean 
+     */
+    public function getCheckCaracteristicas()
+    {
+        return $this->checkCaracteristicas;
+    }
+
+    /**
+     * Set checkVenta
+     *
+     * @param boolean $checkVenta
+     * @return Equipo
+     */
+    public function setCheckVenta($checkVenta)
+    {
+        $this->checkVenta = $checkVenta;
+
+        return $this;
+    }
+
+    /**
+     * Get checkVenta
+     *
+     * @return boolean 
+     */
+    public function getCheckVenta()
+    {
+        return $this->checkVenta;
+    }
+
+    /**
+     * Set checkUbicacion
+     *
+     * @param boolean $checkUbicacion
+     * @return Equipo
+     */
+    public function setCheckUbicacion($checkUbicacion)
+    {
+        $this->checkUbicacion = $checkUbicacion;
+
+        return $this;
+    }
+
+    /**
+     * Get checkUbicacion
+     *
+     * @return boolean 
+     */
+    public function getCheckUbicacion()
+    {
+        return $this->checkUbicacion;
+    }
+
+    /**
+     * Set checkLicencia
+     *
+     * @param boolean $checkLicencia
+     * @return Equipo
+     */
+    public function setCheckLicencia($checkLicencia)
+    {
+        $this->checkLicencia = $checkLicencia;
+
+        return $this;
+    }
+
+    /**
+     * Get checkLicencia
+     *
+     * @return boolean 
+     */
+    public function getCheckLicencia()
+    {
+        return $this->checkLicencia;
+    }
 
     public function __toString()
     {
@@ -280,5 +390,71 @@ class Equipo
     public function getUbicacion()
     {
         return $this->ubicacion;
+    }
+    /**
+     * @var boolean
+     */
+    private $caracteristicas;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $venta;
+
+
+    /**
+     * Set caracteristicas
+     *
+     * @param boolean $caracteristicas
+     * @return Equipo
+     */
+    public function setCaracteristicas($caracteristicas)
+    {
+        $this->caracteristicas = $caracteristicas;
+
+        return $this;
+    }
+
+    /**
+     * Get caracteristicas
+     *
+     * @return boolean 
+     */
+    public function getCaracteristicas()
+    {
+        return $this->caracteristicas;
+    }
+
+    /**
+     * Add venta
+     *
+     * @param \Crm\VentasBundle\Entity\Venta $venta
+     * @return Equipo
+     */
+    public function addVentum(\Crm\VentasBundle\Entity\Venta $venta)
+    {
+        $this->venta[] = $venta;
+
+        return $this;
+    }
+
+    /**
+     * Remove venta
+     *
+     * @param \Crm\VentasBundle\Entity\Venta $venta
+     */
+    public function removeVentum(\Crm\VentasBundle\Entity\Venta $venta)
+    {
+        $this->venta->removeElement($venta);
+    }
+
+    /**
+     * Get venta
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVenta()
+    {
+        return $this->venta;
     }
 }

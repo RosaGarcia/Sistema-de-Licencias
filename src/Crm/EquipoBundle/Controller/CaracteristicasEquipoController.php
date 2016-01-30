@@ -44,6 +44,13 @@ class CaracteristicasEquipoController extends Controller
             $em->persist($entity);
             $em->flush();
 
+            $this->get('session')->getFlashBag()->add(
+                                'mensaje',
+                                'Se ha creado el registro exitosamente'
+                            );
+
+            $equipo = $this->equipos($serial = $entity->getEquipo());
+
             return $this->redirect($this->generateUrl('caracteristicasequipo_show', array('id' => $entity->getId())));
         }
 
@@ -85,6 +92,17 @@ class CaracteristicasEquipoController extends Controller
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
+    }
+
+    public function equipos($serial)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('EquipoBundle:Equipo')->find($serial);
+
+            $entity ->setCheckCaracteristicas('t');
+            $em->persist($entity);
+            $em->flush();
     }
 
     /**

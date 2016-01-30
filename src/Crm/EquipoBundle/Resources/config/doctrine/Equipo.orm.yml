@@ -17,6 +17,18 @@ Crm\EquipoBundle\Entity\Equipo:
             length: '20'
         fechaLlegada:
             type: datetime
+        checkCaracteristicas:
+            type: boolean
+            nullable: TRUE
+        checkVenta:
+            type: boolean
+            nullable: TRUE
+        checkUbicacion:
+            type: boolean
+            nullable: TRUE
+        checkLicencia:
+            type: boolean
+            nullable: TRUE
     manyToOne:
         modeloEquipo:
           targetEntity: Crm\CaracteristicasBundle\Entity\ModeloEquipo
@@ -36,6 +48,9 @@ Crm\EquipoBundle\Entity\Equipo:
           mappedBy: Equipo
         ubicacion:
           targetEntity: Crm\EquipoBundle\Entity\Ubicacion
+          mappedBy: Equipo
+        venta:
+          targetEntity: Crm\VentasBundle\Entity\Venta
           mappedBy: Equipo
     oneToOne:
         licenciaEquipo:

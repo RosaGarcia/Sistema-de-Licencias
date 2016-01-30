@@ -20,7 +20,15 @@ class UbicacionType extends AbstractType
             ->add('numeroInt','text',array('attr' => array('class' => 'form-control'),'required' => false))
             ->add('colonia','text',array('attr' => array('class' => 'form-control')))
             ->add('codigoPostal','text',array('attr' => array('class' => 'form-control')))
-            ->add('equipo')
+            ->add('equipo','entity', array(
+                'class' => 'EquipoBundle:Equipo',
+                'property' => 'serieWarriors',
+                'query_builder' => function (\Crm\EquipoBundle\Entity\EquipoRepository $repository){
+                    return $repository->createQueryBuilder('equipo')
+                    ->orderBy('equipo.checkUbicacion', 'ASC')
+                    ->where('equipo.checkUbicacion = :check')
+                    ->setParameter('check', 'f');}
+                ))
             ->add('estado')
             ->add('localidad','text',array('attr' => array('class' => 'form-control')))
             ->add('pais')

@@ -40,6 +40,10 @@ class EquipoController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $entity -> setCheckCaracteristicas('f');
+            $entity -> setCheckVenta('f');
+            $entity -> setCheckUbicacion('f');
+            $entity -> setCheckLicencia('f');
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();

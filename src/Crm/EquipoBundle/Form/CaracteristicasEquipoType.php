@@ -24,7 +24,15 @@ class CaracteristicasEquipoType extends AbstractType
             ->add('discoDuro')
             ->add('memoriaRam')
             ->add('software')
-            ->add('equipo')
+            ->add('equipo','entity', array(
+                'class' => 'EquipoBundle:Equipo',
+                'property' => 'serieWarriors',
+                'query_builder' => function (\Crm\EquipoBundle\Entity\EquipoRepository $repository){
+                    return $repository->createQueryBuilder('equipo')
+                    ->orderBy('equipo.checkCaracteristicas', 'ASC')
+                    ->where('equipo.checkCaracteristicas = :check')
+                    ->setParameter('check', 'f');}
+                ))
         ;
     }
     

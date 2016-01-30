@@ -47,6 +47,7 @@ class UbicacionController extends Controller
                                 'mensaje',
                                 'Se ha creado el registro exitosamente'
                             );
+             $equipo = $this->equipos($serial = $entity->getEquipo());
 
             return $this->redirect($this->generateUrl('ubicacion_show', array('id' => $entity->getId())));
         }
@@ -89,6 +90,17 @@ class UbicacionController extends Controller
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
+    }
+
+    public function equipos($serial)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('EquipoBundle:Equipo')->find($serial);
+
+            $entity ->setCheckUbicacion('t');
+            $em->persist($entity);
+            $em->flush();
     }
 
     /**

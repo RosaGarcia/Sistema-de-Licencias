@@ -34,4 +34,10 @@ Crm\VentasBundle\Entity\Venta:
           joinColumn: 
             name: cliente_id
             referencedColumnName: id
+        equipo:
+          targetEntity: Crm\EquipoBundle\Entity\Equipo
+          inversedBy: venta
+          joinColumn:
+            name: equipo_id
+            referencedColumnName: id
     lifecycleCallbacks: {  }

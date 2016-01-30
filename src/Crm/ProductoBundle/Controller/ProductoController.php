@@ -21,13 +21,18 @@ class ProductoController extends Controller
      */
     public function indexAction()
     {
+        return $this->render('ProductoBundle:Producto:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('ProductoBundle:Producto')->findAll();
 
-        return $this->render('ProductoBundle:Producto:index.html.twig', array(
+        return $this->render('ProductoBundle:Producto:listado.html.twig', array(
             'entities' => $entities,
-        ));
+        ));   
     }
     /**
      * Creates a new Producto entity.

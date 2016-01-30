@@ -17,7 +17,15 @@ class LicenciaEquipoType extends AbstractType
         $builder
             ->add('fechaInicio','date',array('widget'=>'single_text'))
             ->add('fechaFinal','date',array('widget'=>'single_text'))
-            ->add('equipo')
+            ->add('equipo','entity', array(
+                'class' => 'EquipoBundle:Equipo',
+                'property' => 'serieWarriors',
+                'query_builder' => function (\Crm\EquipoBundle\Entity\EquipoRepository $repository){
+                    return $repository->createQueryBuilder('equipo')
+                    ->orderBy('equipo.checkLicencia', 'ASC')
+                    ->where('equipo.checkLicencia = :check')
+                    ->setParameter('check', 'f');}
+                ))
         ;
     }
     

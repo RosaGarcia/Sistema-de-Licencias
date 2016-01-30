@@ -20,6 +20,15 @@ class VentaType extends AbstractType
             ->add('estatus','choice',array('choices' => array('demo' => 'Demo','venta' => 'Venta'),'attr' => array('class' => 'form-control')))
             ->add('producto')
             ->add('cliente')
+            ->add('equipo','entity', array(
+                'class' => 'EquipoBundle:Equipo',
+                'property' => 'serieWarriors',
+                'query_builder' => function (\Crm\EquipoBundle\Entity\EquipoRepository $repository){
+                    return $repository->createQueryBuilder('equipo')
+                    ->orderBy('equipo.checkVenta', 'ASC')
+                    ->where('equipo.checkVenta = :check')
+                    ->setParameter('check', 'f');}
+                ))
             
         ;
     }

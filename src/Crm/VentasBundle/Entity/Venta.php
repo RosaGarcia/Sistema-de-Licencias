@@ -179,4 +179,19 @@ class Venta
     {
         return $this->cliente;
     }
+    /**
+     * @var \Crm\EquipoBundle\Entity\Equipo
+     */
+    private $equipo;
+
+
+    /**
+     * Get equipo
+     *
+     * @return \Crm\EquipoBundle\Entity\Equipo 
+     */
+    public function getEquipo()
+    {
+        return $this->equipo;
+    }
 }
