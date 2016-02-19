@@ -1,6 +1,6 @@
 producto_producto:
     resource: "@ProductoBundle/Resources/config/routing/producto.yml"
-    prefix:   /producto
+    prefix:   venta/producto
 
 producto_homepage:
     path:     /hello/{name}

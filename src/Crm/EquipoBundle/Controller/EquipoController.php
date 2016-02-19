@@ -21,13 +21,18 @@ class EquipoController extends Controller
      */
     public function indexAction()
     {
+        return $this->render('EquipoBundle:Equipo:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('EquipoBundle:Equipo')->findAll();
 
-        return $this->render('EquipoBundle:Equipo:index.html.twig', array(
+        return $this->render('EquipoBundle:Equipo:listado.html.twig', array(
             'entities' => $entities,
-        ));
+        ));  
     }
     /**
      * Creates a new Equipo entity.

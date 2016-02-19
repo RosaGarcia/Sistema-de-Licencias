@@ -1,78 +1,99 @@
-{% extends '::frontend.html.twig' %}
+{% extends 'UsuariosBundle:Usuarios:index.html.twig' %}
 
-{% block body -%}
-    
-    <div class="row">
-       	<div class="col-xs-12 col-sm-12 com-md-12">
-        	<h2><a href="{{ path('usuarios') }}">
-            		Usuarios:
-            	</a>
-         		Editar
-        	</h2>
-    	</div>
-	</div>
+{% block form -%}
 
-	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12">
-	        <div class="portlet light tasks-widget ">
-	            <div class="portlet-title">
+         <div class="row">
+         	<div class="col-xs-12 col-sm-12 col-md-12">
+                <h2><a href="{{ path('usuarios') }}">
+                	Usuarios:
+                    </a>
+                    Editar           
+                </h2>
+            </div>
+        </div>   
+
+        <div class="row">
+	    <div class="col-md-12 col-sm-12">
+	        <div class="portlet light ">
+	            <div class="portlet-title tabbable-line">
 	                <div class="caption">
-	                	<i class="icon-pencil font-green"></i>
-	                    <span class="caption-subject font-green bold uppercase">Editar Usuarios</span>
+	                    <i class="fa fa-database font-green-sharp"></i>
+	                    <span class="caption-subject font-green-sharp bold uppercase">Editar Usuario</span>
 	                </div>
+	                <ul class="nav nav-tabs">
+	                    <li class="active">
+	                        <a href="#tab_1_1" class="active" data-toggle="tab">Usuarios</a>
+	                    </li>
+	                </ul>
 	            </div>
-	            <div class="portlet-body">
-	                <div class="task-content">
+	            {{ form_start(edit_form) }}
+	                <div class="portlet-body">
+	                    <div class="tab-content">
+	                        <div class="tab-pane active">
+	                            <div class="scroller" data-always-visible="1" data-rail-visible="0">
+	                                <ul class="feeds">
 
-	                	{{ form_start(edit_form) }}
-
-                			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Nombre:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.nombre) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Password:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.contrasena) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Personal:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.personal,{"attr":{"class":"form-control"},"required":"true"}) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-	            			<div class="form-group">
-	    						<div class="row">
-	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Rol:
-	                    			</div>
-	                    			<div class="col-xs-12 col-sm-3 col-md-3">
-	                    				{{ form_widget(edit_form.rol,{"attr":{"class":"form-control"},"required":"true"}) }}
-	                    			</div>
-	                			</div>
-	            			</div>
-
-						{{ form_end(edit_form) }}
-
-					</div>
-	        	</div>
-	    	</div>
-		</div>
+	                                    <div class="col-md-12">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.userName,{'attr': {'placeholder': 'Nombre de usuario'}}) }}
+	                                                <label for="userName">Nombre</label>
+	                                                <i class="fa fa-user"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-6">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.password.first,{'attr': {'class':'form-control','placeholder': 'Password'}}) }}
+	                                                <label for="passwordfirst">Password</label>
+	                                                <i class="fa fa-lock"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-6">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.password.second,{'attr': {'class':'form-control','placeholder': 'Confirmar password'}}) }}
+	                                                <label for="passwordsecond">Confirmar password</label>
+	                                                <i class="fa fa-unlock"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-6">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.personal,{'attr': {'class':'form-control'},'required':'true'}) }}
+	                                                <label for="personal">Personal</label>
+	                                                <i class="fa fa-sort-down"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-6">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.rol,{'attr': {'class':'form-control'},'required':'true'}) }}
+	                                                <label for="rol">Rol</label>
+	                                                <i class="fa fa-sort-down"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                    
+	                                </ul>
+	           {{ form_widget(edit_form._token) }}
+	                         
+	                                <div class="col-xs-12">
+	                                    <button class="btn btn-success" type="submit" id="sendform"><i class="fa fa-pencil"></i>&nbsp;Actualizar</button>
+	                                </div>
+	                          
+	                                </form>     
+	                            </div>
+	                        </div>
+	                                            
+	                    </div>
+	                </div>
+	        </div>
+	    </div>
 	</div>
-	
+
 {% endblock %}

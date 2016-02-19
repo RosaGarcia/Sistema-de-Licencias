@@ -9,7 +9,7 @@ use Crm\UsuariosBundle\Entity\Usuarios;
 use Crm\UsuariosBundle\Form\UsuariosType;
 
 /**
- * Usuarios controller.
+ * Usuario controller.
  *
  */
 class UsuariosController extends Controller
@@ -19,16 +19,20 @@ class UsuariosController extends Controller
      * Lists all Usuarios entities.
      *
      */
-    public function indexAction()
+    public function indexAction() 
+    {
+        return $this->render('UsuariosBundle:Usuarios:index.html.twig');
+    }
+
+    public function listadoAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $entities = $em->getRepository('UsuariosBundle:Usuarios')->findAll();
-
-        return $this->render('UsuariosBundle:Usuarios:index.html.twig', array(
+        return $this->render('UsuariosBundle:Usuarios:listado.html.twig', array(
             'entities' => $entities,
         ));
     }
+
     /**
      * Creates a new Usuarios entity.
      *
@@ -41,13 +45,16 @@ class UsuariosController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            // Encode password
+            $entity->setSalt(md5(time()));
+            $plainPassword = $form->get('password')->getData();
+            $encoder = $this->container->get('security.password_encoder');
+            $encoded = $encoder->encodePassword($entity, $plainPassword);
+            $entity->setPassword($encoded);
+
             $em->persist($entity);
             $em->flush();
-            $this->get('session')->getFlashBag()->add(
-                                'mensaje',
-                                'Se ha creado el registro exitosamente'
-                            );
-
             return $this->redirect($this->generateUrl('usuarios_show', array('id' => $entity->getId())));
         }
 
@@ -58,7 +65,7 @@ class UsuariosController extends Controller
     }
 
     /**
-     * Creates a form to create a Usuarios entity.
+     * Creates a form to create a Usuario entity.
      *
      * @param Usuarios $entity The entity
      *
@@ -71,20 +78,19 @@ class UsuariosController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Crear', 'attr' => array('class' => 'btn btn-success')));
+        $form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
     }
 
     /**
-     * Displays a form to create a new Usuarios entity.
+     * Displays a form to create a new Usuario entity.
      *
      */
     public function newAction()
     {
         $entity = new Usuarios();
         $form   = $this->createCreateForm($entity);
-
         return $this->render('UsuariosBundle:Usuarios:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
@@ -92,7 +98,7 @@ class UsuariosController extends Controller
     }
 
     /**
-     * Finds and displays a Usuarios entity.
+     * Finds and displays a Usuario entity.
      *
      */
     public function showAction($id)
@@ -102,7 +108,7 @@ class UsuariosController extends Controller
         $entity = $em->getRepository('UsuariosBundle:Usuarios')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Usuarios entity.');
+            throw $this->createNotFoundException('Unable to find Usuario entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -124,7 +130,7 @@ class UsuariosController extends Controller
         $entity = $em->getRepository('UsuariosBundle:Usuarios')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Usuarios entity.');
+            throw $this->createNotFoundException('Unable to find Usuario entity.');
         }
 
         $editForm = $this->createEditForm($entity);
@@ -138,7 +144,7 @@ class UsuariosController extends Controller
     }
 
     /**
-    * Creates a form to edit a Usuarios entity.
+    * Creates a form to edit a Usuario entity.
     *
     * @param Usuarios $entity The entity
     *
@@ -151,7 +157,7 @@ class UsuariosController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Editar','attr' => array('class' => 'btn btn-primary')));
+        $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }
@@ -166,7 +172,7 @@ class UsuariosController extends Controller
         $entity = $em->getRepository('UsuariosBundle:Usuarios')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Usuarios entity.');
+            throw $this->createNotFoundException('Unable to find Usuario entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -174,11 +180,14 @@ class UsuariosController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+
+            // Encode password
+            $plainPassword = $editForm->get('password')->getData();
+            $encoder = $this->container->get('security.password_encoder');
+            $encoded = $encoder->encodePassword($entity, $plainPassword);
+            $entity->setPassword($encoded);
+
             $em->flush();
-            $this->get('session')->getFlashBag()->add(
-                                'mensaje',
-                                'Se ha editado el registro exitosamente'
-                            );
 
             return $this->redirect($this->generateUrl('usuarios'));
         }
@@ -190,7 +199,7 @@ class UsuariosController extends Controller
         ));
     }
     /**
-     * Deletes a Usuarios entity.
+     * Deletes a Usuario entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -203,22 +212,18 @@ class UsuariosController extends Controller
             $entity = $em->getRepository('UsuariosBundle:Usuarios')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Usuarios entity.');
+                throw $this->createNotFoundException('Unable to find Usuario entity.');
             }
 
             $em->remove($entity);
             $em->flush();
-            $this->get('session')->getFlashBag()->add(
-                                'mensaje',
-                                'Se ha eliminado el registro exitosamente'
-                            );
         }
 
         return $this->redirect($this->generateUrl('usuarios'));
     }
 
     /**
-     * Creates a form to delete a Usuarios entity by id.
+     * Creates a form to delete a Usuario entity by id.
      *
      * @param mixed $id The entity id
      *

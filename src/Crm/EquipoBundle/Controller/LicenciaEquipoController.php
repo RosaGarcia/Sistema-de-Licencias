@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Crm\EquipoBundle\Entity\LicenciaEquipo;
 use Crm\EquipoBundle\Form\LicenciaEquipoType;
+use Crm\EquipoBundle\Form\LicenciaEquiposType;
 
 /**
  * LicenciaEquipo controller.
@@ -21,11 +22,16 @@ class LicenciaEquipoController extends Controller
      */
     public function indexAction()
     {
+       return $this->render('EquipoBundle:LicenciaEquipo:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('EquipoBundle:LicenciaEquipo')->findAll();
 
-        return $this->render('EquipoBundle:LicenciaEquipo:index.html.twig', array(
+        return $this->render('EquipoBundle:LicenciaEquipo:listado.html.twig', array(
             'entities' => $entities,
         ));
     }
@@ -159,7 +165,7 @@ class LicenciaEquipoController extends Controller
     */
     private function createEditForm(LicenciaEquipo $entity)
     {
-        $form = $this->createForm(new LicenciaEquipoType(), $entity, array(
+        $form = $this->createForm(new LicenciaEquiposType(), $entity, array(
             'action' => $this->generateUrl('licenciaequipo_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
@@ -221,6 +227,8 @@ class LicenciaEquipoController extends Controller
 
             $em->remove($entity);
             $em->flush();
+            $equipo = $this->equiposLibre($serial = $entity->getEquipo());
+
             $this->get('session')->getFlashBag()->add(
                                 'mensaje',
                                 'Se ha eliminado el registro exitosamente'
@@ -245,5 +253,16 @@ class LicenciaEquipoController extends Controller
             ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
+    }
+
+    public function equiposLibre($serial)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('EquipoBundle:Equipo')->find($serial);
+
+            $entity ->setCheckLicencia('f');
+            $em->persist($entity);
+            $em->flush();
     }
 }

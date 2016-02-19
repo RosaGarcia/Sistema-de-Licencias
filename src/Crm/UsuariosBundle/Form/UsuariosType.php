@@ -15,8 +15,8 @@ class UsuariosType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre','text',array('attr' => array('class' => 'form-control')))
-            ->add('contrasena','repeated', array(
+            ->add('userName','text',array('attr' => array('class' => 'form-control')))
+            ->add('password', 'repeated', array(
                     'type' => 'password',
                     'invalid_message' => 'Los paswords no coinciden.',
                     'options' => array('attr' => array('class' => 'input-xlarge','minlength'=>8)),

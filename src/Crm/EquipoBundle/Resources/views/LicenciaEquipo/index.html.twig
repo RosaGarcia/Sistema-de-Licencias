@@ -2,17 +2,14 @@
 
 {% block body -%}
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 com-md-12">
-            <h2>
-                Licencia Equipo
-            </h2>
-        </div>
-    </div>
 
     {% for flashMessage in app.session.flashbag.get('mensaje') %}
         <h2 class="alert-success">{{ flashMessage }}</h2><br /><br />
     {% endfor %}
+
+    {% block form %}
+        {{ render (controller('EquipoBundle:LicenciaEquipo:new')) }}
+    {% endblock %}
 
    <div class="row">
         <div class="col-md-12">
@@ -39,25 +36,15 @@
                         <thead>
                             <tr>
                                 <th class="oculto">Id</th>
+                                <th>Equipo</th>
                                 <th>Fecha Inicio</th>
                                 <th>Fecha Final</th>
-                                <th>Actions</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {% for entity in entities %}
-                                <tr>
-                                    <td class="oculto"><a href="{{ path('licenciaequipo_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                                    <td>{% if entity.fechaInicio %}{{ entity.fechaInicio|date('Y-m-d') }}{% endif %}</td>
-                                    <td>{% if entity.fechaFinal %}{{ entity.fechaFinal|date('Y-m-d') }}{% endif %}</td>
-                                    <td>
-                                        <a href="{{ path('licenciaequipo_show', { 'id': entity.id }) }}"  class="btn yellow btn-outline">Ver</a>
-                                        
-                                        <a href="{{ path('licenciaequipo_edit', { 'id': entity.id }) }}"  class="btn blue btn-outline">Editar</a>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
+                        {% block lista -%}
+                            {{ render (controller('EquipoBundle:LicenciaEquipo:listado')) }}
+                        {% endblock %}
                     </table>
                 </div>
             </div>

@@ -1,26 +1,26 @@
 caracteristicas_modeloequipo:
     resource: "@CaracteristicasBundle/Resources/config/routing/modeloequipo.yml"
-    prefix:   /modeloequipo
+    prefix:   warriors/modeloequipo
 
 caracteristicas_versionsoftware:
     resource: "@CaracteristicasBundle/Resources/config/routing/versionsoftware.yml"
-    prefix:   /versionsoftware
+    prefix:   warriors/versionsoftware
 
 caracteristicas_procesador:
     resource: "@CaracteristicasBundle/Resources/config/routing/procesador.yml"
-    prefix:   /procesador
+    prefix:   warriors/procesador
 
 caracteristicas_memoriaram:
     resource: "@CaracteristicasBundle/Resources/config/routing/memoriaram.yml"
-    prefix:   /memoriaram
+    prefix:   warriors/memoriaram
 
 caracteristicas_discoduro:
     resource: "@CaracteristicasBundle/Resources/config/routing/discoduro.yml"
-    prefix:   /discoduro
+    prefix:   warriors/discoduro
 
 caracteristicas_dimensiones:
     resource: "@CaracteristicasBundle/Resources/config/routing/dimensiones.yml"
-    prefix:   /dimensiones
+    prefix:   warriors/dimensiones
 
 caracteristicas_homepage:
     path:     /hello/{name}

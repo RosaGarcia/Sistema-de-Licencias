@@ -21,14 +21,19 @@ class RolesController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        return $this->render('UsuariosBundle:Roles:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
+       $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('UsuariosBundle:Roles')->findAll();
 
-        return $this->render('UsuariosBundle:Roles:index.html.twig', array(
+        return $this->render('UsuariosBundle:Roles:listado.html.twig', array(
             'entities' => $entities,
-        ));
-    }
+        )); 
+    } 
     /**
      * Creates a new Roles entity.
      *

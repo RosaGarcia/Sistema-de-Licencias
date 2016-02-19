@@ -21,11 +21,16 @@ class VersionSoftwareController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        return $this->render('CaracteristicasBundle:VersionSoftware:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
+      $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('CaracteristicasBundle:VersionSoftware')->findAll();
 
-        return $this->render('CaracteristicasBundle:VersionSoftware:index.html.twig', array(
+        return $this->render('CaracteristicasBundle:VersionSoftware:listado.html.twig', array(
             'entities' => $entities,
         ));
     }

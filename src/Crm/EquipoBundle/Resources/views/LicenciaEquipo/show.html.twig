@@ -16,7 +16,7 @@
         <h2 class="alert-success">{{ flashMessage }}</h2><br /><br />
     {% endfor %}
 
-    <div class="row">
+     <div class="row">
         <div class="col-md-12">
             <div class="portlet light portlet-fit ">
                 <div class="portlet-title">
@@ -27,37 +27,38 @@
                 </div>
                 <div class="portlet-body">
                     <div class="general-item-list">
-                        
+
                         <div class="item">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-2 col-md-2">
-                                        Equipo:
-                                    </div>
-                                    <div class="col-xs-12 col-sm-3 col-md-3">
-                                        {{ entity.equipo }}
-                                    </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Equipo:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.equipo }}
                                 </div>
                             </div>
-                             <div class="item">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-2 col-md-2">
-                                        fechaInicio:
-                                    </div>
-                                    <div class="col-xs-12 col-sm-3 col-md-3">
-                                       {{ entity.fechaInicio|date('Y-m-d') }}
-                                    </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Facha Inicio:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.fechaInicio|date('Y-m-d') }}
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-2 col-md-2">
-                                        Fecha Termino:
-                                    </div>
-                                    <div class="col-xs-12 col-sm-3 col-md-3">
-                                        {{ entity.fechaFinal|date('Y-m-d') }}
-                                    </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Fecha Final:
                                 </div>
-                            </div><br />
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.fechaFinal|date('Y-m-d') }}
+                                </div>
+                            </div>
+                        </div>                       
+                        <br />
 
                         {{ form(delete_form) }}
                        

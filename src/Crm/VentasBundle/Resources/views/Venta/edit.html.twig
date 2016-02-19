@@ -35,7 +35,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group form-md-line-input has-success">
                                                 <div class="input-icon">
-                                                    {{ form_widget(edit_form.equipo,{"attr":{"class":"form-control"},"required":"true"}) }}
+                                                    {{ form_widget(edit_form.equipo,{"attr":{"class":"form-control","disabled":"disabled"},"required":"true"}) }}
                                                     <label for="equipo">Equipo</label>
                                                     <i class="fa fa-sort-down"></i>
                                                 </div>
@@ -45,7 +45,7 @@
                                             <div class="form-group form-md-line-input has-success">
                                                 <div class="input-icon">
                                                     {{ form_widget(edit_form.fechaVenta,{"attr":{"class":"form-control"},"required":"true"}) }}
-                                                    <label for="fechaVenta">Equipo</label>
+                                                    <label for="fechaVenta">Fecha Venta</label>
                                                     <i class="fa fa-sort-down"></i>
                                                 </div>
                                             </div>
@@ -72,7 +72,7 @@
                                             <div class="form-group form-md-line-input has-success">
                                                 <div class="input-icon">
                                                     {{ form_widget(edit_form.usuarios,{"attr":{"class":"form-control"},"required":"true"}) }}
-                                                    <label for="usuarios">Usuarios</label>
+                                                    <label for="usuarios">Vendedor</label>
                                                     <i class="fa fa-sort-down"></i>
                                                 </div>
                                             </div>
@@ -91,7 +91,7 @@
                 {{ form_widget(edit_form._token) }}  
                              
                                     <div class="col-xs-12">
-                                        <button class="btn btn-success" type="submit" id="sendform"><i class="fa fa-plus"></i>&nbsp;Actualizar</button>
+                                        <button class="btn btn-success" type="submit" id="sendform"><i class="fa fa-pencil"></i>&nbsp;Actualizar</button>
                                     </div>
                               
                                     </form>     

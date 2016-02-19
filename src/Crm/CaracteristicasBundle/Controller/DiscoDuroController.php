@@ -21,11 +21,16 @@ class DiscoDuroController extends Controller
      */
     public function indexAction()
     {
+        return $this->render('CaracteristicasBundle:DiscoDuro:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('CaracteristicasBundle:DiscoDuro')->findAll();
 
-        return $this->render('CaracteristicasBundle:DiscoDuro:index.html.twig', array(
+        return $this->render('CaracteristicasBundle:DiscoDuro:listado.html.twig', array(
             'entities' => $entities,
         ));
     }

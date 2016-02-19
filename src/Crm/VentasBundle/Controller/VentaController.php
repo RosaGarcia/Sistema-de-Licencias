@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Crm\VentasBundle\Entity\Venta;
 use Crm\VentasBundle\Form\VentaType;
+use Crm\VentasBundle\Form\VentasType;
 
 /**
  * Venta controller.
@@ -178,7 +179,7 @@ class VentaController extends Controller
     */
     private function createEditForm(Venta $entity)
     {
-        $form = $this->createForm(new VentaType(), $entity, array(
+        $form = $this->createForm(new VentasType(), $entity, array(
             'action' => $this->generateUrl('venta_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
@@ -240,6 +241,7 @@ class VentaController extends Controller
 
             $em->remove($entity);
             $em->flush();
+             $equipo = $this->equiposLibre($serial = $entity->getEquipo());
             $this->get('session')->getFlashBag()->add(
                                 'mensaje',
                                 'Se ha eliminado el registro exitosamente'
@@ -264,5 +266,16 @@ class VentaController extends Controller
             ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
+    }
+
+    public function equiposLibre($serial)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('EquipoBundle:Equipo')->find($serial);
+
+            $entity ->setCheckVenta('f');
+            $em->persist($entity);
+            $em->flush();
     }
 }

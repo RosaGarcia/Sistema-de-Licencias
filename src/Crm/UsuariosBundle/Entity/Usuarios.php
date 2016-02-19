@@ -1,13 +1,14 @@
 <?php
 
 namespace Crm\UsuariosBundle\Entity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Usuarios
  */
-class Usuarios
+class Usuarios implements UserInterface
 {
     /**
      * @var integer
@@ -17,12 +18,17 @@ class Usuarios
     /**
      * @var string
      */
-    private $nombre;
+    private $userName;
 
     /**
      * @var string
      */
-    private $contrasena;
+    private $password;
+
+    /**
+    * @var string
+    **/
+    private $salt;
 
 
     /**
@@ -36,49 +42,78 @@ class Usuarios
     }
 
     /**
-     * Set nombre
+     * Set userName
      *
-     * @param string $nombre
+     * @param string $userName
      * @return Usuarios
      */
-    public function setNombre($nombre)
+    public function setuserName($userName)
     {
-        $this->nombre = $nombre;
+        $this->userName = $userName;
 
         return $this;
     }
 
     /**
-     * Get nombre
+     * Get userName
      *
      * @return string 
      */
-    public function getNombre()
+    public function getuserName()
     {
-        return $this->nombre;
+        return $this->userName;
     }
 
+
     /**
-     * Set contrasena
+     * Set password
      *
-     * @param string $contrasena
+     * @param string $password
      * @return Usuarios
      */
-    public function setContrasena($contrasena)
+    public function setPassword($password)
     {
-        $this->contrasena = $contrasena;
+        $this->password = $password;
 
         return $this;
     }
 
     /**
-     * Get contrasena
+     * Get password
      *
      * @return string 
      */
-    public function getContrasena()
+    public function getPassword()
     {
-        return $this->contrasena;
+        return $this->password;
+    }
+    
+    /**
+     * Set salt
+     *
+     * @param string $salt
+     *
+     * @return Usuarios
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+
+        return $this;
+    }
+
+    /**
+     * Get salt
+     *
+     * @return string
+     */
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+    public function eraseCredentials()
+    {
     }
     /**
      * @var \Crm\PersonalBundle\Entity\Personal
@@ -139,6 +174,18 @@ class Usuarios
 
      public function __toString()
     {
-        return $this->nombre;
+        return $this->userName;
+    }
+
+    /**
+     * Get roles
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+     public function getRoles()
+    {
+        $rol = $this->rol;
+        $permisos = explode(",", $rol);
+        return $permisos;
     }
 }

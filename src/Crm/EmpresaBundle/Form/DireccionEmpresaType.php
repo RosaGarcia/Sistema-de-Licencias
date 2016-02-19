@@ -17,7 +17,7 @@ class DireccionEmpresaType extends AbstractType
         $builder
             ->add('calle','text',array('attr' => array('class' => 'form-control')))
             ->add('numeroExt','text',array('attr' => array('class' => 'form-control')))
-            ->add('numeroInt','text',array('attr' => array('class' => 'form-control')))
+            ->add('numeroInt','text',array('attr' => array('class' => 'form-control'),'required' => false))
             ->add('colonia','text',array('attr' => array('class' => 'form-control')))
             ->add('codigoPostal','text',array('attr' => array('class' => 'form-control')))
             ->add('empresa', new EmpresaType())

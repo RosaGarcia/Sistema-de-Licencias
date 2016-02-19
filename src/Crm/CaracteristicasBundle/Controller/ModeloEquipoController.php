@@ -21,13 +21,18 @@ class ModeloEquipoController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        return $this->render('CaracteristicasBundle:ModeloEquipo:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
+       $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('CaracteristicasBundle:ModeloEquipo')->findAll();
 
-        return $this->render('CaracteristicasBundle:ModeloEquipo:index.html.twig', array(
+        return $this->render('CaracteristicasBundle:ModeloEquipo:listado.html.twig', array(
             'entities' => $entities,
-        ));
+        )); 
     }
     /**
      * Creates a new ModeloEquipo entity.

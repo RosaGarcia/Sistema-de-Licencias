@@ -21,13 +21,17 @@ class PuestoController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        return $this->render('PersonalBundle:Puesto:index.html.twig');
+    }
+
+    public function listadoAction(){
+       $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('PersonalBundle:Puesto')->findAll();
 
-        return $this->render('PersonalBundle:Puesto:index.html.twig', array(
+        return $this->render('PersonalBundle:Puesto:listado.html.twig', array(
             'entities' => $entities,
-        ));
+        )); 
     }
     /**
      * Creates a new Puesto entity.

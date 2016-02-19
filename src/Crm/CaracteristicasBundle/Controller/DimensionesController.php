@@ -21,11 +21,16 @@ class DimensionesController extends Controller
      */
     public function indexAction()
     {
+        return $this->render('CaracteristicasBundle:Dimensiones:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('CaracteristicasBundle:Dimensiones')->findAll();
 
-        return $this->render('CaracteristicasBundle:Dimensiones:index.html.twig', array(
+        return $this->render('CaracteristicasBundle:Dimensiones:listado.html.twig', array(
             'entities' => $entities,
         ));
     }

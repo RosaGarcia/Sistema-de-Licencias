@@ -1,10 +1,10 @@
 cliente_direccioncliente:
     resource: "@ClienteBundle/Resources/config/routing/direccioncliente.yml"
-    prefix:   /direccioncliente
+    prefix:   venta/direccioncliente
 
 cliente_cliente:
     resource: "@ClienteBundle/Resources/config/routing/cliente.yml"
-    prefix:   /cliente
+    prefix:   venta/cliente
 
 cliente_homepage:
     path:     /hello/{name}

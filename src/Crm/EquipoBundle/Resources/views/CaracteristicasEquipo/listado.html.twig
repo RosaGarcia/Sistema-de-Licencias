@@ -1,0 +1,16 @@
+<tbody>
+    {% for entity in entities %}
+        <tr>
+        <td class="oculto">{{ entity.id }}</td>
+         <td><a href="{{ path('caracteristicasequipo_show', { 'id': entity.id }) }}">{{ entity.equipo }}</a></td>
+        <td>{{ entity.interfaz }}</td>
+        <td>{{ entity.usb }}</td>
+        <td><input type="checkbox" {% if  entity.expansion == 1 %} checked="checked" {% endif %}/></td>
+        <td>
+            <a href="{{ path('caracteristicasequipo_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
+                    
+            <a href="{{ path('caracteristicasequipo_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
+        </td>
+    </tr>
+    {% endfor %}
+</tbody>

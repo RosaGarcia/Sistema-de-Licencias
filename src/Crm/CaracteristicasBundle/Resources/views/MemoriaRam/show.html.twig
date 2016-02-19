@@ -1,4 +1,4 @@
-{% extends '::frontend.html.twig' %}
+ {% extends '::frontend.html.twig' %}
 
 {% block body -%}
     
@@ -26,29 +26,61 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <div class="table-scrollable">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Marca</th>
-                                    <th>Modelo</th>
-                                    <th colspan="2">Capacidad</th>
-                                    <th>Tipo</th>
-                                    <th colspan="2">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ entity.marca }}</td>
-                                    <td>{{ entity.modelo }}</td>
-                                    <td>{{ entity.capacidad }}</td>
-                                    <td>{{ entity.unidad }}</td>
-                                    <td>{{ entity.tipo }}</td>
-                                    <td><a href="{{ path('memoriaram_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a></td>
-                                    <td>{{ form(delete_form) }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="general-item-list">
+                        
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Marca:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.marca }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Modelo:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.modelo }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Capacidad:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.capacidad }} {{ entity.unidad }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Tipo:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.tipo }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Termino Memoria:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.terminoMemoria }}
+                                </div>
+                            </div>
+                        </div><br />
+
+                        {{ form(delete_form) }}
+                       
                     </div>
                 </div>
             </div>

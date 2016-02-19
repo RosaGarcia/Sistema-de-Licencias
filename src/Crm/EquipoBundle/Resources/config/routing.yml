@@ -1,6 +1,6 @@
 equipo_caracteristicasequipo:
     resource: "@EquipoBundle/Resources/config/routing/caracteristicasequipo.yml"
-    prefix:   /caracteristicasequipo
+    prefix:   warriors/caracteristicasequipo
 
 equipo_ubicacion:
     resource: "@EquipoBundle/Resources/config/routing/ubicacion.yml"
@@ -8,11 +8,11 @@ equipo_ubicacion:
 
 equipo_licenciaequipo:
     resource: "@EquipoBundle/Resources/config/routing/licenciaequipo.yml"
-    prefix:   /licenciaequipo
+    prefix:   venta/licenciaequipo
 
 equipo_equipo:
     resource: "@EquipoBundle/Resources/config/routing/equipo.yml"
-    prefix:   /equipo
+    prefix:   warriors/equipo
 
 equipo_homepage:
     path:     /hello/{name}

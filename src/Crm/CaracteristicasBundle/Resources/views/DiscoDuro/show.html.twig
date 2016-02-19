@@ -26,31 +26,51 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <div class="table-scrollable">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Marca</th>
-                                    <th>Capacidad</th>
-                                    <th>Unidad</th>
-                                    <th>Tipo</th>
-                                    <th>Termino</th>
-                                    <th colspan="2">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    
-                                    <td>{{ entity.marca }}</td>
-                                    <td>{{ entity.capacidad }}</td>
-                                    <td>{{ entity.unidad }}</td>
-                                    <td>{{ entity.tipo }}</td>
-                                    <td>{{ entity.terminoDisco }}</td>
-                                    <td><a href="{{ path('discoduro_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a></td>
-                                    <td>{{ form(delete_form) }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="general-item-list">
+                        
+                        <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Marca:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.marca }}
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Capacidad:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.capacidad }} {{ entity.unidad }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Tipo:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.tipo }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Termino Disco:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.terminoDisco }}
+                                    </div>
+                                </div>
+                            </div><br />
+
+                        {{ form(delete_form) }}
+                       
                     </div>
                 </div>
             </div>

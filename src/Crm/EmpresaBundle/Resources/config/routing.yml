@@ -1,10 +1,10 @@
 empresa_direccionempresa:
     resource: "@EmpresaBundle/Resources/config/routing/direccionempresa.yml"
-    prefix:   /direccionempresa
+    prefix:   venta/direccionempresa
 
 empresa_empresa:
     resource: "@EmpresaBundle/Resources/config/routing/empresa.yml"
-    prefix:   /empresa
+    prefix:   venta/empresa
 
 empresa_homepage:
     path:     /hello/{name}

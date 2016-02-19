@@ -280,34 +280,7 @@ class Equipo
     {
         return $this->fabricante;
     }
-    /**
-     * @var \Crm\EquipoBundle\Entity\LicenciaEquipo
-     */
-    private $licenciaEquipo;
-
-
-    /**
-     * Set licenciaEquipo
-     *
-     * @param \Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo
-     * @return Equipo
-     */
-    public function setLicenciaEquipo(\Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo = null)
-    {
-        $this->licenciaEquipo = $licenciaEquipo;
-
-        return $this;
-    }
-
-    /**
-     * Get licenciaEquipo
-     *
-     * @return \Crm\EquipoBundle\Entity\LicenciaEquipo 
-     */
-    public function getLicenciaEquipo()
-    {
-        return $this->licenciaEquipo;
-    }
+    
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
@@ -456,5 +429,33 @@ class Equipo
     public function getVenta()
     {
         return $this->venta;
+    }
+    /**
+     * @var \Crm\EquipoBundle\Entity\LicenciaEquipo
+     */
+    private $licenciaEquipo;
+
+
+    /**
+     * Set licenciaEquipo
+     *
+     * @param \Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo
+     * @return Equipo
+     */
+    public function setLicenciaEquipo(\Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo = null)
+    {
+        $this->licenciaEquipo = $licenciaEquipo;
+
+        return $this;
+    }
+
+    /**
+     * Get licenciaEquipo
+     *
+     * @return \Crm\EquipoBundle\Entity\LicenciaEquipo 
+     */
+    public function getLicenciaEquipo()
+    {
+        return $this->licenciaEquipo;
     }
 }

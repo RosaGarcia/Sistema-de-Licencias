@@ -26,26 +26,22 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <div class="table-scrollable">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Estatus</th>
-                                    <th colspan="2">Acciones</th>
-                                </tr>
-                            </thead>
-        <tbody>
-           
-            <tr>
-                <td>{{ entity.estatus }}</td>
-                <td> <a href="{{ path('estatus_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">
-            Editar
-        </a></td>
-                <td>{{ form(delete_form) }}</td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
+                    <div class="general-item-list">
+                        
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Estatus:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.Estatus }}
+                                </div>
+                            </div>
+                        </div><br />
+
+                        {{ form(delete_form) }}
+                       
+                    </div>
                 </div>
             </div>
         </div>

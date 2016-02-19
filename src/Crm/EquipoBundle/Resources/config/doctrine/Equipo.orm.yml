@@ -56,7 +56,4 @@ Crm\EquipoBundle\Entity\Equipo:
         licenciaEquipo:
           targetEntity: Crm\EquipoBundle\Entity\LicenciaEquipo
           inversedBy: equipo
-          joinColumn:
-              name: licenciaEquipo_id
-              referencedColumnName: id
     lifecycleCallbacks: {  }

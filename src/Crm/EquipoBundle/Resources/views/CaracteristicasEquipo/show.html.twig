@@ -1,8 +1,8 @@
 {% extends '::frontend.html.twig' %}
 
 {% block body -%}
-    
-    <div class="row">
+   
+   <div class="row">
         <div class="col-xs-12 col-sm-12 com-md-12">
             <h2><a href="{{ path('caracteristicasequipo') }}">
                 Caracteristicas Equipo:
@@ -26,47 +26,115 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <div class="table-scrollable">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Interfaces</th>
-                                    <th>USB</th>
-                                    <th>Expansion</th>
-                                    <th>Procesador</th>
-                                    <th>Capacidad</th>
-                                    <th>Memoria Ram</th>
-                                    <th>Disco Duro</th>
-                                    <th>Software</th>
-                                    <th>Dimensiones</th>
-                                    <th>Equipo</th>
-                                    <th colspan="2">Acciones</th>  
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ entity.interfaz }}</td>
-                                    <td>{{ entity.usb }}</td>
-                                    <td><input type="checkbox" {% if  entity.expansion == 1 %} checked="checked" {% endif %}/></td>
-                                    <td>{{ entity.procesador }}</td>
-                                    <td>{{ entity.capacidad }}</td>
-                                    <td>{{ entity.memoriaRam }}</td>
-                                    <td>{{ entity.discoDuro }}</td>
-                                    <td>{{ entity.software }}</td>
-                                    <td>{{ entity.dimensiones }}</td>
-                                    <td>{{ entity.equipo }}</td>
-                                    <td><a href="{{ path('caracteristicasequipo_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">
-                                        Editar
-                                        </a>
-                                    </td>
-                                    <td>{{ form(delete_form) }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="general-item-list">
+
+                        <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Equipo:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.equipo }}
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Interfaces:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.interfaz }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Numero de USB:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.usb }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Expansión:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        <input type="checkbox" {% if  entity.expansion == 1 %} checked="checked" {% endif %}/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Procesador:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.procesador }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Capacidad:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.capacidad }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Memoria Ram:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.memoriaRam }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Disco Duro:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.discoDuro }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Software:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.software }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Dimensiones:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.dimensiones }}
+                                    </div>
+                                </div>
+                            </div><br />
+
+                        {{ form(delete_form) }}
+                       
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+        
 {% endblock %}

@@ -403,37 +403,12 @@
                             <li class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                     <img alt="" class="img-circle" src="../assets/layouts/layout2/img/avatar3_small.jpg" />
-                                    <span class="username username-hide-on-mobile"> Nick </span>
+                                    <span class="username username-hide-on-mobile"> {{ app.user.username |capitalize }} </span>
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
                                     <li>
-                                        <a href="page_user_profile_1.html">
-                                            <i class="icon-user"></i> My Profile </a>
-                                    </li>
-                                    <li>
-                                        <a href="app_calendar.html">
-                                            <i class="icon-calendar"></i> My Calendar </a>
-                                    </li>
-                                    <li>
-                                        <a href="app_inbox.html">
-                                            <i class="icon-envelope-open"></i> My Inbox
-                                            <span class="badge badge-danger"> 3 </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="app_todo_2.html">
-                                            <i class="icon-rocket"></i> My Tasks
-                                            <span class="badge badge-success"> 7 </span>
-                                        </a>
-                                    </li>
-                                    <li class="divider"> </li>
-                                    <li>
-                                        <a href="page_user_lock_1.html">
-                                            <i class="icon-lock"></i> Lock Screen </a>
-                                    </li>
-                                    <li>
-                                        <a href="page_user_login_1.html">
+                                        <a href="{{ path ('logout')}}">
                                             <i class="icon-key"></i> Log Out </a>
                                     </li>
                                 </ul>
@@ -462,9 +437,10 @@
                 <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
                 <div class="page-sidebar navbar-collapse collapse">
                     <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                        {% if is_granted('ROLE_VENTAS') %}
                         <li class="nav-item start active open">
                             <a href="{{ path('cliente') }}" class="nav-link nav-toggle">
-                                <i class="icon-home"></i>
+                                <i class="icon-diamond"></i>
                                 <span class="title">Cliente</span>
                                 <span class="selected"></span>
                                 <span class="arrow open"></span>
@@ -472,25 +448,33 @@
                         </li>
                         <li class="nav-item  ">
                             <a href="{{ path('empresa') }}" class="nav-link nav-toggle">
-                                <i class="icon-diamond"></i>
+                                <i class="fa fa-users"></i>
                                 <span class="title">Empresa</span>
                                 <span class="arrow"></span>
                             </a>
                         </li>
+                        {% endif %}
+                        {% if is_granted('ROLE_SOPORTE') %}
                         <li class="nav-item  ">
                             <a href="{{ path('fabricante') }}" class="nav-link nav-toggle">
-                                <i class="icon-diamond"></i>
+                                <i class="fa fa-industry"></i>
                                 <span class="title">Fabricante</span>
                                 <span class="arrow"></span>
                             </a>
                         </li>
+                        {% endif %}
                         <li class="nav-item  ">
-                            <a href="{{ path('personal') }}" class="nav-link nav-toggle">
-                                <i class="icon-diamond"></i>
+                            <a href="" class="nav-link nav-toggle">
+                                <i class="fa fa-user"></i>
                                 <span class="title">Personal</span>
                                 <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="{{ path('personal') }}" class="nav-link ">
+                                        <span class="title">Nuevo Personal</span>
+                                    </a>
+                                </li>
                                 <li class="nav-item  ">
                                     <a href="{{ path('puesto') }}" class="nav-link ">
                                         <span class="title">Puesto</span>
@@ -503,27 +487,37 @@
                                 </li>
                             </ul>
                         </li>
+                        {% if is_granted('ROLE_VENTAS') %}
                         <li class="nav-item  ">
                             <a href="{{ path('producto') }}" class="nav-link nav-toggle">
-                                <i class="icon-diamond"></i>
+                                <i class="fa fa-tags"></i>
                                 <span class="title">Producto</span>
                                 <span class="arrow"></span>
                             </a>
                         </li>
                         <li class="nav-item  ">
                             <a href="{{ path('venta') }}" class="nav-link nav-toggle">
-                                <i class="icon-diamond"></i>
-                                <span class="title">venta</span>
+                                <i class="fa fa-opencart"></i>
+                                <span class="title">Venta</span>
                                 <span class="arrow"></span>
                             </a>
+                             <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="{{ path('licenciaequipo') }}" class="nav-link ">
+                                        <span class="title">Licencia Equipo</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
+                        {% endif %}
                         <li class="nav-item  ">
                             <a href="" class="nav-link nav-toggle">
-                                <i class="icon-diamond"></i>
+                                <i class="fa fa-hdd-o"></i>
                                 <span class="title">Equipo</span>
                                 <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
+                                {% if is_granted('ROLE_SOPORTE') %}
                                 <li class="nav-item  ">
                                     <a href="{{ path('equipo') }}" class="nav-link ">
                                         <span class="title">Nuevo</span>
@@ -559,11 +553,17 @@
                                         </li>
                                     </ul>
                                 </li>
+                                {% endif %}
+                                <li class="nav-item  ">
+                                    <a href="{{ path('ubicacion') }}" class="nav-link ">
+                                        <span class="title">Ubicación</span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item  ">
                             <a href="" class="nav-link nav-toggle">
-                                <i class="icon-diamond"></i>
+                                <i class="fa fa-gears"></i>
                                 <span class="title">General</span>
                                 <span class="arrow"></span>
                             </a>
@@ -589,11 +589,10 @@
                                     </a>
                                 </li>
                                 <li class="nav-item  ">
-                                    <a href="javascript:;" class="nav-link nav-toggle">
-                                        <span class="title">subtitulo 3</span>
-                                        <span class="arrow"></span>
+                                    <a href="{{ path('roles') }}" class="nav-link ">
+                                        <span class="title">Roles</span>
                                     </a>
-                                </li> 
+                                </li>
                             </ul>
                         </li>
                     </ul>

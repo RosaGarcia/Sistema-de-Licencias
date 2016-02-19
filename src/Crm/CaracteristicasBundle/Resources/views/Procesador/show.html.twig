@@ -22,34 +22,55 @@
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="icon-eye font-yellow"></i>
-                        <span class="caption-subject font-yellow bold uppercase">Procesador</span>
+                        <span class="caption-subject font-yellow bold uppercase">Caracteristicas</span>
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <div class="table-scrollable">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Marca</th>
-                                    <th>Modelo</th>
-                                    <th colspan="2">Velocidad</th>
-                                    <th>Termino</th>
-                                    <th colspan="2">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                   
-                                    <td>{{ entity.marca }}</td>
-                                    <td>{{ entity.modelo }}</td>
-                                    <td>{{ entity.velocidad }}</td>
-                                    <td>{{ entity.unidad }}</td>
-                                    <td>{{ entity.terminoProcesador }}</td>
-                                    <td><a href="{{ path('procesador_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a></td>
-                                    <td>{{ form(delete_form) }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="general-item-list">
+                        
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Marca:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.marca }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Modelo:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.modelo }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Velocidad:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.velocidad }} {{ entity.unidad }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Termino Procesador:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.terminoProcesador }}
+                                </div>
+                            </div>
+                        </div><br />
+
+                        {{ form(delete_form) }}
+                       
                     </div>
                 </div>
             </div>

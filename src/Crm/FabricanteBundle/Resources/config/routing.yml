@@ -1,10 +1,10 @@
 fabricante_fabricante:
     resource: "@FabricanteBundle/Resources/config/routing/fabricante.yml"
-    prefix:   /fabricante
+    prefix:   warriors/fabricante
 
 fabricante_direccionfabricante:
     resource: "@FabricanteBundle/Resources/config/routing/direccionfabricante.yml"
-    prefix:   /direccionfabricante
+    prefix:   warriors/direccionfabricante
 
 fabricante_homepage:
     path:     /hello/{name}

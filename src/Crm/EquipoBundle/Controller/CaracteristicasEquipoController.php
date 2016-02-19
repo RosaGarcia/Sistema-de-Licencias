@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Crm\EquipoBundle\Entity\CaracteristicasEquipo;
 use Crm\EquipoBundle\Form\CaracteristicasEquipoType;
+use Crm\EquipoBundle\Form\CaracteristicaEquipoType;
 
 /**
  * CaracteristicasEquipo controller.
@@ -21,13 +22,18 @@ class CaracteristicasEquipoController extends Controller
      */
     public function indexAction()
     {
+        return $this->render('EquipoBundle:CaracteristicasEquipo:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('EquipoBundle:CaracteristicasEquipo')->findAll();
 
-        return $this->render('EquipoBundle:CaracteristicasEquipo:index.html.twig', array(
+        return $this->render('EquipoBundle:CaracteristicasEquipo:listado.html.twig', array(
             'entities' => $entities,
-        ));
+        )); 
     }
     /**
      * Creates a new CaracteristicasEquipo entity.
@@ -160,7 +166,7 @@ class CaracteristicasEquipoController extends Controller
     */
     private function createEditForm(CaracteristicasEquipo $entity)
     {
-        $form = $this->createForm(new CaracteristicasEquipoType(), $entity, array(
+        $form = $this->createForm(new CaracteristicaEquipoType(), $entity, array(
             'action' => $this->generateUrl('caracteristicasequipo_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
@@ -218,6 +224,8 @@ class CaracteristicasEquipoController extends Controller
 
             $em->remove($entity);
             $em->flush();
+
+            $equipo = $this->equiposLibre($serial = $entity->getEquipo());
         }
 
         return $this->redirect($this->generateUrl('caracteristicasequipo'));
@@ -235,8 +243,19 @@ class CaracteristicasEquipoController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('caracteristicasequipo_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
+    }
+
+    public function equiposLibre($serial)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('EquipoBundle:Equipo')->find($serial);
+
+            $entity ->setCheckCaracteristicas('f');
+            $em->persist($entity);
+            $em->flush();
     }
 }

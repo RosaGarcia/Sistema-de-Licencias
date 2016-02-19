@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Crm\EquipoBundle\Entity\Ubicacion;
 use Crm\EquipoBundle\Form\UbicacionType;
+use Crm\EquipoBundle\Form\UbicacionEquipoType;
 
 /**
  * Ubicacion controller.
@@ -21,11 +22,16 @@ class UbicacionController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+       return $this->render('EquipoBundle:Ubicacion:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
+         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('EquipoBundle:Ubicacion')->findAll();
 
-        return $this->render('EquipoBundle:Ubicacion:index.html.twig', array(
+        return $this->render('EquipoBundle:Ubicacion:listado.html.twig', array(
             'entities' => $entities,
         ));
     }
@@ -158,7 +164,7 @@ class UbicacionController extends Controller
     */
     private function createEditForm(Ubicacion $entity)
     {
-        $form = $this->createForm(new UbicacionType(), $entity, array(
+        $form = $this->createForm(new UbicacionEquipoType(), $entity, array(
             'action' => $this->generateUrl('ubicacion_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
@@ -220,6 +226,7 @@ class UbicacionController extends Controller
 
             $em->remove($entity);
             $em->flush();
+            $equipo = $this->equiposLibre($serial = $entity->getEquipo());
             $this->get('session')->getFlashBag()->add(
                                 'mensaje',
                                 'Se ha eliminado el registro exitosamente'
@@ -244,5 +251,16 @@ class UbicacionController extends Controller
             ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
+    }
+
+    public function equiposLibre($serial)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('EquipoBundle:Equipo')->find($serial);
+
+            $entity ->setCheckUbicacion('f');
+            $em->persist($entity);
+            $em->flush();
     }
 }

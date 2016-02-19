@@ -34,12 +34,12 @@ class Equipo
     */
     private $checkCaracteristicas;
 
-     /**
+    /**
     * @var boolean
     */
     private $checkVenta;
 
-     /**
+    /**
     * @var boolean
     */
     private $checkUbicacion;
@@ -280,34 +280,7 @@ class Equipo
     {
         return $this->fabricante;
     }
-    /**
-     * @var \Crm\EquipoBundle\Entity\LicenciaEquipo
-     */
-    private $licenciaEquipo;
-
-
-    /**
-     * Set licenciaEquipo
-     *
-     * @param \Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo
-     * @return Equipo
-     */
-    public function setLicenciaEquipo(\Crm\EquipoBundle\Entity\LicenciaEquipo $licenciaEquipo = null)
-    {
-        $this->licenciaEquipo = $licenciaEquipo;
-
-        return $this;
-    }
-
-    /**
-     * Get licenciaEquipo
-     *
-     * @return \Crm\EquipoBundle\Entity\LicenciaEquipo 
-     */
-    public function getLicenciaEquipo()
-    {
-        return $this->licenciaEquipo;
-    }
+    
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
@@ -390,5 +363,71 @@ class Equipo
     public function getUbicacion()
     {
         return $this->ubicacion;
+    }
+    /**
+     * @var boolean
+     */
+    private $caracteristicas;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $venta;
+
+
+    /**
+     * Set caracteristicas
+     *
+     * @param boolean $caracteristicas
+     * @return Equipo
+     */
+    public function setCaracteristicas($caracteristicas)
+    {
+        $this->caracteristicas = $caracteristicas;
+
+        return $this;
+    }
+
+    /**
+     * Get caracteristicas
+     *
+     * @return boolean 
+     */
+    public function getCaracteristicas()
+    {
+        return $this->caracteristicas;
+    }
+
+    /**
+     * Add venta
+     *
+     * @param \Crm\VentasBundle\Entity\Venta $venta
+     * @return Equipo
+     */
+    public function addVentum(\Crm\VentasBundle\Entity\Venta $venta)
+    {
+        $this->venta[] = $venta;
+
+        return $this;
+    }
+
+    /**
+     * Remove venta
+     *
+     * @param \Crm\VentasBundle\Entity\Venta $venta
+     */
+    public function removeVentum(\Crm\VentasBundle\Entity\Venta $venta)
+    {
+        $this->venta->removeElement($venta);
+    }
+
+    /**
+     * Get venta
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVenta()
+    {
+        return $this->venta;
     }
 }

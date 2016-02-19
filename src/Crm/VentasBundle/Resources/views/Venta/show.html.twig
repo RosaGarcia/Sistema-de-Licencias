@@ -1,8 +1,8 @@
 {% extends '::frontend.html.twig' %}
 
 {% block body -%}
-
-    <div class="row">
+   
+   <div class="row">
         <div class="col-xs-12 col-sm-12 com-md-12">
             <h2><a href="{{ path('venta') }}">
                Venta:
@@ -11,6 +11,10 @@
             </h2>
         </div>
     </div>
+
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <h2 class="alert-success">{{ flashMessage }}</h2><br /><br />
+    {% endfor %}
 
     <div class="row">
         <div class="col-md-12">
@@ -22,27 +26,75 @@
                     </div>
                 </div>
                 <div class="portlet-body">
-                    <div class="table-scrollable">
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th class="oculto">Id</th>
-                                    <th>Fecha Venta</th>
-                                    <th colspan="2">Accion</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>                                    
-                                    <td class="oculto">{{ entity.id }}</td>                         
-                                    <td>{{ entity.fechaVenta|date('Y-m-d H:i:s') }}</td>
-                                    <td><a href="{{ path('venta_edit', { 'id': entity.id }) }}" class="btn blue btn-outline"> Edit </a></td>
-                                    <td>{{ form(delete_form) }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="general-item-list">
+
+                        <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Equipo:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.equipo }}
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Fecha Venta:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.fechaVenta|date('Y-m-d') }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Producto:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.producto }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Cliente:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.cliente }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Vendedor:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.usuarios }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        Estatus:
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {{ entity.estatus }}
+                                    </div>
+                                </div>
+                            </div><br />
+
+                        {{ form(delete_form) }}
+                       
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+        
 {% endblock %}

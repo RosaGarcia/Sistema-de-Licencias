@@ -21,11 +21,16 @@ class EstatusController extends Controller
      */
     public function indexAction()
     {
+         return $this->render('GeneralBundle:Estatus:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('GeneralBundle:Estatus')->findAll();
 
-        return $this->render('GeneralBundle:Estatus:index.html.twig', array(
+        return $this->render('GeneralBundle:Estatus:listado.html.twig', array(
             'entities' => $entities,
         ));
     }
