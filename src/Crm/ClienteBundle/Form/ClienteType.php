@@ -25,6 +25,7 @@ class ClienteType extends AbstractType
             ->add('paginaWeb','text',array('attr' => array('class' => 'form-control'),'required' => false))
             ->add('contacto','text',array('attr'=> array('class' => 'form-control')))
             ->add('estatus')
+            ->add('rangoCliente')
         ;
     }
     
