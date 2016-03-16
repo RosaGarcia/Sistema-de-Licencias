@@ -19,11 +19,6 @@ class Producto
      */
     private $nombre;
 
-    /**
-     * @var string
-     */
-    private $termino;
-
 
     /**
      * Get id
@@ -58,76 +53,53 @@ class Producto
         return $this->nombre;
     }
 
-    /**
-     * Set termino
-     *
-     * @param string $termino
-     * @return Producto
-     */
-    public function setTermino($termino)
-    {
-        $this->termino = $termino;
-
-        return $this;
-    }
-
-    /**
-     * Get termino
-     *
-     * @return string 
-     */
-    public function getTermino()
-    {
-        return $this->termino;
-    }
-
     public function __toString()
     {
-        return $this->termino;
+        return $this->nombre;
     }
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $venta;
+    private $termino;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->venta = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->termino = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add venta
+     * Add termino
      *
-     * @param \Crm\VentasBundle\Entity\Venta $venta
+     * @param \Crm\ProductoBundle\Entity\Termino $termino
      * @return Producto
      */
-    public function addVentum(\Crm\VentasBundle\Entity\Venta $venta)
+    public function addTermino(\Crm\ProductoBundle\Entity\Termino $termino)
     {
-        $this->venta[] = $venta;
+        $this->termino[] = $termino;
 
         return $this;
     }
 
     /**
-     * Remove venta
+     * Remove termino
      *
-     * @param \Crm\VentasBundle\Entity\Venta $venta
+     * @param \Crm\ProductoBundle\Entity\Termino $termino
      */
-    public function removeVentum(\Crm\VentasBundle\Entity\Venta $venta)
+    public function removeTermino(\Crm\ProductoBundle\Entity\Termino $termino)
     {
-        $this->venta->removeElement($venta);
+        $this->termino->removeElement($termino);
     }
 
     /**
-     * Get venta
+     * Get termino
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getVenta()
+    public function getTermino()
     {
-        return $this->venta;
+        return $this->termino;
     }
 }
