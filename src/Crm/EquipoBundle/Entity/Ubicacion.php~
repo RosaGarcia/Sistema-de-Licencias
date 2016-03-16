@@ -44,6 +44,21 @@ class Ubicacion
      */
     private $localidad;
 
+    /**
+     * @var string
+     */
+    private $estatus;
+
+     /**
+     * @var string
+     */
+    private $ip;
+
+     /**
+     * @var string
+     */
+    private $dominio;
+
 
     /**
      * Get id
@@ -191,6 +206,75 @@ class Ubicacion
     public function getLocalidad()
     {
         return $this->localidad;
+    }
+
+     /**
+     * Set estatus
+     *
+     * @param string $estatus
+     * @return Ubicacion
+     */
+    public function setEstatus($estatus)
+    {
+        $this->estatus = $estatus;
+
+        return $this;
+    }
+
+    /**
+     * Get estatus
+     *
+     * @return string 
+     */
+    public function getEstatus()
+    {
+        return $this->estatus;
+    }
+
+    /**
+     * Set ip
+     *
+     * @param string $ip
+     * @return Ubicacion
+     */
+    public function setIp($ip)
+    {
+        $this->ip = $ip;
+
+        return $this;
+    }
+
+    /**
+     * Get ip
+     *
+     * @return string 
+     */
+    public function getIp()
+    {
+        return $this->ip;
+    }
+
+    /**
+     * Set dominio
+     *
+     * @param string $dominio
+     * @return Ubicacion
+     */
+    public function setDominio($dominio)
+    {
+        $this->dominio = $dominio;
+
+        return $this;
+    }
+
+    /**
+     * Get dominio
+     *
+     * @return string 
+     */
+    public function getDominio()
+    {
+        return $this->dominio;
     }
     /**
      * @var \Crm\GeneralBundle\Entity\Estado
