@@ -31,6 +31,17 @@ Crm\EquipoBundle\Entity\Ubicacion:
         localidad:
             type: string
             length: '50'
+        estatus:
+            type: string
+            length: '20'
+        ip:
+            type: string
+            length: '20'
+            nullable: TRUE
+        dominio:
+            type: string
+            length: '150'
+            nullable: TRUE
     manyToOne:
         municipio:
           targetEntity: Crm\GeneralBundle\Entity\Municipio
