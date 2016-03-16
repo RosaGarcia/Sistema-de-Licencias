@@ -43,6 +43,8 @@ class DireccionPersonalController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+            $usuario = $this->usuario($id =$entity->getId());
+
             $this->get('session')->getFlashBag()->add(
                                 'mensaje',
                                 'Se ha creado el registro exitosamente'
@@ -55,6 +57,17 @@ class DireccionPersonalController extends Controller
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
+    }
+
+    public function usuario($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('PersonalBundle:Personal')->find($id);
+
+            $entity -> setCheckUsuario('f');
+            $em->persist($entity);
+            $em->flush();
     }
 
     /**
