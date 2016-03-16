@@ -18,7 +18,7 @@ class PersonalType extends AbstractType
             ->add('nombre','text',array('attr' => array('class' => 'form-control')))
             ->add('apePat','text',array('attr' => array('class' => 'form-control')))
             ->add('apeMat','text',array('attr' => array('class' => 'form-control')))
-            ->add('telefono','text',array('attr' => array('class' => 'form-control'),'required' => false))
+            ->add('telefono','text',array('attr' => array('class' => 'form-control', 'minlength' => '8'),'required' => false))
             ->add('celular','text',array('attr' => array('class' => 'form-control'),'required' => false))
             ->add('email','email',array('attr' => array('class' => 'form-control')))
             ->add('estatus')
