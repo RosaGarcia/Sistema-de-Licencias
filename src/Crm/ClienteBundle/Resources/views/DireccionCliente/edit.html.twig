@@ -110,19 +110,28 @@
 	                                        </div>
 	                                    </div>
 	                                    <div class="col-md-4">
-                                        <div class="form-group form-md-line-input has-success">
-                                            <div class="input-icon">
-                                                {{ form_widget(edit_form.cliente.contacto,{'attr': {'placeholder': 'Contacto'}}) }}
-                                                <label for="contacto">Contacto</label>
-                                                <i class="fa fa-users"></i>
-                                            </div>
-                                        </div>
-                                    </div>
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.cliente.contacto,{'attr': {'placeholder': 'Contacto'}}) }}
+	                                                <label for="contacto">Contacto</label>
+	                                                <i class="fa fa-users"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
 	                                    <div class="col-md-3">
 	                                        <div class="form-group form-md-line-input has-success">
 	                                            <div class="input-icon">
 	                                                {{ form_widget(edit_form.cliente.estatus, {'attr':{'class':'form-control'},'required':'true'}) }}
 	                                                <label for="estatus">Estatus</label>
+	                                                <i class="fa fa-sort-down"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="col-md-3">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.cliente.rangoCliente, {'attr':{'class':'form-control'},'required':'true'}) }}
+	                                                <label for="rangoCliente">Rango de cliente</label>
 	                                                <i class="fa fa-sort-down"></i>
 	                                            </div>
 	                                        </div>
