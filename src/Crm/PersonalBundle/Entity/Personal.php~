@@ -44,6 +44,11 @@ class Personal
      */
     private $email;
 
+    /**
+     * @var boolean
+     */
+    private $checkUsuario;
+
 
     /**
      * Get id
@@ -192,11 +197,35 @@ class Personal
     {
         return $this->email;
     }
-    
+
+    /**
+     * Set checkUsuario
+     *
+     * @param boolean $nombre
+     * @return Personal
+     */
+    public function setCheckUsuario($checkUsuario)
+    {
+        $this->checkUsuario = $checkUsuario;
+
+        return $this;
+    }
+
+    /**
+     * Get checkUsuario
+     *
+     * @return boolean 
+     */
+    public function getCheckUsuario()
+    {
+        return $this->checkUsuario;
+    }
+
      public function __toString()
     {
         return $this->nombre;
     }
+
     /**
      * @var \Crm\GeneralBundle\Entity\Estatus
      */
