@@ -1,3 +1,7 @@
+cliente_rangocliente:
+    resource: "@ClienteBundle/Resources/config/routing/rangocliente.yml"
+    prefix:   venta/rangocliente
+
 cliente_direccioncliente:
     resource: "@ClienteBundle/Resources/config/routing/direccioncliente.yml"
     prefix:   venta/direccioncliente
