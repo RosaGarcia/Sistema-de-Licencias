@@ -25,6 +25,9 @@ class UbicacionEquipoType extends AbstractType
             ->add('localidad','text',array('attr' => array('class' => 'form-control')))
             ->add('pais')
             ->add('municipio')
+            ->add('estatus','choice',array('choices' => array('En Proceso' => 'En Proceso','Instalado' => 'Instalado','En Camino'=> 'En Camino'),'attr' => array('class' => 'form-control')))
+            ->add('ip','text',array('attr' => array('class' => 'form-control')))
+            ->add('dominio','text',array('attr' => array('class' => 'form-control')))
         ;
     }
     
