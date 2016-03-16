@@ -1,0 +1,30 @@
+termino:
+    path:     /
+    defaults: { _controller: "ProductoBundle:Termino:index" }
+
+termino_show:
+    path:     /{id}/show
+    defaults: { _controller: "ProductoBundle:Termino:show" }
+
+termino_new:
+    path:     /new
+    defaults: { _controller: "ProductoBundle:Termino:new" }
+
+termino_create:
+    path:     /create
+    defaults: { _controller: "ProductoBundle:Termino:create" }
+    methods:  POST
+
+termino_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ProductoBundle:Termino:edit" }
+
+termino_update:
+    path:     /{id}/update
+    defaults: { _controller: "ProductoBundle:Termino:update" }
+    methods:  [POST, PUT]
+
+termino_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ProductoBundle:Termino:delete" }
+    methods:  [POST, DELETE]

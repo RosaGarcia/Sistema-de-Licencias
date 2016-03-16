@@ -12,11 +12,8 @@ Crm\ProductoBundle\Entity\Producto:
         nombre:
             type: string
             length: '30'
-        termino:
-            type: string
-            length: '10'
     oneToMany:
-        venta:
-            targetEntity: Crm\VentasBundle\Entity\Venta
+        termino:
+            targetEntity: Crm\ProductoBundle\Entity\Termino
             mappedBy: Producto
     lifecycleCallbacks: {  }

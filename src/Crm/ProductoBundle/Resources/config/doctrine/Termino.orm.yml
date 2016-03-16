@@ -1,0 +1,26 @@
+Crm\ProductoBundle\Entity\Termino:
+    type: entity
+    table: null
+    repositoryClass: Crm\ProductoBundle\Entity\TerminoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        termino:
+            type: string
+            length: '20'
+    manyToOne:
+        producto:
+          targetEntity: Crm\ProductoBundle\Entity\Producto
+          inversedBy: termino
+          joinColumn: 
+               name: producto_id
+               referencedColumnName: id
+    oneToMany:
+        venta:
+            targetEntity: Crm\VentasBundle\Entity\Venta
+            mappedBy: Termino
+    lifecycleCallbacks: {  }

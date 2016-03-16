@@ -1,3 +1,7 @@
+producto_termino:
+    resource: "@ProductoBundle/Resources/config/routing/termino.yml"
+    prefix:   venta/termino
+
 producto_producto:
     resource: "@ProductoBundle/Resources/config/routing/producto.yml"
     prefix:   venta/producto
