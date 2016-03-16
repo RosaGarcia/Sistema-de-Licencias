@@ -16,24 +16,24 @@
         <link href="{{ asset('public/global/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('public/global/plugins/uniform/css/uniform.default.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('public/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css') }}" rel="stylesheet" type="text/css" />
-         <link href="{{ asset('public/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('public/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
         
         <link href="{{ asset('public/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('public/global/plugins/morris/morris.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('public/global/plugins/fullcalendar/fullcalendar.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('public/global/plugins/jqvmap/jqvmap/jqvmap.css') }}" rel="stylesheet" type="text/css" />
         
         <link href="{{ asset('public/global/css/components.min.css') }}" rel="stylesheet" id="style_components" type="text/css" />
         <link href="{{ asset('public/global/css/plugins.min.css') }}" rel="stylesheet" type="text/css" />
        
         <link href="{{ asset('public/layouts/layout2/css/layout.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('public/layouts/layout2/css/themes/blue.min.css') }}" rel="stylesheet" type="text/css" id="style_color" />
-        <link href="{{ asset('public/layouts/layout2/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
+       
+
+        {#<link href="{{ asset('public/layouts/layout2/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
         
         <link href="{{ asset('public/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('public/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('public/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('public/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('public/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css" />#}
 
         <link rel="shortcut icon" href="favicon.ico" /> 
     </head>
@@ -60,34 +60,13 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-circle btn-outline red dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-plus"></i>&nbsp;
-                            <span class="hidden-sm hidden-xs">New&nbsp;</span>&nbsp;
+                            <span class="hidden-sm hidden-xs">Nuevo&nbsp;</span>&nbsp;
                             <i class="fa fa-angle-down"></i>
                         </button>
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="javascript:;">
-                                    <i class="icon-docs"></i> New Post </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="icon-tag"></i> New Comment </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="icon-share"></i> Share </a>
-                            </li>
-                            <li class="divider"> </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="icon-flag"></i> Comments
-                                    <span class="badge badge-success">4</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="icon-users"></i> Feedbacks
-                                    <span class="badge badge-danger">2</span>
-                                </a>
+                                <a href="{{ path('avisos')}}">
+                                    <i class="icon-tag"></i> Nuevo aviso</a>
                             </li>
                         </ul>
                     </div>
@@ -95,311 +74,10 @@
                 <!-- END PAGE ACTIONS -->
                 <!-- BEGIN PAGE TOP -->
                 <div class="page-top">
-                    <!-- BEGIN HEADER SEARCH BOX -->
-                    <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-                    <form class="search-form search-form-expanded" action="page_general_search_3.html" method="GET">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search..." name="query">
-                            <span class="input-group-btn">
-                                <a href="javascript:;" class="btn submit">
-                                    <i class="icon-magnifier"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </form>
-                    <!-- END HEADER SEARCH BOX -->
-                    <!-- BEGIN TOP NAVIGATION MENU -->
+    
                     <div class="top-menu">
                         <ul class="nav navbar-nav pull-right">
-                            <!-- BEGIN NOTIFICATION DROPDOWN -->
-                            <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                            <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
-                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                    <i class="icon-bell"></i>
-                                    <span class="badge badge-default"> 7 </span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="external">
-                                        <h3>
-                                            <span class="bold">12 pending</span> notifications</h3>
-                                        <a href="page_user_profile_1.html">view all</a>
-                                    </li>
-                                    <li>
-                                        <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">just now</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-success">
-                                                            <i class="fa fa-plus"></i>
-                                                        </span> New user registered. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">3 mins</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-danger">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </span> Server #12 overloaded. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">10 mins</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-warning">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </span> Server #2 not responding. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">14 hrs</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-info">
-                                                            <i class="fa fa-bullhorn"></i>
-                                                        </span> Application error. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">2 days</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-danger">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </span> Database overloaded 68%. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">3 days</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-danger">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </span> A user IP blocked. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">4 days</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-warning">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </span> Storage Server #4 not responding dfdfdfd. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">5 days</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-info">
-                                                            <i class="fa fa-bullhorn"></i>
-                                                        </span> System Error. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="time">9 days</span>
-                                                    <span class="details">
-                                                        <span class="label label-sm label-icon label-danger">
-                                                            <i class="fa fa-bolt"></i>
-                                                        </span> Storage server failed. </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- END NOTIFICATION DROPDOWN -->
-                            <!-- BEGIN INBOX DROPDOWN -->
-                            <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                            <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
-                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                    <i class="icon-envelope-open"></i>
-                                    <span class="badge badge-default"> 4 </span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="external">
-                                        <h3>You have
-                                            <span class="bold">7 New</span> Messages</h3>
-                                        <a href="app_inbox.html">view all</a>
-                                    </li>
-                                    <li>
-                                        <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
-                                            <li>
-                                                <a href="#">
-                                                    <span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
-                                                    <span class="subject">
-                                                        <span class="from"> Lisa Wong </span>
-                                                        <span class="time">Just Now </span>
-                                                    </span>
-                                                    <span class="message"> Vivamus sed auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
-                                                    <span class="subject">
-                                                        <span class="from"> Richard Doe </span>
-                                                        <span class="time">16 mins </span>
-                                                    </span>
-                                                    <span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar1.jpg" class="img-circle" alt=""> </span>
-                                                    <span class="subject">
-                                                        <span class="from"> Bob Nilson </span>
-                                                        <span class="time">2 hrs </span>
-                                                    </span>
-                                                    <span class="message"> Vivamus sed nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar2.jpg" class="img-circle" alt=""> </span>
-                                                    <span class="subject">
-                                                        <span class="from"> Lisa Wong </span>
-                                                        <span class="time">40 mins </span>
-                                                    </span>
-                                                    <span class="message"> Vivamus sed auctor 40% nibh congue nibh... </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <span class="photo">
-                                                        <img src="../assets/layouts/layout3/img/avatar3.jpg" class="img-circle" alt=""> </span>
-                                                    <span class="subject">
-                                                        <span class="from"> Richard Doe </span>
-                                                        <span class="time">46 mins </span>
-                                                    </span>
-                                                    <span class="message"> Vivamus sed congue nibh auctor nibh congue nibh. auctor nibh auctor nibh... </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- END INBOX DROPDOWN -->
-                            <!-- BEGIN TODO DROPDOWN -->
-                            <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                            <li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
-                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                    <i class="icon-calendar"></i>
-                                    <span class="badge badge-default"> 0 </span>
-                                </a>
-                                <ul class="dropdown-menu extended tasks">
-                                    <li class="external">
-                                        <h3>You have
-                                            <span class="bold">12 pending</span> tasks</h3>
-                                        <a href="app_todo.html">view all</a>
-                                    </li>
-                                    <li>
-                                        <ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="task">
-                                                        <span class="desc">New release v1.2 </span>
-                                                        <span class="percent">30%</span>
-                                                    </span>
-                                                    <span class="progress">
-                                                        <span style="width: 40%;" class="progress-bar progress-bar-success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">40% Complete</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="task">
-                                                        <span class="desc">Application deployment</span>
-                                                        <span class="percent">65%</span>
-                                                    </span>
-                                                    <span class="progress">
-                                                        <span style="width: 65%;" class="progress-bar progress-bar-danger" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">65% Complete</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="task">
-                                                        <span class="desc">Mobile app release</span>
-                                                        <span class="percent">98%</span>
-                                                    </span>
-                                                    <span class="progress">
-                                                        <span style="width: 98%;" class="progress-bar progress-bar-success" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">98% Complete</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="task">
-                                                        <span class="desc">Database migration</span>
-                                                        <span class="percent">10%</span>
-                                                    </span>
-                                                    <span class="progress">
-                                                        <span style="width: 10%;" class="progress-bar progress-bar-warning" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">10% Complete</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="task">
-                                                        <span class="desc">Web server upgrade</span>
-                                                        <span class="percent">58%</span>
-                                                    </span>
-                                                    <span class="progress">
-                                                        <span style="width: 58%;" class="progress-bar progress-bar-info" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">58% Complete</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="task">
-                                                        <span class="desc">Mobile development</span>
-                                                        <span class="percent">85%</span>
-                                                    </span>
-                                                    <span class="progress">
-                                                        <span style="width: 85%;" class="progress-bar progress-bar-success" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">85% Complete</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <span class="task">
-                                                        <span class="desc">New UI release</span>
-                                                        <span class="percent">38%</span>
-                                                    </span>
-                                                    <span class="progress progress-striped">
-                                                        <span style="width: 38%;" class="progress-bar progress-bar-important" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">38% Complete</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- END TODO DROPDOWN -->
-                            <!-- BEGIN USER LOGIN DROPDOWN -->
-                            <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                           
                             <li class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                     <img alt="" class="img-circle" src="../assets/layouts/layout2/img/avatar3_small.jpg" />
@@ -438,36 +116,49 @@
                 <div class="page-sidebar navbar-collapse collapse">
                     <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                         {% if is_granted('ROLE_VENTAS') %}
-                        <li class="nav-item start active open">
-                            <a href="{{ path('cliente') }}" class="nav-link nav-toggle">
-                                <i class="icon-diamond"></i>
+                        <li id="cliente" class="nav-item">
+                            <a href="" class="nav-link nav-toggle">
+                                <i class="fa fa-diamond"></i>
                                 <span class="title">Cliente</span>
-                                <span class="selected"></span>
-                                <span class="arrow open"></span>
+                                <span class="arrow"></span>
+                                <span id="cli" class=""></span>
                             </a>
+                             <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{ path('cliente') }}" class="nav-link ">
+                                        <span class="title">Nuevo Cliente</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="{{ path('rangocliente') }}" class="nav-link ">
+                                        <span class="title">Rango de cliente</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item  ">
+                        <li id="empresa" class="nav-item">
                             <a href="{{ path('empresa') }}" class="nav-link nav-toggle">
                                 <i class="fa fa-users"></i>
                                 <span class="title">Empresa</span>
-                                <span class="arrow"></span>
+                                <span id="emp" class=""></span>
                             </a>
                         </li>
                         {% endif %}
                         {% if is_granted('ROLE_SOPORTE') %}
-                        <li class="nav-item  ">
+                        <li id="fabricante" class="nav-item">
                             <a href="{{ path('fabricante') }}" class="nav-link nav-toggle">
                                 <i class="fa fa-industry"></i>
                                 <span class="title">Fabricante</span>
-                                <span class="arrow"></span>
+                                <span id="fab" class=""></span>
                             </a>
                         </li>
                         {% endif %}
-                        <li class="nav-item  ">
+                        <li id="personal" class="nav-item ">
                             <a href="" class="nav-link nav-toggle">
                                 <i class="fa fa-user"></i>
                                 <span class="title">Personal</span>
                                 <span class="arrow"></span>
+                                <span id="per" class=""></span>
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item  ">
@@ -488,21 +179,40 @@
                             </ul>
                         </li>
                         {% if is_granted('ROLE_VENTAS') %}
-                        <li class="nav-item  ">
-                            <a href="{{ path('producto') }}" class="nav-link nav-toggle">
+                        <li id="producto" class="nav-item ">
+                            <a href="" class="nav-link nav-toggle">
                                 <i class="fa fa-tags"></i>
                                 <span class="title">Producto</span>
                                 <span class="arrow"></span>
+                                <span id="pro" class=""></span>
                             </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{ path('producto') }}" class="nav-link ">
+                                        <span class="title">Nuevo Producto</span>
+                                    </a>
+                                </li>                                                                                                                       
+                                <li class="nav-item">
+                                    <a href="{{ path('termino') }}" class="nav-link ">
+                                        <span class="title">Nuevo Termino</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item  ">
-                            <a href="{{ path('venta') }}" class="nav-link nav-toggle">
+                        <li id="venta" class="nav-item">
+                            <a href="" class="nav-link nav-toggle">
                                 <i class="fa fa-opencart"></i>
                                 <span class="title">Venta</span>
                                 <span class="arrow"></span>
+                                <span id="ven" class=""></span>
                             </a>
                              <ul class="sub-menu">
-                                <li class="nav-item  ">
+                                <li class="nav-item">
+                                    <a href="{{ path('venta') }}" class="nav-link ">
+                                        <span class="title">Nueva Venta</span>
+                                    </a>
+                                </li>                                                                                                                       
+                                <li class="nav-item">
                                     <a href="{{ path('licenciaequipo') }}" class="nav-link ">
                                         <span class="title">Licencia Equipo</span>
                                     </a>
@@ -510,27 +220,29 @@
                             </ul>
                         </li>
                         {% endif %}
-                        <li class="nav-item  ">
+                        <li id="equipo" class="nav-item">
                             <a href="" class="nav-link nav-toggle">
                                 <i class="fa fa-hdd-o"></i>
                                 <span class="title">Equipo</span>
                                 <span class="arrow"></span>
+                                <span id="equ" class=""></span>
                             </a>
                             <ul class="sub-menu">
                                 {% if is_granted('ROLE_SOPORTE') %}
-                                <li class="nav-item  ">
+                                <li class="nav-item">
                                     <a href="{{ path('equipo') }}" class="nav-link ">
                                         <span class="title">Nuevo</span>
                                     </a>
                                 </li>
-                                <li class="nav-item  ">
+                                <li class="nav-item">
                                     <a href="{{ path('caracteristicasequipo') }}" class="nav-link ">
                                         <span class="title">Caracteristicas</span>
                                     </a>
                                 </li>
-                                <li class="nav-item  ">
+                                <li class="nav-item">
                                     <a href="" class="nav-link ">
                                         <span class="title">Componentes</span>
+                                        <span class="arrow"></span>
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="nav-item ">
@@ -556,16 +268,37 @@
                                 {% endif %}
                                 <li class="nav-item  ">
                                     <a href="{{ path('ubicacion') }}" class="nav-link ">
-                                        <span class="title">Ubicación</span>
+                                        <span class="title">Instalacion</span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item  ">
+                        <li id="avisos" class="nav-item">
+                            <a href="" class="nav-link nav-toggle">
+                                <i class="fa fa-commenting-o"></i>
+                                <span class="title">Avisos</span>
+                                <span class="arrow"></span>
+                                <span id="avi" class=""></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="{{ path('avisos') }}" class="nav-link ">
+                                        <span class="title">Nuevo Aviso</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="{{ path('nuevo_aviso') }}" class="nav-link ">
+                                        <span class="title">Mis Avisos</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="general" class="nav-item">
                             <a href="" class="nav-link nav-toggle">
                                 <i class="fa fa-gears"></i>
                                 <span class="title">General</span>
                                 <span class="arrow"></span>
+                                <span id="gen" class=""></span>
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item  ">
@@ -659,7 +392,7 @@
         <script src="{{ asset('public/global/plugins/bootstrap-daterangepicker/daterangepicker.js') }}" type="text/javascript"></script>
         <script src="{{ asset('public/global/plugins/morris/morris.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('public/global/plugins/morris/raphael-min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('public/global/plugins/counterup/jquery.waypoints.min.js') }}" type="text/javascript"></script>
+        {#<script src="{{ asset('public/global/plugins/counterup/jquery.waypoints.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('public/global/plugins/counterup/jquery.counterup.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('public/global/plugins/amcharts/amcharts/amcharts.js') }}" type="text/javascript"></script>
         <script src="{{ asset('public/global/plugins/amcharts/amcharts/serial.js') }}" type="text/javascript"></script>
@@ -676,7 +409,7 @@
         <script src="{{ asset('public/global/plugins/flot/jquery.flot.resize.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('public/global/plugins/flot/jquery.flot.categories.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('public/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('public/global/plugins/jquery.sparkline.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('public/global/plugins/jquery.sparkline.min.js') }}" type="text/javascript"></script>#}
         
         <script src="{{ asset('public/global/scripts/datatable.js')}}" type="text/javascript"></script>
         <script src="{{ asset('public/global/plugins/datatables/datatables.min.js')}}" type="text/javascript"></script>
@@ -688,14 +421,155 @@
        
         <script src="{{ asset('public/layouts/layout2/scripts/layout.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('public/layouts/layout2/scripts/demo.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('public/layouts/global/scripts/quick-sidebar.min.js') }}" type="text/javascript"></script>   
+        <script src="{{ asset('public/layouts/global/scripts/quick-sidebar.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('public/global/plugins/mifuncion.js') }}" type="text/javascript"></script> 
 
-        <script src="{{ asset('public/global/plugins/bootstrap-daterangepicker/daterangepicker.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('public/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('public/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('public/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}" type="text/javascript"></script>   
+       
 
      {% block javascripts %}{% endblock javascripts %}
+
+        <script type="text/javascript">
+
+        jQuery(document).ready(function(){
+            var url = window.location.pathname;
+            var cliente = "{{ path('cliente') }}";
+            var rango = "{{ path('rangocliente') }}";
+            var empresa = "{{ path('empresa') }}";
+            var fabricante = "{{ path('fabricante') }}";
+            var producto = "{{ path('producto') }}";
+            var termino = "{{ path('termino') }}";
+            var personal = "{{ path('personal')}}";
+            var puesto = "{{ path('puesto') }}";
+            var usuario = "{{ path('usuarios') }}";
+            var ventas = "{{ path('venta') }}";
+            var licencia = "{{ path('licenciaequipo') }}";
+            var equipos = "{{ path('equipo') }}";
+            var caracteristicas = "{{ path('caracteristicasequipo') }}";
+            var memoria = "{{ path('memoriaram') }}";
+            var disco = "{{ path('discoduro') }}";
+            var procesador = "{{ path('procesador') }}";
+            var dimensiones = "{{ path('dimensiones') }}";
+            var modelo = "{{ path('modeloequipo') }}";
+            var software = "{{ path('versionsoftware') }}";
+            var ubicacion = "{{ path('ubicacion') }}";
+            var pais = "{{ path('pais') }}";
+            var municipio = "{{ path('municipio') }}";
+            var estado = "{{ path('estado') }}";
+            var estatus = "{{ path('estatus') }}";
+            var aviso = "{{ path('avisos') }}"
+            var miAviso = "{{ path('nuevo_aviso') }}"
+            var roles = "{{ path('roles') }}";
+
+            switch (url){
+                case rango:
+                    var cliente = rango;
+                    break; 
+                case personal:
+                    var persona = personal;
+                    break;
+                case puesto:
+                    var persona = puesto;
+                    break;
+                case usuario:
+                    var persona = usuario;
+                    break;
+                case termino:
+                    var producto = termino;
+                    break;
+                case ventas:
+                    var venta = ventas;
+                    break;
+                case licencia:
+                    var venta = licencia;
+                    break;
+                case equipos:
+                    var equipo = equipos;
+                    break;
+                case caracteristicas:
+                    var equipo = caracteristicas;
+                    break;
+                case memoria:
+                    var equipo = memoria;
+                    break;
+                case disco:
+                    var equipo = disco;
+                    break;
+                case procesador:
+                    var equipo = procesador;
+                    break;
+                case dimensiones:
+                    var equipo = dimensiones;
+                    break;
+                case modelo:
+                    var equipo = modelo;
+                    break;
+                case software:
+                    var equipo = software;
+                    break;
+                case ubicacion:
+                    var equipo = ubicacion;
+                    break;
+                case pais:
+                    var general = pais;
+                    break;
+                case municipio:
+                    var general = municipio;
+                    break;
+                case estado:
+                    var general = estado;
+                    break;
+                case estatus:
+                    var general = estatus;
+                    break;
+                case roles:
+                    var general = roles;
+                    break;
+                case miAviso:
+                    var aviso = miAviso;
+                    break;
+            }
+        
+            switch (url){
+                case cliente:
+                    jQuery('#cliente').addClass('start active open');
+                    jQuery('#cli').addClass('selected');
+                    break;
+                case empresa:
+                    jQuery('#empresa').addClass('start active open');
+                    jQuery('#emp').addClass('selected');
+                    break;
+                case fabricante:
+                    jQuery('#fabricante').addClass('start active open');
+                    jQuery('#fab').addClass('selected');
+                    break;
+                case persona:
+                    jQuery('#personal').addClass('start active open');
+                    jQuery('#per').addClass('selected');
+                    break; 
+                case producto:
+                    jQuery('#producto').addClass('start active open');
+                    jQuery('#pro').addClass('selected');
+                    break;
+                case venta:
+                    jQuery('#venta').addClass('start active open');
+                    jQuery('#ven').addClass('selected');
+                    break;
+                case equipo:
+                    jQuery('#equipo').addClass('start active open');
+                    jQuery('#equ').addClass('selected');
+                    break;
+                case aviso:
+                    jQuery('#avisos').addClass('start active open');
+                    jQuery('#avi').addClass('selected');
+                    break;
+                case general:
+                    jQuery('#general').addClass('start active open');
+                    jQuery('#gen').addClass('selected');
+                    break;
+            }            
+        });
+        </script>
+     
 </body>
 
 
