@@ -5,7 +5,7 @@
             <td>{{ entity.equipo }}</td>  
             <td>{% if entity.fechaVenta %}{{ entity.fechaVenta|date('Y-m-d') }}{% endif %}</td> 
             <td>{{ entity.cliente }}</td>
-            <td>{{ entity.producto }}</td>
+            <td>{{ entity.termino }}</td>
             <td>{{ entity.estatus }}</td>
             <td>                                           
                 <a href="{{ path('venta_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>                                       

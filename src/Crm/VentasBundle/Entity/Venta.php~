@@ -10,12 +10,6 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Venta
 {
-    protected $usuarios;
- 
-    public function __construct()
-    {
-        $this->usuarios = new ArrayCollection();
-    }
     /**
      * @var integer
      */
@@ -25,6 +19,11 @@ class Venta
      * @var \DateTime
      */
     private $fechaVenta;
+
+    /**
+    * @var boolean
+    **/
+    private  $noDisponible;
 
 
     /**
@@ -61,6 +60,36 @@ class Venta
     }
 
     /**
+     * Set noDisponible
+     *
+     * @param boolean $noDisponible
+     * @return Venta
+     */
+    public function setNoDisponible($noDisponible)
+    {
+        $this->noDisponible = $noDisponible;
+
+        return $this;
+    }
+
+    /**
+     * Get noDisponible
+     *
+     * @return boolean 
+     */
+    public function getNoDisponible()
+    {
+        return $this->noDisponible;
+    }
+
+    protected $usuarios;
+ 
+    public function __construct()
+    {
+        $this->usuarios = new ArrayCollection();
+    }
+
+    /**
      * Set usuarios
      *
      * @param \Crm\UsuariosBundle\Entity\Usuarios $usuarios
@@ -87,11 +116,6 @@ class Venta
      */
     private $estatus;
 
-    /**
-     * @var \Crm\ProductoBundle\Entity\Producto
-     */
-    private $producto;
-
 
     /**
      * Set estatus
@@ -114,29 +138,6 @@ class Venta
     public function getEstatus()
     {
         return $this->estatus;
-    }
-
-    /**
-     * Set producto
-     *
-     * @param \Crm\ProductoBundle\Entity\Producto $producto
-     * @return Venta
-     */
-    public function setProducto(\Crm\ProductoBundle\Entity\Producto $producto = null)
-    {
-        $this->producto = $producto;
-
-        return $this;
-    }
-
-    /**
-     * Get producto
-     *
-     * @return \Crm\ProductoBundle\Entity\Producto 
-     */
-    public function getProducto()
-    {
-        return $this->producto;
     }
 
     /**
@@ -193,5 +194,33 @@ class Venta
     public function getEquipo()
     {
         return $this->equipo;
+    }
+    /**
+     * @var \Crm\ProductoBundle\Entity\Termino
+     */
+    private $termino;
+
+
+    /**
+     * Set termino
+     *
+     * @param \Crm\ProductoBundle\Entity\Termino $termino
+     * @return Venta
+     */
+    public function setTermino(\Crm\ProductoBundle\Entity\Termino $termino = null)
+    {
+        $this->termino = $termino;
+
+        return $this;
+    }
+
+    /**
+     * Get termino
+     *
+     * @return \Crm\ProductoBundle\Entity\Termino 
+     */
+    public function getTermino()
+    {
+        return $this->termino;
     }
 }

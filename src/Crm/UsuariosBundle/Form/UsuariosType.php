@@ -23,7 +23,15 @@ class UsuariosType extends AbstractType
                     'required' => true,
                     'first_options'  => array('label' => 'Password'),
                     'second_options' => array('label' => 'Repite password')))
-            ->add('personal')
+            ->add('personal','entity', array(
+                    'class' => 'PersonalBundle:Personal',
+                    'property' => 'nombre',
+                    'query_builder' => function (\Crm\PersonalBundle\Entity\PersonalRepository $repository){
+                        return $repository->createQueryBuilder('personal')
+                        ->orderBy('personal.checkUsuario', 'ASC')
+                        ->where('personal.checkUsuario = :check')
+                        ->setParameter('check', 'f');}
+                    ))
             ->add('rol')
         ;
     }

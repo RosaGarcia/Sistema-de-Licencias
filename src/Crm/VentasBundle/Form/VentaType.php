@@ -17,8 +17,9 @@ class VentaType extends AbstractType
         $builder
             ->add('fechaVenta','date',array('widget'=>'single_text'))
             ->add('usuarios')
-            ->add('estatus','choice',array('choices' => array('demo' => 'Demo','venta' => 'Venta'),'attr' => array('class' => 'form-control')))
-            ->add('producto')
+            ->add('noDisponible',null,array("required" => false))
+            ->add('estatus','choice',array('choices' => array('Demo' => 'Demo','Venta' => 'Venta'),'attr' => array('class' => 'form-control')))
+            ->add('termino')
             ->add('cliente')
             ->add('equipo','entity', array(
                 'class' => 'EquipoBundle:Equipo',
@@ -29,7 +30,6 @@ class VentaType extends AbstractType
                     ->where('equipo.checkVenta = :check')
                     ->setParameter('check', 'f');}
                 ))
-            
         ;
     }
     

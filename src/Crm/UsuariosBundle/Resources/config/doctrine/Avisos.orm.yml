@@ -11,6 +11,10 @@ Crm\UsuariosBundle\Entity\Avisos:
     fields:
         avisos:
             type: text
+        usuarioCreo:
+            type: integer
+        fechaCreacion:
+            type: datetime
     manyToOne:
         usuarios:
             targetEntity: Crm\UsuariosBundle\Entity\Usuarios

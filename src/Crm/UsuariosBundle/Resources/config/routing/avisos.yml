@@ -28,3 +28,11 @@ avisos_delete:
     path:     /{id}/delete
     defaults: { _controller: "UsuariosBundle:Avisos:delete" }
     methods:  [POST, DELETE]
+
+nuevo_aviso:
+    path: /nuevoaviso
+    defaults: {_controller: "UsuariosBundle:Avisos:avisos" }
+
+vista_avisos:
+    path: /{id}/misavisos/show
+    defaults: {_controller: "UsuariosBundle:Avisos:avisosShow" }

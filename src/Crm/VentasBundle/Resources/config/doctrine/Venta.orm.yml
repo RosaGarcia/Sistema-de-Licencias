@@ -15,6 +15,9 @@ Crm\VentasBundle\Entity\Venta:
         estatus:
             type: string
             length: '20'
+        noDisponible:
+            type: boolean
+            nullable: TRUE
     manyToOne:
         usuarios:
           targetEntity: Crm\UsuariosBundle\Entity\Usuarios
@@ -22,11 +25,11 @@ Crm\VentasBundle\Entity\Venta:
           joinColumn:
               name: usuarios_id
               referencedColumnName: id
-        producto:
-          targetEntity: Crm\ProductoBundle\Entity\Producto
+        termino:
+          targetEntity: Crm\ProductoBundle\Entity\Termino
           inversedBy: venta
           joinColumn:
-            name: producto_id
+            name: termino_id
             referencedColumnName: id
         cliente:
           targetEntity: Crm\ClienteBundle\Entity\Cliente

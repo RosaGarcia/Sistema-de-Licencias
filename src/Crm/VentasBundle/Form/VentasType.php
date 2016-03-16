@@ -17,11 +17,11 @@ class VentasType extends AbstractType
         $builder
             ->add('fechaVenta','date',array('widget'=>'single_text'))
             ->add('usuarios')
+            ->add('noDisponible',null,array("required" => false))
             ->add('estatus','choice',array('choices' => array('Demo' => 'Demo','Venta' => 'Venta'),'attr' => array('class' => 'form-control')))
-            ->add('producto')
+            ->add('termino')
             ->add('cliente')
-            ->add('equipo')
-            
+            ->add('equipo')           
         ;
     }
     

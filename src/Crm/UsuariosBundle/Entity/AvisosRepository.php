@@ -12,4 +12,20 @@ use Doctrine\ORM\EntityRepository;
  */
 class AvisosRepository extends EntityRepository
 {
+	public function avisosCreados($id)
+	{
+		return $this->getEntityManager()->createQuery('SELECT a FROM UsuariosBundle:Avisos a WHERE a.usuarioCreo = :id')->setParameter('id',$id)->getResult();
+	}
+
+	public function nuevoAviso($id)
+    {
+     	$query = $this->getEntityManager()->createQuery('SELECT a AS aviso, u.userName AS nombre FROM UsuariosBundle:Avisos a, UsuariosBundle:Usuarios u WHERE a.usuarioCreo = u.id AND a.usuarios = :id')->setParameter('id',$id)->getResult();
+  		return $query;
+    }
+
+    public function aviso($id)
+    {
+    	$query = $this->getEntityManager()->createQuery('SELECT a AS aviso, u.userName AS nombre FROM UsuariosBundle:Avisos a, UsuariosBundle:Usuarios u WHERE a.usuarioCreo= u.id AND a.id = :id')->setParameter('id',$id)->getResult();
+  		return $query;
+    }
 }

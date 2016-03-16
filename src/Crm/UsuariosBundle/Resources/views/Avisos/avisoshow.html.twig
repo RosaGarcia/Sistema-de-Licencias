@@ -1,0 +1,61 @@
+{% extends '::frontend.html.twig' %}
+
+{% block body -%}
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h2><a href="{{ path('nuevo_aviso') }}">
+                 Aviso:
+                </a>
+                Vista
+            </h2>
+        </div>
+    </div>
+
+    {% for flashMessage in app.session.flashbag.get('mensaje') %}
+        <h2 class="alert-success">{{ flashMessage }} </h2>
+        <br /><br />
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light portlet-fit ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-user font-yellow"></i>
+                        {% for entity in entities %}
+                        <span class="caption-subject font-yellow bold uppercase">De: {{ entity.nombre }}</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="general-item-list">
+                        
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Fecha:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.aviso.fechaCreacion|date('Y-m-d H:i') }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Asunto:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.aviso.avisos }}
+                                </div>
+                            </div>
+                        </div><br />
+
+                       {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

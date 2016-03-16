@@ -1,0 +1,30 @@
+rangocliente:
+    path:     /
+    defaults: { _controller: "ClienteBundle:RangoCliente:index" }
+
+rangocliente_show:
+    path:     /{id}/show
+    defaults: { _controller: "ClienteBundle:RangoCliente:show" }
+
+rangocliente_new:
+    path:     /new
+    defaults: { _controller: "ClienteBundle:RangoCliente:new" }
+
+rangocliente_create:
+    path:     /create
+    defaults: { _controller: "ClienteBundle:RangoCliente:create" }
+    methods:  POST
+
+rangocliente_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ClienteBundle:RangoCliente:edit" }
+
+rangocliente_update:
+    path:     /{id}/update
+    defaults: { _controller: "ClienteBundle:RangoCliente:update" }
+    methods:  [POST, PUT]
+
+rangocliente_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ClienteBundle:RangoCliente:delete" }
+    methods:  [POST, DELETE]

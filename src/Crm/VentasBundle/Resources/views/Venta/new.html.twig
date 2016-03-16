@@ -27,12 +27,20 @@
                             <div class="scroller" data-always-visible="1" data-rail-visible="0">
                                 <ul class="feeds">
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group form-md-line-input has-success">
                                             <div class="input-icon">
                                                 {{ form_widget(form.equipo,{"attr":{"class":"form-control"},"required":"true"}) }}
                                                 <label for="equipo">Equipo</label>
                                                 <i class="fa fa-sort-down"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group form-md-line-input has-success">
+                                            <div class="input-icon">
+                                                {{ form_widget(form.noDisponible) }}
+                                                <label for="noDisponible">Equipo no disponible</label>
                                             </div>
                                         </div>
                                     </div>
@@ -48,7 +56,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group form-md-line-input has-success">
                                             <div class="input-icon">
-                                                {{ form_widget(form.producto,{"attr":{"class":"form-control"},"required":"true"}) }}
+                                                {{ form_widget(form.termino,{"attr":{"class":"form-control"},"required":"true"}) }}
                                                 <label for="producto">Producto</label>
                                                 <i class="fa fa-sort-down"></i>
                                             </div>
@@ -59,15 +67,6 @@
                                             <div class="input-icon">
                                                 {{ form_widget(form.cliente,{"attr":{"class":"form-control"},"required":"true"}) }}
                                                 <label for="cliente">Cliente</label>
-                                                <i class="fa fa-sort-down"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group form-md-line-input has-success">
-                                            <div class="input-icon">
-                                                {{ form_widget(form.usuarios,{"attr":{"class":"form-control"},"required":"true"}) }}
-                                                <label for="usuarios">Vendedor</label>
                                                 <i class="fa fa-sort-down"></i>
                                             </div>
                                         </div>

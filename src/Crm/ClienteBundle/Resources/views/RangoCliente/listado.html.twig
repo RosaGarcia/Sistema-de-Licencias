@@ -1,0 +1,14 @@
+<tbody>
+    {% for entity in entities %}
+        <tr>
+            <td class="oculto"><a href="{{ path('rangocliente_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.rango }}</td>
+            <td>{{ entity.dias }}</td>
+            <td>
+                <a href="{{ path('rangocliente_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
+                                            
+                <a href="{{ path('rangocliente_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
+            </td>
+        </tr>
+    {% endfor %}
+</tbody>

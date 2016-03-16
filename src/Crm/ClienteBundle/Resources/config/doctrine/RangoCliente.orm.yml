@@ -1,0 +1,21 @@
+Crm\ClienteBundle\Entity\RangoCliente:
+    type: entity
+    table: null
+    repositoryClass: Crm\ClienteBundle\Entity\RangoClienteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        rango:
+            type: string
+            length: '50'
+        dias:
+            type: integer
+    oneToMany:
+        cliente: 
+           targetEntity: Crm\ClienteBundle\Entity\Cliente
+           mappedBy: RangoCliente
+    lifecycleCallbacks: {  }

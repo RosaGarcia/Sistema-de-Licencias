@@ -55,6 +55,9 @@ class UsuariosController extends Controller
 
             $em->persist($entity);
             $em->flush();
+
+            $usuario = $this->nuevoUsuario($id = $entity->getPersonal());
+
             return $this->redirect($this->generateUrl('usuarios_show', array('id' => $entity->getId())));
         }
 
@@ -95,6 +98,17 @@ class UsuariosController extends Controller
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
+    }
+
+    public function nuevoUsuario($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('PersonalBundle:Personal')->find($id);
+
+            $entity ->setCheckUsuario('t');
+            $em->persist($entity);
+            $em->flush();
     }
 
     /**
@@ -217,6 +231,7 @@ class UsuariosController extends Controller
 
             $em->remove($entity);
             $em->flush();
+            $usuario = $this->usuarioLibre($id = $entity->getPersonal());
         }
 
         return $this->redirect($this->generateUrl('usuarios'));
@@ -237,5 +252,16 @@ class UsuariosController extends Controller
             ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
+    }
+
+    public function usuarioLibre($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('PersonalBundle:Personal')->find($id);
+
+            $entity ->setCheckUsuario('f');
+            $em->persist($entity);
+            $em->flush();
     }
 }

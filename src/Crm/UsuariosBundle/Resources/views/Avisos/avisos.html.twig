@@ -1,0 +1,36 @@
+{% extends '::frontend.html.twig' %}
+
+{% block body -%}
+
+	<div class="col-md-12 col-sm-12">
+        <div class="portlet light ">
+            <div class="portlet-title tabbable-line">
+                <div class="caption">
+                    <i class="fa fa-comment-o font-dark"></i>
+                    <span class="caption-subject font-dark bold uppercase">Avisos</span>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#tab_nuevos" data-toggle="tab" aria-expanded="true"> Pendientes </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="portlet-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_nuevos">
+                    
+                        <div class="mt-actions">
+
+                            {% block nuevo -%}
+                                {{ render(controller('UsuariosBundle:Avisos:nuevoAviso')) }}
+                            {% endblock %}
+                                                                                    
+                         </div>                
+                    </div>
+
+
+               	</div>
+            </div>
+        </div>
+   	</div>
+{% endblock %}

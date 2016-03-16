@@ -44,9 +44,20 @@ class VentaController extends Controller
         $entity = new Venta();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
+        $user = $this->container->get('security.context')->getToken()->getUser();
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $logeado = $em->getRepository('UsuariosBundle:Usuarios')->find($user->getId());   
+            $entity -> setUsuarios($logeado);
+            if ($entity->getNoDisponible() == 'true')
+            {
+                $entity -> setEquipo(null);
+            }
+            else
+            {
+                $equipo = $this->equipos($serial = $entity->getEquipo());
+            }
             $em->persist($entity);
             $em->flush();
             $this->get('session')->getFlashBag()->add(
@@ -54,7 +65,6 @@ class VentaController extends Controller
                                 'Se ha creado el registro exitosamente'
                             );
             $mail = $this->send($entity);
-            $equipo = $this->equipos($serial = $entity->getEquipo());
 
             return $this->redirect($this->generateUrl('venta_show', array('id' => $entity->getId())));
         }
@@ -207,12 +217,19 @@ class VentaController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            if ($entity->getNoDisponible() == 'true')
+            {
+                $entity -> setEquipo(null);
+            }
+            else
+            {
+                $equipo = $this->equipos($serial = $entity->getEquipo());
+            }
             $em->flush();
             $this->get('session')->getFlashBag()->add(
                                 'mensaje',
                                 'Se ha editado el registro exitosamente'
                             );
-
             return $this->redirect($this->generateUrl('venta'));
         }
 
