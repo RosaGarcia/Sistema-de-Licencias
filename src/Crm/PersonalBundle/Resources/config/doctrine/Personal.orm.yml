@@ -31,6 +31,9 @@ Crm\PersonalBundle\Entity\Personal:
         email:
             type: string
             length: '50'
+        checkUsuario:
+            type: boolean
+            nullable: true
     manyToOne:
         estatus:
             targetEntity: Crm\GeneralBundle\Entity\Estatus
