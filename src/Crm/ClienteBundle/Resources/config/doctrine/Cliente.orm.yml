@@ -52,6 +52,12 @@ Crm\ClienteBundle\Entity\Cliente:
            joinColumn:
                 name: estatus_id
                 referencedColumnName: id
+        rangoCliente:
+           targetEntity: Crm\ClienteBundle\Entity\RangoCliente
+           inversedBy: cliente
+           joinColumn:
+                name: rangoCliente_id
+                referencedColumnName: id
     oneToMany:
         direccionCliente: 
            targetEntity: Crm\ClienteBundle\Entity\DireccionCliente
