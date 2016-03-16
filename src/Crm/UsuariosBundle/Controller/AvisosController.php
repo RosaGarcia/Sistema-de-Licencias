@@ -21,11 +21,19 @@ class AvisosController extends Controller
      */
     public function indexAction()
     {
+        return $this->render('UsuariosBundle:Avisos:index.html.twig');
+    }
+
+    public function listadoAction()
+    {
         $em = $this->getDoctrine()->getManager();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $logeado = $em->getRepository('UsuariosBundle:Usuarios')->find($user->getId());
+        $id = $logeado->getid();
 
-        $entities = $em->getRepository('UsuariosBundle:Avisos')->findAll();
+        $entities = $em->getRepository('UsuariosBundle:Avisos')->avisosCreados($id);
 
-        return $this->render('UsuariosBundle:Avisos:index.html.twig', array(
+        return $this->render('UsuariosBundle:Avisos:listado.html.twig', array(
             'entities' => $entities,
         ));
     }
@@ -38,11 +46,17 @@ class AvisosController extends Controller
         $entity = new Avisos();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
+        $user = $this->container->get('security.context')->getToken()->getUser();
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
+            $logeado = $em->getRepository('UsuariosBundle:Usuarios')->find($user->getId());   
+            $usuario = $logeado->getid();
+            $entity -> setUsuarioCreo($usuario);
+            $entity->setFechaCreacion(new \DateTime("now"));
             $em->flush();
+            $mail = $this->send($entity);
             $this->get('session')->getFlashBag()->add(
                                 'mensaje',
                                 'Se ha creado el registro exitosamente'
@@ -91,6 +105,21 @@ class AvisosController extends Controller
         ));
     }
 
+    public function send($entity)
+    {
+        $message = \Swift_Message::newInstance()
+        ->setSubject('Aviso')
+        ->setFrom('hdz.r.j.david@gmail.com')
+        ->setTo(array('crowin@hotmail.com' => 'David'))
+        ->setBody(
+            $this->renderView(
+                'UsuariosBundle:Avisos:mail.html.twig',array('entity' => $entity)
+            )
+            )
+        ;
+        $this->get('mailer')->send($message);
+    }
+
     /**
      * Finds and displays a Avisos entity.
      *
@@ -110,6 +139,37 @@ class AvisosController extends Controller
         return $this->render('UsuariosBundle:Avisos:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    public function avisosAction()
+    {
+        return $this->render('UsuariosBundle:Avisos:avisos.html.twig');
+    }
+
+    public function nuevoAvisoAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $miAviso = $em->getRepository('UsuariosBundle:Avisos')->nuevoAviso($user->getId());
+
+        return $this->render('UsuariosBundle:Avisos:nuevoaviso.html.twig',array(
+            "entities" => $miAviso,
+            ));
+    }
+
+    public function avisosShowAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('UsuariosBundle:Avisos')->aviso($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Avisos entity.');
+        }
+       
+ 
+        return $this->render('UsuariosBundle:Avisos:avisoshow.html.twig', array(
+            'entities'  => $entity,
         ));
     }
 
