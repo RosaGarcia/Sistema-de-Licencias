@@ -50,4 +50,4 @@ logout:
 
 index:
     pattern: /
-    defaults: {_controller: UsuariosBundle:Avisos:new }
+    defaults: {_controller: UsuariosBundle:Avisos:avisos }
