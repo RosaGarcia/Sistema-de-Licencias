@@ -29,7 +29,7 @@ class LicenciaEquipoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EquipoBundle:LicenciaEquipo')->findAll();
+        $entities = $em->getRepository('EquipoBundle:LicenciaEquipo')->findAll();        
 
         return $this->render('EquipoBundle:LicenciaEquipo:listado.html.twig', array(
             'entities' => $entities,
