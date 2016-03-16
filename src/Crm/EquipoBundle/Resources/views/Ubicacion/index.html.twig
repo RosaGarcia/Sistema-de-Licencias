@@ -16,7 +16,7 @@
                 <div class="portlet-title">
                     <div class="caption font-dark">
                         <i class="icon-settings font-dark"></i>
-                            <span class="caption-subject bold uppercase"> Lista Ubicacion</span>
+                            <span class="caption-subject bold uppercase"> Lista Instalación</span>
                     </div>
                 </div>
                 <div class="portlet-body">
@@ -43,3 +43,17 @@
 
       
 {% endblock %}
+
+
+{% block javascripts %}
+<script>
+    jQuery('#crm_equipobundle_ubicacion_estatus').on('change', function() {
+        if (this.value != "Instalado"){
+            jQuery('#instalado').addClass("oculto");
+        }
+        else{
+            jQuery("#instalado").removeClass("oculto");
+        }
+        });   
+</script>
+{% endblock javascripts %}

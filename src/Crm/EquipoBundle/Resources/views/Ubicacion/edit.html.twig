@@ -5,7 +5,7 @@
     <div class="row">
        	<div class="col-xs-12 col-sm-12 com-md-12">
         	<h2><a href="{{ path('ubicacion') }}">
-            		Ubicacion :
+            		Instalación :
             	</a>
          		Editar
         	</h2>
@@ -18,11 +18,11 @@
 	            <div class="portlet-title tabbable-line">
 	                <div class="caption">
 	                    <i class="fa fa-database font-green-sharp"></i>
-	                    <span class="caption-subject font-green-sharp bold uppercase">Nuevo Ubicación</span>
+	                    <span class="caption-subject font-green-sharp bold uppercase">Nuevo Instalación</span>
 	                </div>
 	                <ul class="nav nav-tabs">
 	                    <li class="active">
-	                        <a href="#tab_1_1" class="active" data-toggle="tab"> Ubicación </a>
+	                        <a href="#tab_1_1" class="active" data-toggle="tab"> Instalación </a>
 	                    </li>
 	                </ul>
 	            </div>
@@ -78,7 +78,7 @@
 	                                            </div>
 	                                        </div>
 	                                    </div>
-	                                    <div class="col-md-6">
+	                                    <div class="col-md-4">
 	                                        <div class="form-group form-md-line-input has-success">
 	                                            <div class="input-icon">
 	                                                {{ form_widget(edit_form.colonia) }}
@@ -87,7 +87,7 @@
 	                                            </div>
 	                                        </div>
 	                                    </div>
-	                                    <div class="col-md-6">
+	                                    <div class="col-md-4">
 	                                        <div class="form-group form-md-line-input has-success">
 	                                            <div class="input-icon">
 	                                                {{ form_widget(edit_form.localidad) }}
@@ -96,10 +96,39 @@
 	                                            </div>
 	                                        </div>
 	                                    </div>
+	                                    <div class="col-md-4" id="status">
+	                                        <div class="form-group form-md-line-input has-success">
+	                                            <div class="input-icon">
+	                                                {{ form_widget(edit_form.estatus) }}
+	                                                <label for="estatus">Estatus</label>
+	                                                <i class="fa fa-sort-down"></i>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="oculto" id="instalado">
+		                                    <div class="col-md-4">
+		                                        <div class="form-group form-md-line-input has-success">
+		                                            <div class="input-icon">
+		                                                {{ form_widget(edit_form.ip) }}
+		                                                <label for="ip">Ip</label>
+		                                                <i class="fa fa-pencil"></i>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                    <div class="col-md-4">
+		                                        <div class="form-group form-md-line-input has-success">
+		                                            <div class="input-icon">
+		                                                {{ form_widget(edit_form.dominio) }}
+		                                                <label for="dominio">Dominio</label>
+		                                                <i class="fa fa-pencil"></i>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+	                                	</div>
 	                                    <div class="col-md-4">
 	                                        <div class="form-group form-md-line-input has-success">
 	                                            <div class="input-icon">
-	                                                {{ form_widget(edit_form.pias,{"attr":{"class":"form-control"},"required":"true"}) }}
+	                                                {{ form_widget(edit_form.pais,{"attr":{"class":"form-control"},"required":"true"}) }}
 	                                                <label for="pais">Pais</label>
 	                                                <i class="fa fa-sort-down"></i>
 	                                            </div>
