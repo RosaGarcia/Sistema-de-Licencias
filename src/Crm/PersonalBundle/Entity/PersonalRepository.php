@@ -12,4 +12,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class PersonalRepository extends EntityRepository
 {
+	public function email($id)
+	{
+		return $this->getEntityManager()->createQuery('SELECT p FROM PersonalBundle:Personal p, UsuariosBundle:Avisos a INNER JOIN a.usuarios u WHERE p.id = u.personal AND a.usuarios = :id ')->setParameter('id',$id)->getResult(); 
+	}
 }

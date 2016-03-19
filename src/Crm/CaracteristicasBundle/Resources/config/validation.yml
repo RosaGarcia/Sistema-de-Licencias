@@ -1,0 +1,16 @@
+Crm\CaracteristicasBundle\Entity\Dimensiones:
+    properties:
+        dimensiones:
+            - NotBlank: { message: "Ingresa una dimensión." }
+
+Crm\CaracteristicasBundle\Entity\DiscoDuro:
+    properties:
+        capacidad:
+            - NotBlank: { message: "Ingresa una capacidad." }
+            - Range:
+                min: 1
+                max: 1024
+                minMessage: Debe de ser mayor a {{ limit }}.
+                maxMessage: Debe de ser menor a {{ limit }}.
+        terminoDisco:
+            - NotBlank: { message: "Ingresa un termino." }

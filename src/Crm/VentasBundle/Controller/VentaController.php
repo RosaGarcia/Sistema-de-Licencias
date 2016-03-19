@@ -117,10 +117,8 @@ class VentaController extends Controller
         ->setTo(array('crowin@hotmail.com' => 'David'))
         ->setBody(
             $this->renderView(
-                'VentasBundle:Venta:mail.html.twig',array('entity' => $entity)
-            )
-            )
-        ;
+                'VentasBundle:Venta:mail.html.twig',array('entity' => $entity)),'text/html'
+            );
         $this->get('mailer')->send($message);
     }
 

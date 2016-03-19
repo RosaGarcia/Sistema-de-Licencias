@@ -56,7 +56,13 @@ class AvisosController extends Controller
             $entity -> setUsuarioCreo($usuario);
             $entity->setFechaCreacion(new \DateTime("now"));
             $em->flush();
-            $mail = $this->send($entity);
+            $destino = $em->getRepository('PersonalBundle:Personal')->email($id = $entity->getUsuarios());
+            foreach ($destino as $email)
+            {
+                $correo = $email->getEmail();
+            }
+            $mail = $this->send($entity,$correo);
+           
             $this->get('session')->getFlashBag()->add(
                                 'mensaje',
                                 'Se ha creado el registro exitosamente'
@@ -105,18 +111,16 @@ class AvisosController extends Controller
         ));
     }
 
-    public function send($entity)
+    public function send($entity,$correo)
     {
         $message = \Swift_Message::newInstance()
         ->setSubject('Aviso')
         ->setFrom('hdz.r.j.david@gmail.com')
-        ->setTo(array('crowin@hotmail.com' => 'David'))
+        ->setTo($correo)
         ->setBody(
             $this->renderView(
-                'UsuariosBundle:Avisos:mail.html.twig',array('entity' => $entity)
-            )
-            )
-        ;
+                'UsuariosBundle:Avisos:mail.html.twig',array('entity' => $entity)),'text/html'
+            );
         $this->get('mailer')->send($message);
     }
 
@@ -133,7 +137,6 @@ class AvisosController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Avisos entity.');
         }
-
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('UsuariosBundle:Avisos:show.html.twig', array(

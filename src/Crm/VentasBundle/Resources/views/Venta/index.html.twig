@@ -43,7 +43,17 @@
     </div>
 {% endblock body %}
 
-
+{% block javascripts %}
+<script>
+        var x = document.getElementById("crm_ventasbundle_venta_equipo").value;
+        if (x == '' )
+        {
+            jQuery('#noDisponible').removeClass("oculto");
+            jQuery("#crm_ventasbundle_venta_equipo" ).prop( "disabled", true );
+        }
+   
+</script>
+{% endblock javascripts %}
 
 
 

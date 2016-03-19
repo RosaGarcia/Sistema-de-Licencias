@@ -28,3 +28,17 @@ dimensiones_delete:
     path:     /{id}/delete
     defaults: { _controller: "CaracteristicasBundle:Dimensiones:delete" }
     methods:  [POST, DELETE]
+
+dimenciones_redirect_create:
+    path: /create
+    defaults:  
+        _controller: "CaracteristicasBundle:Dimensiones:index" 
+        path: /
+        permanent: True
+
+dimenciones_redirect_edit:
+    path: /{id}/update
+    defaults:
+        _controller: "CaracteristicasBundle:Dimensiones:index"
+        path: /
+        permanent: True

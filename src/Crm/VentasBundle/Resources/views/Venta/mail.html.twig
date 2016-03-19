@@ -1,8 +1,29 @@
-Venta: {{ entity.id }}                
-Fecha: {{ entity.fechaVenta|date('Y-m-d ') }}
-Cliente: {{ entity.cliente }}
-Estatus del equipo: {{ entity.estatus }}                                   
-Producto: {{ entity.termino }}
-Numero de serie del equipo: {{ entity.equipo }}
-
-preparar equipo por favor=[.
+<table>
+	<tr>
+		<td>Venta</td>
+		<td>{{ entity.id }}</td>
+	</tr>
+	<tr>
+		<td>Fecha</td>
+		<td>{{ entity.fechaVenta|date('Y-m-d ') }}</td>
+	</tr>
+	<tr>
+		<td>Cliente</td>
+		<td>{{ entity.cliente }}</td>
+	</tr>
+	<tr>
+		<td>Estatus del equipo</td>
+		<td>{{ entity.estatus }}</td>
+	</tr>
+	<tr>
+		<td>Producto</td>
+		<td>{{ entity.termino }}</td>
+	</tr>
+	<tr>
+		<td>Numero de serie del equipo</td>
+		<td>{{ entity.equipo }}</td>
+	</tr>
+ <tr>
+ 	<td>preparar equipo por favor=[.</td>
+ </tr>
+</table>
