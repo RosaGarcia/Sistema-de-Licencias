@@ -53,7 +53,7 @@ class DireccionPersonalController extends Controller
             return $this->redirect($this->generateUrl('personal_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('PersonalBundle:DireccionPersonal:new.html.twig', array(
+        return $this->render('PersonalBundle:DireccionPersonal:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
