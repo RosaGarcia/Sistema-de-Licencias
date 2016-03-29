@@ -1,0 +1,241 @@
+{% extends 'frontend.html.twig' %}
+{% block body %}
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 com-md-12">
+            <h2>
+                Personal
+            </h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="portlet light ">
+                <div class="portlet-title tabbable-line">
+                    <div class="caption">
+                        <i class="fa fa-database font-green-sharp"></i>
+                        <span class="caption-subject font-green-sharp bold uppercase">Nuevo Personal</span>
+                    </div>
+                </div>
+                {{ form_start(form, { 'attr' : {'novalidate': 'novalidate'} }) }}
+                    <div class="portlet-body">
+                        <div class="tab-content">
+                           
+                                <div class="scroller" data-always-visible="1" data-rail-visible="0">
+                                    
+
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.personal.nombre,{'attr': {'placeholder': 'Nombre'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.personal.nombre) }}</span>
+                                                    <label for="nombre">Nombre</label>
+                                                    <i class="fa fa-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.personal.apePat,{'attr': {'placeholder': 'Apellido Paterno'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.personal.apePat) }}</span>
+                                                    <label for="apePat">Apellido Paterno</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.personal.apeMat,{'attr': {'placeholder': 'Apellido Materno'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.personal.apeMat) }}</span>
+                                                    <label for="apeMat">Apellido Materno</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                     {{ form_widget(form.personal.telefono,{'attr': {'placeholder': 'Telefono'}}) }}
+                                                     <span class="help-block help-block-error">{{ form_errors(form.personal.telefono) }}</span>
+                                                    <label for="telefono">Telefono</label>
+                                                    <i class="fa fa-phone"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.personal.celular,{'attr': {'placeholder': 'Celular'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.personal.celular) }}</span>
+                                                    <label for="celular">Celular</label>
+                                                    <i class="fa fa-phone"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.personal.email,{'attr': {'placeholder': 'Email'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.personal.email) }}</span>
+                                                    <label for="email">Email</label>
+                                                    <i class="fa fa-envelope-o"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.personal.estatus, {'attr':{'class':'form-control'},'required':'true'}) }}
+                                                    <label for="estatus">Estatus</label>
+                                                    <i class="fa fa-sort-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.personal.puesto, {'attr':{'class':'form-control'},'required':'true'}) }}
+                                                    <label for="estatus">Puesto</label>
+                                                    <i class="fa fa-sort-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.personal.empresa, {'attr':{'class':'form-control'},'required':'true'}) }}
+                                                    <label for="estatus">Empresa</label>
+                                                    <i class="fa fa-sort-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    
+                                </div>
+                            
+                                                    
+                            
+                                <div class="scroller" style="height: 400px;" data-always-visible="1" data-rail-visible1="1">
+                                   
+                                                                
+                                        <div class="col-md-12">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.calle,{'attr': {'placeholder': 'Calle'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.calle) }}</span>
+                                                    <label for="calle">Calle</label>
+                                                    <i class="fa fa-road"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <br />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.numeroExt,{'attr': {'placeholder': 'Numero Exterior'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.numeroExt) }}</span>
+                                                    <label for="numeroExt">Numero Ext.</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.numeroInt,{'attr': {'placeholder': 'Numero Interior'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.numeroInt) }}</span>
+                                                    <label for="numeroInt">Numero Int</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.codigoPostal,{'attr': {'placeholder': 'Codigo Postal'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.codigoPostal) }}</span>
+                                                    <label for="codigoPostal">Codigo Postal</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <br />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.colonia,{'attr': {'placeholder': 'Colonia'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.colonia) }}</span>
+                                                    <label for="colonia">Colonia</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.localidad,{'attr': {'placeholder': 'Localidad'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.localidad) }}</span>
+                                                    <label for="localidad">Localidad</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <br />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.pais,{"attr":{"class":"form-control"},"required":"true"}) }}
+                                                    <label for="pais">Pais</label>
+                                                    <i class="fa fa-sort-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.estado,{"attr":{"class":"form-control"},"required":"true"}) }}
+                                                    <label for="estado">Estado</label>
+                                                    <i class="fa fa-sort-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.municipio,{"attr":{"class":"form-control"},"required":"true"}) }}
+                                                    <label for="estado">Municipio</label>
+                                                    <i class="fa fa-sort-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                {{ form_widget(form._token) }}  
+                             
+                                        <div class="col-xs-12"><br /><br />
+                                            <button class="btn btn-success" type="submit" id="sendform"><i class="fa fa-plus"></i>&nbsp;Crear</button>
+                                        </div>
+                              
+                                        </form>         
+                                                          
+                                    
+                                </div>
+                            
+                                                
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
