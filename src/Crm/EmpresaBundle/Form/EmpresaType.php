@@ -17,11 +17,11 @@ class EmpresaType extends AbstractType
         $builder
             ->add('razonSocial','text',array('attr' => array('class' => 'form-control')))
             ->add('rfc','text',array('attr' => array('class' => 'form-control')))
-            ->add('telefono1','text',array('attr' => array('class' => 'form-control')))
-            ->add('ext1','integer',array('attr' => array('class' => 'form-control'),'required' => false))
-            ->add('telefono2','text',array('attr' => array('class' => 'form-control'),'required' => false))
-            ->add('ext2','integer',array('attr' => array('class' => 'form-control'),'required' => false))
-            ->add('email','text',array('attr' => array('class' => 'form-control')))
+            ->add('telefono1','text',array('attr' => array('class' => 'form-control','minlength'=>'10','maxlength'=>'10')))
+            ->add('ext1','integer',array('attr' => array('class' => 'form-control','min'=>'0','max'=>'99999'),'required' => false))
+            ->add('telefono2','text',array('attr' => array('class' => 'form-control','minlength'=>'10','maxlength'=>'10'),'required' => false))
+            ->add('ext2','integer',array('attr' => array('class' => 'form-control','min'=>'0','max'=>'99999'),'required' => false))
+            ->add('email','email',array('attr' => array('class' => 'form-control')))
             ->add('paginaWeb','text',array('attr' => array('class' => 'form-control'),'required' => false))
             ->add('estatus')
         ;
