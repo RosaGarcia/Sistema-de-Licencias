@@ -1,0 +1,10 @@
+Crm\VentasBundle\Entity\Venta:
+    properties:
+        fechaVenta:
+          - NotBlank: { message: "Ingresa fecha." }
+        termino:
+          - NotBlank:
+        cliente:
+          - NotBlank:
+        estatus:
+          - NotBlank:
