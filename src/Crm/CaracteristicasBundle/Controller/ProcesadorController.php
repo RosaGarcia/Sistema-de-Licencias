@@ -56,7 +56,7 @@ class ProcesadorController extends Controller
             return $this->redirect($this->generateUrl('procesador_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('CaracteristicasBundle:Procesador:new.html.twig', array(
+        return $this->render('CaracteristicasBundle:Procesador:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));

@@ -56,7 +56,7 @@ class ModeloEquipoController extends Controller
             return $this->redirect($this->generateUrl('modeloequipo_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('CaracteristicasBundle:ModeloEquipo:new.html.twig', array(
+        return $this->render('CaracteristicasBundle:ModeloEquipo:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
