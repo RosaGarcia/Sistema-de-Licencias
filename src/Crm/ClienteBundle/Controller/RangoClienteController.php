@@ -56,7 +56,7 @@ class RangoClienteController extends Controller
             return $this->redirect($this->generateUrl('rangocliente_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('ClienteBundle:RangoCliente:new.html.twig', array(
+        return $this->render('ClienteBundle:RangoCliente:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));

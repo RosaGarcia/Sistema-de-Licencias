@@ -51,7 +51,7 @@ class DireccionClienteController extends Controller
             return $this->redirect($this->generateUrl('cliente_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('ClienteBundle:DireccionCliente:new.html.twig', array(
+        return $this->render('ClienteBundle:DireccionCliente:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
