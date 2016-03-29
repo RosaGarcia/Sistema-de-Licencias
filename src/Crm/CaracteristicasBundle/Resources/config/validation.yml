@@ -5,12 +5,64 @@ Crm\CaracteristicasBundle\Entity\Dimensiones:
 
 Crm\CaracteristicasBundle\Entity\DiscoDuro:
     properties:
+        marca:
+            - NotBlank: { message: "Ingresa la marca del disco duro." }
         capacidad:
-            - NotBlank: { message: "Ingresa una capacidad." }
+            - NotBlank: { message: "Ingresa la capacidad de disco duro." }
             - Range:
                 min: 1
                 max: 1024
                 minMessage: Debe de ser mayor a {{ limit }}.
                 maxMessage: Debe de ser menor a {{ limit }}.
         terminoDisco:
-            - NotBlank: { message: "Ingresa un termino." }
+            - NotBlank: { message: "Ingresa termino de disco duro." }
+        tipo:
+            - NotBlank: { message: "Ingresa tipo de disco duro." }
+        unidad:
+            - NotBlank: { message: "Ingresa la unidad del disco duro." }
+            - Choice: { choices: [GigaByte,TeraByte], message: Elegir una unidad válida. }
+
+Crm\CaracteristicasBundle\Entity\MemoriaRam:
+    properties:
+        marca:
+            - NotBlank: { message: "Ingresa la marca de la memoria ram"} 
+        modelo:
+            - NotBlank: { message: "Ingresa el modelo de la memoria ram"} 
+        capacidad:
+            - NotBlank: { message: "Ingresa la capacidad de la memoria ram"}
+            - Range:
+                min: 1
+                max: 32
+                minMessage: Debe de ser mayor a {{ limit }}.
+                maxMessage: Debe de ser menor a {{ limit }}. 
+        unidad:
+            - NotBlank: { message: "Ingresa la unidad del disco duro." }
+            - Choice: { choices: [GigaByte], message: Elegir una unidad válida. }           
+        tipo:
+          - NotBlank: { message: "Ingresa el tipo de la memoria ram." }
+        terminoMemoria:
+          - NotBlank: { message: "Ingresa el termino de la memoria ram." }
+
+Crm\CaracteristicasBundle\Entity\ModeloEquipo:
+    properties:
+        nombre:
+            - NotBlank: { message: "Ingresa el nombre del modelo." }
+
+Crm\CaracteristicasBundle\Entity\Procesador:
+    properties:
+        marca:
+            - NotBlank: { message: "Ingresa la marca del procesador." }
+        modelo:
+            - NotBlank: { message: "Ingresa el modelo del procesador." }
+        velocidad:
+            - NotBlank: { message: "Ingresa la velocidad del procesador." }
+        unidad:
+            - NotBlank: { message: "Ingresa la unidad del procesador." }
+            - Choice: { choices: [GigaHertz], message: Elegir una unidad válida. }
+        terminoProcesador:
+            - NotBlank: { message: "Ingresa el termino del procesador." }
+
+Crm\CaracteristicasBundle\Entity\VersionSoftware:
+    properties:
+        versionSoftware:
+            - NotBlank: { message: "Ingresa version del software." }
