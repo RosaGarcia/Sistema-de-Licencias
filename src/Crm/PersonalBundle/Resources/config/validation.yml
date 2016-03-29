@@ -1,0 +1,67 @@
+Crm\PersonalBundle\Entity\Personal:
+    properties:
+        nombre:
+            - NotBlank: { message: "Ingresa la razon social." }
+        apePat:
+            - NotBlank: { message: "Ingresa apellido paterno" }
+        apeMat:
+            - NotBlank: { message: "Ingresa apellido materno." }
+        telefono:
+            - NotBlank: { message: "Ingresa telefono." }
+            - Length:
+                min: 10
+                max: 10
+                minMessage: El numero debe de ser de {{ limit }} digitos.
+                maxMessage: El numero debe de ser de {{ limit }} digitos.
+            - Regex: 
+                pattern: "/^[0-9]$/"
+                message: Solo digitos.
+        celular:
+            - NotBlank: { message: "Ingresa telefono." }
+            - Length:
+                min: 10
+                max: 10
+                minMessage: El numero debe de ser de {{ limit }} digitos.
+                maxMessage: El numero debe de ser de {{ limit }} digitos.
+            - Regex: 
+                pattern: "/^[0-9]$/"
+                message: Solo digitos.
+        email:
+            - NotBlank: { message: "Ingresa email." }
+            - Email:
+                message: El email {{ value }} no es válido.
+                checkMX: true
+        estatus:
+            - NotBlank:
+        puesto:
+            - NotBlank: 
+        empresa:
+            - NotBlank:
+
+Crm\PersonalBundle\Entity\DireccionPersonal:
+    properties:
+        calle:
+            - NotBlank: { message: "Ingresa calle." }
+        numeroExt:
+            - NotBlank: { message: "Ingresa numero." }
+        colonia:
+            - NotBlank: { message: "Ingresa colonia." }
+        codigoPostal:
+            - NotBlank: { message: "Ingresa codigo Postal." }
+            - Range:
+                min: 5
+                max: 5
+                minMessage: El numero debe de ser de {{ limit }} digitos.
+                maxMessage: El numero debe de ser de {{ limit }} digitos.
+        localidad:
+            - NotBlank: { message: "Ingresa localidad." }
+        pais:
+            - NotBlank:
+        estado:
+            - NotBlank:
+        municipio: 
+            - NotBlank:
+Crm\PersonalBundle\Entity\Puesto:
+    properties:
+        puesto: 
+            - NotBlank: { message: "Ingresa un puesto" }
