@@ -16,7 +16,7 @@ class RangoClienteType extends AbstractType
     {
         $builder
             ->add('rango','text',array('attr' => array('class' => 'form-control')))
-            ->add('dias','integer',array('attr' => array('class' => 'form-control')))
+            ->add('dias','integer',array('attr' => array('class' => 'form-control','min'=>'0','max'=>'30')))
         ;
     }
     
