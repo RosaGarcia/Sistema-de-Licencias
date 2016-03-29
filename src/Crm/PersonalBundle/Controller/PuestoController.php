@@ -55,7 +55,7 @@ class PuestoController extends Controller
             return $this->redirect($this->generateUrl('puesto_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('PersonalBundle:Puesto:new.html.twig', array(
+        return $this->render('PersonalBundle:Puesto:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
