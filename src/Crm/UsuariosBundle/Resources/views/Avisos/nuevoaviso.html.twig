@@ -8,10 +8,12 @@
                 <div class="mt-action-info ">
                     <div class="mt-action-details ">
                         <p><label>De:</label><span class="mt-action-author">  {{entity.nombre}}</span>&nbsp;&nbsp;&nbsp;
-                            <label>Fecha:</label><span> {{ entity.aviso.fechaCreacion|date('Y-m-d H:i') }}</span></p>
                         <label>Asunto: </label>
                         <p class="mt-action-desc">{{entity.aviso.avisos}}</p>
                     </div>
+                </div>
+                <div class="mt-action-datetime ">
+                        <span class="mt=action-time">{{ entity.aviso.fechaCreacion|date('Y-m-d H:i') }}</span>
                 </div>
                 <div class="mt-action-buttons ">
                     <div class="btn-group btn-group-circle">
