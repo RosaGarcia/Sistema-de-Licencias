@@ -1,0 +1,6 @@
+Crm\EquipoBundle\Entity\LicenciaEquipo:
+    properties:
+        fechaInicio:
+          - NotBlank: { message: "Ingresa fecha." }
+        fechaFinal:
+          - NotBlank: { message: "Ingresa fecha."}
