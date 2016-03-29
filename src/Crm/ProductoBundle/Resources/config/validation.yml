@@ -1,0 +1,11 @@
+Crm\ProductoBundle\Entity\Producto:
+    properties:
+        nombre:
+            - NotBlank: { message: "Ingresa un producto." }
+
+Crm\ProductoBundle\Entity\Termino:
+    properties:
+        producto:
+            - NotBlank:
+        termino:
+            - NotBlank: { message: "Ingresa un termino." }
