@@ -52,7 +52,7 @@ class TerminoController extends Controller
             return $this->redirect($this->generateUrl('termino_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('ProductoBundle:Termino:new.html.twig', array(
+        return $this->render('ProductoBundle:Termino:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));

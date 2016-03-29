@@ -56,7 +56,7 @@ class ProductoController extends Controller
             return $this->redirect($this->generateUrl('producto_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('ProductoBundle:Producto:new.html.twig', array(
+        return $this->render('ProductoBundle:Producto:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
