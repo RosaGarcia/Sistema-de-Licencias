@@ -51,7 +51,7 @@ class DireccionFabricanteController extends Controller
             return $this->redirect($this->generateUrl('fabricante_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('FabricanteBundle:DireccionFabricante:new.html.twig', array(
+        return $this->render('FabricanteBundle:DireccionFabricante:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
