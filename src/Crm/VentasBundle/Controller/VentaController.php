@@ -69,7 +69,7 @@ class VentaController extends Controller
             return $this->redirect($this->generateUrl('venta_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('VentasBundle:Venta:new.html.twig', array(
+        return $this->render('VentasBundle:Venta:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
