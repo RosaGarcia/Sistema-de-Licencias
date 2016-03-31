@@ -18,7 +18,7 @@ Crm\ClienteBundle\Entity\Cliente:
                 pattern: "/^[0-9]$/"
                 message: Solo digitos.
         ext1:
-            - Range:
+            - Length:
                 min: 1
                 max: 5
                 minMessage: El numero debe de ser de {{ limit }} digitos o mayor.
@@ -34,7 +34,7 @@ Crm\ClienteBundle\Entity\Cliente:
                 pattern: '/^[0-9]{10}$/'
                 message: Solo digitos.
         ext2:
-            - Range:
+            - Length:
                 min: 1
                 max: 5
                 minMessage: El numero debe de ser de {{ limit }} digitos o mayor.
@@ -59,7 +59,7 @@ Crm\ClienteBundle\Entity\DireccionCliente:
             - NotBlank: { message: "Ingresa colonia." }
         codigoPostal:
             - NotBlank: { message: "Ingresa codigo Postal." }
-            - Range:
+            - Length:
                 min: 5
                 max: 5
                 minMessage: El numero debe de ser de {{ limit }} digitos.
