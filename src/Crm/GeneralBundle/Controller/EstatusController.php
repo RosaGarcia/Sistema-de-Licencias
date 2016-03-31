@@ -56,7 +56,7 @@ class EstatusController extends Controller
             return $this->redirect($this->generateUrl('estatus_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('GeneralBundle:Estatus:new.html.twig', array(
+        return $this->render('GeneralBundle:Estatus:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
