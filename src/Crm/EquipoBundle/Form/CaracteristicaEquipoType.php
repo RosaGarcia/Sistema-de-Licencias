@@ -16,7 +16,7 @@ class CaracteristicaEquipoType extends AbstractType
     {
         $builder
             ->add('interfaz','text',array('attr' => array('class' => 'form-control')))
-            ->add('usb','integer',array('attr' => array('class' => 'form-control')))
+            ->add('usb','integer',array('attr' => array('class' => 'form-control','min'=>'0','max'=>'12')))
             ->add('expansion',null,array("required" => false))
             ->add('capacidad','text',array('attr' => array('class' => 'form-control'),'required'=> false))
             ->add('procesador')
