@@ -20,7 +20,7 @@ class UsuariosType extends AbstractType
                     'type' => 'password',
                     'invalid_message' => 'Los paswords no coinciden.',
                     'options' => array('attr' => array('class' => 'input-xlarge','minlength'=>8)),
-                    'required' => true,
+                    'required' => false,
                     'first_options'  => array('label' => 'Password'),
                     'second_options' => array('label' => 'Repite password')))
             ->add('personal','entity', array(
