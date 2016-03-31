@@ -58,7 +58,7 @@ class UbicacionController extends Controller
             return $this->redirect($this->generateUrl('ubicacion_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EquipoBundle:Ubicacion:new.html.twig', array(
+        return $this->render('EquipoBundle:Ubicacion:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
