@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Crm\UsuariosBundle\Entity\Usuarios;
 use Crm\UsuariosBundle\Form\UsuariosType;
+use Crm\UsuariosBundle\Form\UsuarioType;
 
 /**
  * Usuario controller.
@@ -61,7 +62,7 @@ class UsuariosController extends Controller
             return $this->redirect($this->generateUrl('usuarios_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('UsuariosBundle:Usuarios:new.html.twig', array(
+        return $this->render('UsuariosBundle:Usuarios:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
@@ -166,7 +167,7 @@ class UsuariosController extends Controller
     */
     private function createEditForm(Usuarios $entity)
     {
-        $form = $this->createForm(new UsuariosType(), $entity, array(
+        $form = $this->createForm(new UsuarioType(), $entity, array(
             'action' => $this->generateUrl('usuarios_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
@@ -195,12 +196,20 @@ class UsuariosController extends Controller
 
         if ($editForm->isValid()) {
 
-            // Encode password
             $plainPassword = $editForm->get('password')->getData();
+
+            if (!empty($password))
+            {
+            // Encode password
             $encoder = $this->container->get('security.password_encoder');
             $encoded = $encoder->encodePassword($entity, $plainPassword);
             $entity->setPassword($encoded);
-
+            }
+            else
+            {
+                $recuperarPass = $em->getRepository('UsuariosBundle:Usuarios')->pass($id);
+                $entity->setPassword($recuperarPass[0]['password']); 
+            }
             $em->flush();
 
             return $this->redirect($this->generateUrl('usuarios'));

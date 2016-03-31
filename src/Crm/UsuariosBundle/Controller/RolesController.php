@@ -56,7 +56,7 @@ class RolesController extends Controller
             return $this->redirect($this->generateUrl('roles_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('UsuariosBundle:Roles:new.html.twig', array(
+        return $this->render('UsuariosBundle:Roles:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));

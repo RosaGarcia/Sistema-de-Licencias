@@ -71,7 +71,7 @@ class AvisosController extends Controller
             return $this->redirect($this->generateUrl('avisos_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('UsuariosBundle:Avisos:new.html.twig', array(
+        return $this->render('UsuariosBundle:Avisos:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
