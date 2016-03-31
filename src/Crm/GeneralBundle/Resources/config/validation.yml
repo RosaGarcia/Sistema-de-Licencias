@@ -1,0 +1,23 @@
+Crm\GeneralBundle\Entity\Pais:
+    properties:
+        nombrePais:
+          - NotBlank: { message: "Ingresa país." }
+
+Crm\GeneralBundle\Entity\Estado:
+  properties:
+      nombreEstado:
+        - NotBlank: { message: "Ingresa estado." }
+      pais:
+        - NotBlank:
+
+Crm\GeneralBundle\Entity\Municipio:
+  properties:
+    municipio:
+      - NotBlank: { message: "Ingresa delegacion o municipio." }
+    estado:
+      - NotBlank:
+
+Crm\GeneralBundle\Entity\Estatus:
+  properties:
+    estatus:
+      - NotBlank: { message: "Ingresa estatus." }
