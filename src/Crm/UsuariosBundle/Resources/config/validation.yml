@@ -1,0 +1,17 @@
+Crm\UsuariosBundle\Entity\Avisos:
+    properties:
+        avisos:
+          - NotBlank: { message: "Ingresa aviso."}
+        usuarios:
+          - NotBlank:
+Crm\UsuariosBundle\Entity\Roles:
+  properties:
+    roles:
+      - NotBlank: { message: "Ingresa un rol." }
+
+Crm\UsuariosBundle\Entity\Usuarios:
+  constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: userName
+  properties:
+    userName:
+      - NotBlank: { message: "Ingresa un nombre de usuario"}
