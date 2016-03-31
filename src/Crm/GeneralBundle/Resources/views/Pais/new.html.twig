@@ -25,16 +25,17 @@
             	<div class="portlet-body">
                 	<div class="task-content">
 
-    {{ form_start(form) }}
+                        {{ form_start(form) }}
 
-    <div class="col-xs-12 col-sm-2 col-md-2">
-                    				Pais:
-                    			</div>
-                    			<div class="col-xs-12 col-sm-3 col-md-3">
-                    				{{ form_widget(form.nombrePais) }}
-                    			</div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                    			Pais:
+                    		</div>
+                    		<div class="col-xs-12 col-sm-3 col-md-3">
+                    			{{ form_widget(form.nombrePais) }}
+                                <span class="help-block help-block-error">{{ form_errors(form.nombrePais) }}</span>
+                    		</div>
 
-    {{ form_end(form) }}
+                        {{ form_end(form) }}
             			
             		</div>
 		        </div>
@@ -42,5 +43,4 @@
 		</div>
 	</div>
 
-        
 {% endblock %}

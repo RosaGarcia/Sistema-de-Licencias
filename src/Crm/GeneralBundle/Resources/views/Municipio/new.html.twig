@@ -30,10 +30,11 @@
 	    					<div class="form-group">
 	    						<div class="row">
 	    							<div class="col-xs-12 col-sm-2 col-md-2">
-	                    				Municipio:
+	                    				Delegación/Municipio:
 	                    			</div>
 	                    			<div class="col-xs-12 col-sm-3 col-md-3">
 	                    				{{ form_widget(form.municipio) }}
+	                    				<span class="help-block help-block-error">{{ form_errors(form.municipio) }}</span>
 	                    			</div>
 	                			</div>
 	            			</div>
