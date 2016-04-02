@@ -1,0 +1,31 @@
+Crm\TicketBundle\Entity\Ticket:
+    type: entity
+    table: null
+    repositoryClass: Crm\TicketBundle\Entity\TicketRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        cola:
+            type: string
+            length: '50'
+        solicitante:
+            type: string
+            length: '100'
+        contenido:
+            type: text
+        propietario:
+            type: integer
+            nullable: TRUE
+        prioridad:
+            type: integer
+        fechaCreacion:
+            type: datetime
+    oneToMany:
+        comentarios:
+             targetEntity: Crm\TicketBundle\Entity\Comentarios
+             mappedBy: Ticket
+    lifecycleCallbacks: {  }

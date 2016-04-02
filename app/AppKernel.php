@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new Crm\ProductoBundle\ProductoBundle(),
             new Crm\UsuariosBundle\UsuariosBundle(),
             new Crm\VentasBundle\VentasBundle(),
+            new Crm\TicketBundle\TicketBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

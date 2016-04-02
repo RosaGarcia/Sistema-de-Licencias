@@ -430,4 +430,32 @@ class Cliente
     {
         return $this->venta;
     }
+    /**
+     * @var \Crm\ClienteBundle\Entity\RangoCliente
+     */
+    private $rangoCliente;
+
+
+    /**
+     * Set rangoCliente
+     *
+     * @param \Crm\ClienteBundle\Entity\RangoCliente $rangoCliente
+     * @return Cliente
+     */
+    public function setRangoCliente(\Crm\ClienteBundle\Entity\RangoCliente $rangoCliente = null)
+    {
+        $this->rangoCliente = $rangoCliente;
+
+        return $this;
+    }
+
+    /**
+     * Get rangoCliente
+     *
+     * @return \Crm\ClienteBundle\Entity\RangoCliente 
+     */
+    public function getRangoCliente()
+    {
+        return $this->rangoCliente;
+    }
 }

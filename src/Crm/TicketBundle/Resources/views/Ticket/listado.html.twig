@@ -1,0 +1,19 @@
+ <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('ticket_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.cola }}</td>
+            <td>{{ entity.solicitante }}</td>
+            <td>{{ entity.contenido }}</td>
+            <td>{{ entity.prioridad }}</td>
+            <td>{% if entity.fechaCreacion %}{{ entity.fechaCreacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>
+               
+                <a href="{{ path('ticket_show', { 'id': entity.id }) }}" class="btn yellow btn-outline">Ver</a>
+                   
+                <a href="{{ path('ticket_edit', { 'id': entity.id }) }}" class="btn blue btn-outline">Editar</a>
+                   
+            </td>
+        </tr>
+    {% endfor %}
+</tbody>
