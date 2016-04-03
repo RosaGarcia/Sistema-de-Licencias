@@ -55,11 +55,13 @@ class DimensionesController extends Controller
 
             return $this->redirect($this->generateUrl('dimensiones_show', array('id' => $entity->getId())));
         }
-
-        return $this->render('CaracteristicasBundle:Dimensiones:new.html.twig', array(
+        
+        $this->render('CaracteristicasBundle:Dimensiones:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
+
+        return $this->render('CaracteristicasBundle:Dimensiones:index.html.twig');
     }
 
     /**

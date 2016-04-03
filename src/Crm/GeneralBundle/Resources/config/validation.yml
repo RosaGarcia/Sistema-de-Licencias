@@ -1,0 +1,5 @@
+Crm\GeneralBundle\Entity\Pais:
+    properties:
+        nombrePais:
+            - NotBlank: { message: "Ingresa una país." }
+
