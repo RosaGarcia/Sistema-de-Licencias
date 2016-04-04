@@ -1,0 +1,25 @@
+Crm\TicketBundle\Entity\Comentarios:
+    type: entity
+    table: null
+    repositoryClass: Crm\TicketBundle\Entity\ComentariosRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        comentario:
+            type: text
+        usuarioCreo:
+            type: integer
+        fechaCreacion:
+            type: datetime
+    manyToOne:
+        ticket:
+          targetEntity: Crm\TicketBundle\Entity\Ticket
+          inversedBy: comentarios
+          joinColumn: 
+               name: ticket_id
+               referencedColumnName: id
+    lifecycleCallbacks: {  }

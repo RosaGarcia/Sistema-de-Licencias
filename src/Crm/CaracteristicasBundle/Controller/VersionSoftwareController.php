@@ -56,7 +56,7 @@ class VersionSoftwareController extends Controller
             return $this->redirect($this->generateUrl('versionsoftware_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('CaracteristicasBundle:VersionSoftware:new.html.twig', array(
+        return $this->render('CaracteristicasBundle:VersionSoftware:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));

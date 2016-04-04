@@ -55,4 +55,9 @@ class UsuariosRepository extends EntityRepository implements UserProviderInterfa
         return $this->getEntityName() === $class
             || is_subclass_of($class, $this->getEntityName());
     }
+
+    public function pass($id)
+    {
+        return $this->getEntityManager()->createQuery('SELECT u.password AS password FROM UsuariosBundle:Usuarios u WHERE u.id = :id')->setParameter('id',$id)->getResult();
+    }
 }

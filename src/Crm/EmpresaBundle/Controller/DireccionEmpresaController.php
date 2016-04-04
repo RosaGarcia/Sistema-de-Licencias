@@ -52,7 +52,7 @@ class DireccionEmpresaController extends Controller
             return $this->redirect($this->generateUrl('empresa_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EmpresaBundle:DireccionEmpresa:new.html.twig', array(
+        return $this->render('EmpresaBundle:DireccionEmpresa:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));

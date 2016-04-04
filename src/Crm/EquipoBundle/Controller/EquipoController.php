@@ -60,7 +60,7 @@ class EquipoController extends Controller
             return $this->redirect($this->generateUrl('equipo_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EquipoBundle:Equipo:new.html.twig', array(
+        return $this->render('EquipoBundle:Equipo:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));

@@ -56,7 +56,7 @@ class DiscoDuroController extends Controller
             return $this->redirect($this->generateUrl('discoduro_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('CaracteristicasBundle:DiscoDuro:new.html.twig', array(
+        return $this->render('CaracteristicasBundle:DiscoDuro:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));

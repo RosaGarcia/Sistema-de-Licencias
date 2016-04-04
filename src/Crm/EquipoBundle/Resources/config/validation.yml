@@ -1,0 +1,59 @@
+Crm\EquipoBundle\Entity\LicenciaEquipo:
+    properties:
+        fechaInicio:
+          - NotBlank: { message: "Ingresa fecha." }
+        fechaFinal:
+          - NotBlank: { message: "Ingresa fecha."}
+Crm\EquipoBundle\Entity\Equipo:
+  properties:
+    modeloEquipo:
+      - NotBlank:
+    fabricante:
+      - NotBlank:
+    serieFabricante:
+      - NotBlank: { message: "Ingresa numero de serie del fabricante." }
+    serieWarriors:
+      - NotBlank: { message: "Ingresa número de serie de Warriors." }
+    fechaLlegada:
+      - NotBlank: { message: "Ingresa fecha de llegada." }
+
+Crm\EquipoBundle\Entity\CaracteristicasEquipo:
+  properties:
+    interfaz:
+      - NotBlank: { message: "Ingresa las interfaces." }
+    procesador:
+      - NotBlank:
+    dimensiones:
+      - NotBlank:
+    discoDuro:
+      - NotBlank:
+    memoriaRam:
+      - NotBlank:
+    software:
+      - NotBlank:
+
+Crm\EquipoBundle\Entity\Ubicacion:
+  properties:
+    calle:
+      - NotBlank: { message: "Ingresa la calle."}
+    numeroExt: 
+      - NotBlank: { message: "Ingresa numero" } 
+    codigoPostal:
+      - NotBlank: { message: "Ingresa codigo Postal." }
+      - Length:
+          min: 5
+          max: 5
+          minMessage: El numero debe de ser de {{ limit }} digitos.
+          maxMessage: El numero debe de ser de {{ limit }} digitos.
+    colonia:
+      - NotBlank: { message: "Ingresa la colonia." }
+    localidad:
+      - NotBlank: { message: "Ingresa la Localidad." }
+    estatus:
+      - NotBlank:
+    pais:
+      - NotBlank:
+    estado:
+      - NotBlank:
+    municipio:
+      - NotBlank:

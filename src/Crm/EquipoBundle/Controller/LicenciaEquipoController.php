@@ -58,7 +58,7 @@ class LicenciaEquipoController extends Controller
             return $this->redirect($this->generateUrl('licenciaequipo_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EquipoBundle:LicenciaEquipo:new.html.twig', array(
+        return $this->render('EquipoBundle:LicenciaEquipo:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));

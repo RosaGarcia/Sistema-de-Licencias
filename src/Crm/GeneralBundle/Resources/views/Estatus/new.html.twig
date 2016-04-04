@@ -31,6 +31,7 @@
                                         <div class="form-group form-md-line-input has-success">
                                             <div class="input-icon">
                                                 {{ form_widget(form.estatus) }}
+                                                <span class="help-block help-block-error">{{ form_errors(form.estatus) }}</span>
                                                 <label for="estatus">Estatus</label>
                                                 <i class="fa fa-pencil"></i>
                                             </div>

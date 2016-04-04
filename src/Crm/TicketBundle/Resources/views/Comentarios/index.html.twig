@@ -1,0 +1,45 @@
+{% extends '::frontend.html.twig' %}
+
+{% block body -%}
+    <h1>Comentarios list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Comentario</th>
+                <th>Usuariocreo</th>
+                <th>Fechacreacion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('comentarios_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.comentario }}</td>
+                <td>{{ entity.usuarioCreo }}</td>
+                <td>{% if entity.fechaCreacion %}{{ entity.fechaCreacion|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('comentarios_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('comentarios_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('comentarios_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

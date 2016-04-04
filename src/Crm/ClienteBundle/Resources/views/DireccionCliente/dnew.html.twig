@@ -1,0 +1,239 @@
+{% extends '::frontend.html.twig' %}
+{% block body %}
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 com-md-12">
+            <h2>
+                Cliente
+            </h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="portlet light ">
+                <div class="portlet-title tabbable-line">
+                    <div class="caption">
+                        <i class="fa fa-database font-green-sharp"></i>
+                        <span class="caption-subject font-green-sharp bold uppercase">Nuevo Cliente</span>
+                    </div>
+                    
+                </div>
+                {{ form_start(form, { 'attr' : {'novalidate': 'novalidate'} }) }}
+                    <div class="portlet-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab_1_1">
+                                <div class="scroller" data-always-visible="1" data-rail-visible="0">
+                                    
+
+                                        <div class="col-md-6">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.cliente.razonSocial,{'attr': {'placeholder': 'Razon Social'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.cliente.razonSocial) }}</span>
+                                                    <label for="razonSocial">Razon Social</label>
+                                                    <i class="fa fa-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.cliente.rfc,{'attr': {'placeholder': 'RFC'}}) }}
+                                                     <span class="help-block help-block-error">{{ form_errors(form.cliente.rfc) }}</span>
+                                                    <label for="rfc">RFC</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.cliente.telefono1,{'attr': {'placeholder': 'Telefono'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.cliente.telefono1) }}</span>
+                                                    <label for="telefono1">Telefono</label>
+                                                    <i class="fa fa-phone"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.cliente.ext1,{'attr': {'placeholder': 'Extención'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.cliente.ext1) }}</span>
+                                                    <label for="ext1">Ext.</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.cliente.telefono2,{'attr': {'placeholder': 'Telefono'}}) }}
+                                                    <label for="telefono2">Telefono</label>
+                                                    <i class="fa fa-phone"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.cliente.ext2,{'attr': {'placeholder': 'Extención'}}) }}
+                                                    <label for="ext2">Ext.</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.cliente.email,{'attr': {'placeholder': 'Email'}}) }}
+                                                    <label for="email">Email</label>
+                                                    <i class="fa fa-envelope-o"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.cliente.paginaWeb,{'attr': {'placeholder': 'Pagina Web'}}) }}
+                                                    <label for="paginaWeb">Pagina Web</label>
+                                                    <i class="fa fa-globe"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.cliente.contacto,{'attr': {'placeholder': 'Contacto'}}) }}
+                                                    <label for="contacto">Contacto</label>
+                                                    <i class="fa fa-users"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.cliente.estatus, {'attr':{'class':'form-control'},'required':'true'}) }}
+                                                    <label for="estatus">Estatus</label>
+                                                    <i class="fa fa-sort-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <div class="col-md-3">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.cliente.rangoCliente, {'attr':{'class':'form-control'},'required':'true'}) }}
+                                                    <label for="rangoCliente">Rango de cliente</label>
+                                                    <i class="fa fa-sort-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                   
+                               
+                                   
+                                                                
+                                        <div class="col-md-12">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.calle,{'attr': {'placeholder': 'Calle'}}) }}
+                                                    <span class="help-block help-block-error">{{ form_errors(form.calle) }}</span>
+                                                    <label for="calle">Calle</label>
+                                                    <i class="fa fa-road"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.numeroExt,{'attr': {'placeholder': 'Numero Exterior'}}) }}
+                                                    <label for="numeroExt">Numero Ext.</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.numeroInt,{'attr': {'placeholder': 'Numero Interior'}}) }}
+                                                    <label for="numeroInt">Numero Int</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.codigoPostal,{'attr': {'placeholder': 'Codigo Postal'}}) }}
+                                                    <label for="codigoPostal">Codigo Postal</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.colonia,{'attr': {'placeholder': 'Colonia'}}) }}
+                                                    <label for="colonia">Colonia</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.localidad,{'attr': {'placeholder': 'Localidad'}}) }}
+                                                    <label for="localidad">Localidad</label>
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.pais,{"attr":{"class":"form-control"},"required":"true"}) }}
+                                                    <label for="pais">Pais</label>
+                                                    <i class="fa fa-sort-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.estado,{"attr":{"class":"form-control"},"required":"true"}) }}
+                                                    <label for="estado">Estado</label>
+                                                    <i class="fa fa-sort-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group form-md-line-input has-success">
+                                                <div class="input-icon">
+                                                    {{ form_widget(form.municipio,{"attr":{"class":"form-control"},"required":"true"}) }}
+                                                    <label for="estado">Municipio</label>
+                                                    <i class="fa fa-sort-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                {{ form_widget(form._token) }}  
+                             
+                                        <div class="col-xs-12">
+                                            <button class="btn btn-success" type="submit" id="sendform"><i class="fa fa-plus"></i>&nbsp;Crear</button>
+                                        </div>
+                              
+                                        </form>         
+               
+                                    
+                                </div>
+                            </div>
+                                                
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

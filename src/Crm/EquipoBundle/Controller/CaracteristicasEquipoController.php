@@ -60,7 +60,7 @@ class CaracteristicasEquipoController extends Controller
             return $this->redirect($this->generateUrl('caracteristicasequipo_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EquipoBundle:CaracteristicasEquipo:new.html.twig', array(
+        return $this->render('EquipoBundle:CaracteristicasEquipo:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));

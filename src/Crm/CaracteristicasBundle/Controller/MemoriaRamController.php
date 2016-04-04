@@ -56,7 +56,7 @@ class MemoriaRamController extends Controller
             return $this->redirect($this->generateUrl('memoriaram_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('CaracteristicasBundle:MemoriaRam:new.html.twig', array(
+        return $this->render('CaracteristicasBundle:MemoriaRam:dnew.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
