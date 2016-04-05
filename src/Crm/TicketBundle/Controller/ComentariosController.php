@@ -21,11 +21,15 @@ class ComentariosController extends Controller
      */
     public function indexAction()
     {
+        return $this->render('TicketBundle:Comentarios:index.html.twig');
+    }
+     public function listadoAction()
+    {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('TicketBundle:Comentarios')->findAll();
 
-        return $this->render('TicketBundle:Comentarios:index.html.twig', array(
+        return $this->render('TicketBundle:Comentarios:listado.html.twig', array(
             'entities' => $entities,
         ));
     }
@@ -38,9 +42,16 @@ class ComentariosController extends Controller
         $entity = new Comentarios();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $entity->setFechaCreacion(new \DateTime("now"));
+            $logeado = $em->getRepository('UsuariosBundle:Usuarios')->find($user->getId());   
+            $usuario = $logeado->getid();
+            $entity -> setUsuarioCreo($usuario);
+            $entity -> setTicket(); 
             $em->persist($entity);
             $em->flush();
 
@@ -217,7 +228,7 @@ class ComentariosController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('comentarios_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
     }
