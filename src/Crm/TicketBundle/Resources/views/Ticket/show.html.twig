@@ -98,5 +98,9 @@
             </div>
         </div>
     </div>
+
+    {% block comen %}
+        {{ render(controller('TicketBundle:Comentarios:new')) }} 
+    {% endblock %}
         
 {% endblock %}

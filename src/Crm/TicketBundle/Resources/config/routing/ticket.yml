@@ -28,3 +28,15 @@ ticket_delete:
     path:     /{id}/delete
     defaults: { _controller: "TicketBundle:Ticket:delete" }
     methods:  [POST, DELETE]
+
+ticket_general:
+    path:     /general
+    defaults: {_controller: "TicketBundle:Ticket:ticket" }
+
+ticket_propietario:
+    path:     /{id}/propietario
+    defaults: { _controller: "TicketBundle:Ticket:propietario" }
+
+vista_ticket:
+    path:   /{id}/vista
+    defaults: { _controller: "TicketBundle:Ticket:ticketShow" }

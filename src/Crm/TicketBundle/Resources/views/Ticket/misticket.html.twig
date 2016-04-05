@@ -1,0 +1,35 @@
+{% for entity in entities %}
+    <div class="mt-action">
+        <div class="mt-action-img">
+            <img src=""> 
+        </div>
+        <div class="mt-action-body">
+            <div class="mt-action-row">
+                <div class="mt-action-info ">
+                    <div class="mt-action-icon ">
+                        <i class=" icon-bubbles"></i>
+                    </div>
+                    <div class="mt-action-details ">
+                        <span class="mt-action-author">Solicitante: {{entity.solicitante}}</span>
+                        <p class="mt-action-desc">{{entity.contenido}}</p>
+                    </div>
+                </div>
+                <div class="mt-action-datetime ">
+                    {% if entity.prioridad >= 1 and entity.prioridad <= 4 %}
+                        <span class="mt-action-dot bg-green"></span>
+                    {% elseif   entity.prioridad >= 5 and entity.prioridad  <= 7 %}
+                        <span class="mt-action-dot bg-yellow"></span>
+                    {% else %}
+                        <span class="mt-action-dot bg-red"></span>
+                    {% endif %}
+                    <span class="mt=action-time">{{ entity.fechaCreacion|date('Y-m-d H:i') }}</span>
+                </div>
+                <div class="mt-action-buttons ">
+                    <div class="btn-group btn-group-circle">
+                       <a href="{{ path('vista_ticket', { 'id': entity.id }) }}" class="btn btn-outline yellow btn-sm">Ver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

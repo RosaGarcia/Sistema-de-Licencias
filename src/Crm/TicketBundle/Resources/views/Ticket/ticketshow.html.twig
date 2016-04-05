@@ -1,0 +1,109 @@
+{% extends '::frontend.html.twig' %}
+
+{% block body -%}
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h2><a href="{{ path('ticket_general') }}">
+                General Ticket:
+                </a>
+                Vista
+            </h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light portlet-fit ">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-eye font-yellow"></i>
+                        <span class="caption-subject font-yellow bold uppercase">Caracteristicas</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="general-item-list">
+
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Fecha:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.fechaCreacion|date('Y-m-d H:i:s') }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Solicita:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.solicitante }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Cola:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.cola }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Prioridad:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                        {% if entity.prioridad >= 1 and entity.prioridad <= 4 %}
+                                        <span class="font-green">{{ entity.prioridad }}</span>
+                                        {% elseif   entity.prioridad >= 5 and entity.prioridad  <= 7 %}
+                                            <span class="font-yellow">{{ entity.prioridad }}</span>
+                                        {% else %}
+                                            <span class="font-red">{{ entity.prioridad }}</span>
+                                        {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Atiende:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.propietario }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-2 col-md-2">
+                                    Descripción:
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3">
+                                    {{ entity.contenido }}
+                                </div>
+                            </div>
+                        </div><br />
+                        <div class="mt-action-buttons ">
+                            <div class="btn-group btn-group-circle">
+                                {% if entity.propietario == NULL %}
+                                <a href="{{ path('ticket_propietario', { 'id': entity.id }) }}" class="btn btn-outline green btn-sm">Atender</a>
+                                {% else %}
+                                {% endif %}
+                            </div>
+                        </div>
+                   
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

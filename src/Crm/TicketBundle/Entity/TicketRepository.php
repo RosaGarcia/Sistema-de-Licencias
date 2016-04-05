@@ -12,4 +12,18 @@ use Doctrine\ORM\EntityRepository;
  */
 class TicketRepository extends EntityRepository
 {
+	public function prioridad()
+	{
+		return $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t WHERE t.prioridad >= 5')->getResult();
+	}
+
+	public function misTicket($id)
+	{
+		return $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t WHERE t.propietario = :id' )->setParameter('id',$id)->getResult();
+	}
+
+	public function todos()
+	{
+		return $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t' )->getResult();
+	}
 }

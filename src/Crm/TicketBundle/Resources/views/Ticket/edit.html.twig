@@ -1,14 +1,16 @@
 {% extends 'TicketBundle:Ticket:index.html.twig' %}
 
 {% block form -%}
-	
-	<div class="row">
-	    <div class="col-xs-12 col-sm-12 col-md-12">
-	        <h2>
-	            Ticket
-	        </h2>
-	    </div>  
-	</div>  
+
+         <div class="row">
+         	<div class="col-xs-12 col-sm-12 col-md-12">
+                <h2><a href="{{ path('ticket_general') }}">
+                	ticket:
+                    </a>
+                    Editar           
+                </h2>
+            </div>
+        </div>   
 
 	<div class="row">
 	    <div class="col-md-12 col-sm-12">
