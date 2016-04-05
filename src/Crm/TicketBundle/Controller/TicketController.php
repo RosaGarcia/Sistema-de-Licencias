@@ -34,6 +34,11 @@ class TicketController extends Controller
             'entities' => $entities,
         ));
     }
+
+    public function ticketAction()
+    {
+        return $this->render('TicketBundle:Ticket:ticket.html.twig');
+    }
     /**
      * Creates a new Ticket entity.
      *
@@ -115,6 +120,50 @@ class TicketController extends Controller
         ));
     }
 
+    public function ticketShowAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('TicketBundle:Ticket')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Ticket entity.');
+        }
+
+        return $this->render('TicketBundle:Ticket:ticketshow.html.twig', array(
+            'entity'  => $entity,
+        ));
+    }
+
+     public function misTicketAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $entities = $em->getRepository('TicketBundle:Ticket')->misTicket($id = $user->getId() );
+
+        return $this->render('TicketBundle:Ticket:misticket.html.twig', array(
+            'entities'  => $entities,
+        ));
+    }
+
+    public function prioridadAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository("TicketBundle:Ticket")->prioridad();
+
+        return $this->render("TicketBundle:Ticket:prioridad.html.twig",array(
+            "entities" => $entities,
+            ));
+    }
+
+     public function recientesAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository("TicketBundle:Ticket")->findAll();
+
+        return $this->render("TicketBundle:Ticket:recientes.html.twig",array(
+            "entities" => $entities,
+            ));
+    }
     /**
      * Displays a form to edit an existing Ticket entity.
      *
@@ -188,19 +237,19 @@ class TicketController extends Controller
         ));
     }
 
-    public function propietario($id)
+    public function propietarioAction($id)
     {
         $em = $this->getDoctrine()->getManager();
         $user = $this->container->get('security.context')->getToken()->getUser();
-        $logeado = $em->getRepository('UsuarioBundle:Usuario')->find($user->getId());
+        $logeado = $em->getRepository('UsuariosBundle:Usuarios')->find($user->getId());
         $usuario = $logeado->getid(); 
         $entity = $em->getRepository('TicketBundle:Ticket')->find($id);
 
-            $entity ->setPropietario($usuario);
-            $em->persist($entity);
-            $em->flush();
+        $entity ->setPropietario($usuario);
+        $em->persist($entity);
+        $em->flush();
 
-            return $this->redirect($this->generateUrl('ticket'));
+        return $this->redirect($this->generateUrl('ticket_general'));
     }
 
     /**
@@ -239,7 +288,7 @@ class TicketController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('ticket_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar','attr' => array('class' => 'btn btn-danger')))
             ->getForm()
         ;
     }
