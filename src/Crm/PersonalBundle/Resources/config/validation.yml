@@ -53,8 +53,6 @@ Crm\PersonalBundle\Entity\DireccionPersonal:
                 max: 5
                 minMessage: El numero debe de ser de {{ limit }} digitos.
                 maxMessage: El numero debe de ser de {{ limit }} digitos.
-        localidad:
-            - NotBlank: { message: "Ingresa localidad." }
         pais:
             - NotBlank:
         estado:
