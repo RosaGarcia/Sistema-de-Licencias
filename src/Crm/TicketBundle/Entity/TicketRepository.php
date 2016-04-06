@@ -26,4 +26,10 @@ class TicketRepository extends EntityRepository
 	{
 		return $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t' )->getResult();
 	}
+
+	public function show($id)
+    {
+     	$query = $this->getEntityManager()->createQuery('SELECT t AS ticket, u.userName AS nombre FROM TicketBundle:Ticket t, UsuariosBundle:Usuarios u WHERE t.propietario = u.id AND t.id = :id')->setParameter('id',$id)->getResult();
+  		return $query;
+    }
 }

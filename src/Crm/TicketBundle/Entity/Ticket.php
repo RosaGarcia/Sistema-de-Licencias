@@ -238,4 +238,9 @@ class Ticket
     {
         return $this->comentarios;
     }
+
+    public function __toString()
+    {
+        return $this->id;
+    }
 }

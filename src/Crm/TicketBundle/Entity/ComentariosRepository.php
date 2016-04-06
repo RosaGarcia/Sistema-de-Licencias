@@ -12,4 +12,9 @@ use Doctrine\ORM\EntityRepository;
  */
 class ComentariosRepository extends EntityRepository
 {
+	public function comentarioTicket($id)
+	{
+		return $this->getEntityManager()->createQuery('SELECT c AS comentario, u.userName AS usuario FROM TicketBundle:Comentarios c, UsuariosBundle:Usuarios u WHERE c.usuarioCreo = u.id AND c.ticket = :id' )->setParameter('id',$id)->getResult();
+	}
+
 }
