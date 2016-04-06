@@ -14,7 +14,7 @@ class TicketRepository extends EntityRepository
 {
 	public function prioridad()
 	{
-		return $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t WHERE t.prioridad >= 5')->getResult();
+		return $this->getEntityManager()->createQuery('SELECT t FROM TicketBundle:Ticket t WHERE t.prioridad >= 5 ORDER BY t.prioridad DESC')->getResult();
 	}
 
 	public function misTicket($id)
@@ -29,7 +29,7 @@ class TicketRepository extends EntityRepository
 
 	public function show($id)
     {
-     	$query = $this->getEntityManager()->createQuery('SELECT t AS ticket, u.userName AS nombre FROM TicketBundle:Ticket t, UsuariosBundle:Usuarios u WHERE t.propietario = u.id AND t.id = :id')->setParameter('id',$id)->getResult();
+     	$query = $this->getEntityManager()->createQuery('SELECT t AS ticket, u.userName AS nombre FROM TicketBundle:Ticket t, UsuariosBundle:Usuarios u WHERE t.propietario = u.id AND t.id = :id OR t.propietario IS NULL AND t.id = :id')->setParameter('id',$id)->getResult();
   		return $query;
     }
 }

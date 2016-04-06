@@ -123,14 +123,14 @@ class TicketController extends Controller
     public function ticketShowAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $entity = $em->getRepository('TicketBundle:Ticket')->find($id);
+        $entities = $em->getRepository('TicketBundle:Ticket')->show($id);
 
-        if (!$entity) {
+        if (!$entities) {
             throw $this->createNotFoundException('Unable to find Ticket entity.');
         }
 
         return $this->render('TicketBundle:Ticket:ticketshow.html.twig', array(
-            'entity'  => $entity,
+            'entities'  => $entities,
         ));
     }
 
@@ -158,7 +158,7 @@ class TicketController extends Controller
      public function recientesAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $entities = $em->getRepository("TicketBundle:Ticket")->findAll();
+        $entities = $em->getRepository("TicketBundle:Ticket")->findBy(array(), array('id' => 'DESC'));
 
         return $this->render("TicketBundle:Ticket:recientes.html.twig",array(
             "entities" => $entities,

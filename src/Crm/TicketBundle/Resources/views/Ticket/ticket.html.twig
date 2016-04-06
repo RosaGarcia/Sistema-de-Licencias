@@ -2,7 +2,7 @@
 
 {% block body -%}
 
-	<div class="col-md-12 col-sm-12">
+	<div class="col-md-6 col-sm-6">
         <div class="portlet light ">
             <div class="portlet-title tabbable-line">
                 <div class="caption">
@@ -12,9 +12,6 @@
                 <ul class="nav nav-tabs">
                     <li class="active">
                         <a href="#tab_prioridad" data-toggle="tab" aria-expanded="true"> Prioridad </a>
-                    </li>
-                    <li class="">
-                        <a href="#tab_recientes" data-toggle="tab" aria-expanded="false"> Recientes </a>
                     </li>
                     <li class="">
                         <a href="#tab_mis_ticket" data-toggle="tab" aria-expanded="false"> Mis atendidos </a>
@@ -34,17 +31,6 @@
                                                                                     
                          </div>                
                     </div>
-                    
-                    <div class="tab-pane" id="tab_recientes">
-                                          
-                      	<div class="mt-actions">
-                            
-                            {% block recientes -%}
-                                {{ render(controller('TicketBundle:Ticket:recientes')) }}
-                            {% endblock %}
-                                                
-                        </div>
-                    </div>
 
                     <div class="tab-pane" id="tab_mis_ticket">
                                           
@@ -62,4 +48,35 @@
             </div>
         </div>
    	</div>
+
+    <div class="col-md-6 col-sm-6">
+        <div class="portlet light ">
+            <div class="portlet-title tabbable-line">
+                <div class="caption">
+                    <i class="fa fa-ticket font-dark"></i>
+                    <span class="caption-subject font-dark bold uppercase">Ticket Recientes</span>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#tab_recientes" data-toggle="tab" aria-expanded="true"> Recientes </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="portlet-body">
+                <div class="tab-content">
+                    
+                    <div class="tab-pane active" id="tab_recientes">                         
+                        <div class="mt-actions">
+                            
+                            {% block recientes -%}
+                                {{ render(controller('TicketBundle:Ticket:recientes')) }}
+                            {% endblock %}
+                                                
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
