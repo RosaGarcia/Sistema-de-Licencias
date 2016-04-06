@@ -1,7 +1,7 @@
  <tbody>
     {% for entity in entities %}
         <tr>
-            <td><a href="{{ path('ticket_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td class="oculto"><a href="{{ path('ticket_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.cola }}</td>
             <td>{{ entity.solicitante }}</td>
             <td>{{ entity.contenido }}</td>

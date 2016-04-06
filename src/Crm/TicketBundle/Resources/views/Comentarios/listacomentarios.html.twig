@@ -1,0 +1,52 @@
+<div class="col-md-12 col-sm-12">
+        <div class="portlet light ">
+            <div class="portlet-title tabbable-line">
+                <div class="caption">
+                    <i class="fa fa-ticket font-dark"></i>
+                    <span class="caption-subject font-dark bold uppercase">Comentarios</span>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#tab_prioridad" data-toggle="tab" aria-expanded="true"> Comentarios </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="portlet-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_prioridad">
+                    
+                        <div class="mt-actions">
+
+                            {% for entity in entities %}
+                                <div class="mt-action">
+                                    <div class="mt-action-img">
+                                        <img src=""> 
+                                    </div>
+                                    <div class="mt-action-body">
+                                        <div class="mt-action-row">
+                                            <div class="mt-action-info ">
+                                                <div class="mt-action-icon ">
+                                                    <i class=" icon-bubbles"></i>
+                                                </div>
+                                                <div class="mt-action-details ">
+                                                    <span class="mt-action-author">Creo: {{entity.usuario}}</span>
+                                                    <p class="mt-action-desc">{{ entity.comentario.comentario }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="mt-action-datetime ">
+                                                <span class="mt=action-time">{% if entity.comentario.fechaCreacion %}{{ entity.comentario.fechaCreacion|date('Y-m-d H:i:s') }}{% endif %}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                                                                              
+                         </div>                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+

@@ -41,7 +41,7 @@
                              <div class="item">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-2 col-md-2">
-                                        Termino:
+                                        Solicitante:
                                     </div>
                                     <div class="col-xs-12 col-sm-3 col-md-3">
                                         {{ entity.solicitante }}
@@ -100,7 +100,11 @@
     </div>
 
     {% block comen %}
-        {{ render(controller('TicketBundle:Comentarios:new')) }} 
+        {{ render(controller('TicketBundle:Comentarios:new', {'id': entity.id} )) }} 
+    {% endblock %}
+
+    {% block index %}
+        {{ render(controller('TicketBundle:Comentarios:listaComentarios', {'id': entity.id} )) }} 
     {% endblock %}
         
 {% endblock %}
