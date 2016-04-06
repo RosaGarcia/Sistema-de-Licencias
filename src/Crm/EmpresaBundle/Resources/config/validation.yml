@@ -61,7 +61,7 @@ Crm\EmpresaBundle\Entity\DireccionEmpresa:
             - NotBlank: { message: "Ingresa codigo Postal." }
             - Length:
                 min: 5
-                mac: 5
+                max: 5
                 minMessage: El numero debe de ser de {{ limit }} digitos.
                 maxMessage: El numero debe de ser de {{ limit }} digitos.
         localidad:
