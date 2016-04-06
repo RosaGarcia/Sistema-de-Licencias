@@ -23,7 +23,7 @@ class DireccionPersonalType extends AbstractType
             ->add('personal', new PersonalType())
             ->add('pais')
             ->add('estado')
-            ->add('localidad','text',array('attr' => array('class' => 'form-control')))
+            ->add('localidad','text',array('attr' => array('class' => 'form-control'),'required' => false))
             ->add('municipio')
         ;
     }
