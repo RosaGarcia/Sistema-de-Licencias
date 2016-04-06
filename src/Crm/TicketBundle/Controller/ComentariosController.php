@@ -7,7 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Crm\TicketBundle\Entity\Comentarios;
 use Crm\TicketBundle\Form\ComentariosType;
-
+/*use Crm\TicketBundle\Entity\Ticket;
+use Crm\TicketBundle\Form\TicketType;*/
 /**
  * Comentarios controller.
  *
@@ -33,17 +34,29 @@ class ComentariosController extends Controller
             'entities' => $entities,
         ));
     }
+
+    public function listaComentariosAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('TicketBundle:Comentarios')->comentarioTicket($id);
+
+        return $this->render('TicketBundle:Comentarios:listacomentarios.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
     /**
      * Creates a new Comentarios entity.
      *
      */
-    public function createAction(Request $request)
+    public function createAction(Request $request, $id)
     {
         $entity = new Comentarios();
-        $form = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity, $id);
         $form->handleRequest($request);
         $user = $this->container->get('security.context')->getToken()->getUser();
-        
+        $ticket = $this->buscaTicket($id);
+
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -51,16 +64,17 @@ class ComentariosController extends Controller
             $logeado = $em->getRepository('UsuariosBundle:Usuarios')->find($user->getId());   
             $usuario = $logeado->getid();
             $entity -> setUsuarioCreo($usuario);
-            $entity -> setTicket(); 
+            $entity -> setTicket($ticket); 
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('comentarios_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('ticket_show', array('id' => $entity->getId())));
         }
 
         return $this->render('TicketBundle:Comentarios:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            'ticket' => $ticket,
         ));
     }
 
@@ -71,10 +85,10 @@ class ComentariosController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Comentarios $entity)
+    private function createCreateForm(Comentarios $entity, $id)
     {
         $form = $this->createForm(new ComentariosType(), $entity, array(
-            'action' => $this->generateUrl('comentarios_create'),
+            'action' => $this->generateUrl('comentarios_create',array('id'=>$id)),
             'method' => 'POST',
         ));
 
@@ -87,10 +101,11 @@ class ComentariosController extends Controller
      * Displays a form to create a new Comentarios entity.
      *
      */
-    public function newAction()
+    public function newAction($id)
     {
         $entity = new Comentarios();
-        $form   = $this->createCreateForm($entity);
+        $form   = $this->createCreateForm($entity, $id);
+        $ticket = $this->buscaTicket($id);
 
         return $this->render('TicketBundle:Comentarios:new.html.twig', array(
             'entity' => $entity,
@@ -98,6 +113,13 @@ class ComentariosController extends Controller
         ));
     }
 
+    private function buscaTicket($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $ticket = $em->getRepository('TicketBundle:Ticket')->find($id);
+
+        return $ticket;
+    }
     /**
      * Finds and displays a Comentarios entity.
      *
