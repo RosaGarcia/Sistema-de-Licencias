@@ -25,7 +25,7 @@
                         <div class="mt-actions">
 
                             {% block prioridad -%}
-                                {{ render(controller('TicketBundle:Ticket:prioridad')) }}
+                                <div id="tick">{{ render(controller('TicketBundle:Ticket:prioridad')) }}</div>
                             {% endblock %}
                            
                                                                                     
@@ -84,6 +84,17 @@
 {% block javascripts %}
     <script type="text/javascript">
        setInterval("location.reload()",60000);
+
+    $(document).ready(function(){
+
+        $("#nav").on("click",".pagination li a", function(){
+            $.get($(this).attr("href","{{path ('ticket_prioridad')}}");
+                 $('#tick').load($(this).attr('href'));
+            );
+            
+        });
+
+    });
     </script>
 
 {% endblock javascripts %}

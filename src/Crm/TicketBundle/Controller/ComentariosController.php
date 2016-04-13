@@ -62,13 +62,13 @@ class ComentariosController extends Controller
             $em = $this->getDoctrine()->getManager();
             $entity->setFechaCreacion(new \DateTime("now"));
             $logeado = $em->getRepository('UsuariosBundle:Usuarios')->find($user->getId());   
-            $usuario = $logeado->getid();
+            $usuario = $logeado->getId();
             $entity -> setUsuarioCreo($usuario);
             $entity -> setTicket($ticket); 
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('ticket_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('ticket_show', array('id' => $ticket->getId())));
         }
 
         return $this->render('TicketBundle:Comentarios:new.html.twig', array(

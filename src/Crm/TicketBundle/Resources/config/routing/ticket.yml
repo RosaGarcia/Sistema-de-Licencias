@@ -40,3 +40,7 @@ ticket_propietario:
 vista_ticket:
     path:   /{id}/vista
     defaults: { _controller: "TicketBundle:Ticket:ticketShow" }
+
+ticket_prioridad:
+    path:   /prioridad
+    defaults: { _controller: "TicketBundle:Ticket:prioridad" }

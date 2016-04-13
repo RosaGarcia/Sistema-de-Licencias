@@ -145,7 +145,7 @@ class TicketController extends Controller
         ));
     }
 
-    public function prioridadAction()
+    public function prioridadAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $entities = $em->getRepository("TicketBundle:Ticket")->prioridad();
@@ -215,6 +215,7 @@ class TicketController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('TicketBundle:Ticket')->find($id);
+        $fecha = $entity->getFechaCreacion();
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Ticket entity.');
@@ -225,9 +226,10 @@ class TicketController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $entity->setFechaCreacion($fecha);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('ticket_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ticket', array('id' => $id)));
         }
 
         return $this->render('TicketBundle:Ticket:edit.html.twig', array(
