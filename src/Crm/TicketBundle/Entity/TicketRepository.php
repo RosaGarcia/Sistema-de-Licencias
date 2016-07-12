@@ -32,4 +32,6 @@ class TicketRepository extends EntityRepository
      	$query = $this->getEntityManager()->createQuery('SELECT t AS ticket, u.userName AS nombre FROM TicketBundle:Ticket t, UsuariosBundle:Usuarios u WHERE t.propietario = u.id AND t.id = :id OR t.propietario IS NULL AND t.id = :id')->setParameter('id',$id)->getResult();
   		return $query;
     }
+
 }
+
